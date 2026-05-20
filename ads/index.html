@@ -92,14 +92,11 @@ button{font-family:inherit;cursor:pointer}
   height:62px;gap:12px;
 }
 .nav-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em;flex-shrink:0}
-.nav-links{display:none;list-style:none;gap:28px;align-items:center}
-@media(min-width:820px){.nav-links{display:flex}}
-.nav-links a{
-  color:var(--dk-muted);font-size:.75rem;font-weight:600;
-  text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;
-  transition:color .15s;
-}
-.nav-links a:hover{color:var(--w)}
+.nav-links{list-style:none;position:absolute;top:62px;left:0;right:0;background:var(--k);border-bottom:1px solid #1a1a1a;flex-direction:column;z-index:200;overflow:hidden;max-height:0;transition:max-height .28s cubic-bezier(.4,0,.2,1)}
+.nav-links.open{max-height:400px}
+.nav-links li a{display:block;color:var(--dk-muted);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:15px 24px;border-bottom:1px solid #111;transition:color .15s,background .15s}
+.nav-links li:last-child a{border-bottom:none}
+.nav-links li a:hover{color:var(--w);background:#0a0a0a}
 .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .lang-btn{
   background:transparent;border:1px solid #333;color:var(--dk-muted);
@@ -113,6 +110,12 @@ button{font-family:inherit;cursor:pointer}
   white-space:nowrap;transition:opacity .15s;border:none;
 }
 .nav-cta:hover{opacity:.85}
+.ham{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:1px solid #333;border-radius:6px;cursor:pointer;padding:10px 11px;transition:border-color .15s;flex-shrink:0}
+.ham:hover{border-color:#555}
+.ham span{display:block;width:18px;height:2px;background:var(--w);border-radius:2px;transition:transform .22s,opacity .22s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ─────────────────────────────────────────
    BUTTONS
@@ -450,20 +453,21 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
 <!-- ══════ NAV ══════ -->
 <header id="nav">
   <div class="wrap nav-in">
-    <a href="#" class="nav-logo">ZYX</a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#ecosistema" data-en="Services">Servicios</a></li>
-        <li><a href="#incluye" data-en="Includes">Incluye</a></li>
-        <li><a href="#proceso" data-en="Process">Proceso</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
+    <a href="https://zyx.mx" class="nav-logo">ZYX</a>
     <div class="nav-right">
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
       <a href="https://wa.me/524421454972" class="nav-cta" target="_blank" rel="noopener" data-en="Get my spot →">Quiero mi cupo →</a>
+      <button class="ham" id="ham" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#ecosistema" data-en="Services">Servicios</a></li>
+    <li><a href="#incluye" data-en="Includes">Incluye</a></li>
+    <li><a href="#proceso" data-en="Process">Proceso</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
 </header>
 
 <!-- ══════ HERO ══════ -->
@@ -1149,6 +1153,11 @@ window.toggleLang=function(){
 initI18n();
 
 })();
+// HAMBURGER MENU
+const ham=document.getElementById('ham');const navLinks=document.getElementById('navLinks');
+ham.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');ham.classList.toggle('open');ham.setAttribute('aria-expanded',open)});
+document.addEventListener('click',e=>{if(!ham.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false')}});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false')}));
 </script>
 
 </body>

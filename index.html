@@ -71,15 +71,22 @@ button{font-family:inherit;cursor:pointer}
 #nav{position:sticky;top:0;z-index:100;background:var(--k);border-bottom:1px solid #111}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
 .nav-logo{font-size:1.6rem;font-weight:900;color:var(--w);letter-spacing:.12em;flex-shrink:0}
-.nav-links{display:none;list-style:none;gap:28px;align-items:center}
-@media(min-width:860px){.nav-links{display:flex}}
-.nav-links a{color:var(--dk-muted);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;transition:color .15s}
-.nav-links a:hover{color:var(--w)}
+.nav-links{list-style:none;position:absolute;top:64px;left:0;right:0;background:var(--k);border-bottom:1px solid #1a1a1a;flex-direction:column;z-index:200;overflow:hidden;max-height:0;transition:max-height .28s cubic-bezier(.4,0,.2,1)}
+.nav-links.open{max-height:500px}
+.nav-links li a{display:block;color:var(--dk-muted);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:15px 24px;border-bottom:1px solid #111;transition:color .15s,background .15s}
+.nav-links li:last-child a{border-bottom:none}
+.nav-links li a:hover{color:var(--w);background:#0a0a0a}
 .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .lang-btn{background:transparent;border:1px solid #333;color:var(--dk-muted);padding:6px 12px;border-radius:var(--r);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:all .15s}
 .lang-btn:hover{border-color:var(--w);color:var(--w)}
 .nav-cta{background:var(--w);color:var(--k);padding:9px 20px;border-radius:var(--r);font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;transition:opacity .15s;border:none}
 .nav-cta:hover{opacity:.85}
+.ham{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:1px solid #333;border-radius:6px;cursor:pointer;padding:10px 11px;transition:border-color .15s;flex-shrink:0}
+.ham:hover{border-color:#555}
+.ham span{display:block;width:18px;height:2px;background:var(--w);border-radius:2px;transition:transform .22s,opacity .22s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ─────────────────────────────────────────
    BUTTONS
@@ -344,22 +351,24 @@ button{font-family:inherit;cursor:pointer}
 <nav id="nav">
   <div class="wrap nav-in">
     <a href="/" class="nav-logo">ZYX</a>
-    <ul class="nav-links">
-      <li><a href="#svc-ads" data-en="Meta Ads">Meta Ads</a></li>
-      <li><a href="#svc-pages" data-en="Landing Pages">Landing Pages</a></li>
-      <li><a href="#svc-ecom" data-en="Shopify Stores">Shopify</a></li>
-      <li><a href="#svc-ugc" data-en="UGC Videos">UGC</a></li>
-      <li><a href="#svc-clone" data-en="AI Clone">Clon IA</a></li>
-      <li><a href="#svc-info" data-en="Infoproducts">Infoproductos</a></li>
-      <li><a href="#who" data-en="About">Nosotros</a></li>
-    </ul>
     <div class="nav-right">
       <button class="lang-btn" id="langBtn">EN</button>
       <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
          class="nav-cta" target="_blank" rel="noopener"
          data-en="Talk to us →">Hablar con ZYX →</a>
+      <button class="ham" id="ham" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#svc-ads" data-en="Meta Ads">Meta Ads</a></li>
+    <li><a href="#svc-pages" data-en="Landing Pages">Landing Pages</a></li>
+    <li><a href="#svc-ecom" data-en="Shopify + UGC">Shopify + UGC</a></li>
+    <li><a href="#svc-clone" data-en="AI Clone">Clon IA</a></li>
+    <li><a href="#svc-info" data-en="Infoproducts">Infoproductos</a></li>
+    <li><a href="#who" data-en="About">Nosotros</a></li>
+  </ul>
 </nav>
 
 <!-- ═══════════════════════════════════════ HERO -->
@@ -1038,6 +1047,26 @@ langBtn.addEventListener('click',()=>{
     }
   });
 });
+// HAMBURGER MENU
+const ham=document.getElementById('ham');
+const navLinks=document.getElementById('navLinks');
+ham.addEventListener('click',()=>{
+  const open=navLinks.classList.toggle('open');
+  ham.classList.toggle('open');
+  ham.setAttribute('aria-expanded',open);
+});
+document.addEventListener('click',e=>{
+  if(!ham.contains(e.target)&&!navLinks.contains(e.target)){
+    navLinks.classList.remove('open');
+    ham.classList.remove('open');
+    ham.setAttribute('aria-expanded','false');
+  }
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+}));
 </script>
 </body>
 </html>
