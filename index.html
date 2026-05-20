@@ -248,7 +248,10 @@ button{font-family:inherit;cursor:pointer}
 
 .svc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:56px}
 @media(min-width:540px){.svc-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-card.featured{grid-column:span 2}
+}
 
 .svc-card{
   background:var(--w);border:1px solid var(--lt-border);border-radius:var(--r);
@@ -296,17 +299,6 @@ button{font-family:inherit;cursor:pointer}
 .inc-card h4{color:var(--w);font-size:.9375rem;font-weight:700;margin-bottom:7px}
 .inc-card p{color:var(--dk-muted);font-size:.8125rem;line-height:1.7}
 
-.not-blk{
-  border:1px solid #1a1a1a;border-radius:var(--r);
-  padding:28px 28px;margin-top:20px;
-}
-.not-ttl{
-  font-size:.6875rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:.12em;color:var(--dk-faint);margin-bottom:18px;
-}
-.not-items{display:grid;grid-template-columns:1fr;gap:9px}
-@media(min-width:480px){.not-items{grid-template-columns:1fr 1fr}}
-.not-li{display:flex;gap:10px;color:var(--dk-faint);font-size:.8125rem}
 
 .why-box{
   background:#090909;border:1px solid #1e1e1e;border-radius:var(--r);
@@ -314,6 +306,17 @@ button{font-family:inherit;cursor:pointer}
 }
 .why-box h3{color:var(--w);font-size:1.3rem;font-weight:800;margin-bottom:14px}
 .why-box p{color:var(--dk-body);max-width:520px;margin:0 auto;font-size:.9375rem;line-height:1.8}
+
+/* Ad spend note */
+.adspend-note{
+  border:1px solid #2a2a2a;border-radius:var(--r);
+  padding:32px 28px;margin-top:24px;
+  display:flex;gap:20px;align-items:flex-start;
+}
+.adspend-icon{font-size:1.4rem;flex-shrink:0;margin-top:1px}
+.adspend-head{color:var(--w);font-weight:700;font-size:.9375rem;margin-bottom:10px}
+.adspend-note p:last-child{color:var(--dk-muted);font-size:.875rem;line-height:1.85}
+.adspend-note p:last-child strong{color:var(--w)}
 
 /* ─────────────────────────────────────────
    BEFORE / AFTER
@@ -566,8 +569,8 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
     </div>
 
     <p class="pas-body reveal"
-      data-en="ZYX builds the complete system: videos that stop the scroll, campaigns that convert, funnels that close, and a brand people remember. So your ideal clients find you every day — even when you're not recording, posting, or pitching.">
-      ZYX construye el sistema completo: videos que detienen el scroll, campañas que convierten,
+      data-en="ZYX builds the complete system: copy that converts, videos that stop the scroll, campaigns that generate leads, funnels that close and a brand people remember. So your ideal clients find you every day — even when you're not recording, posting, or pitching.">
+      ZYX construye el sistema completo: copy que convierte, videos que detienen el scroll, campañas que generan leads,
       funnels que cierran y una marca que la gente recuerda. Para que tus clientes ideales
       lleguen a ti todos los días — aunque no estés grabando, publicando ni haciendo ventas.
     </p>
@@ -602,10 +605,9 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
       data-en="Not just Meta Ads.<br>Everything your personal brand needs.">
       No solo Meta Ads.<br>Todo lo que necesita<br>tu marca personal.
     </h2>
-    <p class="sp-16 reveal" style="max-width:540px;color:var(--lt-body);font-size:.9375rem;line-height:1.8"
-      data-en="We work with creators, coaches and consultants to build everything a personal brand needs to generate consistent revenue. Choose what you need. We combine it. We execute it.">
-      Trabajamos con creadores, coaches y consultores para construir todo lo que necesita
-      una marca personal que genera ingresos consistentes. Elegimos lo que necesitas, lo combinamos, lo ejecutamos.
+    <p class="sp-16 reveal" style="max-width:560px;color:var(--lt-body);font-size:.9375rem;line-height:1.8"
+      data-en="We work with creators, coaches and consultants to build everything a personal brand needs to generate consistent revenue. We're experts in copy, video and Meta — and we execute it all under one roof.">
+      Trabajamos con creadores, coaches y consultores para construir todo lo que necesita una marca personal que genera ingresos consistentes. Somos expertos en copy, video y Meta — y lo ejecutamos todo bajo un solo techo.
     </p>
 
     <div class="svc-grid">
@@ -615,7 +617,7 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
         <div class="svc-badge" data-en="Core Service · $10,000 MXN/month">Servicio Principal · $10,000 MXN/mes</div>
         <div class="svc-icon">◆</div>
         <h3 data-en="Meta Ads &amp; Campaigns">Meta Ads &amp; Campañas</h3>
-        <p data-en="Strategy, targeting, setup and active management. New campaign every month, 4 forty-second creatives, A/B testing and real monthly reporting.">Estrategia, segmentación, configuración y gestión activa. Campaña nueva cada mes, 4 creativos de 40 segundos, pruebas A/B y reporte mensual real.</p>
+        <p data-en="Strategy, targeting, setup and active management. New campaign every month, 4 forty-second creatives and a real monthly report with clear decisions.">Estrategia, segmentación, configuración y gestión activa. Campaña nueva cada mes, 4 creativos de 40 segundos y reporte mensual con decisiones reales.</p>
         <div class="svc-price">$10,000 <span data-en="MXN / month">MXN / mes</span></div>
       </div>
 
@@ -645,17 +647,41 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
 
       <!-- Brand Strategy -->
       <div class="svc-card reveal" data-d="2">
-        <div class="svc-badge" data-en="Available">Disponible</div>
+        <div class="svc-badge" data-en="Add-on">Add-on</div>
         <div class="svc-icon">■</div>
         <h3 data-en="Personal Brand Strategy">Estrategia de Marca Personal</h3>
         <p data-en="We define your authority angle, ideal audience and brand narrative. So when someone sees you for the first time, they already want to buy from you.">Definimos tu ángulo de autoridad, audiencia ideal y narrativa de marca. Para que cuando alguien te vea por primera vez, ya quiera comprarte.</p>
       </div>
 
+      <!-- Landing Pages -->
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-badge" data-en="Add-on · From $10,000 MXN">Add-on · Desde $10,000 MXN</div>
+        <div class="svc-icon">▭</div>
+        <h3 data-en="Landing Pages &amp; Web">Landing Pages &amp; Web</h3>
+        <p data-en="A Meta campaign is only as strong as the page it sends traffic to. We design, write and build high-converting landing pages that turn clicks into clients — fully optimized for your campaigns.">Una campaña de Meta es tan buena como la página a la que manda el tráfico. Diseñamos, escribimos y construimos landing pages de alta conversión que convierten clics en clientes — optimizadas para tus campañas.</p>
+      </div>
+
+      <!-- Lead Automation -->
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-badge" data-en="Add-on">Add-on</div>
+        <div class="svc-icon">⟳</div>
+        <h3 data-en="Lead Automation &amp; Nurturing">Automatización de Leads</h3>
+        <p data-en="Every lead that enters your campaign automatically receives a tailored message sequence that nurtures them until they're ready to buy. More conversions without chasing anyone manually.">Cada lead que entra a tu campaña recibe automáticamente una secuencia de mensajes personalizada que lo nutre hasta que esté listo para comprar. Más ventas sin perseguir prospectos a mano.</p>
+      </div>
+
+      <!-- Copy & Scripts -->
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-badge" data-en="Add-on">Add-on</div>
+        <div class="svc-icon">✍</div>
+        <h3 data-en="Copy &amp; Scripts">Copy &amp; Guiones</h3>
+        <p data-en="We're obsessed with words that sell. From ad scripts to email sequences, VSLs and sales pages — every word engineered to move your audience from 'maybe' to 'yes'.">Somos obsesivos con las palabras que venden. De guiones de anuncios a secuencias de email, VSLs y páginas de venta — cada palabra diseñada para mover a tu audiencia del 'quizás' al 'sí'.</p>
+      </div>
+
     </div>
 
     <p class="eco-note reveal"
-      data-en="The core Meta Ads service includes 4 video creatives per month at $10,000 MXN. Additional services are quoted based on project scope. Schedule a call to build your custom stack.">
-      El servicio principal de Meta Ads incluye 4 creativos de video al mes a $10,000 MXN. Los demás servicios se cotizan según el alcance del proyecto. Agenda una llamada para armar tu stack a la medida.
+      data-en="The core Meta Ads service includes 4 video creatives per month at $10,000 MXN. Additional services — Landing Pages, Lead Automation, AI Avatar, Funnels and more — are quoted by project scope. Schedule a call to build your custom stack.">
+      El servicio base de Meta Ads incluye 4 creativos de video al mes a $10,000 MXN. Los servicios adicionales — Landing Pages, Automatización de Leads, Avatar IA, Funnels y más — se cotizan según el proyecto. Agenda una llamada para armar tu stack a la medida.
     </p>
 
   </div>
@@ -701,10 +727,10 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
         </div>
       </div>
       <div class="inc-card reveal" data-d="1">
-        <span class="inc-ico">■</span>
+        <span class="inc-ico">✍</span>
         <div>
-          <h4 data-en="A/B creative testing">Pruebas A/B de creativos</h4>
-          <p data-en="We test which video converts best, scale the winner, and pause what doesn't perform. Data, not guesswork.">Probamos qué video convierte mejor, escalamos el ganador y pausamos lo que no rinde. Datos, no intuición.</p>
+          <h4 data-en="Copy &amp; conversion hooks">Copy y hooks de conversión</h4>
+          <p data-en="We write the scripts, hooks and CTAs for your ads. Every word chosen to stop the scroll and move your audience to action in the first 3 seconds.">Escribimos los guiones, hooks y CTAs de tus anuncios. Cada palabra elegida para detener el scroll y mover a tu audiencia a la acción en los primeros 3 segundos.</p>
         </div>
       </div>
       <div class="inc-card reveal" data-d="2">
@@ -716,15 +742,16 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
       </div>
     </div>
 
-    <div class="not-blk reveal">
-      <div class="not-ttl" data-en="Not included — to be transparent">No incluye — para ser transparentes</div>
-      <div class="not-items">
-        <div class="not-li"><span>✗</span><span data-en="Ad spend budget (goes directly to Meta, controlled by you)">El presupuesto de pauta (va directo a Meta, lo controlas tú)</span></div>
-        <div class="not-li"><span>✗</span><span data-en="Video recording (you record with your phone following our brief)">Grabación de videos (tú grabas con tu teléfono siguiendo el brief)</span></div>
-        <div class="not-li"><span>✗</span><span data-en="Landing page or website design">Diseño de landing pages o sitios web</span></div>
-        <div class="not-li"><span>✗</span><span data-en="Organic social media management">Manejo de redes sociales orgánicas</span></div>
-        <div class="not-li"><span>✗</span><span data-en="Email marketing, CRM or automations">Email marketing, CRM o automatizaciones</span></div>
-        <div class="not-li"><span>✗</span><span data-en="Professional photography or on-location production">Fotografía profesional en locación</span></div>
+    <div class="adspend-note reveal">
+      <div class="adspend-icon">⚡</div>
+      <div>
+        <p class="adspend-head"
+          data-en="One thing worth being upfront about: ad spend is separate.">
+          Una cosa importante: la pauta va aparte.
+        </p>
+        <p data-en="The $10,000 MXN covers the full service — management, strategy, video editing and creative production. The budget you put into Meta is separate: it goes directly to Meta, you control it from your own ad account, and every peso goes to distribution — not to us. We recommend a minimum of <strong>$5,000 to $6,000 MXN per month</strong> in ad spend to see meaningful results from month one. Think of it as fuel — we build and drive the engine.">
+          Los $10,000 MXN cubren el servicio completo: gestión, estrategia, edición de videos y producción de creativos. El presupuesto que inviertes en Meta va directo a Meta — tú lo controlas desde tu propia cuenta de anuncios y cada peso va a distribución, no a nosotros. Recomendamos un mínimo de <strong>$5,000 a $6,000 MXN al mes</strong> en pauta para ver resultados claros desde el primer mes. Piénsalo así: nosotros construimos y manejamos el motor — tú pones la gasolina.
+        </p>
       </div>
     </div>
 
@@ -763,7 +790,7 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
         <ul class="ps-list">
           <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>4 videos of 40 seconds</b> that stop the scroll"><b>4 videos de 40 segundos</b> que detienen el scroll</span></li>
           <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>New campaign every month</b> with updated strategy"><b>Campaña nueva cada mes</b> con estrategia actualizada</span></li>
-          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Active management:</b> weekly adjustments and real A/B"><b>Gestión activa:</b> ajustes semanales y A/B real</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Active management:</b> weekly monitoring and real adjustments"><b>Gestión activa:</b> monitoreo y ajustes semanales reales</span></li>
           <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Your face and voice</b> building authority in every ad"><b>Tu cara y tu voz</b> construyendo autoridad en cada anuncio</span></li>
           <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Fresh creatives</b> so the algorithm always works in your favor"><b>Creativos frescos</b> para que el algoritmo trabaje a tu favor</span></li>
           <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Clear monthly report</b> of what works and what doesn't"><b>Reporte mensual claro</b> de qué funciona y qué no</span></li>
@@ -909,7 +936,7 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a
       <li>→ <span data-en="<b>4 x 40-second videos</b> edited by our team every month"><b>4 videos de 40 segundos</b> editados por nuestro equipo cada mes</span></li>
       <li>→ <span data-en="<b>1 new Meta campaign</b> configured and live every month"><b>1 campaña nueva en Meta</b> configurada y activa cada mes</span></li>
       <li>→ <span data-en="<b>Active management</b> of spend, budget and creatives"><b>Gestión activa</b> de pauta, presupuesto y creativos</span></li>
-      <li>→ <span data-en="<b>A/B testing</b> to scale the creative that converts most"><b>Pruebas A/B</b> para escalar el creativo que más convierte</span></li>
+      <li>→ <span data-en="<b>Expert copy &amp; hooks</b> written for every ad"><b>Copy y hooks expertos</b> escritos para cada anuncio</span></li>
       <li>→ <span data-en="<b>Monthly report</b> with real data and decisions made"><b>Reporte mensual</b> con datos reales y decisiones tomadas</span></li>
     </ul>
 
