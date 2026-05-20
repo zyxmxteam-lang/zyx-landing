@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZYX Ecom · Tu tienda Shopify lista para vender. Esta semana.</title>
+<meta name="description" content="Diseñamos tu tienda Shopify desde cero: diseño 100% personalizado, copy que convierte, configuración completa. Sin precios fijos — agenda una llamada y arrancamos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────────────────
+   RESET & TOKENS
+───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --k:#000;--w:#fff;
+  --g50:#fafafa;--g100:#f3f3f3;--g200:#e5e5e5;--g300:#d4d4d4;
+  --dk-body:#b8b8b8;
+  --dk-muted:#888;
+  --dk-faint:#555;
+  --dk-border:#222;
+  --lt-body:#555;
+  --lt-muted:#888;
+  --lt-border:#e5e5e5;
+  --r:4px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --green:#00c48c;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--w);color:var(--k);
+  line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────── */
+.disp{font-size:clamp(2.2rem,6.5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-.035em}
+.h1  {font-size:clamp(1.9rem,5.5vw,3.75rem);font-weight:900;line-height:1.07;letter-spacing:-.03em}
+.h2  {font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:800;line-height:1.13;letter-spacing:-.02em}
+.h3  {font-size:clamp(.975rem,2vw,1.15rem);font-weight:700;line-height:1.3}
+.label{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lt-muted)}
+.label.inv{color:var(--dk-faint)}
+
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+.sec{padding:80px 0}
+@media(min-width:768px){.sec{padding:112px 0}}
+.tc{text-align:center}
+
+.sp-4 {margin-top:4px} .sp-8 {margin-top:8px}  .sp-12{margin-top:12px}
+.sp-16{margin-top:16px}.sp-20{margin-top:20px}.sp-24{margin-top:24px}
+.sp-32{margin-top:32px}.sp-40{margin-top:40px}.sp-48{margin-top:48px}
+.sp-56{margin-top:56px}.sp-64{margin-top:64px}
+.mb-8 {margin-bottom:8px}.mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}
+.mb-24{margin-bottom:24px}.mb-32{margin-bottom:32px}.mb-40{margin-bottom:40px}
+.mb-48{margin-bottom:48px}.mb-56{margin-bottom:56px}
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.40s}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+#nav{position:sticky;top:0;z-index:100;background:var(--k);border-bottom:1px solid #111}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;gap:12px;
+}
+.nav-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em;flex-shrink:0}
+.nav-logo span{font-size:.65rem;font-weight:600;letter-spacing:.18em;color:var(--dk-faint);text-transform:uppercase;margin-left:8px;vertical-align:middle}
+.nav-links{display:none;list-style:none;gap:28px;align-items:center}
+@media(min-width:820px){.nav-links{display:flex}}
+.nav-links a{
+  color:var(--dk-muted);font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--w)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lang-btn{
+  background:transparent;border:1px solid #333;color:var(--dk-muted);
+  padding:6px 12px;border-radius:var(--r);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;transition:all .15s;
+}
+.lang-btn:hover{border-color:var(--w);color:var(--w)}
+.nav-cta{
+  background:var(--w);color:var(--k);padding:9px 20px;border-radius:var(--r);
+  font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;
+  white-space:nowrap;transition:opacity .15s;border:none;
+}
+.nav-cta:hover{opacity:.85}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{
+  display:inline-block;padding:17px 36px;border-radius:var(--r);
+  font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;
+  cursor:pointer;border:none;transition:transform .15s var(--ease),opacity .15s;
+  white-space:nowrap;line-height:1;
+}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn:active{transform:none}
+.btn-w  {background:var(--w);color:var(--k)}
+.btn-ol {background:transparent;color:var(--dk-muted);border:1px solid #333}
+.btn-ol:hover{border-color:var(--w);color:var(--w)}
+.btn-full{width:100%;text-align:center}
+@media(min-width:480px){.btn-full{width:auto}}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+#hero{background:var(--k);color:var(--w);padding:88px 0 80px}
+@media(min-width:768px){#hero{padding:112px 0 96px}}
+
+.hero-badge{
+  display:inline-block;background:#0d0d0d;border:1px solid #222;
+  color:var(--dk-muted);font-size:.6875rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 18px;
+  border-radius:30px;margin-bottom:36px;
+}
+.hero-h{color:var(--w);max-width:820px;margin:0 auto}
+.hero-sub{
+  color:var(--dk-body);font-size:clamp(.975rem,2.2vw,1.125rem);
+  line-height:1.85;max-width:560px;margin:0 auto;
+}
+.hero-sub strong{color:var(--w)}
+
+.hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:40px}
+@media(min-width:480px){.hero-ctas{flex-direction:row;justify-content:center}}
+
+.hero-note{color:var(--dk-faint);font-size:.75rem;font-weight:600;letter-spacing:.04em;margin-top:20px}
+
+/* ─────────────────────────────────────────
+   TICKER
+───────────────────────────────────────── */
+.ticker-wrap{background:#0d0d0d;border-top:1px solid #111;border-bottom:1px solid #111;padding:14px 0;overflow:hidden}
+.ticker-inner{display:flex;gap:64px;animation:tick 22s linear infinite;white-space:nowrap}
+.ticker-inner span{color:var(--dk-faint);font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;flex-shrink:0}
+.ticker-inner .dot{color:#333}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─────────────────────────────────────────
+   STATS
+───────────────────────────────────────── */
+#stats{background:var(--k);color:var(--w);padding:72px 0 80px;border-bottom:1px solid #111}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(min-width:640px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:32px 24px;border-right:1px solid #111;border-bottom:1px solid #111}
+.stat:last-child{border-right:none}
+@media(max-width:639px){
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3){border-bottom:none}
+  .stat:nth-child(4){border-right:none;border-bottom:none}
+}
+@media(min-width:640px){
+  .stat:nth-child(4){border-right:none}
+  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+}
+.stat-num{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.03em;line-height:1}
+.stat-label{color:var(--dk-muted);font-size:.7875rem;margin-top:6px;line-height:1.4}
+
+/* ─────────────────────────────────────────
+   PAS SECTION
+───────────────────────────────────────── */
+#pas{background:var(--k);color:var(--w)}
+.pas-box{
+  background:#050505;border:1px solid #1a1a1a;
+  border-radius:8px;padding:48px 40px;
+}
+@media(max-width:639px){.pas-box{padding:32px 24px}}
+.pas-problem{color:#ff4d4d;font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.pas-grid{display:grid;gap:32px}
+@media(min-width:768px){.pas-grid{grid-template-columns:1fr 1fr 1fr}}
+.pas-col{}
+.pas-col-tag{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.tag-p{color:#ff4d4d}
+.tag-a{color:#ff8c00}
+.tag-s{color:var(--green)}
+.pas-col p{color:var(--dk-body);font-size:.9375rem;line-height:1.7}
+.pas-col p strong{color:var(--w)}
+
+/* ─────────────────────────────────────────
+   WHO IT'S FOR
+───────────────────────────────────────── */
+#for{background:var(--g50)}
+.for-grid{display:grid;gap:16px;margin-top:40px}
+@media(min-width:640px){.for-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.for-grid{grid-template-columns:repeat(3,1fr)}}
+.for-card{
+  background:var(--w);border:1px solid var(--lt-border);
+  border-radius:8px;padding:28px 24px;
+}
+.for-icon{font-size:1.8rem;margin-bottom:12px}
+.for-card h3{font-size:.975rem;font-weight:800;margin-bottom:8px}
+.for-card p{color:var(--lt-body);font-size:.875rem;line-height:1.6}
+
+/* ─────────────────────────────────────────
+   WHY SHOPIFY
+───────────────────────────────────────── */
+#why-shopify{background:var(--k);color:var(--w)}
+.why-grid{display:grid;gap:24px;margin-top:48px}
+@media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-card{
+  background:#050505;border:1px solid #1a1a1a;
+  border-radius:8px;padding:28px 24px;
+}
+.why-num{
+  font-size:2rem;font-weight:900;letter-spacing:-.04em;
+  color:var(--green);line-height:1;margin-bottom:12px;
+}
+.why-card h3{font-size:.975rem;font-weight:800;color:var(--w);margin-bottom:8px}
+.why-card p{color:var(--dk-body);font-size:.875rem;line-height:1.6}
+
+/* ─────────────────────────────────────────
+   INCLUDES
+───────────────────────────────────────── */
+#includes{background:var(--k);color:var(--w);border-top:1px solid #111}
+.inc-grid{display:grid;gap:0;border:1px solid #111;border-radius:8px;overflow:hidden;margin-top:48px}
+@media(min-width:640px){.inc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.inc-grid{grid-template-columns:repeat(3,1fr)}}
+.inc-card{
+  padding:32px 28px;border-right:1px solid #111;border-bottom:1px solid #111;
+}
+@media(max-width:639px){.inc-card:nth-child(odd){border-right:none}}
+@media(min-width:640px) and (max-width:899px){.inc-card:nth-child(even){border-right:none}}
+@media(min-width:900px){.inc-card:nth-child(3n){border-right:none}}
+.inc-check{
+  width:32px;height:32px;background:#0a1f16;border:1px solid #1a3d29;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;font-size:.875rem;color:var(--green);flex-shrink:0;
+}
+.inc-card h3{font-size:.975rem;font-weight:800;color:var(--w);margin-bottom:8px}
+.inc-card p{color:var(--dk-body);font-size:.8125rem;line-height:1.6}
+
+/* ─────────────────────────────────────────
+   COMPARISON TABLE
+───────────────────────────────────────── */
+#compare{background:var(--g50)}
+.cmp-wrap{overflow-x:auto;margin-top:48px}
+.cmp-table{width:100%;border-collapse:collapse;min-width:520px}
+.cmp-table th,.cmp-table td{padding:14px 20px;text-align:left;font-size:.875rem}
+.cmp-table thead th{
+  font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lt-muted);padding-bottom:8px;
+}
+.cmp-table thead th:not(:first-child){text-align:center}
+.cmp-table thead th:last-child{background:var(--k);color:var(--w);border-radius:4px 4px 0 0}
+.cmp-table tbody tr{border-top:1px solid var(--lt-border)}
+.cmp-table tbody td:not(:first-child){text-align:center;font-size:1.1rem}
+.cmp-table tbody td:first-child{color:var(--lt-body);font-weight:600}
+.cmp-table tbody td:last-child{background:#fafafa;font-weight:700}
+.cmp-ok{color:var(--green)}
+.cmp-no{color:#d1d5db}
+.cmp-table tfoot td{padding-top:20px}
+
+/* ─────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────── */
+#process{background:var(--k);color:var(--w)}
+.proc-grid{display:grid;gap:32px;margin-top:48px}
+@media(min-width:640px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.proc-grid{grid-template-columns:repeat(5,1fr)}}
+.proc-step{position:relative}
+@media(min-width:900px){
+  .proc-step:not(:last-child)::after{
+    content:'';position:absolute;top:20px;left:calc(100% + 8px);
+    width:calc(100% - 40px);height:1px;background:#222;
+  }
+}
+.proc-num{
+  width:40px;height:40px;background:#111;border:1px solid #222;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:800;color:var(--dk-muted);margin-bottom:16px;
+}
+.proc-step h3{font-size:.925rem;font-weight:800;color:var(--w);margin-bottom:6px}
+.proc-step p{color:var(--dk-body);font-size:.8125rem;line-height:1.6}
+
+/* ─────────────────────────────────────────
+   BEFORE / AFTER
+───────────────────────────────────────── */
+#ba{background:var(--g50)}
+.ba-grid{display:grid;gap:16px;margin-top:40px}
+@media(min-width:640px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba-card{border-radius:8px;padding:32px 28px}
+.ba-before{background:#fff5f5;border:1px solid #fecaca}
+.ba-after{background:#f0fdf4;border:1px solid #bbf7d0}
+.ba-tag{
+  display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;padding:4px 12px;border-radius:30px;margin-bottom:16px;
+}
+.ba-before .ba-tag{background:#fee2e2;color:#dc2626}
+.ba-after  .ba-tag{background:#dcfce7;color:#16a34a}
+.ba-card h3{font-size:1rem;font-weight:800;margin-bottom:16px}
+.ba-list{list-style:none}
+.ba-list li{font-size:.875rem;line-height:1.5;padding:6px 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--lt-body)}
+.ba-list li:last-child{border:none}
+.ba-list li::before{margin-right:8px}
+.ba-before .ba-list li::before{content:'✗';color:#dc2626}
+.ba-after  .ba-list li::before{content:'✓';color:#16a34a;font-weight:700}
+
+/* ─────────────────────────────────────────
+   CTA BLOCK
+───────────────────────────────────────── */
+#cta-block{background:var(--k);color:var(--w)}
+.cta-inner{
+  background:#050505;border:1px solid #1a1a1a;
+  border-radius:12px;padding:56px 48px;text-align:center;
+}
+@media(max-width:639px){.cta-inner{padding:40px 24px}}
+.cta-inner .h2{max-width:600px;margin:0 auto}
+.cta-inner .hero-sub{margin-top:16px}
+.cta-btns{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:40px}
+@media(min-width:480px){.cta-btns{flex-direction:row;justify-content:center}}
+.cta-note{color:var(--dk-faint);font-size:.75rem;margin-top:20px;font-weight:600}
+
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
+#faq{background:var(--g50)}
+.faq-list{margin-top:40px;display:grid;gap:8px}
+.faq-item{background:var(--w);border:1px solid var(--lt-border);border-radius:6px;overflow:hidden}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;text-align:left;background:none;border:none;
+  font-size:.9375rem;font-weight:700;cursor:pointer;gap:16px;
+  transition:color .15s;
+}
+.faq-q:hover{color:var(--lt-muted)}
+.faq-icon{font-size:1.25rem;font-weight:300;flex-shrink:0;transition:transform .3s var(--ease)}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s var(--ease),padding .4s var(--ease);
+}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 24px 20px;color:var(--lt-body);font-size:.9rem;line-height:1.75}
+
+/* ─────────────────────────────────────────
+   FOOTER CTA
+───────────────────────────────────────── */
+#footer-cta{background:var(--k);color:var(--w);padding:80px 0;text-align:center}
+#footer-cta .h2{max-width:640px;margin:0 auto}
+#footer-cta .hero-sub{margin:20px auto 0}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+#footer{background:#050505;border-top:1px solid #111;padding:32px 0}
+.foot-in{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+@media(min-width:640px){.foot-in{flex-direction:row;justify-content:space-between;text-align:left}}
+.foot-logo{font-size:1.1rem;font-weight:900;color:var(--w);letter-spacing:.14em}
+.foot-logo span{font-size:.55rem;color:var(--dk-faint);letter-spacing:.2em;text-transform:uppercase;margin-left:6px}
+.foot-copy{color:var(--dk-faint);font-size:.75rem}
+.foot-links{display:flex;gap:20px}
+.foot-links a{color:var(--dk-faint);font-size:.75rem;transition:color .15s}
+.foot-links a:hover{color:var(--w)}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ NAV -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="nav-logo">ZYX <span data-en="Ecom">Ecom</span></a>
+    <ul class="nav-links">
+      <li><a href="#includes" data-en="What's included">Qué incluye</a></li>
+      <li><a href="#process" data-en="Process">Proceso</a></li>
+      <li><a href="#faq" data-en="FAQ">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn">EN</button>
+      <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20crear%20mi%20tienda%20en%20Shopify.%20%C2%BFPodemos%20hablar%3F"
+         class="nav-cta" target="_blank" rel="noopener"
+         data-en="Book a call →">Agendar llamada →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO -->
+<section id="hero" class="tc">
+  <div class="wrap">
+    <div class="hero-badge reveal" data-en="🛍 Shopify Store Design · Built to sell">🛍 Diseño de Tiendas Shopify · Hechas para vender</div>
+
+    <h1 class="disp hero-h reveal sp-4" data-en="Your Shopify store,<br>live and selling.<br><em style='font-style:italic'>This week.</em>">
+      Tu tienda Shopify,<br>lista y vendiendo.<br><em style="font-style:italic">Esta semana.</em>
+    </h1>
+
+    <p class="hero-sub sp-24 reveal" data-d="1"
+       data-en="We don't just build pretty stores. We design Shopify stores <strong>built from the first pixel to convert</strong> — custom design, sales copy, full setup. You focus on your product. We handle everything else.">
+      No solo hacemos tiendas bonitas. Diseñamos tiendas Shopify <strong>pensadas desde el primer píxel para vender</strong> — diseño personalizado, copy de ventas, configuración completa. Tú enfócate en tu producto. Nosotros nos encargamos de todo lo demás.
+    </p>
+
+    <div class="hero-ctas reveal" data-d="2">
+      <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20crear%20mi%20tienda%20en%20Shopify.%20%C2%BFPodemos%20hablar%3F"
+         class="btn btn-w" target="_blank" rel="noopener"
+         data-en="📞 Book a free call">📞 Agendar llamada gratis</a>
+      <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20cotizar%20mi%20tienda%20Shopify"
+         class="btn btn-ol" target="_blank" rel="noopener"
+         data-en="💬 Tell us about your project">💬 Cuéntanos tu proyecto</a>
+    </div>
+
+    <p class="hero-note reveal" data-d="3"
+       data-en="No price list · Each store is unique · We quote based on your project">
+      Sin precio fijo · Cada tienda es única · Cotizamos según tu proyecto
+    </p>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="tickerInner">
+    <span>Shopify Expert</span><span class="dot">·</span>
+    <span>Mobile First</span><span class="dot">·</span>
+    <span>Copy que convierte</span><span class="dot">·</span>
+    <span>Entrega en días</span><span class="dot">·</span>
+    <span>Diseño 100% custom</span><span class="dot">·</span>
+    <span>Configuración total</span><span class="dot">·</span>
+    <span>Pagos integrados</span><span class="dot">·</span>
+    <span>Apps de conversión</span><span class="dot">·</span>
+    <span>Shopify Expert</span><span class="dot">·</span>
+    <span>Mobile First</span><span class="dot">·</span>
+    <span>Copy que convierte</span><span class="dot">·</span>
+    <span>Entrega en días</span><span class="dot">·</span>
+    <span>Diseño 100% custom</span><span class="dot">·</span>
+    <span>Configuración total</span><span class="dot">·</span>
+    <span>Pagos integrados</span><span class="dot">·</span>
+    <span>Apps de conversión</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ STATS -->
+<section id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num">+50</div>
+        <div class="stat-label" data-en="Shopify stores launched">Tiendas Shopify lanzadas</div>
+      </div>
+      <div class="stat reveal" data-d="1">
+        <div class="stat-num">&lt;7d</div>
+        <div class="stat-label" data-en="Average delivery time">Tiempo promedio de entrega</div>
+      </div>
+      <div class="stat reveal" data-d="2">
+        <div class="stat-num">100%</div>
+        <div class="stat-label" data-en="Custom design, zero templates">Diseño custom, cero templates</div>
+      </div>
+      <div class="stat reveal" data-d="3">
+        <div class="stat-num">70%+</div>
+        <div class="stat-label" data-en="Mobile traffic — we prioritize it from day one">Tráfico móvil — lo priorizamos desde el día 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PAS -->
+<section id="pas" class="sec">
+  <div class="wrap">
+    <div class="pas-box reveal">
+      <p class="pas-problem" data-en="THE REAL PROBLEM">EL PROBLEMA REAL</p>
+      <div class="pas-grid">
+        <div class="pas-col">
+          <div class="pas-col-tag tag-p" data-en="PROBLEM">PROBLEMA</div>
+          <p data-en="You have a great product but your store <strong>doesn't convert</strong>. It looks generic, loads slow, and on mobile it's a disaster. Visitors arrive and leave without buying.">
+            Tienes un producto increíble pero tu tienda <strong>no convierte</strong>. Se ve genérica, carga lento, y en móvil es un desastre. Los visitantes llegan y se van sin comprar.
+          </p>
+        </div>
+        <div class="pas-col">
+          <div class="pas-col-tag tag-a" data-en="REALITY">REALIDAD</div>
+          <p data-en="Every day without a professional store is <strong>money left on the table</strong>. Your competition is already on Shopify. Ads are getting more expensive. And traffic that doesn't convert is just burned cash.">
+            Cada día sin una tienda profesional es <strong>dinero que estás dejando ir</strong>. Tu competencia ya está en Shopify. Los anuncios cada vez cuestan más. Y el tráfico que no convierte es dinero quemado.
+          </p>
+        </div>
+        <div class="pas-col">
+          <div class="pas-col-tag tag-s" data-en="SOLUTION">SOLUCIÓN</div>
+          <p data-en="ZYX designs your Shopify store <strong>from the ground up to sell</strong>: custom brand design, conversion copy, complete technical setup and mobile-first. In less than a week, you're open for business.">
+            ZYX diseña tu tienda Shopify <strong>desde cero para vender</strong>: diseño 100% a tu marca, copy que convierte, configuración técnica completa y mobile-first. En menos de una semana, ya estás vendiendo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOR WHO -->
+<section id="for" class="sec">
+  <div class="wrap">
+    <p class="label tc reveal" data-en="WHO IT'S FOR">PARA QUIÉN ES</p>
+    <h2 class="h2 tc sp-12 reveal" data-en="Built for businesses<br>that are serious about selling">Hecho para negocios<br>que van en serio a vender</h2>
+    <div class="for-grid sp-40">
+      <div class="for-card reveal" data-d="1">
+        <div class="for-icon">🏪</div>
+        <h3 data-en="Starting from scratch">Empezando desde cero</h3>
+        <p data-en="You have a product or brand ready to sell online but you don't know where to start. We handle 100% of the setup.">Tienes un producto o marca listo para vender en línea pero no sabes por dónde empezar. Nosotros manejamos el 100% de la configuración.</p>
+      </div>
+      <div class="for-card reveal" data-d="2">
+        <div class="for-icon">🔁</div>
+        <h3 data-en="Migrating from another platform">Migrando de otra plataforma</h3>
+        <p data-en="You're on WooCommerce, Wix, or another platform and want to move to Shopify to scale. We migrate you without losing data or traffic.">Estás en WooCommerce, Wix u otra plataforma y quieres pasarte a Shopify para escalar. Te migramos sin perder datos ni tráfico.</p>
+      </div>
+      <div class="for-card reveal" data-d="3">
+        <div class="for-icon">📈</div>
+        <h3 data-en="Existing store that doesn't convert">Tienda existente que no convierte</h3>
+        <p data-en="You already have a Shopify store but it looks generic, loads slow, or just isn't selling. We redesign it to actually convert.">Ya tienes una tienda en Shopify pero se ve genérica, carga lento o simplemente no vende. La rediseñamos para que convierta de verdad.</p>
+      </div>
+      <div class="for-card reveal" data-d="1">
+        <div class="for-icon">🛒</div>
+        <h3 data-en="Physical store going digital">Negocio físico que va al digital</h3>
+        <p data-en="You have a business that works offline and want to expand your sales online without stopping what you're already doing.">Tienes un negocio que funciona offline y quieres expandir tus ventas al mundo digital sin parar lo que ya haces.</p>
+      </div>
+      <div class="for-card reveal" data-d="2">
+        <div class="for-icon">🚀</div>
+        <h3 data-en="Launching a new product">Lanzando un nuevo producto</h3>
+        <p data-en="You have a new launch coming and need a store that's ready to receive traffic from day one, with design that sells.">Tienes un lanzamiento próximo y necesitas una tienda lista para recibir tráfico desde el día uno, con diseño que venda.</p>
+      </div>
+      <div class="for-card reveal" data-d="3">
+        <div class="for-icon">💡</div>
+        <h3 data-en="Running ads but not converting">Corriendo anuncios pero sin convertir</h3>
+        <p data-en="You're sending paid traffic to your store but it doesn't convert. The problem isn't the ad — it's the destination.">Estás mandando tráfico pagado a tu tienda pero no convierte. El problema no es el anuncio — es el destino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ WHY SHOPIFY -->
+<section id="why-shopify" class="sec">
+  <div class="wrap">
+    <p class="label inv tc reveal" data-en="WHY SHOPIFY">POR QUÉ SHOPIFY</p>
+    <h2 class="h2 tc sp-12 reveal" style="color:var(--w)"
+        data-en="The platform designed<br>for brands that sell">La plataforma diseñada<br>para marcas que venden</h2>
+    <p class="hero-sub tc sp-16 reveal" data-d="1"
+       data-en="Shopify powers over 4 million stores worldwide. It's the most reliable, fastest, and most scalable ecommerce platform that exists.">
+      Shopify impulsa más de 4 millones de tiendas en el mundo. Es la plataforma de ecommerce más confiable, rápida y escalable que existe.
+    </p>
+    <div class="why-grid">
+      <div class="why-card reveal" data-d="1">
+        <div class="why-num">4M+</div>
+        <h3 data-en="Stores trust Shopify">Tiendas confían en Shopify</h3>
+        <p data-en="The most used platform by successful brands. Proven, reliable, and always improving.">La plataforma más usada por marcas exitosas. Probada, confiable y en constante mejora.</p>
+      </div>
+      <div class="why-card reveal" data-d="2">
+        <div class="why-num">2s</div>
+        <h3 data-en="Load speed that converts">Velocidad de carga que convierte</h3>
+        <p data-en="A 1-second delay reduces conversions by 7%. Shopify stores load fast out of the box. We optimize them even further.">1 segundo de retraso reduce las conversiones 7%. Las tiendas Shopify cargan rápido de base. Las optimizamos aún más.</p>
+      </div>
+      <div class="why-card reveal" data-d="3">
+        <div class="why-num">📱</div>
+        <h3 data-en="Mobile-first by design">Mobile-first por diseño</h3>
+        <p data-en="Over 70% of ecommerce traffic arrives from mobile. Every store we build is designed first for the phone, then for desktop.">Más del 70% del tráfico de ecommerce llega desde el móvil. Cada tienda que construimos está diseñada primero para el teléfono, luego para escritorio.</p>
+      </div>
+      <div class="why-card reveal" data-d="1">
+        <div class="why-num">💳</div>
+        <h3 data-en="Payments ready from day one">Pagos listos desde el día uno</h3>
+        <p data-en="Cards, OXXO, bank transfers, PayPal, Mercado Pago. All integrations configured so your customers pay however they prefer.">Tarjetas, OXXO, transferencias, PayPal, Mercado Pago. Todas las integraciones configuradas para que tus clientes paguen como prefieran.</p>
+      </div>
+      <div class="why-card reveal" data-d="2">
+        <div class="why-num">📦</div>
+        <h3 data-en="Scale without limits">Escala sin límites</h3>
+        <p data-en="From 1 to 10,000 products. From 10 to 10,000 orders per day. Shopify scales with your business without extra technical cost.">De 1 a 10,000 productos. De 10 a 10,000 pedidos por día. Shopify escala con tu negocio sin costo técnico adicional.</p>
+      </div>
+      <div class="why-card reveal" data-d="3">
+        <div class="why-num">🔒</div>
+        <h3 data-en="Security and reliability">Seguridad y confiabilidad</h3>
+        <p data-en="SSL, PCI compliance, 99.99% uptime. Your store is protected and available 24/7, without you having to worry about anything technical.">SSL, certificación PCI, 99.99% de uptime. Tu tienda está protegida y disponible 24/7, sin que tú te preocupes por nada técnico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ INCLUDES -->
+<section id="includes" class="sec">
+  <div class="wrap">
+    <p class="label inv tc reveal" data-en="WHAT'S INCLUDED">QUÉ INCLUYE</p>
+    <h2 class="h2 tc sp-12 reveal" style="color:var(--w)"
+        data-en="Everything your store needs<br>to sell from day one">Todo lo que tu tienda necesita<br>para vender desde el día uno</h2>
+    <div class="inc-grid">
+      <div class="inc-card reveal" data-d="1">
+        <div class="inc-check">✓</div>
+        <h3 data-en="100% Custom Design">Diseño 100% personalizado</h3>
+        <p data-en="We design your store from scratch based on your brand identity. Zero generic templates — your store will look like no other.">Diseñamos tu tienda desde cero basándonos en tu identidad de marca. Cero templates genéricos — tu tienda se verá como ninguna otra.</p>
+      </div>
+      <div class="inc-card reveal" data-d="2">
+        <div class="inc-check">✓</div>
+        <h3 data-en="Conversion Copywriting">Copy de ventas que convierte</h3>
+        <p data-en="Every word in your store is written to sell: headlines, product descriptions, CTAs, and checkout. Not just 'nice text' — copy that drives buying decisions.">Cada palabra en tu tienda está escrita para vender: titulares, descripciones de producto, CTAs y checkout. No solo 'texto bonito' — copy que impulsa decisiones de compra.</p>
+      </div>
+      <div class="inc-card reveal" data-d="3">
+        <div class="inc-check">✓</div>
+        <h3 data-en="Complete Technical Setup">Configuración técnica completa</h3>
+        <p data-en="Payments (cards, OXXO, bank transfers), shipping, taxes, legal pages, domain connection. Your store is ready to operate from day one.">Pagos (tarjetas, OXXO, transferencias), envíos, impuestos, páginas legales, conexión de dominio. Tu tienda lista para operar desde el día uno.</p>
+      </div>
+      <div class="inc-card reveal" data-d="1">
+        <div class="inc-check">✓</div>
+        <h3 data-en="Mobile-First Development">Desarrollo mobile-first</h3>
+        <p data-en="Your store is designed first for mobile, then for desktop. Where your customers actually shop. No awkward adaptations — native mobile experience.">Tu tienda se diseña primero para móvil, luego para escritorio. Donde realmente compran tus clientes. Sin adaptaciones incómodas — experiencia nativa en el teléfono.</p>
+      </div>
+      <div class="inc-card reveal" data-d="2">
+        <div class="inc-check">✓</div>
+        <h3 data-en="Conversion Apps">Apps de conversión instaladas</h3>
+        <p data-en="Abandoned cart recovery, reviews, urgency timers, pop-ups, and upsells. The apps that drive real revenue — selected and configured for your business.">Recuperación de carritos abandonados, reseñas, temporizadores de urgencia, pop-ups y upsells. Las apps que generan ingresos reales — seleccionadas y configuradas para tu negocio.</p>
+      </div>
+      <div class="inc-card reveal" data-d="3">
+        <div class="inc-check">✓</div>
+        <h3 data-en="Launch Support">Soporte en lanzamiento</h3>
+        <p data-en="We're with you on launch day. We do thorough testing on all devices, resolve any last-minute issues, and ensure everything goes live smoothly.">Estamos contigo el día del lanzamiento. Hacemos pruebas exhaustivas en todos los dispositivos, resolvemos cualquier problema de último minuto y nos aseguramos de que todo salga perfecto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ COMPARE -->
+<section id="compare" class="sec">
+  <div class="wrap">
+    <p class="label tc reveal" data-en="THE DIFFERENCE">LA DIFERENCIA</p>
+    <h2 class="h2 tc sp-12 reveal" data-en="Generic store<br>vs. ZYX store">Tienda genérica<br>vs. Tienda ZYX</h2>
+    <div class="cmp-wrap sp-48 reveal" data-d="1">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th data-en="Feature">Característica</th>
+            <th data-en="Typical store">Tienda típica</th>
+            <th data-en="ZYX Store">Tienda ZYX</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-en="Design">Diseño</td>
+            <td><span class="cmp-no">✗</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="100% custom">100% custom</span></td>
+          </tr>
+          <tr>
+            <td data-en="Sales copy">Copy de ventas</td>
+            <td><span class="cmp-no">✗</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Written to convert">Escrito para convertir</span></td>
+          </tr>
+          <tr>
+            <td data-en="Mobile-first">Mobile-first</td>
+            <td><span class="cmp-no">✗</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Designed for mobile">Diseñado para el teléfono</span></td>
+          </tr>
+          <tr>
+            <td data-en="Payment configuration">Configuración de pagos</td>
+            <td><span class="cmp-no">✗</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Cards + OXXO + transfers">Tarjetas + OXXO + transferencias</span></td>
+          </tr>
+          <tr>
+            <td data-en="Conversion apps">Apps de conversión</td>
+            <td><span class="cmp-no">✗</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Installed and configured">Instaladas y configuradas</span></td>
+          </tr>
+          <tr>
+            <td data-en="Load speed">Velocidad de carga</td>
+            <td><span class="cmp-no">Lenta</span></td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Optimized from day one">Optimizada desde el día uno</span></td>
+          </tr>
+          <tr>
+            <td data-en="Delivery time">Tiempo de entrega</td>
+            <td data-en="Weeks or months">Semanas o meses</td>
+            <td><span class="cmp-ok">✓</span> <span data-en="Less than 7 days">Menos de 7 días</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ BEFORE / AFTER -->
+<section id="ba" class="sec">
+  <div class="wrap">
+    <p class="label tc reveal" data-en="REAL DIFFERENCE">DIFERENCIA REAL</p>
+    <h2 class="h2 tc sp-12 reveal" data-en="Before ZYX.<br>After ZYX.">Antes de ZYX.<br>Después de ZYX.</h2>
+    <div class="ba-grid sp-40">
+      <div class="ba-card ba-before reveal" data-d="1">
+        <span class="ba-tag" data-en="Without ZYX">Sin ZYX</span>
+        <h3 data-en="A store that just exists">Una tienda que solo existe</h3>
+        <ul class="ba-list">
+          <li data-en="Overused template, indistinguishable from competition">Template sobreusado, indistinguible de la competencia</li>
+          <li data-en="Generic copy that doesn't convince anyone">Copy genérico que no convence a nadie</li>
+          <li data-en="Broken or confusing on mobile">Rota o confusa en el móvil</li>
+          <li data-en="Slow load — customers leave before seeing your product">Carga lenta — los clientes se van antes de ver tu producto</li>
+          <li data-en="No apps to recover lost sales">Sin apps para recuperar ventas perdidas</li>
+          <li data-en="Payments that only work sometimes">Pagos que solo funcionan a veces</li>
+          <li data-en="Months to launch">Meses para lanzar</li>
+        </ul>
+      </div>
+      <div class="ba-card ba-after reveal" data-d="2">
+        <span class="ba-tag" data-en="With ZYX">Con ZYX</span>
+        <h3 data-en="A store that sells while you sleep">Una tienda que vende mientras duermes</h3>
+        <ul class="ba-list">
+          <li data-en="Design that reflects your brand 100%">Diseño que refleja tu marca al 100%</li>
+          <li data-en="Copy written to move buyers toward checkout">Copy escrito para mover compradores hacia el checkout</li>
+          <li data-en="Perfect experience on any device">Experiencia perfecta en cualquier dispositivo</li>
+          <li data-en="Fast loading — no lost customers">Carga rápida — sin clientes perdidos</li>
+          <li data-en="Conversion apps from day one">Apps de conversión desde el día uno</li>
+          <li data-en="All payments configured and working">Todos los pagos configurados y funcionando</li>
+          <li data-en="Live in less than a week">Live en menos de una semana</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PROCESS -->
+<section id="process" class="sec">
+  <div class="wrap">
+    <p class="label inv tc reveal" data-en="HOW IT WORKS">CÓMO FUNCIONA</p>
+    <h2 class="h2 tc sp-12 reveal" style="color:var(--w)"
+        data-en="From first message<br>to live store in 5 steps">Del primer mensaje<br>a tienda live en 5 pasos</h2>
+    <div class="proc-grid sp-48">
+      <div class="proc-step reveal" data-d="1">
+        <div class="proc-num">01</div>
+        <h3 data-en="Discovery Call">Llamada de descubrimiento</h3>
+        <p data-en="We talk 30 minutes to understand your product, brand, audience, and goals. This conversation defines everything.">Hablamos 30 minutos para entender tu producto, marca, audiencia y objetivos. Esta conversación define todo.</p>
+      </div>
+      <div class="proc-step reveal" data-d="2">
+        <div class="proc-num">02</div>
+        <h3 data-en="Strategy & Proposal">Estrategia y propuesta</h3>
+        <p data-en="Based on the call, we put together a custom proposal: design, structure, copy, and apps. You approve before we start.">Con base en la llamada, armamos una propuesta a tu medida: diseño, estructura, copy y apps. Tú apruebas antes de empezar.</p>
+      </div>
+      <div class="proc-step reveal" data-d="3">
+        <div class="proc-num">03</div>
+        <h3 data-en="Design & Development">Diseño y desarrollo</h3>
+        <p data-en="We build your store from scratch in Shopify: design, content, technical setup, and conversion apps configured.">Construimos tu tienda desde cero en Shopify: diseño, contenido, configuración técnica y apps de conversión instaladas.</p>
+      </div>
+      <div class="proc-step reveal" data-d="4">
+        <div class="proc-num">04</div>
+        <h3 data-en="Review & Adjustments">Revisión y ajustes</h3>
+        <p data-en="You review every detail. We make all necessary adjustments until the store is exactly how you imagined it.">Revisas cada detalle. Hacemos todos los ajustes necesarios hasta que la tienda sea exactamente como la imaginaste.</p>
+      </div>
+      <div class="proc-step reveal" data-d="5">
+        <div class="proc-num">05</div>
+        <h3 data-en="Launch 🚀">Lanzamiento 🚀</h3>
+        <p data-en="Full testing, domain connection, final checks, and go live. We're there on launch day to make sure everything goes perfectly.">Pruebas exhaustivas, conexión de dominio, checks finales y live. Estamos en el día de lanzamiento para que todo salga perfecto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CTA BLOCK -->
+<section id="cta-block" class="sec">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <p class="label inv tc" data-en="NEXT STEP">SIGUIENTE PASO</p>
+      <h2 class="h2 sp-16" style="color:var(--w)"
+          data-en="Ready to have a store<br>that actually sells?">¿Listo para tener una tienda<br>que de verdad venda?</h2>
+      <p class="hero-sub tc" data-d="1"
+         data-en="Let's talk. A 30-minute call is all it takes to understand your project and tell you exactly how we can help you.">
+        Hablemos. Una llamada de 30 minutos es todo lo que necesitamos para entender tu proyecto y decirte exactamente cómo podemos ayudarte.
+      </p>
+      <div class="cta-btns">
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20crear%20mi%20tienda%20en%20Shopify.%20%C2%BFPodemos%20hablar%3F"
+           class="btn btn-w" target="_blank" rel="noopener"
+           data-en="📞 Schedule my free call">📞 Agendar mi llamada gratis</a>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20cotizar%20mi%20tienda%20Shopify"
+           class="btn btn-ol" target="_blank" rel="noopener"
+           data-en="💬 Write to us on WhatsApp">💬 Escribirnos por WhatsApp</a>
+      </div>
+      <p class="cta-note" data-en="No commitment · Free consultation · Response in less than 24 hours">Sin compromiso · Consulta gratuita · Respuesta en menos de 24 horas</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FAQ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <p class="label tc reveal" data-en="COMMON QUESTIONS">PREGUNTAS FRECUENTES</p>
+    <h2 class="h2 tc sp-12 reveal" data-en="Questions you probably have">Preguntas que probablemente tienes</h2>
+
+    <div class="faq-list sp-40 reveal" data-d="1">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="How much does it cost to build a Shopify store with ZYX?">¿Cuánto cuesta construir una tienda Shopify con ZYX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="Every store is unique, so we don't have a fixed price. The cost depends on the number of products, custom features needed, and the level of design customization. We quote based on your specific project after a discovery call. Schedule your free call and we'll give you a transparent estimate.">
+            Cada tienda es única, así que no tenemos un precio fijo. El costo depende del número de productos, funcionalidades personalizadas requeridas y el nivel de personalización del diseño. Cotizamos según tu proyecto específico después de una llamada de descubrimiento. Agenda tu llamada gratuita y te damos un presupuesto transparente.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="How long does it take to have my store ready?">¿Cuánto tiempo tarda tener mi tienda lista?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="For most projects, delivery is in less than 7 business days. More complex stores with many products or custom features may take 10-14 days. Either way, we give you a clear deadline from the start and we meet it.">
+            Para la mayoría de los proyectos, la entrega es en menos de 7 días hábiles. Tiendas más complejas con muchos productos o funcionalidades custom pueden tomar 10-14 días. De cualquier forma, te damos una fecha clara desde el inicio y la cumplimos.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="Do I need to already have a Shopify account?">¿Necesito tener una cuenta de Shopify ya?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="No. We help you set up your Shopify account from scratch if you don't have one. Shopify offers a free trial that you can use during development. When you're ready to launch, you just activate the subscription — we guide you through every step.">
+            No. Te ayudamos a configurar tu cuenta de Shopify desde cero si no tienes una. Shopify ofrece una prueba gratuita que puedes usar durante el desarrollo. Cuando estés listo para lanzar, solo activas la suscripción — te guiamos en cada paso.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="Can I accept payments in Mexico (OXXO, bank transfer)?">¿Puedo aceptar pagos en México (OXXO, transferencia bancaria)?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="Yes. We configure all the payment methods that work in Mexico: credit and debit cards, OXXO Pay, bank transfers, PayPal, and Mercado Pago. Your customers can pay however they prefer — which means more sales for you.">
+            Sí. Configuramos todos los métodos de pago que funcionan en México: tarjetas de crédito y débito, OXXO Pay, transferencias bancarias, PayPal y Mercado Pago. Tus clientes pueden pagar como prefieran — lo que significa más ventas para ti.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="What if I already have a Shopify store but it doesn't sell well?">¿Y si ya tengo una tienda en Shopify pero no vende bien?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="We do complete redesigns of existing stores. We analyze what's not working (design, copy, speed, mobile experience), propose improvements, and redesign it to actually convert. In many cases, a good redesign can significantly increase your conversion rate.">
+            Hacemos rediseños completos de tiendas existentes. Analizamos qué no está funcionando (diseño, copy, velocidad, experiencia móvil), proponemos mejoras y la rediseñamos para que convierta de verdad. En muchos casos, un buen rediseño puede aumentar significativamente tu tasa de conversión.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="Do you handle the copywriting for the products?">¿Hacen el copywriting de los productos?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="Yes. We write all the copy for your store: main page, product descriptions, CTAs, and key sections. It's not just 'pretty text' — it's copy specifically written to drive buying decisions and move customers toward checkout.">
+            Sí. Escribimos todo el copy de tu tienda: página principal, descripciones de productos, CTAs y secciones clave. No es solo 'texto bonito' — es copy escrito específicamente para impulsar decisiones de compra y mover clientes hacia el checkout.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span data-en="What happens after the store launches?">¿Qué pasa después del lanzamiento?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner" data-en="We offer post-launch support for minor adjustments. For ongoing changes, maintenance, or growth optimization, we have support packages adapted to your needs. But from day one, your store will be completely operational so you can manage it yourself.">
+            Ofrecemos soporte post-lanzamiento para ajustes menores. Para cambios continuos, mantenimiento u optimización de crecimiento, tenemos paquetes de soporte adaptados a tus necesidades. Pero desde el día uno, tu tienda estará completamente operativa para que la puedas manejar tú mismo.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER CTA -->
+<section id="footer-cta">
+  <div class="wrap">
+    <p class="label inv tc reveal" data-en="START TODAY">EMPIEZA HOY</p>
+    <h2 class="h2 sp-16 reveal" data-en="Your competition is already<br>on Shopify.<br><em style='font-style:italic'>Are you?</em>">
+      Tu competencia ya está<br>en Shopify.<br><em style="font-style:italic">¿Y tú?</em>
+    </h2>
+    <p class="hero-sub sp-20 reveal" data-d="1"
+       data-en="Every day without a professional store is a day of sales you won't get back. Let's talk and we'll tell you exactly how we can help you.">
+      Cada día sin una tienda profesional es un día de ventas que no vas a recuperar. Hablemos y te decimos exactamente cómo podemos ayudarte.
+    </p>
+    <div class="sp-36 reveal" data-d="2" style="margin-top:36px">
+      <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20crear%20mi%20tienda%20en%20Shopify.%20%C2%BFPodemos%20hablar%3F"
+         class="btn btn-w" target="_blank" rel="noopener"
+         data-en="Secure my spot now →">Asegurar mi cupo ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER -->
+<footer id="footer">
+  <div class="wrap foot-in">
+    <div class="foot-logo">ZYX <span>Ecom</span></div>
+    <div class="foot-copy" data-en="© 2025 ZYX. All rights reserved.">© 2025 ZYX. Todos los derechos reservados.</div>
+    <div class="foot-links">
+      <a href="https://zyx.mx" data-en="Main site">Sitio principal</a>
+      <a href="https://wa.me/524421454972" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════ JS -->
+<script>
+// ── SCROLL REVEAL
+const ro = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// ── FAQ ACCORDION
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+
+// ── LANG TOGGLE (ES / EN)
+const langBtn=document.getElementById('langBtn');
+let lang='es';
+langBtn.addEventListener('click',()=>{
+  lang=lang==='es'?'en':'es';
+  langBtn.textContent=lang==='es'?'EN':'ES';
+  document.documentElement.setAttribute('data-lang',lang);
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(lang==='en'){
+      if(!el.dataset.es)el.dataset.es=el.innerHTML;
+      el.innerHTML=el.dataset.en;
+    }else{
+      if(el.dataset.es)el.innerHTML=el.dataset.es;
+    }
+  });
+});
+</script>
+</body>
+</html>
