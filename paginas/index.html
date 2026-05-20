@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZYX Páginas · Tu landing page lista en menos de 7 días.</title>
+<meta name="description" content="Diseño 100% personalizado a tu marca, copy que convierte y entrega en menos de una semana. $6,000 MXN pago único. Solo 3 cupos al mes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ─────────────────────────────────────────
+   RESET & TOKENS
+───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --k:#000;--w:#fff;
+  --g50:#fafafa;--g100:#f3f3f3;--g200:#e5e5e5;--g300:#d4d4d4;
+  --dk-body:#b8b8b8;
+  --dk-muted:#888;
+  --dk-faint:#555;
+  --dk-border:#222;
+  --lt-body:#555;
+  --lt-muted:#888;
+  --lt-border:#e5e5e5;
+  --r:4px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--w);color:var(--k);
+  line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────── */
+.disp{font-size:clamp(2.2rem,6.5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-.035em}
+.h1  {font-size:clamp(1.9rem,5.5vw,3.75rem);font-weight:900;line-height:1.07;letter-spacing:-.03em}
+.h2  {font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:800;line-height:1.13;letter-spacing:-.02em}
+.h3  {font-size:clamp(.975rem,2vw,1.15rem);font-weight:700;line-height:1.3}
+.label{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lt-muted)}
+.label.inv{color:var(--dk-faint)}
+
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+.sec{padding:80px 0}
+@media(min-width:768px){.sec{padding:112px 0}}
+.tc{text-align:center}
+
+.sp-4 {margin-top:4px} .sp-8 {margin-top:8px}  .sp-12{margin-top:12px}
+.sp-16{margin-top:16px}.sp-20{margin-top:20px}.sp-24{margin-top:24px}
+.sp-32{margin-top:32px}.sp-40{margin-top:40px}.sp-48{margin-top:48px}
+.sp-56{margin-top:56px}.sp-64{margin-top:64px}
+.mb-8 {margin-bottom:8px}.mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}
+.mb-24{margin-bottom:24px}.mb-32{margin-bottom:32px}.mb-40{margin-bottom:40px}
+.mb-48{margin-bottom:48px}.mb-56{margin-bottom:56px}
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.40s}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+#nav{position:sticky;top:0;z-index:100;background:var(--k);border-bottom:1px solid #111}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;gap:12px;
+}
+.nav-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em;flex-shrink:0}
+.nav-logo span{font-size:.65rem;font-weight:600;letter-spacing:.18em;color:var(--dk-faint);text-transform:uppercase;margin-left:8px;vertical-align:middle}
+.nav-links{display:none;list-style:none;gap:28px;align-items:center}
+@media(min-width:820px){.nav-links{display:flex}}
+.nav-links a{
+  color:var(--dk-muted);font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--w)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lang-btn{
+  background:transparent;border:1px solid #333;color:var(--dk-muted);
+  padding:6px 12px;border-radius:var(--r);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;transition:all .15s;
+}
+.lang-btn:hover{border-color:var(--w);color:var(--w)}
+.nav-cta{
+  background:var(--w);color:var(--k);padding:9px 20px;border-radius:var(--r);
+  font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;
+  white-space:nowrap;transition:opacity .15s;border:none;
+}
+.nav-cta:hover{opacity:.85}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{
+  display:inline-block;padding:17px 36px;border-radius:var(--r);
+  font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;
+  cursor:pointer;border:none;transition:transform .15s var(--ease),opacity .15s;
+  white-space:nowrap;line-height:1;
+}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn:active{transform:none}
+.btn-w  {background:var(--w);color:var(--k)}
+.btn-ol {background:transparent;color:var(--dk-muted);border:1px solid #333}
+.btn-ol:hover{border-color:var(--w);color:var(--w)}
+.btn-full{width:100%;text-align:center}
+@media(min-width:480px){.btn-full{width:auto}}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+#hero{background:var(--k);color:var(--w);padding:88px 0 80px}
+@media(min-width:768px){#hero{padding:112px 0 96px}}
+
+.hero-badge{
+  display:inline-block;background:#0d0d0d;border:1px solid #222;
+  color:var(--dk-muted);font-size:.6875rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 18px;
+  border-radius:30px;margin-bottom:36px;
+}
+.hero-h{color:var(--w);max-width:760px;margin:0 auto}
+.hero-sub{
+  color:var(--dk-body);font-size:clamp(.975rem,2.2vw,1.125rem);
+  line-height:1.85;max-width:540px;margin:0 auto;
+}
+.hero-sub strong{color:var(--w)}
+
+/* Countdown */
+.cd-row{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid #222;padding:12px 22px;border-radius:var(--r);
+  flex-wrap:wrap;justify-content:center;
+}
+.cd-label{
+  color:var(--dk-muted);font-size:.6875rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;margin-right:4px;
+}
+.cd-num{
+  display:block;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;
+  color:var(--w);line-height:1;min-width:46px;font-variant-numeric:tabular-nums;
+}
+.cd-sep{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;color:#2a2a2a;line-height:1}
+
+/* Slots */
+.slots-row{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--dk-muted);font-size:.8125rem;
+}
+.pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--w);flex-shrink:0;
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.18}}
+
+/* Price */
+.hero-price{font-size:clamp(3rem,10vw,6.5rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.04em}
+.hero-price sup{font-size:.35em;font-weight:700;vertical-align:.25em;letter-spacing:0}
+.price-tag{color:var(--dk-muted);font-size:clamp(.875rem,2vw,1.05rem);font-weight:400;letter-spacing:0}
+
+/* Hero CTA row */
+.hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center}
+@media(min-width:480px){.hero-ctas{flex-direction:row;justify-content:center}}
+.trust-line{color:var(--dk-faint);font-size:.75rem;letter-spacing:.04em}
+
+/* ─────────────────────────────────────────
+   STATS BAR
+───────────────────────────────────────── */
+#stats{
+  background:#0a0a0a;border-top:1px solid #1a1a1a;
+  border-bottom:1px solid #1a1a1a;padding:36px 0;
+}
+.stats-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+.stat-n{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.035em;margin-bottom:5px}
+.stat-l{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--dk-faint)}
+
+/* ─────────────────────────────────────────
+   PAS SECTION
+───────────────────────────────────────── */
+#por-que{background:var(--k);color:var(--w)}
+#por-que .label{color:var(--dk-faint)}
+#por-que .h2{color:var(--w)}
+
+.pas-body{
+  max-width:640px;color:var(--dk-body);
+  font-size:clamp(.975rem,2.2vw,1.0625rem);line-height:1.9;
+}
+.pas-body strong{color:var(--w)}
+
+.pas-pull{
+  border-left:2px solid #2a2a2a;padding-left:28px;
+  margin:40px 0;
+}
+.pas-pull p{
+  color:var(--dk-body);font-size:clamp(1rem,2.5vw,1.25rem);
+  line-height:1.75;font-weight:500;
+}
+.pas-pull p strong{color:var(--w)}
+
+.pas-3{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:#1a1a1a;border:1px solid #1a1a1a;
+  border-radius:var(--r);overflow:hidden;margin-top:56px;
+}
+@media(min-width:600px){.pas-3{grid-template-columns:repeat(3,1fr)}}
+.pas-item{background:var(--k);padding:32px 28px}
+.pas-item-n{
+  font-size:.6875rem;font-weight:700;letter-spacing:.14em;
+  color:var(--dk-faint);margin-bottom:14px;
+}
+.pas-item h3{color:var(--w);font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.3}
+.pas-item p{color:var(--dk-muted);font-size:.875rem;line-height:1.7}
+
+/* ─────────────────────────────────────────
+   DELIVERABLES
+───────────────────────────────────────── */
+#incluye{background:var(--k);color:var(--w)}
+#incluye .label{color:var(--dk-faint)}
+#incluye .h2{color:var(--w)}
+
+.inc-grid{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:#1a1a1a;border:1px solid #1a1a1a;
+  border-radius:var(--r);overflow:hidden;margin-top:56px;
+}
+@media(min-width:480px){.inc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:768px){.inc-grid{grid-template-columns:repeat(3,1fr)}}
+.inc-card{background:var(--k);padding:30px 26px;display:flex;gap:18px;align-items:flex-start}
+.inc-ico{flex-shrink:0;font-size:1rem;color:var(--w);margin-top:2px}
+.inc-card h4{color:var(--w);font-size:.9375rem;font-weight:700;margin-bottom:7px}
+.inc-card p{color:var(--dk-muted);font-size:.8125rem;line-height:1.7}
+
+.why-box{
+  background:#090909;border:1px solid #1e1e1e;border-radius:var(--r);
+  padding:44px 36px;margin-top:20px;text-align:center;
+}
+.why-box h3{color:var(--w);font-size:1.3rem;font-weight:800;margin-bottom:14px}
+.why-box p{color:var(--dk-body);max-width:520px;margin:0 auto;font-size:.9375rem;line-height:1.8}
+
+/* ─────────────────────────────────────────
+   BEFORE / AFTER
+───────────────────────────────────────── */
+#antes-despues{background:var(--w)}
+.ps-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:56px}
+@media(min-width:640px){.ps-grid{grid-template-columns:1fr 1fr}}
+.ps-card{border:1px solid var(--lt-border);border-radius:var(--r);padding:36px 30px}
+.ps-card.dk{background:var(--k);border-color:var(--k)}
+.ps-ttl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#bbb;margin-bottom:26px}
+.ps-card:not(.dk) .ps-ttl{color:var(--lt-muted)}
+.ps-list{list-style:none;display:flex;flex-direction:column;gap:15px}
+.ps-li{display:flex;gap:13px;font-size:.9375rem;line-height:1.55}
+.ps-card:not(.dk) .ps-li{color:var(--lt-body)}
+.ps-card.dk .ps-li{color:var(--dk-body)}
+.ps-card.dk .ps-li b{color:var(--w)}
+.ico{flex-shrink:0;width:17px;margin-top:2px;font-size:.8rem;font-weight:800}
+.ico.x{color:#444}.ico.v{color:var(--w)}
+
+/* ─────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────── */
+#proceso{background:var(--g50)}
+.steps{margin-top:56px;border:1px solid var(--lt-border);border-radius:var(--r);overflow:hidden}
+.step{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:28px 28px;border-bottom:1px solid var(--lt-border);
+  background:var(--w);transition:background .15s;
+}
+@media(min-width:640px){.step{gap:32px;padding:32px 40px}}
+.step:hover{background:var(--g50)}
+.step:last-child{border-bottom:none}
+.step-n{
+  font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;color:var(--g200);
+  line-height:1;flex-shrink:0;letter-spacing:-.04em;min-width:44px;
+}
+.step h3{font-size:1.0rem;color:var(--k);margin-bottom:6px;font-weight:700}
+.step p{font-size:.875rem;color:var(--lt-body);line-height:1.75}
+
+/* ─────────────────────────────────────────
+   COMPARISON
+───────────────────────────────────────── */
+#comparacion{background:var(--w)}
+.tbl-hint{
+  display:block;font-size:.75rem;color:var(--lt-muted);
+  margin-bottom:10px;margin-top:56px;
+}
+@media(min-width:640px){.tbl-hint{display:none}}
+.tbl-wrap{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--lt-border);border-radius:var(--r);
+}
+@media(min-width:640px){.tbl-wrap{margin-top:56px}}
+table{width:100%;min-width:580px;border-collapse:collapse;font-size:.875rem}
+thead tr{border-bottom:2px solid var(--k)}
+th{
+  padding:17px 22px;text-align:left;
+  font-size:.675rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.08em;background:var(--w);
+}
+th:first-child{color:var(--lt-muted)}
+th.hl{background:var(--k);color:var(--w)}
+td{padding:15px 22px;color:var(--lt-body);border-bottom:1px solid var(--g100)}
+tr:last-child td{border-bottom:none}
+tr:hover td:not(.hl){background:var(--g50)}
+td:first-child{font-weight:700;color:var(--k)}
+td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a1a1a}
+
+/* ─────────────────────────────────────────
+   CTA BLOCK
+───────────────────────────────────────── */
+.cta-blk{background:var(--k);text-align:center;padding:100px 0}
+.cta-blk .label{color:var(--dk-faint)}
+.cta-blk .h2{color:var(--w)}
+.cta-price-big{
+  font-size:clamp(4.5rem,14vw,9.5rem);font-weight:900;color:var(--w);
+  line-height:1;letter-spacing:-.04em;
+}
+.cta-sub{color:var(--dk-muted);font-size:.9375rem}
+.cta-list{list-style:none;display:inline-flex;flex-direction:column;gap:13px;text-align:left;margin:0 auto}
+.cta-list li{display:flex;gap:14px;color:var(--dk-body);font-size:.9375rem}
+.cta-list li b{color:var(--w)}
+.cta-trust{color:var(--dk-faint);font-size:.75rem;letter-spacing:.04em}
+
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
+#faq{background:var(--g50)}
+.faqs{margin-top:56px;border:1px solid var(--lt-border);border-radius:var(--r);overflow:hidden}
+.faq{background:var(--w);border-bottom:1px solid var(--lt-border)}
+.faq:last-child{border-bottom:none}
+.faq-btn{
+  width:100%;background:none;border:none;padding:22px 26px;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  font-size:.9375rem;font-weight:700;color:var(--k);
+  cursor:pointer;text-align:left;transition:background .15s;
+}
+@media(min-width:640px){.faq-btn{padding:26px 36px}}
+.faq-btn:hover{background:var(--g50)}
+.faq-arr{
+  flex-shrink:0;width:26px;height:26px;border:1px solid var(--lt-border);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;color:var(--lt-muted);transition:transform .25s var(--ease),background .15s,border-color .15s;
+}
+.faq.open .faq-arr{transform:rotate(180deg);background:var(--k);border-color:var(--k);color:var(--w)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq.open .faq-body{max-height:500px}
+.faq-ans{padding:0 26px 26px;font-size:.9rem;color:var(--lt-body);line-height:1.85}
+@media(min-width:640px){.faq-ans{padding:0 36px 30px}}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+#footer{background:var(--k);padding:48px 0;text-align:center;border-top:1px solid #111}
+.foot-logo{font-size:1.6rem;font-weight:900;color:var(--w);letter-spacing:.12em;margin-bottom:22px}
+.foot-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:22px}
+.foot-links a{color:var(--dk-faint);font-size:.8125rem;transition:color .15s}
+.foot-links a:hover{color:var(--w)}
+.foot-copy{color:var(--dk-faint);font-size:.8125rem}
+
+.rule{height:1px;background:var(--lt-border);border:none;margin:0}
+.rule.inv{background:#1a1a1a}
+
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<header id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="nav-logo">ZYX <span>Páginas</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#incluye" data-en="Includes">Incluye</a></li>
+        <li><a href="#proceso" data-en="Process">Proceso</a></li>
+        <li><a href="#comparacion" data-en="Comparison">Comparación</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+      <a href="https://wa.me/524421454972" class="nav-cta" target="_blank" rel="noopener"
+        data-en="Get my page →">Quiero mi página →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="wrap tc">
+
+    <div class="hero-badge reveal"
+      data-en="Only 3 spots/month · Delivery in 7 days or less">
+      Solo 3 cupos al mes · Entrega en 7 días o menos
+    </div>
+
+    <h1 class="h1 hero-h sp-4 reveal"
+      data-en="Your page.<br>Design that stops.<br>Copy that converts.">
+      Tu página web.<br>Diseño que enamora.<br>Copy que vende.
+    </h1>
+
+    <p class="hero-sub sp-24 reveal"
+      data-en="100% personalized design for your brand, copy written to turn visitors into clients, and delivery in less than a week. <strong>One payment. One week. Your page live.</strong>">
+      Diseño 100% personalizado a tu marca, copy escrito para convertir visitantes en clientes
+      y entrega en menos de una semana.
+      <strong>Un solo pago. Una semana. Tu página publicada.</strong>
+    </p>
+
+    <!-- Countdown -->
+    <div class="sp-48 mb-24 reveal">
+      <div class="cd-row">
+        <span class="cd-label" data-en="Spot closes in">Cupo cierra en</span>
+        <div><span class="cd-num" id="cdh">23</span></div>
+        <span class="cd-sep">:</span>
+        <div><span class="cd-num" id="cdm">59</span></div>
+        <span class="cd-sep">:</span>
+        <div><span class="cd-num" id="cds">59</span></div>
+      </div>
+    </div>
+
+    <!-- Slots -->
+    <div class="mb-44 reveal">
+      <div class="slots-row">
+        <span class="pulse"></span>
+        <span data-en="1 of 3 spots available this month">1 de 3 cupos disponibles este mes</span>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-48 reveal">
+      <div class="hero-price">
+        $6,000 <span class="price-tag" data-en="MXN · one-time payment">MXN · pago único</span>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="hero-ctas mb-20 reveal">
+      <a href="https://wa.me/524421454972" class="btn btn-w btn-full" target="_blank" rel="noopener"
+        data-en="I want my page →">Quiero mi página →</a>
+      <a href="#incluye" class="btn btn-ol btn-full"
+        data-en="See what's included">Ver qué incluye</a>
+    </div>
+
+    <p class="trust-line reveal"
+      data-en="No monthly fees · One-time payment · Delivery in 7 days or less">
+      Sin mensualidades · Pago único · Entrega en 7 días o menos
+    </p>
+
+  </div>
+</section>
+
+<!-- ══════ STATS ══════ -->
+<div id="stats">
+  <div class="wrap">
+    <div class="stats-g">
+      <div class="reveal">
+        <div class="stat-n">&lt;7</div>
+        <div class="stat-l" data-en="Days to delivery">Días de entrega</div>
+      </div>
+      <div class="reveal" data-d="1">
+        <div class="stat-n">$6k</div>
+        <div class="stat-l" data-en="One-time payment">Pago único</div>
+      </div>
+      <div class="reveal" data-d="2">
+        <div class="stat-n">3</div>
+        <div class="stat-l" data-en="Max spots / month">Cupos máx / mes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PAS SECTION ══════ -->
+<section id="por-que" class="sec">
+  <div class="wrap">
+
+    <div class="label inv mb-12 reveal"
+      data-en="Why it matters">Por qué importa</div>
+
+    <h2 class="h2 reveal"
+      data-en="Most businesses have a page.<br>Almost none have a page<br>that actually sells.">
+      La mayoría de los negocios tienen una página.<br>Casi ninguno tiene una página<br>que de verdad convierte.
+    </h2>
+
+    <div class="pas-pull reveal">
+      <p data-en="You have social media, maybe ads, referrals — and when someone finally lands on your page, nothing happens. They leave. It's not a traffic problem. <strong>It's a page problem.</strong>">
+        Tienes redes, quizás anuncios, referencias — y cuando alguien finalmente llega a tu página, no pasa nada. Se va. No es un problema de tráfico.
+        <strong>Es un problema de página.</strong>
+      </p>
+    </div>
+
+    <p class="pas-body reveal"
+      data-en="ZYX builds pages that do real work: design that reflects your brand from the first scroll, copy that speaks directly to your ideal client, and a conversion structure that moves visitors to action. Not decoration — architecture of sales.">
+      ZYX construye páginas que hacen trabajo real: diseño que refleja tu marca desde el primer scroll,
+      copy que habla directo a tu cliente ideal y una estructura de conversión que mueve al visitante a la acción.
+      No decoración — arquitectura de ventas.
+    </p>
+
+    <div class="pas-3">
+      <div class="pas-item reveal">
+        <div class="pas-item-n" data-en="THE PROBLEM">EL PROBLEMA</div>
+        <h3 data-en="Your page exists. It doesn't convert.">Tu página existe. No convierte.</h3>
+        <p data-en="Generic design, no clear message, no hook. Visitors arrive, don't understand what you offer or why to choose you, and leave. Every bounce is a lost sale.">Diseño genérico, mensaje sin claridad, sin hook. Los visitantes llegan, no entienden qué ofreces ni por qué elegirte, y se van. Cada rebote es una venta perdida.</p>
+      </div>
+      <div class="pas-item reveal" data-d="1">
+        <div class="pas-item-n" data-en="WHAT'S MISSING">LO QUE FALTA</div>
+        <h3 data-en="Design + Copy + Strategy = Page that sells">Diseño + Copy + Estrategia = Página que vende</h3>
+        <p data-en="A good page isn't just looking nice. It needs the right design, the right words and the right structure. The three together, aligned to your brand and your offer.">Una buena página no es solo verse bien. Necesita el diseño correcto, las palabras correctas y la estructura correcta. Las tres juntas, alineadas a tu marca y tu oferta.</p>
+      </div>
+      <div class="pas-item reveal" data-d="2">
+        <div class="pas-item-n" data-en="THE SOLUTION">LA SOLUCIÓN</div>
+        <h3 data-en="A page built to sell, ready in a week">Una página construida para vender, lista en una semana</h3>
+        <p data-en="We design, write and build your complete landing page. Ready in less than 7 days and optimized to convert from day one — so every visit counts.">Diseñamos, escribimos y construimos tu landing page completa. Lista en menos de 7 días y optimizada para convertir desde el día uno — para que cada visita cuente.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ INCLUDES ══════ -->
+<section id="incluye" class="sec">
+  <div class="wrap">
+
+    <div class="label inv mb-12 reveal" data-en="What's inside your $6,000 MXN">Qué incluye tu $6,000 MXN</div>
+    <h2 class="h2 reveal" style="color:var(--w)"
+      data-en="A page that works for you.<br>Here's exactly what we build.">
+      Una página que trabaja por ti.<br>Esto es exactamente lo que construimos.
+    </h2>
+
+    <div class="inc-grid">
+      <div class="inc-card reveal">
+        <span class="inc-ico">◆</span>
+        <div>
+          <h4 data-en="100% personalized design">Diseño 100% personalizado</h4>
+          <p data-en="No generic templates. Every element designed to your brand: colors, typography, visual style. A page that feels yours from the first scroll.">Nada de plantillas genéricas. Cada elemento diseñado a tu marca: colores, tipografía, estilo visual. Una página que se siente tuya desde el primer scroll.</p>
+        </div>
+      </div>
+      <div class="inc-card reveal" data-d="1">
+        <span class="inc-ico">✍</span>
+        <div>
+          <h4 data-en="Copy written to convert">Copy escrito para convertir</h4>
+          <p data-en="Every word chosen to speak directly to your ideal client. From the headline to the CTA button — copy that stops the scroll and moves people to action.">Cada palabra elegida para hablar directamente a tu cliente ideal. Desde el título hasta el botón de contacto — copy que detiene el scroll y mueve a la acción.</p>
+        </div>
+      </div>
+      <div class="inc-card reveal" data-d="2">
+        <span class="inc-ico">▶</span>
+        <div>
+          <h4 data-en="Mobile-first responsive">Responsive mobile-first</h4>
+          <p data-en="More than 70% of web traffic comes from mobile. Your page looks perfect on any screen — phone, tablet or desktop. No exceptions.">Más del 70% del tráfico web llega desde el teléfono. Tu página se ve perfecta en cualquier pantalla — celular, tablet o computadora. Sin excepciones.</p>
+        </div>
+      </div>
+      <div class="inc-card reveal">
+        <span class="inc-ico">▲</span>
+        <div>
+          <h4 data-en="Optimized for conversions">Optimizada para conversión</h4>
+          <p data-en="Proven conversion structure: hook → problem → solution → proof → CTA. Every section designed so the visitor moves naturally toward taking action.">Estructura de conversión probada: hook → problema → solución → prueba → CTA. Cada sección diseñada para que el visitante avance naturalmente hacia la acción.</p>
+        </div>
+      </div>
+      <div class="inc-card reveal" data-d="1">
+        <span class="inc-ico">◉</span>
+        <div>
+          <h4 data-en="Ready in 7 days or less">Lista en 7 días o menos</h4>
+          <p data-en="From brief to published page in less than a week. No waiting months, no endless revisions, no surprises. Guaranteed delivery or we keep working until it's done.">De brief a página publicada en menos de una semana. Sin esperar meses, sin revisiones interminables, sin sorpresas. Entrega garantizada o seguimos hasta terminarla.</p>
+        </div>
+      </div>
+      <div class="inc-card reveal" data-d="2">
+        <span class="inc-ico">◈</span>
+        <div>
+          <h4 data-en="1 round of revisions included">1 ronda de revisiones incluida</h4>
+          <p data-en="After the first version, you have a complete round of adjustments so it ends up exactly as you imagined. You decide what changes. We execute it.">Después de la primera versión, tienes una ronda completa de ajustes para que quede exactamente como la imaginas. Tú decides qué cambia. Nosotros lo ejecutamos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-box reveal">
+      <h3 data-en="Why $6,000 MXN and not less?">¿Por qué $6,000 MXN y no menos?</h3>
+      <p data-en="Because we don't sell templates. Every page we build requires brand analysis, audience research, offer positioning and copy written from scratch. We work with a maximum of 3 projects per month to guarantee each one gets our full attention. $6,000 MXN is the cost of doing it right.">Porque no vendemos plantillas. Cada página que construimos requiere análisis de marca, investigación de audiencia, posicionamiento de oferta y copy escrito desde cero. Trabajamos con máximo 3 proyectos al mes para garantizar que cada uno reciba atención completa. $6,000 MXN es lo que cuesta hacerlo bien.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ BEFORE / AFTER ══════ -->
+<section id="antes-despues" class="sec">
+  <div class="wrap">
+
+    <div class="label mb-12 reveal" data-en="Before and after">El antes y el después</div>
+    <h2 class="h2 reveal"
+      data-en="The difference between having a page<br>and having a page that sells.">
+      La diferencia entre tener una página<br>y tener una página que vende.
+    </h2>
+
+    <div class="ps-grid">
+      <div class="ps-card reveal">
+        <div class="ps-ttl" data-en="✗ Without ZYX">✗ Sin ZYX</div>
+        <ul class="ps-list">
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Generic template that has nothing to do with your brand">Plantilla genérica que nada tiene que ver con tu marca</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Text so generic nobody reads it">Texto tan genérico que nadie lo lee</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="No clear call to action — visitors don't know what to do">Sin llamada a la acción clara — los visitantes no saben qué hacer</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Traffic that arrives and bounces without converting">Tráfico que llega y rebota sin convertir</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Weeks or months waiting for it to get done">Semanas o meses esperando a que quede lista</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Nobody explains why it doesn't convert">Nadie te explica por qué no convierte</span></li>
+        </ul>
+      </div>
+      <div class="ps-card dk reveal" data-d="1">
+        <div class="ps-ttl" data-en="✓ With ZYX">✓ Con ZYX</div>
+        <ul class="ps-list">
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Design unique to your brand</b>, colors and visual style"><b>Diseño único a tu marca</b>, colores y estilo visual</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Copy that speaks directly</b> to your ideal client and makes them stay"><b>Copy que habla directo</b> a tu cliente ideal y hace que se quede</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Strategic CTAs</b> that guide the visitor toward taking action"><b>CTAs estratégicos</b> que guían al visitante hacia la acción</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Conversion structure</b> proven to generate leads from day one"><b>Estructura de conversión</b> probada para generar leads desde el día uno</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Published in 7 days or less</b> — guaranteed"><b>Publicada en 7 días o menos</b> — garantizado</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Every element</b> designed to convert, not just look good"><b>Cada elemento</b> diseñado para convertir, no solo decorar</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ PROCESS ══════ -->
+<section id="proceso" class="sec">
+  <div class="wrap">
+
+    <div class="label mb-12 reveal" data-en="How it works">Cómo funciona</div>
+    <h2 class="h2 reveal"
+      data-en="From brief to published page<br>in less than 7 days.">
+      De brief a página publicada<br>en menos de 7 días.
+    </h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">01</div>
+        <div>
+          <h3 data-en="Reserve your spot">Aparta tu cupo</h3>
+          <p data-en="You make the payment and reserve your spot. Only 3 available per month. No monthly contract — this is a single project, start to finish.">Realizas el pago y reservas tu lugar. Solo 3 disponibles al mes. Sin contrato mensual — este es un proyecto de inicio a fin.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">02</div>
+        <div>
+          <h3 data-en="Brief session (30 min)">Sesión de brief (30 min)</h3>
+          <p data-en="Quick call to understand your brand, offer, target audience and the goal of the page. Everything we need to build something that actually works for your business.">Llamada rápida para entender tu marca, oferta, audiencia objetivo y el objetivo de la página. Todo lo que necesitamos para construir algo que de verdad funcione para tu negocio.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">03</div>
+        <div>
+          <h3 data-en="Design and copy (days 1–4)">Diseño y copy (días 1–4)</h3>
+          <p data-en="We build the design and write the copy for every section. 100% personalized to your brand, your audience and your offer. Nothing generic, nothing templated.">Construimos el diseño y escribimos el copy de cada sección. 100% personalizado a tu marca, tu audiencia y tu oferta. Nada genérico, nada de plantillas.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">04</div>
+        <div>
+          <h3 data-en="Review and adjustments (days 5–6)">Revisión y ajustes (días 5–6)</h3>
+          <p data-en="We send you the first version for feedback. You have one complete round of revisions to make it exactly as you imagined. We execute every change.">Te enviamos la primera versión para que des tu feedback. Tienes una ronda completa de revisiones para que quede exactamente como la imaginas. Ejecutamos cada cambio.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">05</div>
+        <div>
+          <h3 data-en="Delivery and launch (day 7)">Entrega y lanzamiento (día 7)</h3>
+          <p data-en="Your page is published and live. Files, code and access delivered directly to you. Ready to receive traffic, generate leads and convert from day one.">Tu página publicada y activa. Archivos, código y accesos entregados directamente a ti. Lista para recibir tráfico, generar leads y convertir desde el día uno.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ COMPARISON ══════ -->
+<section id="comparacion" class="sec">
+  <div class="wrap">
+
+    <div class="label mb-12 reveal" data-en="Why ZYX">Por qué ZYX</div>
+    <h2 class="h2 reveal" data-en="An honest comparison.">Una comparación honesta.</h2>
+
+    <span class="tbl-hint" data-en="← Slide to see full table">← Desliza para ver la tabla completa</span>
+    <div class="tbl-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th data-en="Criteria">Criterio</th>
+            <th class="hl">ZYX</th>
+            <th data-en="Traditional Agency">Agencia</th>
+            <th data-en="Freelancer">Freelancer</th>
+            <th data-en="Wix / Squarespace">Wix / Constructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-en="Personalized design">Diseño personalizado</td>
+            <td class="hl" data-en="✓ 100%">✓ 100%</td>
+            <td data-en="✓ Expensive">✓ Caro</td>
+            <td data-en="Sometimes">A veces</td>
+            <td data-en="Template">Plantilla</td>
+          </tr>
+          <tr>
+            <td data-en="Copy included">Copy incluido</td>
+            <td class="hl" data-en="✓ Expert copy">✓ Copy experto</td>
+            <td data-en="Extra cost">Costo extra</td>
+            <td data-en="Rarely">Raro</td>
+            <td data-en="You write it">Tú lo escribes</td>
+          </tr>
+          <tr>
+            <td data-en="Delivery time">Tiempo de entrega</td>
+            <td class="hl" data-en="≤ 7 days">≤ 7 días</td>
+            <td data-en="4–8 weeks">4–8 semanas</td>
+            <td data-en="2–4 weeks">2–4 semanas</td>
+            <td data-en="You build it">Tú la construyes</td>
+          </tr>
+          <tr>
+            <td data-en="Optimized for ads">Optimizada para ads</td>
+            <td class="hl" data-en="✓ Included">✓ Incluida</td>
+            <td data-en="Sometimes">A veces</td>
+            <td data-en="Rarely">Raro</td>
+            <td data-en="No">No</td>
+          </tr>
+          <tr>
+            <td data-en="Conversion structure">Estructura de conversión</td>
+            <td class="hl" data-en="✓ Built in">✓ Incluida</td>
+            <td data-en="Depends">Depende</td>
+            <td data-en="Depends">Depende</td>
+            <td data-en="No">No</td>
+          </tr>
+          <tr>
+            <td data-en="Price">Precio</td>
+            <td class="hl">$6,000 MXN</td>
+            <td>$30,000–$80,000</td>
+            <td>$5,000–$18,000</td>
+            <td data-en="$200–$500/year">$200–$500/año</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ CTA BLOCK ══════ -->
+<section id="checkout" class="cta-blk">
+  <div class="wrap">
+    <div class="label mb-16 reveal" data-en="Start this week">Empieza esta semana</div>
+    <h2 class="h2 sp-4 reveal"
+      data-en="Your landing page live<br>before the week is over.">
+      Tu página web publicada<br>antes de que termine la semana.
+    </h2>
+
+    <div class="sp-32 reveal">
+      <div class="cta-price-big">$6,000</div>
+      <p class="cta-sub sp-8" data-en="MXN · one-time payment · delivery in 7 days or less">MXN · Pago único · Entrega en 7 días o menos</p>
+    </div>
+
+    <ul class="cta-list sp-40 reveal">
+      <li>→ <span data-en="<b>100% personalized design</b> to your brand, colors and style"><b>Diseño 100% personalizado</b> a tu marca, colores y estilo</span></li>
+      <li>→ <span data-en="<b>Expert copy</b> written to convert your ideal client"><b>Copy experto</b> escrito para convertir a tu cliente ideal</span></li>
+      <li>→ <span data-en="<b>Conversion structure</b> proven to generate leads from day one"><b>Estructura de conversión</b> probada para generar leads desde el día uno</span></li>
+      <li>→ <span data-en="<b>Mobile-first</b> responsive on any screen"><b>Mobile-first</b>, responsive en cualquier pantalla</span></li>
+      <li>→ <span data-en="<b>1 round of revisions</b> included after first delivery"><b>1 ronda de revisiones</b> incluida después de la primera entrega</span></li>
+      <li>→ <span data-en="<b>Delivered in 7 days or less</b> — guaranteed"><b>Entrega en 7 días o menos</b> — garantizado</span></li>
+    </ul>
+
+    <div class="sp-40 reveal">
+      <a href="https://wa.me/524421454972"
+        class="btn btn-w btn-full" target="_blank" rel="noopener"
+        data-en="Talk to the team →">
+        Habla con el equipo →
+      </a>
+    </div>
+    <p class="cta-trust sp-16 reveal"
+      data-en="3 spots only · One-time payment · No monthly fees">
+      Solo 3 cupos al mes · Pago único · Sin mensualidades
+    </p>
+  </div>
+</section>
+
+<!-- ══════ FAQ ══════ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+
+    <div class="label mb-12 reveal" data-en="Frequently asked questions">Preguntas frecuentes</div>
+    <h2 class="h2 reveal" data-en="What people ask<br>before getting started.">Lo que preguntan<br>antes de arrancar.</h2>
+
+    <div class="faqs reveal">
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="What do I need to get started?">¿Qué necesito para empezar?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Just 30 minutes for the brief call and basic information about your brand: what you sell, who you sell to and what you want the page to achieve. We take care of the design, copy, structure and development. You don't need to write anything or prepare materials beforehand.">Solo 30 minutos para la llamada de brief e información básica sobre tu marca: qué vendes, a quién le vendes y qué quieres que logre la página. Nosotros nos encargamos del diseño, copy, estructura y desarrollo. No necesitas escribir nada ni preparar materiales de antemano.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="What platform do you build on?">¿En qué plataforma construyen la página?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="It depends on what works best for your project and how you plan to manage the page afterward. We work with HTML/CSS (static, ultra-fast), WordPress and Webflow. We discuss it during the brief call and recommend what best fits your situation.">Depende de lo que funcione mejor para tu proyecto y cómo planeas administrar la página después. Trabajamos con HTML/CSS (estático, ultra rápido), WordPress y Webflow. Lo conversamos durante la llamada de brief y recomendamos lo que mejor se adapte a tu situación.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="Is hosting included?">¿El hosting está incluido?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="The $6,000 MXN covers design, copy and development. Hosting and domain are separate — but we guide you on where to host it (many options start at $0 for the first year) and we can help connect the domain if needed.">Los $6,000 MXN cubren diseño, copy y desarrollo. El hosting y el dominio van aparte — pero te orientamos sobre dónde hospedarla (muchas opciones parten de $0 el primer año) y podemos ayudar a conectar el dominio si es necesario.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="Can I ask for changes after delivery?">¿Puedo pedir cambios después de la entrega?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="The package includes 1 complete revision round after the first delivery. If you need additional changes after that, we quote them by scope. Most clients find the first revision round is enough to leave the page exactly as they want it.">El paquete incluye 1 ronda completa de revisiones después de la primera entrega. Si necesitas cambios adicionales después de eso, los cotizamos por alcance. La mayoría de los clientes encuentran que la primera ronda de revisiones es suficiente para dejar la página exactamente como la quieren.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="Does it work if I already have a page and want to improve it?">¿Funciona si ya tengo una página y quiero mejorarla?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Yes. If you have an existing page and want to redesign it, rewrite the copy or improve its structure, we can work from what you already have or rebuild it from scratch — whatever the diagnosis indicates. We'll tell you honestly which approach makes more sense for your case.">Sí. Si tienes una página existente y quieres rediseñarla, reescribir el copy o mejorar su estructura, podemos trabajar desde lo que ya tienes o reconstruirla desde cero — lo que el diagnóstico indique. Te decimos honestamente cuál enfoque tiene más sentido para tu caso.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="What type of business is it for?">¿Para qué tipo de negocio funciona?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="It works perfectly for coaches, consultants, agencies, service businesses, infoproducts, local businesses, personal brands or anyone who needs a professional page that generates leads or sales. If your business needs more clients and you want a page that actually captures them, this is for you.">Funciona perfecto para coaches, consultores, agencias, negocios de servicios, infoproductos, negocios locales, marcas personales o cualquier persona que necesite una página profesional que genere leads o ventas. Si tu negocio necesita más clientes y quieres una página que de verdad los capture, esto es para ti.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="faq-btn">
+          <span data-en="What if I'm not satisfied with the result?">¿Qué pasa si no quedo satisfecho con el resultado?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="The revision round is precisely to ensure you love the page. We work with you until you're happy. In the rare case something doesn't feel right after revisions, we talk and find a solution together. We've never had a client leave unhappy — our reputation depends on it.">La ronda de revisiones existe precisamente para que la página te encante. Trabajamos contigo hasta que estés feliz. En el caso poco frecuente de que algo no se sienta bien después de las revisiones, conversamos y encontramos una solución juntos. Nunca hemos tenido un cliente que se vaya insatisfecho — nuestra reputación depende de ello.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER CTA ══════ -->
+<section class="cta-blk" style="padding:72px 0">
+  <div class="wrap tc">
+    <h2 class="h2 reveal" style="color:var(--w)"
+      data-en="Only 1 spot left.<br>Delivery guaranteed this week.">
+      Solo queda 1 cupo.<br>Entrega garantizada esta semana.
+    </h2>
+    <p class="sp-16 reveal" style="color:var(--dk-muted);font-size:.9375rem"
+      data-en="When the 3 spots fill up, the list closes until next month.">
+      Cuando se llenan los 3 cupos, cerramos la lista hasta el siguiente mes.
+    </p>
+    <div class="sp-32 reveal">
+      <a href="https://wa.me/524421454972" class="btn btn-w" target="_blank" rel="noopener"
+        data-en="Secure my spot now →">Asegurar mi cupo ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-logo">ZYX</div>
+    <div class="foot-links">
+      <a href="/" data-en="ZYX · Meta Ads">ZYX · Meta Ads</a>
+      <a href="#" data-en="Terms">Términos</a>
+      <a href="#" data-en="Privacy">Privacidad</a>
+      <a href="https://wa.me/524421454972" target="_blank" rel="noopener" data-en="Contact">Contacto</a>
+    </div>
+    <p class="foot-copy"
+      data-en="© 2026 ZYX · Landing Pages &amp; Web · Mexico">
+      © 2026 ZYX · Landing Pages &amp; Web · México
+    </p>
+  </div>
+</footer>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script>
+(function(){
+'use strict';
+
+/* ── Countdown ── */
+function eod(){var d=new Date();d.setHours(23,59,59,999);return d}
+var end=eod();
+function tick(){
+  var diff=end-new Date();
+  if(diff<0){end=eod();diff=end-new Date()}
+  var h=Math.floor(diff/3600000),
+      m=Math.floor(diff%3600000/60000),
+      s=Math.floor(diff%60000/1000);
+  document.getElementById('cdh').textContent=String(h).padStart(2,'0');
+  document.getElementById('cdm').textContent=String(m).padStart(2,'0');
+  document.getElementById('cds').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+/* ── Scroll Reveal ── */
+var ro=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+
+/* ── FAQ Accordion ── */
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var faq=this.closest('.faq'),open=faq.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});
+    if(!open)faq.classList.add('open');
+  });
+});
+
+/* ── i18n ── */
+var currentLang='es';
+
+function initI18n(){
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    if(!el.dataset.es)el.dataset.es=el.innerHTML;
+  });
+}
+
+function setLang(lang){
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.documentElement.dataset.lang=lang;
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    el.innerHTML=lang==='en'?el.dataset.en:el.dataset.es;
+  });
+  var btn=document.getElementById('langBtn');
+  if(btn)btn.textContent=lang==='en'?'ES':'EN';
+}
+
+window.toggleLang=function(){
+  setLang(currentLang==='es'?'en':'es');
+};
+
+initI18n();
+
+})();
+</script>
+
+</body>
+</html>
