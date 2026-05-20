@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZYX · La agencia que hace crecer tu negocio en digital.</title>
-<meta name="description" content="ZYX es la agencia de marketing digital que combina Meta Ads, diseño de landing pages, tiendas Shopify y contenido UGC para hacer crecer tu negocio. Resultados reales, entrega rápida.">
+<meta name="description" content="ZYX es la agencia digital que combina Meta Ads, landing pages, Shopify, UGC, clones IA de marca personal e infoproductos para hacer crecer tu negocio. Resultados reales, entrega rápida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
   --lt-body:#555;--lt-muted:#888;--lt-border:#e5e5e5;
   --r:4px;--ease:cubic-bezier(.16,1,.3,1);
   --green:#00c48c;--blue:#4f8ef7;--purple:#a855f7;--orange:#f97316;
+  --pink:#e879f9;--teal:#14b8a6;
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -107,8 +108,9 @@ button{font-family:inherit;cursor:pointer}
 .hero-note{color:var(--dk-faint);font-size:.72rem;font-weight:600;letter-spacing:.04em;margin-top:20px}
 
 /* SERVICE CARDS IN HERO */
-.hero-services{display:grid;gap:16px;margin-top:72px}
-@media(min-width:640px){.hero-services{grid-template-columns:repeat(3,1fr)}}
+.hero-services{display:grid;gap:16px;margin-top:72px;justify-content:center}
+@media(min-width:580px){.hero-services{grid-template-columns:repeat(2,minmax(0,420px))}}
+@media(min-width:900px){.hero-services{grid-template-columns:repeat(3,minmax(0,300px))}}
 .hsvc{
   background:#050505;border:1px solid #1a1a1a;border-radius:10px;
   padding:28px 24px;text-align:left;transition:border-color .2s,transform .2s var(--ease);
@@ -213,6 +215,51 @@ button{font-family:inherit;cursor:pointer}
 #svc-ugc .svc-desc strong{color:var(--k)}
 #svc-ugc .svc-link-cta{background:var(--orange);color:var(--w)}
 
+/* AI CLONE SECTION */
+#svc-clone{background:var(--k);color:var(--w)}
+#svc-clone .svc-badge{background:#1a0a1f;border:1px solid #5b1870;color:var(--pink)}
+#svc-clone .svc-desc{color:var(--dk-body)}
+#svc-clone .svc-desc strong{color:var(--w)}
+#svc-clone .svc-link-cta{background:var(--pink);color:var(--w)}
+
+/* INFOPRODUCTS SECTION */
+#svc-info{background:var(--g50)}
+#svc-info .svc-badge{background:#f0fdfa;border:1px solid #99f6e4;color:var(--teal)}
+#svc-info .svc-desc{color:var(--lt-body)}
+#svc-info .svc-desc strong{color:var(--k)}
+#svc-info .svc-link-cta{background:var(--teal);color:var(--w)}
+
+/* CLONE VISUAL BLOCK */
+.clone-vis{
+  background:#050505;border:1px solid #1a1a1a;border-radius:10px;
+  padding:32px 28px;position:relative;overflow:hidden;
+}
+.clone-vis::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 70% 30%,#3d0050 0%,transparent 60%);
+  opacity:.5;pointer-events:none;
+}
+.clone-vis-tag{
+  display:inline-block;background:#1a0a1f;border:1px solid #5b1870;
+  color:var(--pink);font-size:.6rem;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;padding:5px 14px;border-radius:30px;margin-bottom:20px;
+}
+.clone-vis-name{font-size:1.5rem;font-weight:900;color:var(--w);margin-bottom:8px}
+.clone-vis-sub{color:var(--dk-body);font-size:.875rem;line-height:1.65;margin-bottom:24px}
+.clone-benefits{display:grid;gap:10px}
+.clone-benefit{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:rgba(232,121,249,.06);border:1px solid rgba(232,121,249,.15);border-radius:6px}
+.clone-benefit-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.clone-benefit-text{font-size:.8125rem;color:var(--dk-body);line-height:1.55}
+.clone-benefit-text strong{color:var(--w)}
+
+/* INFO PRODUCT TYPES */
+.info-types{display:grid;gap:12px;margin-top:0}
+@media(min-width:560px){.info-types{grid-template-columns:1fr 1fr 1fr}}
+.info-type{background:var(--w);border:1px solid var(--lt-border);border-radius:8px;padding:20px 16px;text-align:center}
+.info-type-icon{font-size:1.8rem;margin-bottom:8px}
+.info-type h4{font-size:.9rem;font-weight:800;margin-bottom:4px}
+.info-type p{font-size:.78rem;color:var(--lt-muted);line-height:1.5}
+
 /* FEATURE GRIDS */
 .feat-grid{display:grid;gap:12px}
 @media(min-width:560px){.feat-grid{grid-template-columns:1fr 1fr}}
@@ -300,8 +347,10 @@ button{font-family:inherit;cursor:pointer}
     <ul class="nav-links">
       <li><a href="#svc-ads" data-en="Meta Ads">Meta Ads</a></li>
       <li><a href="#svc-pages" data-en="Landing Pages">Landing Pages</a></li>
-      <li><a href="#svc-ecom" data-en="Shopify Stores">Tiendas Shopify</a></li>
-      <li><a href="#svc-ugc" data-en="UGC Videos">Videos UGC</a></li>
+      <li><a href="#svc-ecom" data-en="Shopify Stores">Shopify</a></li>
+      <li><a href="#svc-ugc" data-en="UGC Videos">UGC</a></li>
+      <li><a href="#svc-clone" data-en="AI Clone">Clon IA</a></li>
+      <li><a href="#svc-info" data-en="Infoproducts">Infoproductos</a></li>
       <li><a href="#who" data-en="About">Nosotros</a></li>
     </ul>
     <div class="nav-right">
@@ -327,7 +376,7 @@ button{font-family:inherit;cursor:pointer}
 
     <p class="hero-sub sp-24 reveal" data-d="1"
        data-en="ZYX is the digital agency that combines <strong>Meta Ads, landing pages, Shopify stores and UGC content</strong> to make your business sell more. One team. Four powerful services. Real results.">
-      ZYX es la agencia digital que combina <strong>Meta Ads, landing pages, tiendas Shopify y contenido UGC</strong> para que tu negocio venda más. Un solo equipo. Cuatro servicios poderosos. Resultados reales.
+      ZYX es la agencia digital que combina <strong>Meta Ads, landing pages, Shopify, UGC, clones IA y venta de infoproductos</strong> para que tu negocio venda más. Un solo equipo. Seis servicios poderosos. Resultados reales.
     </p>
 
     <div class="hero-ctas reveal" data-d="2">
@@ -365,6 +414,20 @@ button{font-family:inherit;cursor:pointer}
         <div class="hsvc-desc" data-en="Complete Shopify stores built to sell, plus UGC video packages to fill them with content that converts.">Tiendas Shopify completas listas para vender, más paquetes de video UGC para llenarlas de contenido que convierte.</div>
         <div class="hsvc-link" style="color:var(--green)" data-en="See service →">Ver servicio →</div>
       </a>
+      <a href="#svc-clone" class="hsvc reveal" data-d="1">
+        <div class="hsvc-icon">🤖</div>
+        <div class="hsvc-tag" style="color:var(--pink)" data-en="AI · PERSONAL BRAND">IA · MARCA PERSONAL</div>
+        <div class="hsvc-name" data-en="Hyper-Realistic AI Clone">Clon IA Hiper-Realista</div>
+        <div class="hsvc-desc" data-en="We create a digital clone of you that produces content 24/7. Post daily without spending hours in front of a camera.">Creamos un clon digital tuyo que produce contenido 24/7. Publica todos los días sin pasar horas frente a una cámara.</div>
+        <div class="hsvc-link" style="color:var(--pink)" data-en="See service →">Ver servicio →</div>
+      </a>
+      <a href="#svc-info" class="hsvc reveal" data-d="2">
+        <div class="hsvc-icon">🎓</div>
+        <div class="hsvc-tag" style="color:var(--teal)" data-en="INFOPRODUCTS · KNOWLEDGE">INFOPRODUCTOS · CONOCIMIENTO</div>
+        <div class="hsvc-name" data-en="Sell Your Knowledge">Vende tu Conocimiento</div>
+        <div class="hsvc-desc" data-en="We turn your expertise into a digital product that sells while you sleep: course, masterclass, ebook. Strategy, design, and launch included.">Convertimos tu expertise en un producto digital que vende mientras duermes: curso, masterclass, ebook. Estrategia, diseño y lanzamiento incluidos.</div>
+        <div class="hsvc-link" style="color:var(--teal)" data-en="See service →">Ver servicio →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -376,6 +439,8 @@ button{font-family:inherit;cursor:pointer}
     <span>Landing Pages</span><span class="dot">·</span>
     <span>Tiendas Shopify</span><span class="dot">·</span>
     <span>Videos UGC</span><span class="dot">·</span>
+    <span>Clon IA Hiper-Realista</span><span class="dot">·</span>
+    <span>Infoproductos</span><span class="dot">·</span>
     <span>Diseño 100% custom</span><span class="dot">·</span>
     <span>Copy que convierte</span><span class="dot">·</span>
     <span>Entrega rápida</span><span class="dot">·</span>
@@ -384,6 +449,8 @@ button{font-family:inherit;cursor:pointer}
     <span>Landing Pages</span><span class="dot">·</span>
     <span>Tiendas Shopify</span><span class="dot">·</span>
     <span>Videos UGC</span><span class="dot">·</span>
+    <span>Clon IA Hiper-Realista</span><span class="dot">·</span>
+    <span>Infoproductos</span><span class="dot">·</span>
     <span>Diseño 100% custom</span><span class="dot">·</span>
     <span>Copy que convierte</span><span class="dot">·</span>
     <span>Entrega rápida</span><span class="dot">·</span>
@@ -404,7 +471,7 @@ button{font-family:inherit;cursor:pointer}
         <div class="stat-label" data-en="Average delivery time per project">Tiempo promedio de entrega por proyecto</div>
       </div>
       <div class="stat reveal" data-d="2">
-        <div class="stat-num">4</div>
+        <div class="stat-num">6</div>
         <div class="stat-label" data-en="Specialized services under one team">Servicios especializados bajo un solo equipo</div>
       </div>
       <div class="stat reveal" data-d="3">
@@ -421,15 +488,17 @@ button{font-family:inherit;cursor:pointer}
     <p class="label reveal" data-en="WHO WE ARE">QUIÉNES SOMOS</p>
     <div class="who-grid">
       <div class="who-text reveal" data-d="1">
-        <h2 class="h2" data-en="We're not an agency<br>that does everything.<br>We do <em style='font-style:italic'>four things perfectly.</em>">No somos una agencia<br>que hace todo.<br>Hacemos <em style="font-style:italic">cuatro cosas perfecto.</em></h2>
-        <p data-en="ZYX was born from a simple idea: most agencies spread too thin. They try to do everything and end up doing nothing well. We chose 4 specific digital services and mastered each one of them.">ZYX nació de una idea simple: la mayoría de las agencias se dispersan demasiado. Intentan hacer todo y terminan no haciendo nada bien. Nosotros elegimos 4 servicios digitales específicos y los dominamos por completo.</p>
-        <p data-en="<strong>Meta Ads, landing pages, Shopify stores and UGC videos</strong> are not random — they're the four pillars that any business needs to grow online. And we're specialists in all four."><strong>Meta Ads, landing pages, tiendas Shopify y videos UGC</strong> no son casualidad — son los cuatro pilares que cualquier negocio necesita para crecer en digital. Y somos especialistas en los cuatro.</p>
+        <h2 class="h2" data-en="We're not an agency<br>that does everything.<br>We do <em style='font-style:italic'>six things perfectly.</em>">No somos una agencia<br>que hace todo.<br>Hacemos <em style="font-style:italic">seis cosas perfecto.</em></h2>
+        <p data-en="ZYX was born from a simple idea: most agencies spread too thin. They try to do everything and end up doing nothing well. We chose 6 specific digital services and mastered each one of them.">ZYX nació de una idea simple: la mayoría de las agencias se dispersan demasiado. Intentan hacer todo y terminan no haciendo nada bien. Nosotros elegimos 6 servicios digitales específicos y los dominamos por completo.</p>
+        <p data-en="<strong>Meta Ads, landing pages, Shopify stores, UGC videos, hyper-realistic AI clones and infoproducts</strong> — the six pillars any brand needs to dominate digitally. And we're specialists in all six."><strong>Meta Ads, landing pages, tiendas Shopify, videos UGC, clones IA hiper-realistas e infoproductos</strong> — los seis pilares que cualquier marca necesita para dominar en digital. Y somos especialistas en los seis.</p>
         <p data-en="We don't sell contracts. We sell results. We don't have 50 clients. We have the clients we can truly serve well. And every project we deliver is 100% custom, built from scratch for each business.">No vendemos contratos. Vendemos resultados. No tenemos 50 clientes. Tenemos los clientes que podemos atender bien de verdad. Y cada proyecto que entregamos es 100% personalizado, construido desde cero para cada negocio.</p>
         <div class="who-pills sp-20">
           <span class="who-pill">Meta Ads</span>
           <span class="who-pill">Landing Pages</span>
           <span class="who-pill">Shopify</span>
           <span class="who-pill">UGC</span>
+          <span class="who-pill" data-en="AI Clone">Clon IA</span>
+          <span class="who-pill" data-en="Infoproducts">Infoproductos</span>
           <span class="who-pill" data-en="Custom copy">Copy personalizado</span>
           <span class="who-pill" data-en="Fast delivery">Entrega rápida</span>
         </div>
@@ -708,6 +777,166 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════ SERVICE: AI CLONE -->
+<section id="svc-clone" class="sec svc-section">
+  <div class="wrap">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="svc-badge">
+          🤖 <span data-en="AI CLONE · PERSONAL BRAND">CLON IA · MARCA PERSONAL</span>
+        </div>
+        <h2 class="h2 svc-h" style="color:var(--w)"
+            data-en="Your digital clone<br>posting while you<br>live your life.">
+          Tu clon digital<br>publicando mientras<br>tú vives tu vida.
+        </h2>
+        <p class="svc-desc"
+           data-en="Imagine being able to post every day on every platform <strong>without recording a single video</strong>. We create a hyper-realistic AI clone of you — your voice, your face, your style — that produces content 24/7. Grow your personal brand without losing hours in front of a camera.">
+          Imagina poder publicar todos los días en todas las plataformas <strong>sin grabar un solo video</strong>. Creamos un clon IA hiper-realista de ti — tu voz, tu cara, tu estilo — que produce contenido 24/7. Haz crecer tu marca personal sin perder horas frente a una cámara.
+        </p>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20el%20Clon%20IA%20de%20marca%20personal.%20%C2%BFPodemos%20hablar%3F"
+           class="svc-link-cta" target="_blank" rel="noopener"
+           data-en="Learn about my AI Clone →">Quiero saber sobre mi Clon IA →</a>
+      </div>
+      <div class="reveal" data-d="1">
+        <div class="clone-vis">
+          <div class="clone-vis-tag" data-en="✨ HYPER-REALISTIC AI TECHNOLOGY">✨ TECNOLOGÍA IA HIPER-REALISTA</div>
+          <div class="clone-vis-name" data-en="Your Clone. Your Brand.">Tu Clon. Tu Marca.</div>
+          <p class="clone-vis-sub"
+             data-en="We train a personalized AI model on your voice, face, and communication style. The result: a digital version of you, indistinguishable from the real thing.">
+            Entrenamos un modelo IA personalizado con tu voz, cara y estilo de comunicación. El resultado: una versión digital de ti, indistinguible del original.
+          </p>
+          <div class="clone-benefits">
+            <div class="clone-benefit">
+              <div class="clone-benefit-icon">⚡</div>
+              <div class="clone-benefit-text"><strong data-en="10× more content,">10× más contenido,</strong> <span data-en="same time invested">mismo tiempo invertido</span></div>
+            </div>
+            <div class="clone-benefit">
+              <div class="clone-benefit-icon">🎙</div>
+              <div class="clone-benefit-text"><strong data-en="Your voice and face,">Tu voz y tu cara,</strong> <span data-en="perfectly replicated">perfectamente replicadas</span></div>
+            </div>
+            <div class="clone-benefit">
+              <div class="clone-benefit-icon">🌍</div>
+              <div class="clone-benefit-text"><strong data-en="Multiple languages">Múltiples idiomas</strong> <span data-en="with your same voice and style">con tu misma voz y estilo</span></div>
+            </div>
+            <div class="clone-benefit">
+              <div class="clone-benefit-icon">📱</div>
+              <div class="clone-benefit-text"><strong data-en="Ready for">Listo para</strong> <span data-en="TikTok, Reels, YouTube Shorts, LinkedIn">TikTok, Reels, YouTube Shorts, LinkedIn</span></div>
+            </div>
+            <div class="clone-benefit">
+              <div class="clone-benefit-icon">🔄</div>
+              <div class="clone-benefit-text"><strong data-en="Content calendar">Calendario de contenido</strong> <span data-en="with scripts written specifically for your brand">con guiones escritos específicamente para tu marca</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-grid sp-40">
+      <div class="feat-card dark-feat reveal" data-d="1">
+        <div class="feat-check" style="background:#1a0a1f;color:var(--pink)">✓</div>
+        <div class="feat-card-text">
+          <h4 data-en="Personalized AI model">Modelo IA personalizado</h4>
+          <p data-en="We train the AI specifically with your voice, face, and communication style. No generic voices — your real clone.">Entrenamos la IA específicamente con tu voz, cara y estilo de comunicación. Sin voces genéricas — tu clon real.</p>
+        </div>
+      </div>
+      <div class="feat-card dark-feat reveal" data-d="2">
+        <div class="feat-check" style="background:#1a0a1f;color:var(--pink)">✓</div>
+        <div class="feat-card-text">
+          <h4 data-en="Scripts written to convert">Guiones escritos para convertir</h4>
+          <p data-en="Your clone doesn't just talk — it delivers the right message to grow your audience and attract clients.">Tu clon no solo habla — entrega el mensaje correcto para crecer tu audiencia y atraer clientes.</p>
+        </div>
+      </div>
+      <div class="feat-card dark-feat reveal" data-d="3">
+        <div class="feat-check" style="background:#1a0a1f;color:var(--pink)">✓</div>
+        <div class="feat-card-text">
+          <h4 data-en="Multi-platform and multi-language">Multi-plataforma y multi-idioma</h4>
+          <p data-en="TikTok, Reels, YouTube Shorts, LinkedIn. Even in English, Portuguese, or any other language — with your exact voice.">TikTok, Reels, YouTube Shorts, LinkedIn. Incluso en inglés, portugués o cualquier idioma — con tu voz exacta.</p>
+        </div>
+      </div>
+      <div class="feat-card dark-feat reveal" data-d="4">
+        <div class="feat-check" style="background:#1a0a1f;color:var(--pink)">✓</div>
+        <div class="feat-card-text">
+          <h4 data-en="Post without recording">Publica sin grabar</h4>
+          <p data-en="Stop spending hours setting up, recording, and editing. Your clone does it — you invest that time in growing your business.">Deja de pasar horas preparando, grabando y editando. Tu clon lo hace — tú inviertes ese tiempo en crecer tu negocio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ SERVICE: INFOPRODUCTS -->
+<section id="svc-info" class="sec svc-section light">
+  <div class="wrap">
+    <div class="svc-header">
+      <div class="reveal" data-d="1">
+        <div class="info-types">
+          <div class="info-type">
+            <div class="info-type-icon">🎓</div>
+            <h4 data-en="Online Course">Curso Online</h4>
+            <p data-en="Structured modules, video lessons, and a complete learning experience.">Módulos estructurados, lecciones en video y experiencia de aprendizaje completa.</p>
+          </div>
+          <div class="info-type">
+            <div class="info-type-icon">⚡</div>
+            <h4 data-en="Masterclass">Masterclass</h4>
+            <p data-en="High-value 1-3 hour sessions with premium positioning and high ticket price.">Sesiones de alto valor de 1-3 horas con posicionamiento premium y precio alto.</p>
+          </div>
+          <div class="info-type">
+            <div class="info-type-icon">📘</div>
+            <h4 data-en="Ebook / Guide">Ebook / Guía</h4>
+            <p data-en="Digital content that positions you as an expert and generates passive income.">Contenido digital que te posiciona como experto y genera ingresos pasivos.</p>
+          </div>
+        </div>
+        <div class="feat-grid sp-16">
+          <div class="feat-card light-feat reveal" data-d="1">
+            <div class="feat-check" style="background:#f0fdfa;color:var(--teal)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="Product strategy">Estrategia del producto</h4>
+              <p data-en="We define the topic, format, price, and positioning that maximizes your income.">Definimos el tema, formato, precio y posicionamiento que maximiza tus ingresos.</p>
+            </div>
+          </div>
+          <div class="feat-card light-feat reveal" data-d="2">
+            <div class="feat-check" style="background:#f0fdfa;color:var(--teal)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="Sales landing page">Landing page de ventas</h4>
+              <p data-en="High-converting page with copy that sells, designed specifically for your product.">Página de alta conversión con copy que vende, diseñada específicamente para tu producto.</p>
+            </div>
+          </div>
+          <div class="feat-card light-feat reveal" data-d="3">
+            <div class="feat-check" style="background:#f0fdfa;color:var(--teal)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="Complete launch funnel">Funnel de lanzamiento completo</h4>
+              <p data-en="Email sequences, ads, content, and sales strategy to maximize launch sales.">Secuencias de email, anuncios, contenido y estrategia de ventas para maximizar las ventas del lanzamiento.</p>
+            </div>
+          </div>
+          <div class="feat-card light-feat reveal" data-d="4">
+            <div class="feat-check" style="background:#f0fdfa;color:var(--teal)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="Passive income 24/7">Ingresos pasivos 24/7</h4>
+              <p data-en="Once launched, your product sells while you sleep, travel, and live your life.">Una vez lanzado, tu producto vende mientras duermes, viajas y vives tu vida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="svc-badge">
+          🎓 <span data-en="INFOPRODUCTS · SELL YOUR KNOWLEDGE">INFOPRODUCTOS · VENDE TU CONOCIMIENTO</span>
+        </div>
+        <h2 class="h2 svc-h" style="color:var(--k)"
+            data-en="Everything you know<br>is worth more than<br>you imagine.">
+          Todo lo que sabes<br>vale más de lo<br>que imaginas.
+        </h2>
+        <p class="svc-desc"
+           data-en="You have knowledge, experience, and a process that others would pay to learn. <strong>We turn your expertise into a digital product that generates income 24/7</strong>: online course, masterclass, or ebook. We handle the strategy, design, landing page, funnel, and launch — you just need to share what you know.">
+          Tienes conocimiento, experiencia y un proceso que otros pagarían por aprender. <strong>Convertimos tu expertise en un producto digital que genera ingresos 24/7</strong>: curso online, masterclass o ebook. Nosotros manejamos la estrategia, diseño, landing page, funnel y lanzamiento — tú solo necesitas compartir lo que sabes.
+        </p>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20crear%20un%20infoproducto%20para%20vender%20mi%20conocimiento.%20%C2%BFPodemos%20hablar%3F"
+           class="svc-link-cta" target="_blank" rel="noopener"
+           data-en="Start selling my knowledge →">Empezar a vender mi conocimiento →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════════════ WHY ZYX -->
 <section id="why" class="sec">
   <div class="wrap">
@@ -778,6 +1007,8 @@ button{font-family:inherit;cursor:pointer}
       <a href="https://paginas.zyx.mx" class="foot-svc purple">Landing Pages</a>
       <a href="https://ecom.zyx.mx" class="foot-svc green">Shopify</a>
       <a href="https://ecom.zyx.mx#ugc" class="foot-svc orange">UGC Videos</a>
+      <a href="#svc-clone" class="foot-svc" style="color:var(--pink)">Clon IA</a>
+      <a href="#svc-info" class="foot-svc" style="color:var(--teal)">Infoproductos</a>
     </div>
     <div class="foot-copy" data-en="© 2025 ZYX. All rights reserved.">© 2025 ZYX. Todos los derechos reservados.</div>
   </div>
