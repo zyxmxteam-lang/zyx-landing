@@ -338,6 +338,68 @@ button{font-family:inherit;cursor:pointer}
 .cta-note{color:var(--dk-faint);font-size:.75rem;margin-top:20px;font-weight:600}
 
 /* ─────────────────────────────────────────
+   UGC PACKAGES
+───────────────────────────────────────── */
+#ugc{background:var(--w)}
+.ugc-intro{max-width:600px;margin:0 auto}
+.pkg-grid{display:grid;gap:20px;margin-top:56px}
+@media(min-width:760px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
+.pkg-card{
+  border-radius:10px;padding:36px 28px;position:relative;
+  display:flex;flex-direction:column;
+}
+.pkg-base{background:var(--g50);border:1px solid var(--lt-border)}
+.pkg-mid {background:var(--k);color:var(--w);border:2px solid #222}
+.pkg-top {background:#050505;border:2px solid var(--green);color:var(--w)}
+.pkg-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--green);color:var(--k);
+  font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  padding:5px 16px;border-radius:30px;white-space:nowrap;
+}
+.pkg-label{
+  font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.pkg-base .pkg-label{color:var(--lt-muted)}
+.pkg-mid  .pkg-label{color:var(--dk-faint)}
+.pkg-top  .pkg-label{color:var(--green)}
+.pkg-name{font-size:1.2rem;font-weight:900;margin-bottom:4px}
+.pkg-base .pkg-name{color:var(--k)}
+.pkg-price{font-size:2.4rem;font-weight:900;letter-spacing:-.04em;line-height:1;margin:16px 0 4px}
+.pkg-base .pkg-price{color:var(--k)}
+.pkg-per{font-size:.8rem;font-weight:600;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid}
+.pkg-base .pkg-per{color:var(--lt-muted);border-color:var(--lt-border)}
+.pkg-mid  .pkg-per{color:var(--dk-muted);border-color:#222}
+.pkg-top  .pkg-per{color:var(--dk-body);border-color:#1a1a1a}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1}
+.pkg-list li{font-size:.875rem;line-height:1.45;display:flex;align-items:flex-start;gap:10px}
+.pkg-base .pkg-list li{color:var(--lt-body)}
+.pkg-mid  .pkg-list li{color:var(--dk-body)}
+.pkg-top  .pkg-list li{color:var(--dk-body)}
+.pkg-list li::before{
+  content:'✓';font-weight:800;flex-shrink:0;margin-top:1px;
+}
+.pkg-base .pkg-list li::before{color:#16a34a}
+.pkg-mid  .pkg-list li::before{color:var(--green)}
+.pkg-top  .pkg-list li::before{color:var(--green)}
+.pkg-cta{
+  margin-top:28px;display:block;text-align:center;
+  padding:14px 24px;border-radius:var(--r);
+  font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;
+  transition:transform .15s var(--ease),opacity .15s;
+}
+.pkg-cta:hover{transform:translateY(-2px);opacity:.9}
+.pkg-base .pkg-cta{background:var(--k);color:var(--w)}
+.pkg-mid  .pkg-cta{background:var(--w);color:var(--k)}
+.pkg-top  .pkg-cta{background:var(--green);color:var(--k)}
+.ugc-note{
+  text-align:center;margin-top:36px;
+  color:var(--lt-muted);font-size:.8rem;line-height:1.7;
+}
+.ugc-note strong{color:var(--lt-body)}
+
+/* ─────────────────────────────────────────
    FAQ
 ───────────────────────────────────────── */
 #faq{background:var(--g50)}
@@ -389,6 +451,7 @@ button{font-family:inherit;cursor:pointer}
     <a href="/" class="nav-logo">ZYX <span data-en="Ecom">Ecom</span></a>
     <ul class="nav-links">
       <li><a href="#includes" data-en="What's included">Qué incluye</a></li>
+      <li><a href="#ugc" data-en="UGC Videos">Videos UGC</a></li>
       <li><a href="#process" data-en="Process">Proceso</a></li>
       <li><a href="#faq" data-en="FAQ">FAQ</a></li>
     </ul>
@@ -781,6 +844,88 @@ button{font-family:inherit;cursor:pointer}
       </div>
       <p class="cta-note" data-en="No commitment · Free consultation · Response in less than 24 hours">Sin compromiso · Consulta gratuita · Respuesta en menos de 24 horas</p>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ UGC PACKAGES -->
+<section id="ugc" class="sec">
+  <div class="wrap">
+    <p class="label tc reveal" data-en="UGC CONTENT">CONTENIDO UGC</p>
+    <h2 class="h2 tc sp-12 reveal" data-en="Videos that make<br>your products sell">Videos que hacen<br>que tus productos vendan</h2>
+    <p class="hero-sub tc sp-16 ugc-intro reveal" data-d="1"
+       data-en="UGC-style videos optimized for ecommerce ads, organic social, and product pages. Real content, real style — the type that stops the scroll and drives purchases.">
+      Videos estilo UGC optimizados para anuncios de ecommerce, redes sociales y páginas de producto. Contenido real, estilo auténtico — el tipo que detiene el scroll y genera compras.
+    </p>
+
+    <div class="pkg-grid">
+
+      <!-- STARTER -->
+      <div class="pkg-card pkg-base reveal" data-d="1">
+        <div class="pkg-label" data-en="STARTER PACK">PACK STARTER</div>
+        <div class="pkg-name" data-en="5 UGC Videos">5 Videos UGC</div>
+        <div class="pkg-price">$5,000</div>
+        <div class="pkg-per" data-en="$1,000 MXN per video · One-time payment">$1,000 MXN por video · Pago único</div>
+        <ul class="pkg-list">
+          <li data-en="5 UGC-style product videos">5 videos UGC de producto</li>
+          <li data-en="Vertical format (9:16) optimized for ads">Formato vertical (9:16) optimizado para anuncios</li>
+          <li data-en="Script and creative direction included">Guión y dirección creativa incluidos</li>
+          <li data-en="Editing with captions and music">Edición con subtítulos y música</li>
+          <li data-en="Ready to publish on TikTok, Reels, Meta Ads">Listos para publicar en TikTok, Reels, Meta Ads</li>
+          <li data-en="Delivery in 7 business days">Entrega en 7 días hábiles</li>
+        </ul>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20el%20Pack%20Starter%20de%205%20videos%20UGC%20para%20ecommerce"
+           class="pkg-cta" target="_blank" rel="noopener"
+           data-en="Get Starter Pack →">Quiero el Pack Starter →</a>
+      </div>
+
+      <!-- GROWTH -->
+      <div class="pkg-card pkg-mid reveal" data-d="2">
+        <div class="pkg-label" data-en="GROWTH PACK · Most popular">PACK GROWTH · Más popular</div>
+        <div class="pkg-name" data-en="10 UGC Videos">10 Videos UGC</div>
+        <div class="pkg-price">$9,000</div>
+        <div class="pkg-per" data-en="$900 MXN per video · Save $1,000 vs Starter">$900 MXN por video · Ahorras $1,000 vs Starter</div>
+        <ul class="pkg-list">
+          <li data-en="10 UGC-style product videos">10 videos UGC de producto</li>
+          <li data-en="Vertical format (9:16) + horizontal versions (16:9)">Formato vertical (9:16) + versiones horizontales (16:9)</li>
+          <li data-en="Script and creative direction for each video">Guión y dirección creativa por video</li>
+          <li data-en="Editing with captions, music, and effects">Edición con subtítulos, música y efectos</li>
+          <li data-en="Ready for TikTok, Reels, Meta Ads, and your store">Listos para TikTok, Reels, Meta Ads y tu tienda</li>
+          <li data-en="1 round of revisions per video">1 ronda de revisiones por video</li>
+          <li data-en="Delivery in 10 business days">Entrega en 10 días hábiles</li>
+        </ul>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20el%20Pack%20Growth%20de%2010%20videos%20UGC%20para%20ecommerce"
+           class="pkg-cta" target="_blank" rel="noopener"
+           data-en="Get Growth Pack →">Quiero el Pack Growth →</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="pkg-card pkg-top reveal" data-d="3">
+        <div class="pkg-badge" data-en="🔥 Best value">🔥 Mejor valor</div>
+        <div class="pkg-label" data-en="PRO PACK">PACK PRO</div>
+        <div class="pkg-name" data-en="20 UGC Videos">20 Videos UGC</div>
+        <div class="pkg-price">$16,000</div>
+        <div class="pkg-per" data-en="$800 MXN per video · Save $4,000 vs Starter">$800 MXN por video · Ahorras $4,000 vs Starter</div>
+        <ul class="pkg-list">
+          <li data-en="20 UGC-style product videos">20 videos UGC de producto</li>
+          <li data-en="Multiple formats: vertical, horizontal, and square">Múltiples formatos: vertical, horizontal y cuadrado</li>
+          <li data-en="Full script + creative direction + storyboard">Guión completo + dirección creativa + storyboard</li>
+          <li data-en="Professional editing with subtitles, music, effects, and transitions">Edición profesional con subtítulos, música, efectos y transiciones</li>
+          <li data-en="Optimized for ads, organic, and product pages">Optimizados para ads, orgánico y páginas de producto</li>
+          <li data-en="2 rounds of revisions per video">2 rondas de revisiones por video</li>
+          <li data-en="Content calendar and posting strategy">Calendario de contenido y estrategia de publicación</li>
+          <li data-en="Delivery in 15 business days">Entrega en 15 días hábiles</li>
+        </ul>
+        <a href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20me%20interesa%20el%20Pack%20Pro%20de%2020%20videos%20UGC%20para%20ecommerce"
+           class="pkg-cta" target="_blank" rel="noopener"
+           data-en="Get Pro Pack →">Quiero el Pack Pro →</a>
+      </div>
+
+    </div>
+
+    <p class="ugc-note reveal" data-d="1"
+       data-en="<strong>All packages include:</strong> Creative concept, UGC-style filming/production, editing, subtitles and music, and files ready to use in all formats. · <strong>Packages can be combined with any Shopify store design service.</strong>">
+      <strong>Todos los paquetes incluyen:</strong> Concepto creativo, producción estilo UGC, edición, subtítulos y música, y archivos listos para usar en todos los formatos. · <strong>Los paquetes se pueden combinar con cualquier servicio de diseño de tienda Shopify.</strong>
+    </p>
   </div>
 </section>
 
