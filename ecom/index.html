@@ -400,6 +400,74 @@ button{font-family:inherit;cursor:pointer}
 .ugc-note strong{color:var(--lt-body)}
 
 /* ─────────────────────────────────────────
+   UGC EXPLAINER
+───────────────────────────────────────── */
+#ugc-why{background:var(--k);color:var(--w)}
+.ugc-why-intro{max-width:640px;margin:0 auto}
+.ugc-pill{
+  display:inline-block;background:#0d1a12;border:1px solid #1a3d29;
+  color:var(--green);font-size:.65rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;
+  border-radius:30px;margin-bottom:32px;
+}
+.ugc-why-hero{
+  background:#050505;border:1px solid #1a1a1a;border-radius:10px;
+  padding:48px 44px;margin-top:56px;
+}
+@media(max-width:639px){.ugc-why-hero{padding:32px 24px}}
+.ugc-why-hero-grid{display:grid;gap:40px}
+@media(min-width:768px){.ugc-why-hero-grid{grid-template-columns:1fr 1fr;align-items:center}}
+.ugc-big-stat{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--green)}
+.ugc-big-stat span{font-size:clamp(1.2rem,3vw,2rem);color:var(--dk-muted);font-weight:600;letter-spacing:-.02em}
+.ugc-big-text{color:var(--dk-body);font-size:clamp(.975rem,2vw,1.1rem);line-height:1.8;margin-top:12px}
+.ugc-big-text strong{color:var(--w)}
+
+.ugc-why-grid{display:grid;gap:16px;margin-top:32px}
+@media(min-width:640px){.ugc-why-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.ugc-why-grid{grid-template-columns:repeat(4,1fr)}}
+.ugc-why-card{
+  background:#050505;border:1px solid #1a1a1a;
+  border-radius:8px;padding:24px 20px;
+}
+.ugc-why-num{
+  font-size:1.8rem;font-weight:900;letter-spacing:-.04em;
+  color:var(--green);line-height:1;margin-bottom:10px;
+}
+.ugc-why-card h3{font-size:.9rem;font-weight:800;color:var(--w);margin-bottom:8px}
+.ugc-why-card p{color:var(--dk-body);font-size:.8125rem;line-height:1.65}
+
+.ugc-vs{display:grid;gap:16px;margin-top:40px}
+@media(min-width:640px){.ugc-vs{grid-template-columns:1fr 1fr}}
+.ugc-vs-card{border-radius:8px;padding:28px 24px}
+.ugc-vs-old{background:#111;border:1px solid #1a1a1a}
+.ugc-vs-new{background:#081a10;border:1px solid #1a3d29}
+.ugc-vs-tag{
+  font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  padding:4px 12px;border-radius:30px;display:inline-block;margin-bottom:14px;
+}
+.ugc-vs-old .ugc-vs-tag{background:#1a1a1a;color:var(--dk-faint)}
+.ugc-vs-new .ugc-vs-tag{background:#0d2e1a;color:var(--green)}
+.ugc-vs-card h3{font-size:1rem;font-weight:800;margin-bottom:14px}
+.ugc-vs-old h3{color:var(--dk-muted)}
+.ugc-vs-new h3{color:var(--w)}
+.ugc-vs-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ugc-vs-list li{font-size:.875rem;line-height:1.45;padding-left:20px;position:relative}
+.ugc-vs-old .ugc-vs-list li{color:var(--dk-faint)}
+.ugc-vs-old .ugc-vs-list li::before{content:'✗';position:absolute;left:0;color:#555}
+.ugc-vs-new .ugc-vs-list li{color:var(--dk-body)}
+.ugc-vs-new .ugc-vs-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+.ugc-quote{
+  margin-top:40px;background:#050505;border-left:3px solid var(--green);
+  border-radius:0 8px 8px 0;padding:28px 32px;
+}
+.ugc-quote p{
+  font-size:clamp(1rem,2.2vw,1.2rem);font-weight:600;line-height:1.7;
+  color:var(--dk-body);font-style:italic;
+}
+.ugc-quote p strong{color:var(--w);font-style:normal}
+
+/* ─────────────────────────────────────────
    FAQ
 ───────────────────────────────────────── */
 #faq{background:var(--g50)}
@@ -926,6 +994,102 @@ button{font-family:inherit;cursor:pointer}
        data-en="<strong>All packages include:</strong> Creative concept, UGC-style filming/production, editing, subtitles and music, and files ready to use in all formats. · <strong>Packages can be combined with any Shopify store design service.</strong>">
       <strong>Todos los paquetes incluyen:</strong> Concepto creativo, producción estilo UGC, edición, subtítulos y música, y archivos listos para usar en todos los formatos. · <strong>Los paquetes se pueden combinar con cualquier servicio de diseño de tienda Shopify.</strong>
     </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ UGC WHY IT WORKS -->
+<section id="ugc-why" class="sec">
+  <div class="wrap">
+
+    <div class="tc reveal">
+      <div class="ugc-pill" data-en="WHY UGC DOMINATES">POR QUÉ EL UGC DOMINA</div>
+    </div>
+    <h2 class="h2 tc reveal" style="color:var(--w);max-width:700px;margin:0 auto"
+        data-en="Your customers don't trust ads.<br>They trust people like them.">
+      Tus clientes no confían en los anuncios.<br>Confían en personas como ellos.
+    </h2>
+    <p class="hero-sub tc sp-16 ugc-why-intro reveal" data-d="1"
+       data-en="UGC (User Generated Content) is content that looks like it was made by real users — not brands. And that difference changes everything.">
+      UGC (User Generated Content) es contenido que parece hecho por usuarios reales, no por marcas. Y esa diferencia lo cambia todo.
+    </p>
+
+    <!-- BIG STAT HERO BLOCK -->
+    <div class="ugc-why-hero reveal" data-d="1">
+      <div class="ugc-why-hero-grid">
+        <div>
+          <div class="ugc-big-stat">4× <span data-en="more clicks">más clics</span></div>
+          <p class="ugc-big-text" data-en="UGC ads generate <strong>4 times more clicks</strong> than traditional brand content. Why? Because they look real, not produced. They fit naturally into the feed. And people stop to watch them.">
+            Los anuncios UGC generan <strong>4 veces más clics</strong> que el contenido de marca tradicional. ¿Por qué? Porque se ven reales, no producidos. Encajan de forma natural en el feed. Y la gente para a verlos.
+          </p>
+        </div>
+        <div>
+          <div class="ugc-big-stat">50% <span data-en="lower CPM">menos CPM</span></div>
+          <p class="ugc-big-text" data-en="UGC content has up to <strong>50% lower cost per thousand impressions</strong>. The algorithm rewards content that generates engagement. More engagement = more reach for less money.">
+            El contenido UGC tiene hasta <strong>50% menos costo por mil impresiones</strong>. El algoritmo premia el contenido que genera engagement. Más engagement = más alcance por menos dinero.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 STATS GRID -->
+    <div class="ugc-why-grid">
+      <div class="ugc-why-card reveal" data-d="1">
+        <div class="ugc-why-num">92%</div>
+        <h3 data-en="Trust real people">Confían en personas reales</h3>
+        <p data-en="92% of consumers trust recommendations from other people over brand-produced advertising. UGC is the digital version of that trust.">El 92% de los consumidores confía más en recomendaciones de otras personas que en publicidad de marcas. El UGC es la versión digital de esa confianza.</p>
+      </div>
+      <div class="ugc-why-card reveal" data-d="2">
+        <div class="ugc-why-num">+29%</div>
+        <h3 data-en="Higher web conversions">Más conversión en web</h3>
+        <p data-en="Ecommerce stores that show UGC content on their product pages see up to 29% more conversions. Real content builds trust at the moment of purchase decision.">Las tiendas ecommerce que muestran contenido UGC en sus páginas de producto ven hasta 29% más conversiones. El contenido real genera confianza en el momento de la decisión de compra.</p>
+      </div>
+      <div class="ugc-why-card reveal" data-d="3">
+        <div class="ugc-why-num">×3</div>
+        <h3 data-en="More time watching">Más tiempo viendo</h3>
+        <p data-en="People spend 3 times more time watching UGC videos than traditional brand content. More time watching = more brand recall = more sales.">Las personas pasan 3 veces más tiempo viendo videos UGC que contenido de marca tradicional. Más tiempo viendo = más recordación de marca = más ventas.</p>
+      </div>
+      <div class="ugc-why-card reveal" data-d="4">
+        <div class="ugc-why-num">70%</div>
+        <h3 data-en="Prefer UGC to discover brands">Prefieren UGC para descubrir marcas</h3>
+        <p data-en="7 out of 10 people prefer discovering new brands through UGC content rather than traditional ads. It's authentic, relatable, and real.">7 de cada 10 personas prefieren descubrir nuevas marcas a través de contenido UGC en vez de anuncios tradicionales. Es auténtico, cercano y real.</p>
+      </div>
+    </div>
+
+    <!-- VS BLOCK -->
+    <div class="ugc-vs">
+      <div class="ugc-vs-card ugc-vs-old reveal" data-d="1">
+        <div class="ugc-vs-tag" data-en="Traditional content">Contenido tradicional</div>
+        <h3 data-en="Expensive, generic, ignored">Costoso, genérico, ignorado</h3>
+        <ul class="ugc-vs-list">
+          <li data-en="Overproduced videos that scream 'ad'">Videos sobreproducidos que gritan "anuncio"</li>
+          <li data-en="People scroll past without stopping">Las personas lo pasan sin detenerse</li>
+          <li data-en="High CPM — you pay more for less reach">CPM alto — pagas más por menos alcance</li>
+          <li data-en="Low trust — looks like it's trying too hard to sell">Poca confianza — parece que está vendiendo forzado</li>
+          <li data-en="Requires expensive studios and crews">Requiere estudios y equipos costosos</li>
+          <li data-en="Slow to produce — weeks of coordination">Lento de producir — semanas de coordinación</li>
+        </ul>
+      </div>
+      <div class="ugc-vs-card ugc-vs-new reveal" data-d="2">
+        <div class="ugc-vs-tag" data-en="UGC · ZYX style">UGC · Estilo ZYX</div>
+        <h3 data-en="Authentic, trusted, converting">Auténtico, confiable, que convierte</h3>
+        <ul class="ugc-vs-list">
+          <li data-en="Natural content that blends into the feed">Contenido natural que se mezcla en el feed</li>
+          <li data-en="People stop, watch, and engage">Las personas paran, ven y se enganchan</li>
+          <li data-en="Up to 50% lower CPM — more reach for less">Hasta 50% menos CPM — más alcance por menos</li>
+          <li data-en="Generates real trust — like a recommendation from a friend">Genera confianza real — como recomendación de un amigo</li>
+          <li data-en="No studios, no complicated logistics">Sin estudios, sin logística complicada</li>
+          <li data-en="Ready in days — not weeks">Listo en días — no semanas</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="ugc-quote reveal" data-d="1">
+      <p data-en="The best ad doesn't look like an ad. It looks like a person you trust telling you about something that changed their life. <strong>That's exactly what UGC is. And that's exactly what we make.</strong>">
+        El mejor anuncio no parece un anuncio. Parece una persona en la que confías contándote algo que le cambió la vida. <strong>Eso es exactamente lo que es el UGC. Y eso es exactamente lo que hacemos.</strong>
+      </p>
+    </div>
+
   </div>
 </section>
 
