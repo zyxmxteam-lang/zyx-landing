@@ -1,258 +1,492 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZYX · Meta Ads con Marca Personal | $10,000 MXN/mes</title>
-<meta name="description" content="No lanzamos anuncios. Nos ganamos el scroll. Videos de 40 segundos de marca personal en Meta. Campaña nueva cada mes. Solo 5 clientes activos.">
+<title>ZYX · Tu conocimiento. Nuestro sistema. Meta hace el resto.</title>
+<meta name="description" content="Videos de marca personal, campañas de Meta Ads, avatares IA, infoproductos y estrategia. El sistema completo bajo un solo equipo. Solo 5 clientes activos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+
+/* ─────────────────────────────────────────
+   RESET & TOKENS
+───────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
   --k:#000;--w:#fff;
-  --g50:#fafafa;--g100:#f4f4f4;--g200:#e5e5e5;
-  --g400:#a3a3a3;--g500:#737373;--g600:#525252;
-  --g700:#404040;--g800:#262626;--g900:#171717;
-  --r:3px;
-  --f:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
+  /* Light surfaces */
+  --g50:#fafafa;--g100:#f3f3f3;--g200:#e5e5e5;--g300:#d4d4d4;
+  /* Dark-bg readable text — much lighter than before */
+  --dk-body:#b8b8b8;   /* body text on black */
+  --dk-muted:#888;     /* secondary on black */
+  --dk-faint:#555;     /* very muted on black */
+  --dk-border:#222;    /* borders on black */
+  /* Light-surface text */
+  --lt-body:#555;
+  --lt-muted:#888;
+  --lt-border:#e5e5e5;
+  --r:4px;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--f);background:var(--w);color:var(--k);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--w);color:var(--k);
+  line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button{font-family:var(--f)}
+button{font-family:inherit;cursor:pointer}
 
-/* TYPOGRAPHY */
-.h1{font-size:clamp(1.75rem,5.5vw,3.5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em}
-.h2{font-size:clamp(1.35rem,3.5vw,2.25rem);font-weight:800;line-height:1.15;letter-spacing:-.02em}
-.body{font-size:.9375rem;line-height:1.75;color:var(--g500)}
-.label{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g400)}
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────── */
+.disp{font-size:clamp(2.2rem,6.5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-.035em}
+.h1  {font-size:clamp(1.9rem,5.5vw,3.75rem);font-weight:900;line-height:1.07;letter-spacing:-.03em}
+.h2  {font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:800;line-height:1.13;letter-spacing:-.02em}
+.h3  {font-size:clamp(.975rem,2vw,1.15rem);font-weight:700;line-height:1.3}
+.label{font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lt-muted)}
+.label.inv{color:var(--dk-faint)}
 
-/* LAYOUT */
-.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 20px}
-@media(min-width:640px){.wrap{padding:0 32px}}
-.sec{padding:64px 0}
-@media(min-width:768px){.sec{padding:96px 0}}
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+.sec{padding:80px 0}
+@media(min-width:768px){.sec{padding:112px 0}}
 .tc{text-align:center}
-.mt-4{margin-top:4px}.mt-8{margin-top:8px}.mt-12{margin-top:12px}
-.mt-16{margin-top:16px}.mt-20{margin-top:20px}.mt-24{margin-top:24px}
-.mt-32{margin-top:32px}.mt-40{margin-top:40px}.mt-48{margin-top:48px}
-.mb-4{margin-bottom:4px}.mb-8{margin-bottom:8px}.mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}
 
-/* NAV */
-#nav{position:sticky;top:0;z-index:100;background:var(--k);border-bottom:1px solid var(--g900)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.nav-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em}
-.nav-links{display:none;list-style:none;gap:24px}
-@media(min-width:800px){.nav-links{display:flex}}
-.nav-links a{color:var(--g400);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;transition:color .15s}
+/* Spacer helpers */
+.sp-4 {margin-top:4px} .sp-8 {margin-top:8px}  .sp-12{margin-top:12px}
+.sp-16{margin-top:16px}.sp-20{margin-top:20px}.sp-24{margin-top:24px}
+.sp-32{margin-top:32px}.sp-40{margin-top:40px}.sp-48{margin-top:48px}
+.sp-56{margin-top:56px}.sp-64{margin-top:64px}
+.mb-8 {margin-bottom:8px}.mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}
+.mb-24{margin-bottom:24px}.mb-32{margin-bottom:32px}.mb-40{margin-bottom:40px}
+.mb-48{margin-bottom:48px}.mb-56{margin-bottom:56px}
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.40s}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+#nav{position:sticky;top:0;z-index:100;background:var(--k);border-bottom:1px solid #111}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;
+  height:62px;gap:12px;
+}
+.nav-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em;flex-shrink:0}
+.nav-links{display:none;list-style:none;gap:28px;align-items:center}
+@media(min-width:820px){.nav-links{display:flex}}
+.nav-links a{
+  color:var(--dk-muted);font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;
+  transition:color .15s;
+}
 .nav-links a:hover{color:var(--w)}
-.nav-cta{background:var(--w);color:var(--k);padding:8px 18px;border-radius:var(--r);font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;transition:opacity .15s;flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lang-btn{
+  background:transparent;border:1px solid #333;color:var(--dk-muted);
+  padding:6px 12px;border-radius:var(--r);font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;transition:all .15s;
+}
+.lang-btn:hover{border-color:var(--w);color:var(--w)}
+.nav-cta{
+  background:var(--w);color:var(--k);padding:9px 20px;border-radius:var(--r);
+  font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;
+  white-space:nowrap;transition:opacity .15s;border:none;
+}
 .nav-cta:hover{opacity:.85}
 
-/* BUTTONS */
-.btn{display:inline-block;padding:16px 32px;border-radius:var(--r);font-weight:800;font-size:.875rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;border:none;transition:transform .15s,opacity .15s;white-space:nowrap;line-height:1}
-.btn:hover{transform:translateY(-1px);opacity:.9}
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{
+  display:inline-block;padding:17px 36px;border-radius:var(--r);
+  font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;
+  cursor:pointer;border:none;transition:transform .15s var(--ease),opacity .15s;
+  white-space:nowrap;line-height:1;
+}
+.btn:hover{transform:translateY(-2px);opacity:.92}
 .btn:active{transform:none}
-.btn-light{background:var(--w);color:var(--k)}
-.btn-ol{background:transparent;color:var(--g400);border:1px solid var(--g800)}
+.btn-w  {background:var(--w);color:var(--k)}
+.btn-ol {background:transparent;color:var(--dk-muted);border:1px solid #333}
 .btn-ol:hover{border-color:var(--w);color:var(--w)}
 .btn-full{width:100%;text-align:center}
 @media(min-width:480px){.btn-full{width:auto}}
 
-/* HERO */
-#hero{background:var(--k);color:var(--w);padding:64px 0}
-@media(min-width:768px){#hero{padding:100px 0 88px}}
-.hero-badge{display:inline-block;background:var(--g900);border:1px solid var(--g800);color:var(--g400);font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:var(--r);margin-bottom:32px}
-.hero-h{color:var(--w);max-width:720px;margin:0 auto 20px}
-.hero-sub{color:var(--g400);font-size:clamp(.9375rem,2vw,1.0625rem);line-height:1.8;max-width:500px;margin:0 auto}
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+#hero{background:var(--k);color:var(--w);padding:88px 0 80px}
+@media(min-width:768px){#hero{padding:112px 0 96px}}
+
+.hero-badge{
+  display:inline-block;background:#0d0d0d;border:1px solid #222;
+  color:var(--dk-muted);font-size:.6875rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 18px;
+  border-radius:30px;margin-bottom:36px;
+}
+.hero-h{color:var(--w);max-width:760px;margin:0 auto}
+.hero-sub{
+  color:var(--dk-body);font-size:clamp(.975rem,2.2vw,1.125rem);
+  line-height:1.85;max-width:540px;margin:0 auto;
+}
 .hero-sub strong{color:var(--w)}
 
 /* Countdown */
-.cd-wrap{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g800);padding:12px 20px;border-radius:var(--r);flex-wrap:wrap;justify-content:center}
-.cd-label{color:var(--g500);font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-right:4px}
-.cd-num{display:block;font-size:clamp(1.4rem,4vw,2rem);font-weight:900;color:var(--w);line-height:1;min-width:44px;font-variant-numeric:tabular-nums}
-.cd-sep{font-size:clamp(1.4rem,4vw,2rem);font-weight:900;color:var(--g800);line-height:1}
+.cd-row{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid #222;padding:12px 22px;border-radius:var(--r);
+  flex-wrap:wrap;justify-content:center;
+}
+.cd-label{
+  color:var(--dk-muted);font-size:.6875rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;margin-right:4px;
+}
+.cd-num{
+  display:block;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;
+  color:var(--w);line-height:1;min-width:46px;font-variant-numeric:tabular-nums;
+}
+.cd-sep{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;color:#2a2a2a;line-height:1}
 
 /* Slots */
-.slots{display:inline-flex;align-items:center;gap:8px;color:var(--g500);font-size:.8125rem}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--w);flex-shrink:0;animation:blink 2s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.slots-row{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--dk-muted);font-size:.8125rem;
+}
+.pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--w);flex-shrink:0;
+  animation:blink 2s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.18}}
 
 /* Price */
-.price-num{font-size:clamp(2.75rem,9vw,6rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.04em}
-.price-sfx{color:var(--g600);font-size:clamp(.875rem,2vw,1rem);font-weight:400;letter-spacing:0}
+.hero-price{font-size:clamp(3rem,10vw,6.5rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.04em}
+.hero-price sup{font-size:.35em;font-weight:700;vertical-align:.25em;letter-spacing:0}
+.price-tag{color:var(--dk-muted);font-size:clamp(.875rem,2vw,1.05rem);font-weight:400;letter-spacing:0}
 
-/* Hero CTAs */
+/* Hero CTA row */
 .hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center}
 @media(min-width:480px){.hero-ctas{flex-direction:row;justify-content:center}}
-.trust{color:var(--g700);font-size:.75rem;letter-spacing:.04em}
+.trust-line{color:var(--dk-faint);font-size:.75rem;letter-spacing:.04em}
 
-/* STATS BAR */
-#stats{background:var(--g900);border-top:1px solid var(--g800);border-bottom:1px solid var(--g800);padding:32px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
-.stat-n{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.03em;margin-bottom:4px}
-.stat-l{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--g500)}
+/* ─────────────────────────────────────────
+   STATS BAR
+───────────────────────────────────────── */
+#stats{
+  background:#0a0a0a;border-top:1px solid #1a1a1a;
+  border-bottom:1px solid #1a1a1a;padding:36px 0;
+}
+.stats-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+.stat-n{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.035em;margin-bottom:5px}
+.stat-l{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--dk-faint)}
 
-/* PHILOSOPHY */
-#filosofia{background:var(--k);color:var(--w)}
-#filosofia .label{color:var(--g700)}
-#filosofia .h2{color:var(--w)}
-.q-block{border-left:2px solid var(--g800);padding-left:24px;margin:32px 0;color:var(--g400);font-size:clamp(.9375rem,2vw,1.0625rem);line-height:1.85;max-width:640px}
-.q-block strong{color:var(--w)}
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g800);border:1px solid var(--g800);border-radius:var(--r);overflow:hidden;margin-top:48px}
-@media(min-width:640px){.pillars{grid-template-columns:repeat(4,1fr)}}
-.pillar{background:var(--k);padding:24px 20px}
-.pillar-n{font-size:.6875rem;font-weight:700;letter-spacing:.14em;color:var(--g700);margin-bottom:12px}
-.pillar h3{color:var(--w);font-size:.9375rem;font-weight:700;margin-bottom:8px;line-height:1.3}
-.pillar p{color:var(--g600);font-size:.8125rem;line-height:1.65}
+/* ─────────────────────────────────────────
+   PAS SECTION (Problem-Agitate-Solution)
+───────────────────────────────────────── */
+#por-que{background:var(--k);color:var(--w)}
+#por-que .label{color:var(--dk-faint)}
+#por-que .h2{color:var(--w)}
 
-/* DELIVERABLES */
-#que-hacemos{background:var(--g50)}
-.delivs{display:grid;grid-template-columns:1fr;gap:16px;margin-top:48px}
-@media(min-width:480px){.delivs{grid-template-columns:1fr 1fr}}
-@media(min-width:800px){.delivs{grid-template-columns:repeat(4,1fr)}}
-.deliv{background:var(--w);border:1px solid var(--g200);border-radius:var(--r);padding:32px 24px}
-.deliv-n{font-size:3rem;font-weight:900;color:var(--g200);line-height:1;letter-spacing:-.04em;margin-bottom:12px}
-.deliv h3{color:var(--k);font-size:.9375rem;font-weight:700;margin-bottom:8px}
-.deliv p{font-size:.875rem;color:var(--g500);line-height:1.7}
+.pas-body{
+  max-width:640px;color:var(--dk-body);
+  font-size:clamp(.975rem,2.2vw,1.0625rem);line-height:1.9;
+}
+.pas-body strong{color:var(--w)}
+.pas-body em{color:var(--dk-body);font-style:normal}
 
-/* PROBLEM / SOLUTION */
-#problema{background:var(--w)}
-.ps{display:grid;grid-template-columns:1fr;gap:16px;margin-top:48px}
-@media(min-width:640px){.ps{grid-template-columns:1fr 1fr}}
-.ps-card{border:1px solid var(--g200);border-radius:var(--r);padding:32px 28px}
-.ps-card.dk{background:var(--k);border-color:var(--k)}
-.ps-ttl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--g400);margin-bottom:24px}
-.ps-card.dk .ps-ttl{color:var(--g700)}
-.ps-list{list-style:none;display:flex;flex-direction:column;gap:14px}
-.ps-li{display:flex;gap:12px;font-size:.9rem;color:var(--g500);line-height:1.5}
-.ps-card.dk .ps-li{color:var(--g400)}
-.ps-card.dk .ps-li b{color:var(--w)}
-.ico{flex-shrink:0;width:16px;margin-top:2px;font-size:.8rem;font-weight:800}
-.ico.x{color:var(--g200)}.ico.v{color:var(--w)}
+.pas-pull{
+  border-left:2px solid #2a2a2a;padding-left:28px;
+  margin:40px 0;
+}
+.pas-pull p{
+  color:var(--dk-body);font-size:clamp(1rem,2.5vw,1.25rem);
+  line-height:1.75;font-weight:500;
+}
+.pas-pull p strong{color:var(--w)}
 
-/* INCLUDES */
+.pas-3{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:#1a1a1a;border:1px solid #1a1a1a;
+  border-radius:var(--r);overflow:hidden;margin-top:56px;
+}
+@media(min-width:600px){.pas-3{grid-template-columns:repeat(3,1fr)}}
+.pas-item{background:var(--k);padding:32px 28px}
+.pas-item-n{
+  font-size:.6875rem;font-weight:700;letter-spacing:.14em;
+  color:var(--dk-faint);margin-bottom:14px;
+}
+.pas-item h3{color:var(--w);font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.3}
+.pas-item p{color:var(--dk-muted);font-size:.875rem;line-height:1.7}
+
+/* ─────────────────────────────────────────
+   ECOSYSTEM / SERVICES
+───────────────────────────────────────── */
+#ecosistema{background:var(--g50)}
+.eco-note{
+  display:inline-block;font-size:.8125rem;color:var(--lt-muted);
+  border-top:1px solid var(--lt-border);padding-top:20px;margin-top:48px;
+  max-width:580px;line-height:1.7;
+}
+
+.svc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:56px}
+@media(min-width:540px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+
+.svc-card{
+  background:var(--w);border:1px solid var(--lt-border);border-radius:var(--r);
+  padding:36px 28px;position:relative;transition:border-color .2s,box-shadow .2s;
+}
+.svc-card:hover{border-color:#bbb;box-shadow:0 6px 32px rgba(0,0,0,.07)}
+.svc-card.featured{background:var(--k);border-color:var(--k)}
+.svc-badge{
+  display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;background:var(--w);color:var(--k);
+  padding:3px 9px;border-radius:2px;margin-bottom:20px;
+}
+.svc-card:not(.featured) .svc-badge{
+  background:var(--g100);color:var(--lt-muted);
+}
+.svc-icon{font-size:1.5rem;margin-bottom:18px;line-height:1}
+.svc-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.3}
+.svc-card:not(.featured) h3{color:var(--k)}
+.svc-card.featured h3{color:var(--w)}
+.svc-card p{font-size:.875rem;line-height:1.7}
+.svc-card:not(.featured) p{color:var(--lt-body)}
+.svc-card.featured p{color:var(--dk-body)}
+.svc-price{
+  display:inline-block;font-size:1.1rem;font-weight:800;color:var(--w);
+  margin-top:20px;
+}
+.svc-price span{font-size:.8rem;font-weight:400;color:var(--dk-muted)}
+
+/* ─────────────────────────────────────────
+   DELIVERABLES (what $10k includes)
+───────────────────────────────────────── */
 #incluye{background:var(--k);color:var(--w)}
-#incluye .label{color:var(--g700)}
+#incluye .label{color:var(--dk-faint)}
 #incluye .h2{color:var(--w)}
-.inc-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--g900);border:1px solid var(--g900);border-radius:var(--r);overflow:hidden;margin-top:48px}
+
+.inc-grid{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:#1a1a1a;border:1px solid #1a1a1a;
+  border-radius:var(--r);overflow:hidden;margin-top:56px;
+}
 @media(min-width:480px){.inc-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:768px){.inc-grid{grid-template-columns:repeat(3,1fr)}}
-.inc-card{background:var(--k);padding:28px 24px;display:flex;gap:16px;align-items:flex-start}
-.inc-ico{flex-shrink:0;font-size:.875rem;color:var(--w);margin-top:3px}
-.inc-card h4{color:var(--w);font-size:.9rem;font-weight:700;margin-bottom:5px}
-.inc-card p{color:var(--g600);font-size:.8125rem;line-height:1.65}
-.not-blk{border:1px solid var(--g900);border-radius:var(--r);padding:28px 24px;margin-top:20px}
-.not-ttl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--g700);margin-bottom:16px}
-.not-items{display:grid;grid-template-columns:1fr;gap:8px}
-@media(min-width:480px){.not-items{grid-template-columns:1fr 1fr}}
-.not-li{display:flex;gap:8px;color:var(--g700);font-size:.8125rem}
-.why-bx{background:var(--g900);border:1px solid var(--g800);border-radius:var(--r);padding:40px 32px;margin-top:20px;text-align:center}
-.why-bx h3{color:var(--w);font-size:1.25rem;font-weight:700;margin-bottom:12px}
-.why-bx p{color:var(--g500);max-width:520px;margin:0 auto;font-size:.9375rem;line-height:1.75}
+.inc-card{background:var(--k);padding:30px 26px;display:flex;gap:18px;align-items:flex-start}
+.inc-ico{flex-shrink:0;font-size:1rem;color:var(--w);margin-top:2px}
+.inc-card h4{color:var(--w);font-size:.9375rem;font-weight:700;margin-bottom:7px}
+.inc-card p{color:var(--dk-muted);font-size:.8125rem;line-height:1.7}
 
-/* PROCESS */
+.not-blk{
+  border:1px solid #1a1a1a;border-radius:var(--r);
+  padding:28px 28px;margin-top:20px;
+}
+.not-ttl{
+  font-size:.6875rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--dk-faint);margin-bottom:18px;
+}
+.not-items{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:480px){.not-items{grid-template-columns:1fr 1fr}}
+.not-li{display:flex;gap:10px;color:var(--dk-faint);font-size:.8125rem}
+
+.why-box{
+  background:#090909;border:1px solid #1e1e1e;border-radius:var(--r);
+  padding:44px 36px;margin-top:20px;text-align:center;
+}
+.why-box h3{color:var(--w);font-size:1.3rem;font-weight:800;margin-bottom:14px}
+.why-box p{color:var(--dk-body);max-width:520px;margin:0 auto;font-size:.9375rem;line-height:1.8}
+
+/* ─────────────────────────────────────────
+   BEFORE / AFTER
+───────────────────────────────────────── */
+#antes-despues{background:var(--w)}
+.ps-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:56px}
+@media(min-width:640px){.ps-grid{grid-template-columns:1fr 1fr}}
+.ps-card{border:1px solid var(--lt-border);border-radius:var(--r);padding:36px 30px}
+.ps-card.dk{background:var(--k);border-color:var(--k)}
+.ps-ttl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#bbb;margin-bottom:26px}
+.ps-card:not(.dk) .ps-ttl{color:var(--lt-muted)}
+.ps-list{list-style:none;display:flex;flex-direction:column;gap:15px}
+.ps-li{display:flex;gap:13px;font-size:.9375rem;line-height:1.55}
+.ps-card:not(.dk) .ps-li{color:var(--lt-body)}
+.ps-card.dk .ps-li{color:var(--dk-body)}
+.ps-card.dk .ps-li b{color:var(--w)}
+.ico{flex-shrink:0;width:17px;margin-top:2px;font-size:.8rem;font-weight:800}
+.ico.x{color:#444}.ico.v{color:var(--w)}
+
+/* ─────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────── */
 #proceso{background:var(--g50)}
-.steps{margin-top:48px;border:1px solid var(--g200);border-radius:var(--r);overflow:hidden}
-.step{display:flex;gap:20px;align-items:flex-start;padding:24px;border-bottom:1px solid var(--g200);background:var(--w);transition:background .15s}
-@media(min-width:640px){.step{gap:28px;padding:28px 36px}}
+.steps{margin-top:56px;border:1px solid var(--lt-border);border-radius:var(--r);overflow:hidden}
+.step{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:28px 28px;border-bottom:1px solid var(--lt-border);
+  background:var(--w);transition:background .15s;
+}
+@media(min-width:640px){.step{gap:32px;padding:32px 40px}}
 .step:hover{background:var(--g50)}
 .step:last-child{border-bottom:none}
-.step-n{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;color:var(--g200);line-height:1;flex-shrink:0;letter-spacing:-.04em;min-width:40px}
-.step h3{font-size:1rem;color:var(--k);margin-bottom:5px;font-weight:700}
-.step p{font-size:.875rem;color:var(--g500);line-height:1.7}
+.step-n{
+  font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;color:var(--g200);
+  line-height:1;flex-shrink:0;letter-spacing:-.04em;min-width:44px;
+}
+.step h3{font-size:1.0rem;color:var(--k);margin-bottom:6px;font-weight:700}
+.step p{font-size:.875rem;color:var(--lt-body);line-height:1.75}
 
-/* COMPARISON */
+/* ─────────────────────────────────────────
+   COMPARISON
+───────────────────────────────────────── */
 #comparacion{background:var(--w)}
-.tbl-hint{display:block;font-size:.75rem;color:var(--g400);margin-bottom:8px;margin-top:48px}
+.tbl-hint{
+  display:block;font-size:.75rem;color:var(--lt-muted);
+  margin-bottom:10px;margin-top:56px;
+}
 @media(min-width:640px){.tbl-hint{display:none}}
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--g200);border-radius:var(--r)}
-@media(min-width:640px){.tbl-wrap{margin-top:48px}}
-table{width:100%;min-width:560px;border-collapse:collapse;font-size:.875rem}
+.tbl-wrap{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--lt-border);border-radius:var(--r);
+}
+@media(min-width:640px){.tbl-wrap{margin-top:56px}}
+table{width:100%;min-width:580px;border-collapse:collapse;font-size:.875rem}
 thead tr{border-bottom:2px solid var(--k)}
-th{padding:16px 20px;text-align:left;font-size:.6875rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:var(--w)}
-th:first-child{color:var(--g400)}
+th{
+  padding:17px 22px;text-align:left;
+  font-size:.675rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.08em;background:var(--w);
+}
+th:first-child{color:var(--lt-muted)}
 th.hl{background:var(--k);color:var(--w)}
-td{padding:14px 20px;color:var(--g500);border-bottom:1px solid var(--g100)}
+td{padding:15px 22px;color:var(--lt-body);border-bottom:1px solid var(--g100)}
 tr:last-child td{border-bottom:none}
 tr:hover td:not(.hl){background:var(--g50)}
 td:first-child{font-weight:700;color:var(--k)}
-td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:var(--g800)}
+td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:#1a1a1a}
 
-/* CTA BLOCK */
-.cta-blk{background:var(--k);color:var(--w);padding:88px 0;text-align:center}
-.cta-blk .label{color:var(--g700)}
+/* ─────────────────────────────────────────
+   CTA BLOCK
+───────────────────────────────────────── */
+.cta-blk{background:var(--k);text-align:center;padding:100px 0}
+.cta-blk .label{color:var(--dk-faint)}
 .cta-blk .h2{color:var(--w)}
-.cta-price{font-size:clamp(4rem,13vw,8.5rem);font-weight:900;color:var(--w);line-height:1;letter-spacing:-.04em}
-.cta-per{color:var(--g700);font-size:.9375rem}
-.cta-list{list-style:none;display:inline-flex;flex-direction:column;gap:12px;text-align:left;margin:0 auto}
-.cta-list li{display:flex;gap:12px;color:var(--g500);font-size:.9375rem}
+.cta-price-big{
+  font-size:clamp(4.5rem,14vw,9.5rem);font-weight:900;color:var(--w);
+  line-height:1;letter-spacing:-.04em;
+}
+.cta-sub{color:var(--dk-muted);font-size:.9375rem}
+.cta-list{list-style:none;display:inline-flex;flex-direction:column;gap:13px;text-align:left;margin:0 auto}
+.cta-list li{display:flex;gap:14px;color:var(--dk-body);font-size:.9375rem}
 .cta-list li b{color:var(--w)}
-.cta-trust{color:var(--g800);font-size:.75rem;letter-spacing:.04em}
+.cta-trust{color:var(--dk-faint);font-size:.75rem;letter-spacing:.04em}
 
-/* FAQ */
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
 #faq{background:var(--g50)}
-.faqs{margin-top:48px;border:1px solid var(--g200);border-radius:var(--r);overflow:hidden}
-.faq{background:var(--w);border-bottom:1px solid var(--g200)}
+.faqs{margin-top:56px;border:1px solid var(--lt-border);border-radius:var(--r);overflow:hidden}
+.faq{background:var(--w);border-bottom:1px solid var(--lt-border)}
 .faq:last-child{border-bottom:none}
-.faq-btn{width:100%;background:none;border:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:.9375rem;font-weight:700;color:var(--k);cursor:pointer;text-align:left;transition:background .15s}
-@media(min-width:640px){.faq-btn{padding:24px 32px}}
+.faq-btn{
+  width:100%;background:none;border:none;padding:22px 26px;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  font-size:.9375rem;font-weight:700;color:var(--k);
+  cursor:pointer;text-align:left;transition:background .15s;
+}
+@media(min-width:640px){.faq-btn{padding:26px 36px}}
 .faq-btn:hover{background:var(--g50)}
-.faq-arr{flex-shrink:0;width:24px;height:24px;border:1px solid var(--g200);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--g400);transition:transform .2s,background .15s,border-color .15s}
+.faq-arr{
+  flex-shrink:0;width:26px;height:26px;border:1px solid var(--lt-border);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;color:var(--lt-muted);transition:transform .25s var(--ease),background .15s,border-color .15s;
+}
 .faq.open .faq-arr{transform:rotate(180deg);background:var(--k);border-color:var(--k);color:var(--w)}
-.faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
 .faq.open .faq-body{max-height:500px}
-.faq-ans{padding:0 24px 24px;font-size:.9rem;color:var(--g500);line-height:1.8}
-@media(min-width:640px){.faq-ans{padding:0 32px 28px}}
+.faq-ans{padding:0 26px 26px;font-size:.9rem;color:var(--lt-body);line-height:1.85}
+@media(min-width:640px){.faq-ans{padding:0 36px 30px}}
 
-/* FOOTER */
-#footer{background:var(--k);padding:44px 0;text-align:center;border-top:1px solid var(--g900)}
-.foot-logo{font-size:1.5rem;font-weight:900;color:var(--w);letter-spacing:.12em;margin-bottom:20px}
-.foot-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}
-.foot-links a{color:var(--g700);font-size:.8125rem;transition:color .15s}
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+#footer{background:var(--k);padding:48px 0;text-align:center;border-top:1px solid #111}
+.foot-logo{font-size:1.6rem;font-weight:900;color:var(--w);letter-spacing:.12em;margin-bottom:22px}
+.foot-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:22px}
+.foot-links a{color:var(--dk-faint);font-size:.8125rem;transition:color .15s}
 .foot-links a:hover{color:var(--w)}
-.foot-copy{color:var(--g700);font-size:.8125rem}
+.foot-copy{color:var(--dk-faint);font-size:.8125rem}
+
+/* ─────────────────────────────────────────
+   DIVIDER LINE
+───────────────────────────────────────── */
+.rule{height:1px;background:var(--lt-border);border:none;margin:0}
+.rule.inv{background:#1a1a1a}
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══════ NAV ══════ -->
 <header id="nav">
   <div class="wrap nav-in">
     <a href="#" class="nav-logo">ZYX</a>
-    <nav aria-label="Principal">
+    <nav>
       <ul class="nav-links">
-        <li><a href="#que-hacemos">Servicio</a></li>
-        <li><a href="#incluye">Incluye</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#comparacion">Comparación</a></li>
+        <li><a href="#ecosistema" data-en="Services">Servicios</a></li>
+        <li><a href="#incluye" data-en="Includes">Incluye</a></li>
+        <li><a href="#proceso" data-en="Process">Proceso</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
-    <a href="#checkout" class="nav-cta">Quiero mi cupo →</a>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+      <a href="#checkout" class="nav-cta" data-en="Get my spot →">Quiero mi cupo →</a>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ══════ HERO ══════ -->
 <section id="hero">
   <div class="wrap tc">
-    <div class="hero-badge">Solo 5 cupos al mes &nbsp;·&nbsp; Campaña nueva cada mes</div>
 
-    <h1 class="h1 hero-h">
-      No lanzamos anuncios.<br>Nos ganamos el scroll.
+    <div class="hero-badge reveal"
+      data-en="Only 5 spots/month · 100% Personal Brand">
+      Solo 5 cupos al mes · 100% Marca Personal
+    </div>
+
+    <h1 class="h1 hero-h sp-4 reveal"
+      data-en="Your expertise.<br>Our system.<br>Meta does the rest.">
+      Tu conocimiento.<br>Nuestro sistema.<br>Meta hace el resto.
     </h1>
 
-    <p class="hero-sub">
-      La mayoría de las agencias corren imágenes estáticas que tu audiencia ignora en 2 segundos.
-      Nosotros corremos <strong>videos de 40 segundos de marca personal</strong> que se sienten como
-      contenido — no como publicidad que quieren saltarse.
+    <p class="hero-sub sp-24 reveal"
+      data-en="40-second personal brand videos. Active Meta campaigns. AI avatars. Infoproducts. Brand strategy. <strong>One team. One system.</strong> So your business sells even when you're not recording.">
+      Videos de 40 segundos. Campañas activas en Meta. Avatares IA. Infoproductos. Estrategia de marca.
+      <strong>Un solo equipo. Un solo sistema.</strong> Para que tu negocio venda aunque no estés grabando.
     </p>
 
-    <div class="mt-40 mb-16">
-      <div class="cd-wrap">
-        <span class="cd-label">Cupo cierra en</span>
+    <!-- Countdown -->
+    <div class="sp-48 mb-24 reveal">
+      <div class="cd-row">
+        <span class="cd-label" data-en="Spot closes in">Cupo cierra en</span>
         <div><span class="cd-num" id="cdh">23</span></div>
         <span class="cd-sep">:</span>
         <div><span class="cd-num" id="cdm">59</span></div>
@@ -261,446 +495,634 @@ td.hl{background:var(--k);color:var(--w);font-weight:700;border-bottom-color:var
       </div>
     </div>
 
-    <div class="mb-40">
-      <div class="slots">
-        <span class="dot"></span>
-        2 de 5 cupos disponibles este mes
+    <!-- Slots -->
+    <div class="mb-44 reveal">
+      <div class="slots-row">
+        <span class="pulse"></span>
+        <span data-en="2 of 5 spots available this month">2 de 5 cupos disponibles este mes</span>
       </div>
     </div>
 
-    <div class="mb-40">
-      <div class="price-num">$10,000 <span class="price-sfx">MXN / mes</span></div>
+    <!-- Price -->
+    <div class="mb-48 reveal">
+      <div class="hero-price">
+        $10,000 <span class="price-tag" data-en="MXN / month">MXN / mes</span>
+      </div>
     </div>
 
-    <div class="hero-ctas mb-16">
-      <a href="#checkout" class="btn btn-light btn-full">Quiero mi cupo →</a>
-      <a href="#que-hacemos" class="btn btn-ol btn-full">Ver qué incluye</a>
+    <!-- CTAs -->
+    <div class="hero-ctas mb-20 reveal">
+      <a href="#checkout" class="btn btn-w btn-full"
+        data-en="Get my spot →">Quiero mi cupo →</a>
+      <a href="#ecosistema" class="btn btn-ol btn-full"
+        data-en="See what's included">Ver qué incluye</a>
     </div>
 
-    <p class="trust">Sin contratos anuales &nbsp;·&nbsp; Cancela cuando quieras &nbsp;·&nbsp; Pago mensual</p>
+    <p class="trust-line reveal"
+      data-en="No annual contracts · Cancel anytime · Monthly billing">
+      Sin contratos anuales · Cancela cuando quieras · Pago mensual
+    </p>
+
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ══════ STATS ══════ -->
 <div id="stats">
   <div class="wrap">
-    <div class="stats-grid">
-      <div>
+    <div class="stats-g">
+      <div class="reveal">
         <div class="stat-n">4</div>
-        <div class="stat-l">Creativos / mes</div>
+        <div class="stat-l" data-en="Creatives / month">Creativos / mes</div>
       </div>
-      <div>
+      <div class="reveal" data-d="1">
         <div class="stat-n">40s</div>
-        <div class="stat-l">Formato video</div>
+        <div class="stat-l" data-en="Video format">Formato video</div>
       </div>
-      <div>
-        <div class="stat-n">Máx 5</div>
-        <div class="stat-l">Clientes activos</div>
+      <div class="reveal" data-d="2">
+        <div class="stat-n">5</div>
+        <div class="stat-l" data-en="Max active clients">Clientes máx activos</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PHILOSOPHY -->
-<section id="filosofia" class="sec">
+<!-- ══════ PAS SECTION ══════ -->
+<section id="por-que" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Nuestra filosofía</div>
-    <h2 class="h2">La mayoría de las agencias<br>te cobran por el scroll.<br>Nosotros lo ganamos.</h2>
 
-    <div class="q-block">
-      Las agencias típicas lanzan imágenes estáticas y carruseles que tu audiencia ignora en 2 segundos.
-      El resultado: presupuesto quemado, CPM inflado, resultados mediocres.
-      Nosotros hacemos lo opuesto: <strong>videos de 40 segundos de marca personal</strong> que se sienten
-      como el contenido que la gente vino a ver — no como el anuncio que quieren saltarse.
-      El resultado es una campaña que detiene el scroll, filtra a los curiosos y te entrega personas
-      que realmente quieren comprar.
+    <div class="label inv mb-12 reveal"
+      data-en="Why it works">Por qué funciona</div>
+
+    <h2 class="h2 reveal"
+      data-en="Most people with valuable knowledge<br>are stuck in the feast-or-famine cycle.<br>We fix that.">
+      La mayoría de los que tienen<br>conocimiento valioso dependen<br>100% del boca a boca.
+    </h2>
+
+    <div class="pas-pull reveal">
+      <p data-en="Good month. Slow month. No system. No predictability. No scale. <strong>Meanwhile, someone with less expertise than you already has 50 clients — because they learned how to use Meta.</strong>">
+        Un mes con clientes. Un mes en seco. Sin sistema. Sin predecibilidad. Sin escala.
+        <strong>Mientras tanto, alguien con menos talento que tú ya tiene 50 clientes — porque aprendió a usar Meta.</strong>
+      </p>
     </div>
 
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-n">01</div>
-        <h3>Video que gana la atención</h3>
-        <p>40 segundos de tu cara y tu voz. El prospecto ve el pitch completo, no solo los primeros 3 segundos.</p>
+    <p class="pas-body reveal"
+      data-en="ZYX builds the complete system: videos that stop the scroll, campaigns that convert, funnels that close, and a brand people remember. So your ideal clients find you every day — even when you're not recording, posting, or pitching.">
+      ZYX construye el sistema completo: videos que detienen el scroll, campañas que convierten,
+      funnels que cierran y una marca que la gente recuerda. Para que tus clientes ideales
+      lleguen a ti todos los días — aunque no estés grabando, publicando ni haciendo ventas.
+    </p>
+
+    <div class="pas-3">
+      <div class="pas-item reveal">
+        <div class="pas-item-n" data-en="THE PROBLEM">EL PROBLEMA</div>
+        <h3 data-en="No system, no predictability">Sin sistema, sin predecibilidad</h3>
+        <p data-en="You depend on referrals and organic content. Good months, bad months. No way to scale what you can't control.">Dependes de referidos y contenido orgánico. Meses buenos, meses malos. No puedes escalar lo que no controlas.</p>
       </div>
-      <div class="pillar">
-        <div class="pillar-n">02</div>
-        <h3>Marca personal, no banner genérico</h3>
-        <p>Tu historia, tu autoridad, tu oferta. No un anuncio corporativo que nadie recuerda dos segundos después.</p>
+      <div class="pas-item reveal" data-d="1">
+        <div class="pas-item-n" data-en="THE MISS">LO QUE FALTA</div>
+        <h3 data-en="Video + Campaign + Funnel = System">Video + Campaña + Funnel = Sistema</h3>
+        <p data-en="Most agencies only manage the campaign. Nobody builds the creative. Nobody builds the funnel. Nobody connects the dots.">La mayoría de las agencias solo corre la campaña. Nadie construye el creativo. Nadie arma el funnel. Nadie conecta todo.</p>
       </div>
-      <div class="pillar">
-        <div class="pillar-n">03</div>
-        <h3>Creativos frescos cada mes</h3>
-        <p>Campaña nueva mensual para que el algoritmo siempre tenga material nuevo y tus resultados no se estanquen.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-n">04</div>
-        <h3>Gestión real, no piloto automático</h3>
-        <p>Monitoreamos, ajustamos y reportamos. No solo "prendemos" la campaña y te mandamos un PDF bonito.</p>
+      <div class="pas-item reveal" data-d="2">
+        <div class="pas-item-n" data-en="THE SOLUTION">LA SOLUCIÓN</div>
+        <h3 data-en="The complete ecosystem, one team">El ecosistema completo, un equipo</h3>
+        <p data-en="Videos, campaigns, avatars, funnels, brand strategy. All connected, all running, all managed — so Meta works for you, not the other way around.">Videos, campañas, avatares, funnels, marca. Todo conectado, todo corriendo, todo gestionado — para que Meta trabaje para ti.</p>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- DELIVERABLES -->
-<section id="que-hacemos" class="sec">
+<!-- ══════ ECOSYSTEM / SERVICES ══════ -->
+<section id="ecosistema" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Lo que hacemos</div>
-    <h2 class="h2">Un servicio. Cuatro entregables.<br>Sin sorpresas. Cada mes.</h2>
-    <p class="body mt-16" style="max-width:500px">Esto es exactamente lo que recibes cada 30 días — sin extras escondidos, sin cobros sorpresa.</p>
 
-    <div class="delivs">
-      <div class="deliv">
-        <div class="deliv-n">01</div>
-        <h3>Campaña nueva en Meta</h3>
-        <p>Estrategia, segmentación y configuración completa en Facebook e Instagram. Nos encargamos de todo el backend.</p>
+    <div class="label mb-12 reveal" data-en="The complete ecosystem">El ecosistema completo</div>
+    <h2 class="h2 reveal"
+      data-en="Not just Meta Ads.<br>Everything your personal brand needs.">
+      No solo Meta Ads.<br>Todo lo que necesita<br>tu marca personal.
+    </h2>
+    <p class="sp-16 reveal" style="max-width:540px;color:var(--lt-body);font-size:.9375rem;line-height:1.8"
+      data-en="We work with creators, coaches and consultants to build everything a personal brand needs to generate consistent revenue. Choose what you need. We combine it. We execute it.">
+      Trabajamos con creadores, coaches y consultores para construir todo lo que necesita
+      una marca personal que genera ingresos consistentes. Elegimos lo que necesitas, lo combinamos, lo ejecutamos.
+    </p>
+
+    <div class="svc-grid">
+
+      <!-- Core service — featured -->
+      <div class="svc-card featured reveal">
+        <div class="svc-badge" data-en="Core Service · $10,000 MXN/month">Servicio Principal · $10,000 MXN/mes</div>
+        <div class="svc-icon">◆</div>
+        <h3 data-en="Meta Ads &amp; Campaigns">Meta Ads &amp; Campañas</h3>
+        <p data-en="Strategy, targeting, setup and active management. New campaign every month, 4 forty-second creatives, A/B testing and real monthly reporting.">Estrategia, segmentación, configuración y gestión activa. Campaña nueva cada mes, 4 creativos de 40 segundos, pruebas A/B y reporte mensual real.</p>
+        <div class="svc-price">$10,000 <span data-en="MXN / month">MXN / mes</span></div>
       </div>
-      <div class="deliv">
-        <div class="deliv-n">02</div>
-        <h3>4 creativos de 40 segundos</h3>
-        <p>Cuatro videos de marca personal editados y listos para Meta. Tú los grabas, nosotros los optimizamos para el scroll.</p>
+
+      <!-- Personal Brand Videos -->
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-badge" data-en="Available">Disponible</div>
+        <div class="svc-icon">▶</div>
+        <h3 data-en="Personal Brand Videos">Videos de Marca Personal</h3>
+        <p data-en="40-second videos that feel like content, not ads. Script, editing, captions and optimization for Meta, Instagram and TikTok.">Videos de 40 segundos que se sienten como contenido, no como publicidad. Guión, edición, subtítulos y optimización para Meta, Instagram y TikTok.</p>
       </div>
-      <div class="deliv">
-        <div class="deliv-n">03</div>
-        <h3>Gestión activa de pauta</h3>
-        <p>Monitoreo semanal, ajuste de presupuesto, pruebas A/B y optimización constante según los datos reales de tu campaña.</p>
+
+      <!-- AI Avatar -->
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-badge" data-en="Available">Disponible</div>
+        <div class="svc-icon">◉</div>
+        <h3 data-en="AI Avatar &amp; Video Cloning">Avatar IA &amp; Clonación de Video</h3>
+        <p data-en="Don't want to be on camera? We clone your voice and image into a hyperrealistic avatar that records for you — in any language, at any scale, no camera needed.">¿No quieres aparecer en cámara? Clonamos tu voz e imagen en un avatar hiperrealista que graba por ti — en cualquier idioma, a cualquier escala, sin set de filmación.</p>
       </div>
-      <div class="deliv">
-        <div class="deliv-n">04</div>
-        <h3>Reporte mensual de resultados</h3>
-        <p>CPM, CTR, costo por resultado y decisiones tomadas con base en datos. Nada de capturas bonitas sin contexto.</p>
+
+      <!-- Infoproducts -->
+      <div class="svc-card reveal" data-d="1">
+        <div class="svc-badge" data-en="Available">Disponible</div>
+        <div class="svc-icon">▲</div>
+        <h3 data-en="Infoproducts &amp; Funnels">Infoproductos &amp; Funnels</h3>
+        <p data-en="We turn your knowledge into a product that sells itself. Landing page, VSL, email sequences and dedicated campaigns. Revenue while you sleep.">Convertimos tu conocimiento en un producto que se vende solo. Landing page, VSL, secuencias de email y campañas dedicadas. Ingresos mientras duermes.</p>
       </div>
+
+      <!-- Brand Strategy -->
+      <div class="svc-card reveal" data-d="2">
+        <div class="svc-badge" data-en="Available">Disponible</div>
+        <div class="svc-icon">■</div>
+        <h3 data-en="Personal Brand Strategy">Estrategia de Marca Personal</h3>
+        <p data-en="We define your authority angle, ideal audience and brand narrative. So when someone sees you for the first time, they already want to buy from you.">Definimos tu ángulo de autoridad, audiencia ideal y narrativa de marca. Para que cuando alguien te vea por primera vez, ya quiera comprarte.</p>
+      </div>
+
     </div>
+
+    <p class="eco-note reveal"
+      data-en="The core Meta Ads service includes 4 video creatives per month at $10,000 MXN. Additional services are quoted based on project scope. Schedule a call to build your custom stack.">
+      El servicio principal de Meta Ads incluye 4 creativos de video al mes a $10,000 MXN. Los demás servicios se cotizan según el alcance del proyecto. Agenda una llamada para armar tu stack a la medida.
+    </p>
+
   </div>
 </section>
 
-<!-- PROBLEM / SOLUTION -->
-<section id="problema" class="sec">
-  <div class="wrap">
-    <div class="label mb-12">El antes y el después</div>
-    <h2 class="h2">La diferencia entre gastar<br>en ads y escalar con ads.</h2>
-
-    <div class="ps">
-      <div class="ps-card">
-        <div class="ps-ttl">✗ Sin ZYX</div>
-        <ul class="ps-list">
-          <li class="ps-li"><span class="ico x">✗</span>Creativos viejos que nadie para a ver</li>
-          <li class="ps-li"><span class="ico x">✗</span>Campañas "optimizadas" que no convierten</li>
-          <li class="ps-li"><span class="ico x">✗</span>Pagas a alguien que solo prende y apaga</li>
-          <li class="ps-li"><span class="ico x">✗</span>Anuncios genéricos sin identidad de marca</li>
-          <li class="ps-li"><span class="ico x">✗</span>Meses sin creativos nuevos, CPM en aumento</li>
-          <li class="ps-li"><span class="ico x">✗</span>Nadie te explica qué pasa con tu presupuesto</li>
-        </ul>
-      </div>
-      <div class="ps-card dk">
-        <div class="ps-ttl">✓ Con ZYX</div>
-        <ul class="ps-list">
-          <li class="ps-li"><span class="ico v">✓</span><b>4 videos de 40 segundos</b> que detienen el scroll</li>
-          <li class="ps-li"><span class="ico v">✓</span><b>Campaña nueva cada mes</b> con estrategia actualizada</li>
-          <li class="ps-li"><span class="ico v">✓</span><b>Gestión activa:</b> ajustes semanales y A/B real</li>
-          <li class="ps-li"><span class="ico v">✓</span><b>Tu cara y tu voz</b> construyendo autoridad en cada anuncio</li>
-          <li class="ps-li"><span class="ico v">✓</span><b>Creativos frescos</b> para que el algoritmo trabaje a tu favor</li>
-          <li class="ps-li"><span class="ico v">✓</span><b>Reporte mensual claro</b> de qué funciona y qué no</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INCLUDES -->
+<!-- ══════ INCLUDES ══════ -->
 <section id="incluye" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Todo lo que obtienes</div>
-    <h2 class="h2">$10,000 MXN/mes.<br>Esto es exactamente lo que incluye.</h2>
+
+    <div class="label inv mb-12 reveal" data-en="What your $10,000 MXN/month buys">Qué incluye el servicio principal</div>
+    <h2 class="h2 reveal" style="color:var(--w)"
+      data-en="$10,000 MXN/month.<br>Here's exactly what that means.">
+      $10,000 MXN/mes.<br>Esto es exactamente lo que significa.
+    </h2>
 
     <div class="inc-grid">
-      <div class="inc-card">
+      <div class="inc-card reveal">
         <span class="inc-ico">▶</span>
         <div>
-          <h4>4 videos editados de 40 seg</h4>
-          <p>Formato 9:16 vertical para feed y stories. Subtítulos, música, cortes y optimización para Meta incluidos.</p>
+          <h4 data-en="4 edited videos · 40 seconds each">4 videos editados · 40 segundos c/u</h4>
+          <p data-en="Vertical 9:16 format for feed and stories. Captions, music, cuts and Meta optimization included. Ready to launch.">Formato vertical 9:16 para feed y stories. Subtítulos, música, cortes y optimización para Meta incluidos. Listos para lanzar.</p>
         </div>
       </div>
-      <div class="inc-card">
+      <div class="inc-card reveal" data-d="1">
         <span class="inc-ico">◆</span>
         <div>
-          <h4>Campaña en Meta configurada</h4>
-          <p>Estructura de campaña, conjuntos de anuncios, segmentación y pixel correctamente instalado desde el día uno.</p>
+          <h4 data-en="Meta campaign configured">Campaña en Meta configurada</h4>
+          <p data-en="Campaign structure, ad sets, targeting and pixel correctly installed from day one. No guesswork.">Estructura de campaña, conjuntos de anuncios, segmentación y pixel instalado correctamente desde el día uno. Sin adivinanzas.</p>
         </div>
       </div>
-      <div class="inc-card">
+      <div class="inc-card reveal" data-d="2">
         <span class="inc-ico">◈</span>
         <div>
-          <h4>Brief mensual de grabación</h4>
-          <p>Ángulo narrativo, hooks de apertura, CTAs y guión de apoyo. Sabes exactamente qué grabar cada mes, sin improvisar.</p>
+          <h4 data-en="Monthly recording brief">Brief mensual de grabación</h4>
+          <p data-en="Narrative angle, opening hooks, CTAs and a script guide. You know exactly what to record each month. No improvising.">Ángulo narrativo, hooks de apertura, CTAs y guión de apoyo. Sabes exactamente qué grabar cada mes. Sin improvisar.</p>
         </div>
       </div>
-      <div class="inc-card">
+      <div class="inc-card reveal">
         <span class="inc-ico">▲</span>
         <div>
-          <h4>Gestión activa de pauta</h4>
-          <p>Monitoreo constante, ajuste de presupuesto y distribución óptima entre tus 4 creativos según rendimiento real.</p>
+          <h4 data-en="Active campaign management">Gestión activa de pauta</h4>
+          <p data-en="Weekly monitoring, budget adjustment and optimal distribution across your 4 creatives based on real performance data.">Monitoreo semanal, ajuste de presupuesto y distribución óptima entre tus 4 creativos según datos reales de rendimiento.</p>
         </div>
       </div>
-      <div class="inc-card">
+      <div class="inc-card reveal" data-d="1">
         <span class="inc-ico">■</span>
         <div>
-          <h4>Pruebas A/B de creativos</h4>
-          <p>Probamos qué video convierte mejor, escalamos el ganador y pausamos los que no rinden. Datos, no intuición.</p>
+          <h4 data-en="A/B creative testing">Pruebas A/B de creativos</h4>
+          <p data-en="We test which video converts best, scale the winner, and pause what doesn't perform. Data, not guesswork.">Probamos qué video convierte mejor, escalamos el ganador y pausamos lo que no rinde. Datos, no intuición.</p>
         </div>
       </div>
-      <div class="inc-card">
+      <div class="inc-card reveal" data-d="2">
         <span class="inc-ico">●</span>
         <div>
-          <h4>Reporte mensual de resultados</h4>
-          <p>CPM, CTR, costo por resultado y decisiones tomadas. No capturas bonitas — contexto real de qué pasó y por qué.</p>
+          <h4 data-en="Monthly results report">Reporte mensual de resultados</h4>
+          <p data-en="CPM, CTR, cost per result and decisions made. Not a pretty screenshot — real context on what happened and what's next.">CPM, CTR, costo por resultado y decisiones tomadas. No una captura bonita — contexto real de qué pasó y qué sigue.</p>
         </div>
       </div>
     </div>
 
-    <div class="not-blk">
-      <div class="not-ttl">No incluye — para ser transparentes</div>
+    <div class="not-blk reveal">
+      <div class="not-ttl" data-en="Not included — to be transparent">No incluye — para ser transparentes</div>
       <div class="not-items">
-        <div class="not-li"><span>✗</span>El presupuesto de pauta (va directo a Meta, por tu cuenta)</div>
-        <div class="not-li"><span>✗</span>Grabación de los videos (tú los grabas con tu teléfono)</div>
-        <div class="not-li"><span>✗</span>Diseño de landing pages o sitios web</div>
-        <div class="not-li"><span>✗</span>Manejo de redes sociales orgánicas</div>
-        <div class="not-li"><span>✗</span>Fotografía profesional en locación</div>
-        <div class="not-li"><span>✗</span>Email marketing, CRM o automatizaciones</div>
+        <div class="not-li"><span>✗</span><span data-en="Ad spend budget (goes directly to Meta, controlled by you)">El presupuesto de pauta (va directo a Meta, lo controlas tú)</span></div>
+        <div class="not-li"><span>✗</span><span data-en="Video recording (you record with your phone following our brief)">Grabación de videos (tú grabas con tu teléfono siguiendo el brief)</span></div>
+        <div class="not-li"><span>✗</span><span data-en="Landing page or website design">Diseño de landing pages o sitios web</span></div>
+        <div class="not-li"><span>✗</span><span data-en="Organic social media management">Manejo de redes sociales orgánicas</span></div>
+        <div class="not-li"><span>✗</span><span data-en="Email marketing, CRM or automations">Email marketing, CRM o automatizaciones</span></div>
+        <div class="not-li"><span>✗</span><span data-en="Professional photography or on-location production">Fotografía profesional en locación</span></div>
       </div>
     </div>
 
-    <div class="why-bx">
-      <h3>¿Por qué $10,000 MXN y no menos?</h3>
-      <p>Trabajamos con máximo 5 clientes simultáneos por decisión propia — no por capacidad. Es la única forma de garantizar atención real, entregables a tiempo y resultados medibles. Los $10,000 te dan acceso directo al equipo. No a un gestor de cuentas que revisa tus campañas cada dos semanas.</p>
+    <div class="why-box reveal">
+      <h3 data-en="Why $10,000 MXN and not less?">¿Por qué $10,000 MXN y no menos?</h3>
+      <p data-en="We work with a maximum of 5 clients simultaneously — by choice, not by capacity. It's the only way to guarantee real attention, on-time delivery and measurable results. Your $10,000 gives you direct access to the team. Not an account manager who checks your campaigns once a week.">Trabajamos con máximo 5 clientes simultáneos — por decisión, no por capacidad. Es la única forma de garantizar atención real, entregables a tiempo y resultados medibles. Tus $10,000 te dan acceso directo al equipo. No a un gestor de cuentas que revisa tus campañas una vez a la semana.</p>
     </div>
+
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ══════ BEFORE / AFTER ══════ -->
+<section id="antes-despues" class="sec">
+  <div class="wrap">
+
+    <div class="label mb-12 reveal" data-en="Before and after">El antes y el después</div>
+    <h2 class="h2 reveal"
+      data-en="The difference between spending on ads<br>and actually scaling with ads.">
+      La diferencia entre gastar en ads<br>y escalar con ads de verdad.
+    </h2>
+
+    <div class="ps-grid">
+      <div class="ps-card reveal">
+        <div class="ps-ttl" data-en="✗ Without ZYX">✗ Sin ZYX</div>
+        <ul class="ps-list">
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Old creatives nobody stops to watch">Creativos viejos que nadie para a ver</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Campaigns 'optimized' that don't convert">Campañas "optimizadas" que no convierten</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="You pay someone who just turns campaigns on and off">Pagas a alguien que solo prende y apaga campañas</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Generic ads with zero brand identity">Anuncios genéricos sin identidad de marca</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Months without new creatives while CPM climbs">Meses sin creativos nuevos, CPM en aumento</span></li>
+          <li class="ps-li"><span class="ico x">✗</span><span data-en="Nobody explains what's happening with your budget">Nadie te explica qué pasa con tu presupuesto</span></li>
+        </ul>
+      </div>
+      <div class="ps-card dk reveal" data-d="1">
+        <div class="ps-ttl" data-en="✓ With ZYX">✓ Con ZYX</div>
+        <ul class="ps-list">
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>4 videos of 40 seconds</b> that stop the scroll"><b>4 videos de 40 segundos</b> que detienen el scroll</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>New campaign every month</b> with updated strategy"><b>Campaña nueva cada mes</b> con estrategia actualizada</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Active management:</b> weekly adjustments and real A/B"><b>Gestión activa:</b> ajustes semanales y A/B real</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Your face and voice</b> building authority in every ad"><b>Tu cara y tu voz</b> construyendo autoridad en cada anuncio</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Fresh creatives</b> so the algorithm always works in your favor"><b>Creativos frescos</b> para que el algoritmo trabaje a tu favor</span></li>
+          <li class="ps-li"><span class="ico v">✓</span><span data-en="<b>Clear monthly report</b> of what works and what doesn't"><b>Reporte mensual claro</b> de qué funciona y qué no</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ PROCESS ══════ -->
 <section id="proceso" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Cómo funciona</div>
-    <h2 class="h2">De cero a campaña activa<br>en menos de 7 días.</h2>
+
+    <div class="label mb-12 reveal" data-en="How it works">Cómo funciona</div>
+    <h2 class="h2 reveal" data-en="From zero to live campaign<br>in less than 7 days.">De cero a campaña activa<br>en menos de 7 días.</h2>
 
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-n">01</div>
         <div>
-          <h3>Aparta tu cupo</h3>
-          <p>Realizas el primer pago mensual y reservas tu lugar. Solo 5 cupos disponibles. Sin contrato anual — cancelas con 7 días de anticipación cuando quieras.</p>
+          <h3 data-en="Reserve your spot">Aparta tu cupo</h3>
+          <p data-en="You make the first monthly payment and reserve your place. Only 5 spots available. No annual contract — cancel with 7 days notice whenever you want.">Realizas el primer pago mensual y reservas tu lugar. Solo 5 cupos disponibles. Sin contrato anual — cancelas con 7 días de anticipación cuando quieras.</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-n">02</div>
         <div>
-          <h3>Sesión de estrategia (30 min)</h3>
-          <p>Llamada rápida para definir el ángulo narrativo de tu marca, la audiencia objetivo, tu oferta principal y el enfoque de la campaña del mes.</p>
+          <h3 data-en="Strategy session (30 min)">Sesión de estrategia (30 min)</h3>
+          <p data-en="Quick call to define your brand's narrative angle, target audience, core offer and the campaign focus for the month. The foundation everything is built on.">Llamada rápida para definir el ángulo narrativo de tu marca, audiencia objetivo, oferta principal y el enfoque de la campaña del mes. La base sobre la que construimos todo.</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-n">03</div>
         <div>
-          <h3>Recibes tu brief y grabas</h3>
-          <p>Te enviamos el guión y los lineamientos. Solo necesitas tu teléfono y buena luz. Tiempo estimado: 1 hora. Tú decides cuándo y dónde grabas.</p>
+          <h3 data-en="You get your brief and record">Recibes tu brief y grabas</h3>
+          <p data-en="We send you the script and recording guidelines. Just your phone and good lighting. Estimated time: 1 hour. You decide when and where you record.">Te enviamos el guión y los lineamientos. Solo tu teléfono y buena luz. Tiempo estimado: 1 hora. Tú decides cuándo y dónde grabas.</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-n">04</div>
         <div>
-          <h3>Editamos y configuramos todo</h3>
-          <p>Editamos tus 4 creativos, configuramos la campaña en Meta con la segmentación correcta y verificamos que el tracking esté bien instalado. Entrega en 48–72 horas.</p>
+          <h3 data-en="We edit and configure everything">Editamos y configuramos todo</h3>
+          <p data-en="We edit your 4 creatives, configure the Meta campaign with the right targeting and verify the tracking is correctly installed. Delivery in 48–72 hours.">Editamos tus 4 creativos, configuramos la campaña en Meta con la segmentación correcta y verificamos que el tracking esté bien instalado. Entrega en 48–72 horas.</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-n">05</div>
         <div>
-          <h3>Campaña live + gestión activa</h3>
-          <p>Lanzamos y monitoreamos activamente durante el mes. Al cierre recibes tu reporte completo y arrancamos el siguiente ciclo con un ángulo nuevo.</p>
+          <h3 data-en="Campaign live + active management">Campaña live + gestión activa</h3>
+          <p data-en="We launch and actively monitor throughout the month. At close you get your full report and we start the next cycle with a new angle and fresh creatives.">Lanzamos y monitoreamos activamente durante el mes. Al cierre recibes tu reporte completo y arrancamos el siguiente ciclo con un ángulo nuevo y creativos frescos.</p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- COMPARISON -->
+<!-- ══════ COMPARISON ══════ -->
 <section id="comparacion" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Por qué ZYX</div>
-    <h2 class="h2">Una comparación honesta.</h2>
 
-    <span class="tbl-hint">← Desliza para ver la tabla completa</span>
-    <div class="tbl-wrap">
+    <div class="label mb-12 reveal" data-en="Why ZYX">Por qué ZYX</div>
+    <h2 class="h2 reveal" data-en="An honest comparison.">Una comparación honesta.</h2>
+
+    <span class="tbl-hint" data-en="← Slide to see full table">← Desliza para ver la tabla completa</span>
+    <div class="tbl-wrap reveal">
       <table>
         <thead>
           <tr>
-            <th>Criterio</th>
+            <th data-en="Criteria">Criterio</th>
             <th class="hl">ZYX</th>
-            <th>Agencia tradicional</th>
-            <th>Freelancer</th>
-            <th>Tú solo</th>
+            <th data-en="Traditional Agency">Agencia tradicional</th>
+            <th data-en="Freelancer">Freelancer</th>
+            <th data-en="On your own">Tú solo</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Videos nuevos cada mes</td>
-            <td class="hl">✓ 4 videos</td>
-            <td>A veces, + costo</td>
-            <td>No incluye</td>
-            <td>Tienes que producirlos</td>
+            <td data-en="New videos every month">Videos nuevos cada mes</td>
+            <td class="hl" data-en="✓ 4 videos">✓ 4 videos</td>
+            <td data-en="Sometimes, extra cost">A veces, + costo</td>
+            <td data-en="Not included">No incluye</td>
+            <td data-en="You produce them">Tienes que producirlos</td>
           </tr>
           <tr>
-            <td>Tipo de anuncio</td>
-            <td class="hl">Marca personal</td>
-            <td>Genérico</td>
-            <td>Genérico</td>
-            <td>Lo que puedas</td>
+            <td data-en="Ad type">Tipo de anuncio</td>
+            <td class="hl" data-en="Personal brand">Marca personal</td>
+            <td data-en="Generic">Genérico</td>
+            <td data-en="Generic">Genérico</td>
+            <td data-en="Whatever you can manage">Lo que puedas</td>
           </tr>
           <tr>
-            <td>Gestión activa de pauta</td>
-            <td class="hl">✓ Semanal</td>
-            <td>✓ Muy cara</td>
-            <td>Mínima</td>
-            <td>Tú te encargas</td>
+            <td data-en="Active campaign management">Gestión activa de pauta</td>
+            <td class="hl" data-en="✓ Weekly">✓ Semanal</td>
+            <td data-en="✓ Very expensive">✓ Muy cara</td>
+            <td data-en="Minimal">Mínima</td>
+            <td data-en="You handle it">Tú te encargas</td>
           </tr>
           <tr>
-            <td>Clientes simultáneos</td>
-            <td class="hl">Máx. 5</td>
-            <td>50–200</td>
-            <td>20–40</td>
+            <td data-en="Simultaneous clients">Clientes simultáneos</td>
+            <td class="hl" data-en="Max. 5">Máx. 5</td>
+            <td data-en="50–200">50–200</td>
+            <td data-en="20–40">20–40</td>
             <td>N/A</td>
           </tr>
           <tr>
-            <td>Reporte mensual real</td>
-            <td class="hl">✓ Detallado</td>
-            <td>Básico</td>
-            <td>Raro</td>
-            <td>Tú lo construyes</td>
+            <td data-en="Real monthly report">Reporte mensual real</td>
+            <td class="hl" data-en="✓ Detailed">✓ Detallado</td>
+            <td data-en="Basic">Básico</td>
+            <td data-en="Rarely">Raro</td>
+            <td data-en="You build it">Tú lo construyes</td>
           </tr>
           <tr>
-            <td>Precio mensual (servicio)</td>
+            <td data-en="Monthly price (service)">Precio mensual (servicio)</td>
             <td class="hl">$10,000 MXN</td>
             <td>$30,000–$80,000</td>
             <td>$3,000–$6,000</td>
-            <td>Solo pauta</td>
+            <td data-en="Ad spend only">Solo pauta</td>
           </tr>
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 
-<!-- CTA BLOCK -->
+<!-- ══════ CTA BLOCK ══════ -->
 <section id="checkout" class="cta-blk">
   <div class="wrap">
-    <div class="label">Empieza este mes</div>
-    <h2 class="h2 mt-16">Tu marca personal en Meta.<br>Con videos que la gente sí ve.</h2>
-    <div class="cta-price mt-24">$10,000</div>
-    <p class="cta-per mt-8">MXN por mes &nbsp;·&nbsp; Sin contratos &nbsp;·&nbsp; Cancela cuando quieras</p>
-    <ul class="cta-list mt-40">
-      <li>→ <span><b>4 videos de 40 segundos</b> editados por nuestro equipo cada mes</span></li>
-      <li>→ <span><b>1 campaña nueva en Meta</b> configurada y activa cada mes</span></li>
-      <li>→ <span><b>Gestión activa</b> de pauta, presupuesto y creativos</span></li>
-      <li>→ <span><b>Pruebas A/B</b> para escalar el creativo que más convierte</span></li>
-      <li>→ <span><b>Reporte mensual</b> con datos reales y decisiones tomadas</span></li>
+    <div class="label mb-16 reveal" data-en="Start this month">Empieza este mes</div>
+    <h2 class="h2 sp-4 reveal"
+      data-en="Your personal brand in Meta.<br>With videos people actually watch.">
+      Tu marca personal en Meta.<br>Con videos que la gente sí ve.
+    </h2>
+
+    <div class="sp-32 reveal">
+      <div class="cta-price-big">$10,000</div>
+      <p class="cta-sub sp-8" data-en="MXN per month · No contracts · Cancel anytime">MXN por mes · Sin contratos · Cancela cuando quieras</p>
+    </div>
+
+    <ul class="cta-list sp-40 reveal">
+      <li>→ <span data-en="<b>4 x 40-second videos</b> edited by our team every month"><b>4 videos de 40 segundos</b> editados por nuestro equipo cada mes</span></li>
+      <li>→ <span data-en="<b>1 new Meta campaign</b> configured and live every month"><b>1 campaña nueva en Meta</b> configurada y activa cada mes</span></li>
+      <li>→ <span data-en="<b>Active management</b> of spend, budget and creatives"><b>Gestión activa</b> de pauta, presupuesto y creativos</span></li>
+      <li>→ <span data-en="<b>A/B testing</b> to scale the creative that converts most"><b>Pruebas A/B</b> para escalar el creativo que más convierte</span></li>
+      <li>→ <span data-en="<b>Monthly report</b> with real data and decisions made"><b>Reporte mensual</b> con datos reales y decisiones tomadas</span></li>
     </ul>
-    <div class="mt-40">
-      <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20información%20sobre%20ZYX%20Meta%20Ads" class="btn btn-light btn-full" target="_blank" rel="noopener">
-        Quiero mi cupo este mes →
+
+    <div class="sp-40 reveal">
+      <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20información%20sobre%20ZYX"
+        class="btn btn-w btn-full" target="_blank" rel="noopener"
+        data-en="Talk to the team →">
+        Habla con el equipo →
       </a>
     </div>
-    <p class="cta-trust mt-16">Solo 5 cupos &nbsp;·&nbsp; Pago mensual &nbsp;·&nbsp; Sin contratos largos</p>
+    <p class="cta-trust sp-16 reveal"
+      data-en="5 spots only · Monthly billing · No long-term contracts">
+      Solo 5 cupos · Pago mensual · Sin contratos largos
+    </p>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ══════ FAQ ══════ -->
 <section id="faq" class="sec">
   <div class="wrap">
-    <div class="label mb-12">Preguntas frecuentes</div>
-    <h2 class="h2">Lo que preguntan antes<br>de arrancar.</h2>
 
-    <div class="faqs">
+    <div class="label mb-12 reveal" data-en="Frequently asked questions">Preguntas frecuentes</div>
+    <h2 class="h2 reveal" data-en="What people ask<br>before getting started.">Lo que preguntan<br>antes de arrancar.</h2>
+
+    <div class="faqs reveal">
+
       <div class="faq">
-        <button class="faq-btn">¿El presupuesto de Meta está incluido en los $10,000?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">No. Los $10,000 MXN son el servicio completo: gestión, estrategia, edición de videos y producción de creativos. El presupuesto que inviertes en Meta va aparte y lo controlas tú directamente desde tu cuenta de anuncios. Recomendamos mínimo $5,000 MXN de pauta mensual para ver resultados claros desde el primer mes.</p></div>
+        <button class="faq-btn">
+          <span data-en="Is Meta's ad spend included in the $10,000?">¿El presupuesto de Meta está incluido en los $10,000?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="No. The $10,000 MXN covers the full service: management, strategy, video editing and creative production. The budget you invest in Meta is separate and you control it directly from your own ad account. We recommend a minimum of $5,000 MXN in ad spend per month to see clear results from month one.">No. Los $10,000 MXN cubren el servicio completo: gestión, estrategia, edición de videos y producción de creativos. El presupuesto que inviertes en Meta va aparte y lo controlas tú directamente desde tu cuenta de anuncios. Recomendamos mínimo $5,000 MXN de pauta mensual para ver resultados claros desde el primer mes.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Yo tengo que grabar los videos?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Sí, y eso es precisamente lo que los hace funcionar. Son anuncios de marca personal — necesitan tu cara, tu voz y tu personalidad. Tú grabas el material crudo con tu teléfono siguiendo el brief que te damos. Nosotros hacemos todo lo demás: edición, subtítulos, música, formato 9:16 y optimización para que el video detenga el scroll desde el primer frame.</p></div>
+        <button class="faq-btn">
+          <span data-en="Do I have to record the videos myself?">¿Yo tengo que grabar los videos?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Yes — and that's precisely what makes them work. Personal brand ads need your face, voice and personality. You record the raw footage with your phone following our brief. We handle everything else: editing, captions, music, 9:16 format and optimization so the video stops the scroll from the first frame. If you prefer not to appear on camera, ask us about our AI Avatar service.">Sí — y eso es precisamente lo que los hace funcionar. Los anuncios de marca personal necesitan tu cara, tu voz y tu personalidad. Tú grabas el material crudo con tu teléfono siguiendo el brief. Nosotros hacemos todo lo demás: edición, subtítulos, música, formato 9:16 y optimización para que el video detenga el scroll desde el primer frame. Si prefieres no aparecer en cámara, pregúntanos por el servicio de Avatar IA.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Cuánto tiempo me toma a mí cada mes?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Aproximadamente 2 horas al mes. 30 minutos para la sesión de estrategia y 1 a 1.5 horas para grabar los 4 videos crudos siguiendo el guión. El resto lo hacemos nosotros. Es la única forma de que tu tiempo no sea el cuello de botella para escalar.</p></div>
+        <button class="faq-btn">
+          <span data-en="What is the AI Avatar? How does it work?">¿Qué es el Avatar IA y cómo funciona?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="We create a hyperrealistic avatar that uses your image, your voice and your visual style. Once the clone is built, you only need to send us the script — the avatar records the video for you. Available in any language, at any volume, without a camera or recording setup. This is an additional service beyond the core plan.">Creamos un avatar hiperrealista que usa tu imagen, tu voz y tu estilo visual. Una vez construido el clon, solo necesitas enviarnos el guión — el avatar graba el video por ti. Disponible en cualquier idioma, a cualquier volumen, sin cámara ni set de grabación. Es un servicio adicional al plan principal.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Puedo cancelar cuando quiera?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Sí. No hay contratos anuales ni penalizaciones. El pago es mensual y puedes cancelar con 7 días de anticipación antes de tu próximo ciclo. Sin letras pequeñas, sin sorpresas, sin retención forzada.</p></div>
+        <button class="faq-btn">
+          <span data-en="How much time does it take from me each month?">¿Cuánto tiempo me toma a mí cada mes?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Approximately 2 hours per month. 30 minutes for the strategy session and 1 to 1.5 hours to record the 4 raw videos following the script. We handle the rest. That's the only way your time doesn't become the bottleneck to scaling.">Aproximadamente 2 horas al mes. 30 minutos para la sesión de estrategia y 1 a 1.5 horas para grabar los 4 videos crudos siguiendo el guión. El resto lo hacemos nosotros. Es la única forma de que tu tiempo no sea el cuello de botella para escalar.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Para qué tipo de negocio funciona?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Funciona perfecto si tienes un infoproducto, servicio de coaching, consultoría, agencia, membresía o cualquier negocio donde tú seas la marca y la autoridad. Donde funciona menos es en tiendas de producto físico puro o ecommerce donde la marca no eres tú como persona.</p></div>
+        <button class="faq-btn">
+          <span data-en="What type of business is this for?">¿Para qué tipo de negocio funciona?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="It works perfectly if you have an infoproduct, coaching service, consulting, agency, membership or any business where you are the brand and the authority. Where it works less well is in pure physical product stores or ecommerce where the brand is not you as a person.">Funciona perfecto si tienes un infoproducto, servicio de coaching, consultoría, agencia, membresía o cualquier negocio donde tú seas la marca y la autoridad. Donde funciona menos es en tiendas de producto físico puro o ecommerce donde la marca no eres tú como persona.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Cuánto tiempo para ver resultados?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Meta necesita entre 1 y 3 semanas para optimizar la entrega de tus anuncios. Los primeros datos significativos aparecen en el mes 1. El crecimiento más consistente llega en el mes 2 y 3, cuando ya tenemos datos reales del algoritmo y sabemos exactamente qué creativos resuenan con tu audiencia y cuáles pausar.</p></div>
+        <button class="faq-btn">
+          <span data-en="I tried Meta Ads before and it didn't work. Why would it be different now?">Ya intenté Meta Ads y no me funcionó. ¿Por qué sería diferente?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Most Meta Ads campaigns fail because of the creative, not the targeting. Static images, generic videos, no hook in the first 3 seconds. The audience skips them in 2 seconds flat. Our model starts with the video: 40 seconds of personal brand content that earns attention before trying to sell anything. When the creative works, the campaign works.">La mayoría de las campañas de Meta fallan por el creativo, no por la segmentación. Imágenes estáticas, videos genéricos, sin hook en los primeros 3 segundos. La audiencia los ignora en 2 segundos. Nuestro modelo empieza por el video: 40 segundos de contenido de marca personal que se gana la atención antes de intentar vender. Cuando el creativo funciona, la campaña funciona.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Qué necesito antes de empezar?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Necesitas: una página de Facebook o Instagram activa, una oferta clara (qué vendes y a quién) y un destino para el tráfico (landing page, perfil de Instagram, WhatsApp). Si te falta algo, lo vemos juntos en la sesión de estrategia y te digo exactamente cómo resolverlo antes de lanzar.</p></div>
+        <button class="faq-btn">
+          <span data-en="How long until I see results?">¿Cuánto tiempo para ver resultados?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Meta needs 1 to 3 weeks to optimize ad delivery. The first meaningful data appears in month 1. The most consistent growth comes in months 2 and 3, when we have real algorithm data and know exactly which creatives resonate with your audience and which to pause.">Meta necesita entre 1 y 3 semanas para optimizar la entrega de anuncios. Los primeros datos significativos aparecen en el mes 1. El crecimiento más consistente llega en el mes 2 y 3, cuando ya tenemos datos reales del algoritmo y sabemos exactamente qué creativos resuenan con tu audiencia y cuáles pausar.</p>
+        </div>
       </div>
+
       <div class="faq">
-        <button class="faq-btn">¿Por qué solo 5 clientes?<span class="faq-arr">↓</span></button>
-        <div class="faq-body"><p class="faq-ans">Porque es la única forma de garantizar atención real. No somos una agencia de volumen donde todos son un ticket más y nadie revisa tus campañas hasta que algo explota. Con máximo 5 clientes monitoreamos activamente, entregamos a tiempo y nos enfocamos en los resultados de cada cuenta. Cuando los 5 cupos están ocupados, cerramos la lista.</p></div>
+        <button class="faq-btn">
+          <span data-en="Can I cancel anytime?">¿Puedo cancelar cuando quiera?</span>
+          <span class="faq-arr">↓</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-ans" data-en="Yes. No annual contracts, no cancellation fees. Payment is monthly and you can cancel with 7 days notice before your next cycle. No small print, no surprises, no forced retention.">Sí. Sin contratos anuales ni penalizaciones. El pago es mensual y puedes cancelar con 7 días de anticipación antes de tu próximo ciclo. Sin letras pequeñas, sin sorpresas, sin retención forzada.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- FOOTER CTA -->
-<section class="cta-blk" style="padding:64px 0">
+<!-- ══════ FOOTER CTA ══════ -->
+<section class="cta-blk" style="padding:72px 0">
   <div class="wrap tc">
-    <h2 class="h2" style="color:var(--w)">Solo quedan 2 cupos disponibles.</h2>
-    <p style="color:var(--g600);margin:16px 0 32px;font-size:.9375rem">El siguiente ciclo comienza el 1 del próximo mes.</p>
-    <a href="#checkout" class="btn btn-light">Asegurar mi cupo ahora →</a>
+    <h2 class="h2 reveal" style="color:var(--w)"
+      data-en="Only 2 spots left.<br>Next cycle starts June 1st.">
+      Solo quedan 2 cupos.<br>El siguiente ciclo empieza el 1 de junio.
+    </h2>
+    <p class="sp-16 reveal" style="color:var(--dk-muted);font-size:.9375rem"
+      data-en="When the 5 spots fill up, the list closes.">
+      Cuando se llenan los 5 cupos, cerramos la lista.
+    </p>
+    <div class="sp-32 reveal">
+      <a href="#checkout" class="btn btn-w"
+        data-en="Secure my spot now →">Asegurar mi cupo ahora →</a>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════ FOOTER ══════ -->
 <footer id="footer">
   <div class="wrap">
     <div class="foot-logo">ZYX</div>
     <div class="foot-links">
-      <a href="#">Términos</a>
-      <a href="#">Privacidad</a>
-      <a href="#">Contacto</a>
+      <a href="#" data-en="Terms">Términos</a>
+      <a href="#" data-en="Privacy">Privacidad</a>
+      <a href="#" data-en="Contact">Contacto</a>
     </div>
-    <p class="foot-copy">© 2026 ZYX · Meta Ads con Marca Personal · México</p>
+    <p class="foot-copy"
+      data-en="© 2026 ZYX · Personal Brand on Meta · Mexico">
+      © 2026 ZYX · Marca Personal en Meta · México
+    </p>
   </div>
 </footer>
 
+<!-- ══════ SCRIPTS ══════ -->
 <script>
 (function(){
-  // Countdown
-  function eod(){var d=new Date();d.setHours(23,59,59,999);return d}
-  var end=eod();
-  function tick(){
-    var diff=end-new Date();
-    if(diff<0){end=eod();diff=end-new Date()}
-    var h=Math.floor(diff/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
-    document.getElementById('cdh').textContent=String(h).padStart(2,'0');
-    document.getElementById('cdm').textContent=String(m).padStart(2,'0');
-    document.getElementById('cds').textContent=String(s).padStart(2,'0');
-  }
-  tick();setInterval(tick,1000);
+'use strict';
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var faq=this.closest('.faq'),open=faq.classList.contains('open');
-      document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});
-      if(!open)faq.classList.add('open');
-    });
+/* ── Countdown ── */
+function eod(){var d=new Date();d.setHours(23,59,59,999);return d}
+var end=eod();
+function tick(){
+  var diff=end-new Date();
+  if(diff<0){end=eod();diff=end-new Date()}
+  var h=Math.floor(diff/3600000),
+      m=Math.floor(diff%3600000/60000),
+      s=Math.floor(diff%60000/1000);
+  document.getElementById('cdh').textContent=String(h).padStart(2,'0');
+  document.getElementById('cdm').textContent=String(m).padStart(2,'0');
+  document.getElementById('cds').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+/* ── Scroll Reveal ── */
+var ro=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      ro.unobserve(e.target);
+    }
   });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+
+/* ── FAQ Accordion ── */
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var faq=this.closest('.faq'),open=faq.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open')});
+    if(!open)faq.classList.add('open');
+  });
+});
+
+/* ── i18n ── */
+var currentLang='es';
+
+/* On load, save all current innerHTML as data-es */
+function initI18n(){
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    if(!el.dataset.es)el.dataset.es=el.innerHTML;
+  });
+}
+
+function setLang(lang){
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.documentElement.dataset.lang=lang;
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    el.innerHTML=lang==='en'?el.dataset.en:el.dataset.es;
+  });
+  var btn=document.getElementById('langBtn');
+  if(btn)btn.textContent=lang==='en'?'ES':'EN';
+}
+
+window.toggleLang=function(){
+  setLang(currentLang==='es'?'en':'es');
+};
+
+initI18n();
+
 })();
 </script>
+
 </body>
 </html>
