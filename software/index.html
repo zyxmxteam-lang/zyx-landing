@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZYX Software · Si lo puedes imaginar, lo construimos.</title>
+<meta name="description" content="Desarrollo de software a la medida: apps móviles, plataformas SaaS, sistemas internos, IA y chatbots, automatizaciones e integraciones. NDA, el código es tuyo y cotización cerrada.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://zyx.mx/software/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zyx.mx/software/">
+<meta property="og:title" content="ZYX Software · Si lo puedes imaginar, lo construimos.">
+<meta property="og:description" content="Desarrollo de software a la medida: apps móviles, plataformas SaaS, sistemas internos, IA y chatbots, automatizaciones e integraciones. NDA, el código es tuyo y cotización cerrada.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='700' font-size='30' text-anchor='middle' fill='%23fff' letter-spacing='-2'%3EZYX%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+*{box-sizing:border-box}
+::selection{background:#fff;color:#000}
+a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 32px}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.it{font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:500;font-size:15px;transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn-ghost{border:1px solid #333;color:#fff}.btn-ghost:hover{border-color:#fff;color:#fff}
+.pill a.l{color:#a3a3a3;font-size:13.5px;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}.pill a.l:hover{color:#fff;background:#1a1a1a}
+.h2{margin:0;font-weight:500;font-size:clamp(38px,5.2vw,76px);line-height:1;letter-spacing:-.045em}
+.dotgrid{background-image:radial-gradient(#262626 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 40% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 40% 40%,#000 30%,transparent 75%)}
+.up{animation:up 1s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.1s}.d2{animation-delay:.2s}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@keyframes rv{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+.build{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.bc{border:1px solid #1a1a1a;border-radius:24px;padding:28px;background:#0a0a0a;transition:border-color .3s,transform .3s}
+.bc:hover{border-color:#3a3a3a;transform:translateY(-3px)}
+.chip{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #2a2a2a;font-size:14px;cursor:pointer;font-family:'Geist',sans-serif;background:transparent;color:#d4d4d4;transition:border-color .2s}
+.chip:hover{border-color:#888}
+details{border-top:1px solid #1c1c1c}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-size:clamp(18px,2vw,22px);font-weight:500;letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+.pl{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid #333;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s}
+details[open] .pl{transform:rotate(45deg)}
+.other{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;border:1px solid #1a1a1a;border-radius:20px;background:#0a0a0a;transition:border-color .25s,transform .25s}
+.other:hover{border-color:#3a3a3a;transform:translateY(-2px);color:#fff}
+.tl{opacity:0;animation:tl 9s steps(1) infinite}
+@keyframes tl{0%{opacity:0}100%{opacity:1}}
+.tline{white-space:nowrap;animation:typ 9s cubic-bezier(.6,0,.2,1) infinite both}
+@keyframes typ{0%{clip-path:inset(0 100% 0 0);opacity:1}10%,88%{clip-path:inset(0 0 0 0);opacity:1}96%,100%{clip-path:inset(0 0 0 0);opacity:0}}
+.caret{display:inline-block;width:8px;height:15px;vertical-align:middle;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.node{position:relative;overflow:hidden}
+.node .lit{position:absolute;inset:0;opacity:0;animation:lit 9s ease infinite both}
+@keyframes lit{0%{opacity:0}6%,88%{opacity:1}96%,100%{opacity:0}}
+.rec{animation:rec 1.2s ease-in-out infinite}@keyframes rec{50%{opacity:.25}}
+@media (max-width:760px){.wrap{padding:0 20px}.hide-sm{display:none!important}}
+.chip.on{background:#a3e635;border-color:#a3e635;color:#000;font-weight:500}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div style="background: #000; color: #fff; font-family: 'Geist', system-ui, sans-serif; font-size: 16px; line-height: 1.55; overflow: hidden; -webkit-font-smoothing: antialiased">
+
+<header style="position: sticky; top: 14px; z-index: 20; padding: 0 16px">
+<div class="pill" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 8px 0 20px; border-radius: 999px; background: rgba(12,12,12,.72); backdrop-filter: blur(18px) saturate(1.4); border: 1px solid #1f1f1f">
+<a href="https://zyx.mx/" style="display: flex; align-items: center; gap: 12px"><span style="font-weight: 700; font-size: 20px; letter-spacing: -.045em">ZYX</span><span style="width: 1px; height: 18px; background: #2a2a2a"></span><span style="display: flex; align-items: center; gap: 7px; font-size: 13.5px; color: #d4d4d4"><span style="width: 7px; height: 7px; border-radius: 50%; background: #A3E635"></span>Software</span></a>
+<nav class="hide-sm" style="display: flex; gap: 2px">
+<a class="l" href="#construimos">Qué construimos</a><a class="l" href="#proceso">Proceso</a><a class="l" href="#stack">Stack</a><a class="l" href="#faq">FAQ</a>
+</nav>
+<a class="btn" href="#cotizar" style="background: #A3E635; color: #000; min-height: 44px; padding: 0 18px; font-size: 14px">Cotizar proyecto →</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section style="position: relative; padding: 150px 0 72px; margin-top: -60px">
+<div class="dotgrid" aria-hidden="true" style="position: absolute; inset: 0"></div>
+<div class="wrap" style="position: relative">
+<div class="mono up" style="display: inline-flex; align-items: center; gap: 10px; color: #a3a3a3; border: 1px solid #262626; border-radius: 999px; padding: 8px 14px; background: #0a0a0a"><span style="width: 7px; height: 7px; border-radius: 50%; background: #A3E635"></span>Desarrollo de software · A la medida</div>
+<h1 class="up d1" style="margin: 40px 0 0; font-weight: 500; font-size: clamp(54px, 9.4vw, 148px); line-height: .9; letter-spacing: -.06em">Si lo puedes<br>imaginar, <span class="serif it" style="color: #A3E635; letter-spacing: -.015em">lo construimos.</span></h1>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: flex-end; margin-top: 56px">
+<p style="flex: 1 1 420px; max-width: 600px; margin: 0; font-size: 19px; color: #a3a3a3">Apps, plataformas, sistemas internos, automatizaciones y herramientas con IA. Desde un MVP para validar tu startup hasta el sistema que corre toda tu operación. <span style="color: #fff">Tú traes la idea, aunque sea en una servilleta.</span></p>
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a class="btn" href="#cotizar" style="background: #A3E635; color: #000">Cotizar mi proyecto →</a>
+<a class="btn btn-ghost" href="#construimos">Qué construimos</a>
+</div>
+<span class="mono" style="color: #737373">NDA · El código es tuyo · Cotización cerrada</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SHOWCASE: terminal + pipeline -->
+<section style="padding: 0 0 112px">
+<div class="wrap">
+<div class="up d2" style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 999 1 560px; min-width: 0; border: 1px solid #1a1a1a; border-radius: 28px; background: #050505; overflow: hidden">
+<div style="display: flex; align-items: center; gap: 6px; padding: 14px 18px; border-bottom: 1px solid #141414"><span style="width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a"></span><span class="mono" style="margin-left: 12px; color: #525252; font-size: 10.5px">zyx ~ tu-proyecto</span></div>
+<div style="padding: 24px 26px 28px; font-family: 'Geist Mono', monospace; font-size: 14px; line-height: 2.1; color: #a3a3a3; min-height: 300px">
+<div class="tline" style="animation-delay: 0s"><span style="color: #525252">$</span> <span style="color: #A3E635">zyx</span> new tu-proyecto --idea "app de reservas"</div>
+<div class="tline" style="animation-delay: .8s"><span style="color: #A3E635">✓</span> discovery · usuarios y objetivos definidos</div>
+<div class="tline" style="animation-delay: 1.6s"><span style="color: #A3E635">✓</span> blueprint · pantallas + cotización cerrada</div>
+<div class="tline" style="animation-delay: 2.4s"><span style="color: #A3E635">✓</span> sprint 01 · login, pagos, panel admin</div>
+<div class="tline" style="animation-delay: 3.2s"><span style="color: #A3E635">✓</span> sprint 02 · notificaciones + WhatsApp API</div>
+<div class="tline" style="animation-delay: 4s"><span style="color: #A3E635">✓</span> demo semanal enviada al cliente</div>
+<div class="tline" style="animation-delay: 4.8s"><span style="color: #fff">▲ deploy</span> · producción en línea <span class="caret" style="background: #A3E635"></span></div>
+</div>
+</div>
+<div style="flex: 1 1 300px; border: 1px solid #1a1a1a; border-radius: 28px; background: #0a0a0a; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div class="mono" style="display: flex; justify-content: space-between; color: #737373"><span>Pipeline</span><span style="display: inline-flex; align-items: center; gap: 8px; color: #A3E635"><span class="rec" style="width: 7px; height: 7px; border-radius: 50%; background: #A3E635"></span>En curso</span></div>
+<div class="node" style="border: 1px solid #262626; border-radius: 16px; padding: 16px 18px; margin-top: 8px"><div class="lit" style="background: #10160a; border-radius: 16px; animation-delay: .8s"></div><div style="position: relative; display: flex; justify-content: space-between"><span style="font-weight: 500">01 · Discovery</span><span class="mono" style="color: #A3E635">Gratis</span></div></div>
+<div class="node" style="border: 1px solid #262626; border-radius: 16px; padding: 16px 18px"><div class="lit" style="background: #10160a; border-radius: 16px; animation-delay: 1.6s"></div><div style="position: relative; display: flex; justify-content: space-between"><span style="font-weight: 500">02 · Blueprint</span><span class="mono" style="color: #A3E635">2–5 días</span></div></div>
+<div class="node" style="border: 1px solid #262626; border-radius: 16px; padding: 16px 18px"><div class="lit" style="background: #10160a; border-radius: 16px; animation-delay: 2.8s"></div><div style="position: relative; display: flex; justify-content: space-between"><span style="font-weight: 500">03 · Build</span><span class="mono" style="color: #A3E635">Sprints</span></div></div>
+<div class="node" style="border: 1px solid #262626; border-radius: 16px; padding: 16px 18px"><div class="lit" style="background: #A3E635; border-radius: 16px; animation-delay: 4.8s"></div><div style="position: relative; display: flex; justify-content: space-between; mix-blend-mode: difference"><span style="font-weight: 500">04 · Launch</span><span class="mono">Live</span></div></div>
+<div class="mono" style="margin-top: auto; padding-top: 14px; color: #525252">Demos cada semana · Cero cajas negras</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONSTRUIMOS -->
+<section id="construimos" style="padding: 0 0 120px">
+<div class="wrap">
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-end; margin-bottom: 48px">
+<div style="flex: 999 1 560px"><div class="mono" style="color: #A3E635">Lo que construimos</div><h2 class="h2" style="margin-top: 24px">Básicamente cualquier cosa <span class="serif it" style="color: #737373">que corra en una pantalla.</span></h2></div>
+<p style="flex: 1 1 300px; margin: 0; color: #a3a3a3">Estos son solo algunos ejemplos. Si no ves tu idea aquí, cuéntanosla.</p>
+</div>
+<div class="build">
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Apps móviles</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">iOS y Android que tus clientes van a querer tener en su celular.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">Delivery · Reservas · Lealtad · Fitness</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Plataformas web y SaaS</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Software que vendes por suscripción, con usuarios, pagos y panel de administración.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">Marketplaces · Cursos · B2B</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Sistemas internos</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Adiós a los Excel y al caos por WhatsApp. Un sistema hecho a cómo tú trabajas.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">CRM · ERP · Inventarios · POS</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">IA y chatbots</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Asistentes que responden, califican y venden por ti 24/7, entrenados con tu negocio.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">WhatsApp · Agentes IA · Documentos</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Automatizaciones</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Conectamos tus herramientas para que las tareas repetitivas se hagan solas.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">Facturación · Reportes · Seguimientos</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16v-5M11 16V7M16 16v-8M21 16V4"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Dashboards y datos</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Todos los números de tu negocio en una pantalla, en tiempo real.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">Ventas · Operación · KPIs · Finanzas</div></div>
+<div class="bc rv"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H5a3 3 0 0 0 0 6h4M15 7h4a3 3 0 0 1 0 6h-4M8 10h8"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Integraciones y APIs</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Hacemos que tus sistemas hablen entre sí: pagos, CRMs, ERPs, facturación, paqueterías.</p><div class="mono" style="color: #525252; font-size: 10.5px; margin-top: 18px">Stripe · Mercado Pago · SAT · Shopify · Meta</div></div>
+<div class="bc rv" style="background: #A3E635; color: #000; border-color: transparent"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10l-2 4H9l-2-4c0-4 2-8 5-10z"/><path d="M9 16l-2 5 3-2M15 16l2 5-3-2"/><circle cx="12" cy="10" r="1.6"/></svg><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">MVPs para startups</div><p style="margin: 8px 0 0; font-size: 14.5px">Valida tu idea con un producto real en semanas, no meses, sin quemar tu capital.</p><div class="mono" style="font-size: 10.5px; margin-top: 18px; opacity: .7">Prototipo · Lanzamiento · Pitch</div></div>
+</div>
+</div>
+</section>
+
+<!-- ANTES / DESPUES + PROCESO (light) -->
+<section id="proceso" style="background: #fafafa; color: #000; padding: 120px 0; border-radius: 48px 48px 0 0">
+<div class="wrap">
+<div class="mono rv" style="color: #525252">El antes y el después</div>
+<h2 class="h2 rv" style="margin-top: 24px">Seis apps que no se hablan <span class="serif it">vs. un sistema hecho para ti.</span></h2>
+<div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-top: 56px">
+<div style="border: 1px solid #e5e5e5; background: #fff; border-radius: 28px; padding: 40px">
+<div class="mono" style="color: #a3a3a3">Sin software a la medida</div>
+<ul style="list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 16px; color: #525252">
+<li style="display: flex; gap: 14px"><span style="color: #d4d4d4">✕</span>Pagas 6 apps distintas que no se hablan entre sí.</li>
+<li style="display: flex; gap: 14px"><span style="color: #d4d4d4">✕</span>Tu equipo pierde horas copiando datos de un lado a otro.</li>
+<li style="display: flex; gap: 14px"><span style="color: #d4d4d4">✕</span>Dependes de un Excel que se rompe si alguien mueve una celda.</li>
+<li style="display: flex; gap: 14px"><span style="color: #d4d4d4">✕</span>Tu idea millonaria se queda en una libreta porque "está muy complicado".</li>
+</ul>
+</div>
+<div style="border-radius: 28px; padding: 40px; background: #000; color: #fff">
+<div class="mono" style="color: #A3E635">Con ZYX</div>
+<ul style="list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 16px">
+<li style="display: flex; gap: 14px"><span style="color: #A3E635">✓</span>Un solo sistema, diseñado exactamente para cómo funciona tu negocio.</li>
+<li style="display: flex; gap: 14px"><span style="color: #A3E635">✓</span>Las tareas repetitivas corren solas. Tu equipo se enfoca en vender.</li>
+<li style="display: flex; gap: 14px"><span style="color: #A3E635">✓</span>Datos en tiempo real desde cualquier lugar, en tu celular o laptop.</li>
+<li style="display: flex; gap: 14px"><span style="color: #A3E635">✓</span>Tu idea lanzada y en manos de usuarios reales. Un activo que vale dinero.</li>
+</ul>
+</div>
+</div>
+<div style="margin-top: 140px">
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end">
+<h3 style="margin: 0; font-weight: 500; font-size: clamp(38px, 5vw, 72px); line-height: 1; letter-spacing: -.045em">De la idea al lanzamiento <span class="serif it">en 4 pasos claros.</span></h3>
+<div class="mono" style="color: #737373">Cómo trabajamos</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 56px">
+<div class="rv" style="background: #fff; border: 1px solid #e5e5e5; border-radius: 24px; padding: 28px"><div style="display: flex; justify-content: space-between"><span class="serif it" style="font-size: 44px; line-height: 1">01</span><span class="mono" style="font-size: 10.5px; background: #000; color: #fff; padding: 5px 10px; border-radius: 999px; height: fit-content">Gratis</span></div><div style="font-size: 21px; font-weight: 500; margin-top: 40px; letter-spacing: -.02em">Entendemos tu problema</div><p style="color: #525252; font-size: 14.5px; margin: 8px 0 0">Una llamada donde aterrizamos tu idea, tus usuarios y qué significa el éxito para ti.</p></div>
+<div class="rv" style="background: #fff; border: 1px solid #e5e5e5; border-radius: 24px; padding: 28px"><div style="display: flex; justify-content: space-between"><span class="serif it" style="font-size: 44px; line-height: 1">02</span><span class="mono" style="font-size: 10.5px; background: #000; color: #fff; padding: 5px 10px; border-radius: 999px; height: fit-content">2–5 días</span></div><div style="font-size: 21px; font-weight: 500; margin-top: 40px; letter-spacing: -.02em">Plan + cotización</div><p style="color: #525252; font-size: 14.5px; margin: 8px 0 0">Alcance, diseño de pantallas, tiempos y una cotización cerrada. Sin sorpresas.</p></div>
+<div class="rv" style="background: #fff; border: 1px solid #e5e5e5; border-radius: 24px; padding: 28px"><div style="display: flex; justify-content: space-between"><span class="serif it" style="font-size: 44px; line-height: 1">03</span><span class="mono" style="font-size: 10.5px; background: #000; color: #fff; padding: 5px 10px; border-radius: 999px; height: fit-content">Demos semanales</span></div><div style="font-size: 21px; font-weight: 500; margin-top: 40px; letter-spacing: -.02em">Construimos por sprints</div><p style="color: #525252; font-size: 14.5px; margin: 8px 0 0">Ciclos cortos. Tú pruebas, das feedback y ajustamos sobre la marcha.</p></div>
+<div class="rv" style="background: #000; color: #fff; border-radius: 24px; padding: 28px"><div style="display: flex; justify-content: space-between"><span class="serif it" style="font-size: 44px; line-height: 1; color: #A3E635">04</span><span class="mono" style="font-size: 10.5px; background: #A3E635; color: #000; padding: 5px 10px; border-radius: 999px; height: fit-content">Soporte incluido</span></div><div style="font-size: 21px; font-weight: 500; margin-top: 40px; letter-spacing: -.02em">Lanzamiento + soporte</div><p style="color: #a3a3a3; font-size: 14.5px; margin: 8px 0 0">Publicamos, monitoreamos y seguimos mejorando. No desaparecemos.</p></div>
+</div>
+</div>
+<div id="stack" class="rv" style="margin-top: 112px; padding-top: 40px; border-top: 1px solid #e5e5e5; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 280px"><div class="mono" style="color: #737373">Stack moderno, hecho para escalar</div></div>
+<div style="flex: 3 1 560px; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">React</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Next.js</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">React Native</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Swift</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Kotlin</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Node.js</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Python</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">PostgreSQL</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Supabase</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Firebase</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">AWS</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Vercel</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">OpenAI · Claude</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Stripe</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">WhatsApp API</span>
+</div>
+</div>
+<div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 56px">
+<div style="display: flex; gap: 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><div style="font-weight: 500; font-size: 17px">Confidencialidad total</div><p style="margin: 6px 0 0; color: #525252; font-size: 15px">Firmamos NDA antes de que nos cuentes tu idea.</p></div></div>
+<div style="display: flex; gap: 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg><div><div style="font-weight: 500; font-size: 17px">El código es tuyo</div><p style="margin: 6px 0 0; color: #525252; font-size: 15px">Código, cuentas y documentación. Cero dependencia de nosotros.</p></div></div>
+<div style="display: flex; gap: 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><div style="font-weight: 500; font-size: 17px">Cotización cerrada</div><p style="margin: 6px 0 0; color: #525252; font-size: 15px">Sabes cuánto vas a pagar y qué recibes antes de empezar.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- COTIZADOR -->
+<section id="cotizar" style="background: #fafafa; padding: 0 0 140px">
+<div class="wrap">
+<div class="rv" style="position: relative; overflow: hidden; background: #000; color: #fff; border-radius: 36px; padding: clamp(28px, 5vw, 72px); display: flex; flex-wrap: wrap; gap: 56px">
+<div class="dotgrid" aria-hidden="true" style="position: absolute; inset: 0; opacity: .7"></div>
+<div style="position: relative; flex: 1 1 340px">
+<div class="mono" style="color: #A3E635">Cotización gratis · Sin compromiso</div>
+<h2 style="margin: 24px 0 0; font-weight: 500; font-size: clamp(42px, 5.2vw, 76px); line-height: .96; letter-spacing: -.05em">Cuéntanos tu proyecto. <span class="serif it" style="color: #A3E635">Cotizado en &lt;48 h.</span></h2>
+<p style="margin: 28px 0 0; color: #a3a3a3; font-size: 17px; max-width: 440px">Cada proyecto es distinto, por eso no manejamos precios genéricos. Responde 3 preguntas y mándalas por WhatsApp: un desarrollador te responde con los siguientes pasos.</p>
+<div style="margin-top: 36px; border: 1px solid #1f1f1f; border-radius: 20px; padding: 20px; background: rgba(10,10,10,.8)">
+<div class="mono" style="color: #737373">Tu brief</div>
+<div style="margin-top: 12px; font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.9; color: #d4d4d4">
+<div><span style="color: #525252">qué:</span> <span id="brief-type">App móvil</span></div>
+<div><span style="color: #525252">etapa:</span> <span id="brief-stage">Solo es una idea</span></div>
+<div><span style="color: #525252">cuándo:</span> <span id="brief-when">Lo antes posible</span></div>
+</div>
+</div>
+</div>
+<div style="position: relative; flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
+<div>
+<div style="font-weight: 500; margin-bottom: 14px"><span class="mono" style="color: #737373; margin-right: 10px">01</span>¿Qué quieres construir?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="chip on" data-k="type" data-v="App móvil" aria-pressed="true">App móvil</button><button type="button" class="chip" data-k="type" data-v="Plataforma web / SaaS" aria-pressed="false">Plataforma web / SaaS</button><button type="button" class="chip" data-k="type" data-v="Sistema interno" aria-pressed="false">Sistema interno</button><button type="button" class="chip" data-k="type" data-v="IA / Chatbot" aria-pressed="false">IA / Chatbot</button><button type="button" class="chip" data-k="type" data-v="Automatización" aria-pressed="false">Automatización</button><button type="button" class="chip" data-k="type" data-v="Integración / API" aria-pressed="false">Integración / API</button><button type="button" class="chip" data-k="type" data-v="Otra cosa" aria-pressed="false">Otra cosa</button>
+</div>
+</div>
+<div>
+<div style="font-weight: 500; margin-bottom: 14px"><span class="mono" style="color: #737373; margin-right: 10px">02</span>¿En qué etapa estás?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="chip on" data-k="stage" data-v="Solo es una idea" aria-pressed="true">Solo es una idea</button><button type="button" class="chip" data-k="stage" data-v="Ya tengo diseños / plan" aria-pressed="false">Ya tengo diseños / plan</button><button type="button" class="chip" data-k="stage" data-v="Mejorar algo existente" aria-pressed="false">Mejorar algo existente</button>
+</div>
+</div>
+<div>
+<div style="font-weight: 500; margin-bottom: 14px"><span class="mono" style="color: #737373; margin-right: 10px">03</span>¿Para cuándo lo necesitas?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="chip on" data-k="when" data-v="Lo antes posible" aria-pressed="true">Lo antes posible</button><button type="button" class="chip" data-k="when" data-v="1–3 meses" aria-pressed="false">1–3 meses</button><button type="button" class="chip" data-k="when" data-v="3+ meses" aria-pressed="false">3+ meses</button><button type="button" class="chip" data-k="when" data-v="Solo explorando" aria-pressed="false">Solo explorando</button>
+</div>
+</div>
+<div>
+<label for="zyx-desc" style="display: block; font-weight: 500; margin-bottom: 14px"><span class="mono" style="color: #737373; margin-right: 10px">04</span>Descríbelo en pocas palabras <span style="color: #737373; font-weight: 400">(opcional)</span></label>
+<textarea id="zyx-desc" rows="3" placeholder="Ej. una app de reservas para mi restaurante…" style="width: 100%; background: #0a0a0a; border: 1px solid #2a2a2a; border-radius: 18px; padding: 16px; color: #fff; font-size: 15px; resize: vertical; font-family: 'Geist', sans-serif"></textarea>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+<a class="btn" id="wa-quote" href="https://wa.me/524421454972" target="_blank" rel="noopener" style="background: #a3e635; color: #000; min-height: 58px; padding: 0 32px; font-size: 16px">Cotizar por WhatsApp
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11L11 3M5 3h6v6"/></svg></a>
+<span class="mono" style="color: #737373">NDA disponible · Respuesta &lt;24 h</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding: 140px 0 120px">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 320px"><div class="mono" style="color: #A3E635">Preguntas frecuentes</div><h2 class="h2 rv" style="margin-top: 24px">Lo que preguntan <span class="serif it" style="color: #737373">antes de empezar.</span></h2></div>
+<div style="flex: 999 1 560px; min-width: 0; border-bottom: 1px solid #1c1c1c">
+<details><summary>¿Firman NDA? <span class="pl">+</span></summary><p style="margin: 0 0 28px; color: #a3a3a3; max-width: 680px">Sí, antes de que nos cuentes los detalles de tu idea.</p></details>
+<details><summary>¿El código es mío? <span class="pl">+</span></summary><p style="margin: 0 0 28px; color: #a3a3a3; max-width: 680px">Sí: el código, el diseño, las cuentas y los datos son tuyos. Entregamos todo con documentación.</p></details>
+<details><summary>¿Cuánto cuesta? <span class="pl">+</span></summary><p style="margin: 0 0 28px; color: #a3a3a3; max-width: 680px">Depende del alcance. Tras la llamada de discovery te entregamos un blueprint con una cotización cerrada en 2 a 5 días.</p></details>
+<details><summary>¿Cómo sé que va avanzando? <span class="pl">+</span></summary><p style="margin: 0 0 28px; color: #a3a3a3; max-width: 680px">Trabajamos por sprints y te mostramos una demo cada semana. Pruebas, das feedback y ajustamos.</p></details>
+<details><summary>¿Qué pasa después del lanzamiento? <span class="pl">+</span></summary><p style="margin: 0 0 28px; color: #a3a3a3; max-width: 680px">Publicamos, monitoreamos y seguimos mejorando. El soporte post-lanzamiento está incluido.</p></details>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding: 0 0 24px">
+<div class="wrap">
+<div class="rv" style="position: relative; overflow: hidden; border-radius: 40px; background: #A3E635; color: #000; padding: clamp(40px, 7vw, 104px) clamp(28px, 6vw, 88px)">
+<div aria-hidden="true" style="position: absolute; right: -140px; bottom: -240px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(0,0,0,.2)"></div>
+<div class="mono" style="position: relative">Cotización gratis · NDA disponible</div>
+<h2 style="position: relative; margin: 28px 0 0; font-weight: 500; font-size: clamp(48px, 8vw, 120px); line-height: .92; letter-spacing: -.055em">Tu idea merece <span class="serif it" style="letter-spacing: -.01em">salir de la libreta.</span></h2>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; margin-top: 56px">
+<p style="margin: 0; max-width: 460px; font-size: 18px">Cuéntanos qué quieres construir. Un desarrollador te responde en menos de 24 horas.</p>
+<a class="btn" href="#cotizar" style="background: #000; color: #fff; min-height: 60px; padding: 0 34px; font-size: 16px">Cotizar mi proyecto →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 0 24px">
+<div class="wrap rv">
+<div class="mono" style="color: #737373">Otros servicios ZYX</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 24px">
+<a class="other" href="https://ads.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4f8ef7"></span>Meta Ads</span><span style="color: #4f8ef7">→</span></a>
+<a class="other" href="https://paginas.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #a855f7"></span>Landing Pages</span><span style="color: #a855f7">→</span></a>
+<a class="other" href="https://ecom.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #00c48c"></span>Shopify + UGC</span><span style="color: #00c48c">→</span></a>
+<a class="other" href="https://clon.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #e879f9"></span>Clon IA</span><span style="color: #e879f9">→</span></a>
+<a class="other" href="https://info.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #14b8a6"></span>Infoproductos</span><span style="color: #14b8a6">→</span></a>
+</div>
+</div>
+</section>
+
+<footer style="padding: 40px 0">
+<div class="wrap mono" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; color: #737373">
+<a href="https://zyx.mx/" style="color: #a3a3a3">← ZYX · Todos los servicios</a>
+<span>© 2026 ZYX · Software a la medida · México</span>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  // Palabra rotatoria del hero
+  var rot=document.getElementById('rot'), track=document.getElementById('rot-track');
+  var widths=[2.95, 2.2, 3.2, 2.9, 1.15, 3.5], i=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(rot&&track&&!reduce){setInterval(function(){i=(i+1)%widths.length;track.style.transform='translateY('+(-1.34*i)+'em)';rot.style.width=widths[i]+'em';},2400);}
+  // Cotizador de software
+  var sel={type:'App móvil',stage:'Solo es una idea',when:'Lo antes posible'};
+  var desc=document.getElementById('zyx-desc'), wa=document.getElementById('wa-quote');
+  function update(){
+    ['type','stage','when'].forEach(function(k){var el=document.getElementById('brief-'+k);if(el)el.textContent=sel[k];});
+    var msg='Hola ZYX, quiero cotizar un proyecto de software.\n• Qué: '+sel.type+'\n• Etapa: '+sel.stage+'\n• Para cuándo: '+sel.when+(desc&&desc.value.trim()?'\n• Idea: '+desc.value.trim():'');
+    if(wa)wa.href='https://wa.me/524421454972?text='+encodeURIComponent(msg);
+  }
+  document.querySelectorAll('.chip[data-k]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var k=b.getAttribute('data-k');sel[k]=b.getAttribute('data-v');
+      document.querySelectorAll('.chip[data-k="'+k+'"]').forEach(function(o){var on=o===b;o.classList.toggle('on',on);o.setAttribute('aria-pressed',on?'true':'false');});
+      update();
+    });
+  });
+  if(desc)desc.addEventListener('input',update);
+  update();
+})();
+</script>
+</body>
+</html>
