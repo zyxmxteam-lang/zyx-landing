@@ -96,7 +96,25 @@ body{top:0!important}
 body>.skiptranslate,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,#gt-el{display:none!important}
 .goog-text-highlight{background:none!important;box-shadow:none!important}
 font[style]{background:none!important;box-shadow:none!important}
-@media (max-width:760px){.lang-btn .lang-cur{display:none}.lang-btn{padding:0 12px}.hide-sm{display:block!important;position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}}
+html.mm-lock{overflow:hidden}
+.burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#fff;cursor:pointer}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;border-radius:2px;transition:transform .3s,opacity .3s}
+.burger span+span{margin-top:4px}
+.mm{position:fixed;inset:0;z-index:100;font-family:'Geist',system-ui,sans-serif;color:#fff;-webkit-font-smoothing:antialiased;background:rgba(0,0,0,.97);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mm.open{opacity:1;pointer-events:auto}
+.mm-in{min-height:100%;padding:18px 20px 40px;display:flex;flex-direction:column;gap:28px;transform:translateY(-12px);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mm.open .mm-in{transform:none}
+.mm-top{display:flex;justify-content:space-between;align-items:center;height:56px}
+.mm-x{width:44px;height:44px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#fff;font-size:20px;cursor:pointer}
+.mm-h{font:500 11px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#737373;margin-bottom:6px}
+.mm-l a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;border-bottom:1px solid #161616;font-size:22px;font-weight:500;letter-spacing:-.02em;color:#fff}
+.mm-s{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mm-s a{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 14px;border:1px solid #1f1f1f;border-radius:16px;background:#0a0a0a;font-size:15px;color:#fff}
+.mm-langs{display:flex;flex-wrap:wrap;gap:6px}
+.mm-langs button{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#d4d4d4;font:400 14px 'Geist',sans-serif;cursor:pointer}
+.mm-langs button[aria-current=true]{background:#fff;color:#000;border-color:#fff}
+.mm-cta{display:flex;align-items:center;justify-content:center;min-height:58px;border-radius:999px;background:#fff;color:#000!important;font-weight:600;font-size:16px}
+@media (max-width:760px){.burger{display:inline-flex}.navr>a.btn{display:none!important}.lang{position:static}.lang-menu{left:16px;right:16px;width:auto;max-width:none;top:calc(100% + 8px);transform-origin:top center}.pill .lang-dots{display:none!important}.lang-btn .lang-cur{display:none}.lang-btn{padding:0 12px}.hide-sm{display:block!important;position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Automatización: 10 tareas que tu negocio no debería seguir haciendo a mano", "description": "Diez tareas repetitivas que la mayoría de los negocios puede automatizar: seguimiento de prospectos, facturación, recordatorios, reportes, inventario y más.", "datePublished": "2026-09-17", "dateModified": "2026-09-17", "inLanguage": "es-MX", "author": {"@type": "Organization", "name": "ZYX Research", "url": "https://zyx.mx/blog/"}, "publisher": {"@type": "Organization", "name": "ZYX", "url": "https://zyx.mx/", "logo": "https://zyx.mx/favicon.svg"}, "mainEntityOfPage": "https://zyx.mx/blog/automatizaciones-tareas-que-no-deberias-hacer-a-mano/", "articleSection": "Software"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ZYX", "item": "https://zyx.mx/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zyx.mx/blog/"}, {"@type": "ListItem", "position": 3, "name": "Automatización: 10 tareas que tu negocio no debería seguir haciendo a mano", "item": "https://zyx.mx/blog/automatizaciones-tareas-que-no-deberias-hacer-a-mano/"}]}</script>
@@ -111,7 +129,7 @@ font[style]{background:none!important;box-shadow:none!important}
 <nav class="hide-sm" style="display: flex; gap: 2px">
 <a class="l" href="https://zyx.mx/blog/">Todos los artículos</a><a class="l" href="https://zyx.mx/#servicios">Servicios</a><a class="l" href="https://zyx.mx/#cotizar">Cotizar</a>
 </nav>
-<div style="display: flex; align-items: center; gap: 8px"><div class="lang notranslate" translate="no"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma / Change language"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg><span class="lang-cur">ES</span></button><div class="lang-menu" role="menu"><div class="lang-hint">Idioma · Language</div><button type="button" data-lang="es" lang="es"><span>Español</span><span class="mono" style="font-size:10px;opacity:.6">ES</span></button><button type="button" data-lang="en" lang="en"><span>English</span><span class="mono" style="font-size:10px;opacity:.6">EN</span></button><button type="button" data-lang="pt" lang="pt"><span>Português</span><span class="mono" style="font-size:10px;opacity:.6">PT</span></button><button type="button" data-lang="fr" lang="fr"><span>Français</span><span class="mono" style="font-size:10px;opacity:.6">FR</span></button><button type="button" data-lang="de" lang="de"><span>Deutsch</span><span class="mono" style="font-size:10px;opacity:.6">DE</span></button><button type="button" data-lang="it" lang="it"><span>Italiano</span><span class="mono" style="font-size:10px;opacity:.6">IT</span></button><button type="button" data-lang="zh-CN" lang="zh-CN"><span>中文</span><span class="mono" style="font-size:10px;opacity:.6">ZH</span></button><button type="button" data-lang="ja" lang="ja"><span>日本語</span><span class="mono" style="font-size:10px;opacity:.6">JA</span></button><button type="button" data-lang="ko" lang="ko"><span>한국어</span><span class="mono" style="font-size:10px;opacity:.6">KO</span></button><button type="button" data-lang="ar" lang="ar"><span>العربية</span><span class="mono" style="font-size:10px;opacity:.6">AR</span></button><button type="button" data-lang="hi" lang="hi"><span>हिन्दी</span><span class="mono" style="font-size:10px;opacity:.6">HI</span></button><button type="button" data-lang="ru" lang="ru"><span>Русский</span><span class="mono" style="font-size:10px;opacity:.6">RU</span></button><button type="button" data-lang="tr" lang="tr"><span>Türkçe</span><span class="mono" style="font-size:10px;opacity:.6">TR</span></button><button type="button" data-lang="pl" lang="pl"><span>Polski</span><span class="mono" style="font-size:10px;opacity:.6">PL</span></button><button type="button" data-lang="iw" lang="iw"><span>עברית</span><span class="mono" style="font-size:10px;opacity:.6">IW</span></button><button type="button" data-lang="id" lang="id"><span>Bahasa Indonesia</span><span class="mono" style="font-size:10px;opacity:.6">ID</span></button></div></div><a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20le%C3%AD%20su%20blog%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" style="background: #fff; color: #000; min-height: 44px; padding: 0 18px; font-size: 14px"><span>Hablar con <span class="notranslate" translate="no">ZYX</span> →</span></a></div>
+<div class="navr" style="display: flex; align-items: center; gap: 8px"><div class="lang notranslate" translate="no"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma / Change language"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg><span class="lang-cur">ES</span></button><div class="lang-menu" role="menu"><div class="lang-hint">Idioma · Language</div><button type="button" data-lang="es" lang="es"><span>Español</span><span class="mono" style="font-size:10px;opacity:.6">ES</span></button><button type="button" data-lang="en" lang="en"><span>English</span><span class="mono" style="font-size:10px;opacity:.6">EN</span></button><button type="button" data-lang="pt" lang="pt"><span>Português</span><span class="mono" style="font-size:10px;opacity:.6">PT</span></button><button type="button" data-lang="fr" lang="fr"><span>Français</span><span class="mono" style="font-size:10px;opacity:.6">FR</span></button><button type="button" data-lang="de" lang="de"><span>Deutsch</span><span class="mono" style="font-size:10px;opacity:.6">DE</span></button><button type="button" data-lang="it" lang="it"><span>Italiano</span><span class="mono" style="font-size:10px;opacity:.6">IT</span></button><button type="button" data-lang="zh-CN" lang="zh-CN"><span>中文</span><span class="mono" style="font-size:10px;opacity:.6">ZH</span></button><button type="button" data-lang="ja" lang="ja"><span>日本語</span><span class="mono" style="font-size:10px;opacity:.6">JA</span></button><button type="button" data-lang="ko" lang="ko"><span>한국어</span><span class="mono" style="font-size:10px;opacity:.6">KO</span></button><button type="button" data-lang="ar" lang="ar"><span>العربية</span><span class="mono" style="font-size:10px;opacity:.6">AR</span></button><button type="button" data-lang="hi" lang="hi"><span>हिन्दी</span><span class="mono" style="font-size:10px;opacity:.6">HI</span></button><button type="button" data-lang="ru" lang="ru"><span>Русский</span><span class="mono" style="font-size:10px;opacity:.6">RU</span></button><button type="button" data-lang="tr" lang="tr"><span>Türkçe</span><span class="mono" style="font-size:10px;opacity:.6">TR</span></button><button type="button" data-lang="pl" lang="pl"><span>Polski</span><span class="mono" style="font-size:10px;opacity:.6">PL</span></button><button type="button" data-lang="iw" lang="iw"><span>עברית</span><span class="mono" style="font-size:10px;opacity:.6">IW</span></button><button type="button" data-lang="id" lang="id"><span>Bahasa Indonesia</span><span class="mono" style="font-size:10px;opacity:.6">ID</span></button></div></div><a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20le%C3%AD%20su%20blog%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" style="background: #fff; color: #000; min-height: 44px; padding: 0 18px; font-size: 14px"><span>Hablar con <span class="notranslate" translate="no">ZYX</span> →</span></a><button type="button" class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button></div>
 </div>
 </header>
 <section style="position: relative; padding: 140px 0 56px; margin-top: -60px">
@@ -203,40 +221,53 @@ font[style]{background:none!important;box-shadow:none!important}
 <span><span>© 2026 <span class="notranslate" translate="no">ZYX</span> · <span class="notranslate" translate="no">ZYX</span> Research · México</span></span>
 </div>
 </footer>
+<div class="mm notranslate-not" id="mm" role="dialog" aria-modal="true" aria-label="Menú"><div class="mm-in">
+<div class="mm-top"><a href="https://zyx.mx/" style="font-weight:700;font-size:22px;letter-spacing:-.045em" class="notranslate" translate="no">ZYX</a><button type="button" class="mm-x" data-mm-close aria-label="Cerrar menú">✕</button></div>
+<div><div class="mm-h">En esta página</div><div class="mm-l"><a href="https://zyx.mx/blog/">Todos los artículos<span style="color:#525252">→</span></a><a href="https://zyx.mx/#servicios">Servicios<span style="color:#525252">→</span></a><a href="https://zyx.mx/#cotizar">Cotizar<span style="color:#525252">→</span></a></div></div>
+<div><div class="mm-h">Servicios</div><div class="mm-s"><a href="https://ads.zyx.mx/"><span style="width:8px;height:8px;border-radius:50%;background:#4f8ef7;flex:none"></span>Meta Ads</a><a href="https://paginas.zyx.mx/"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;flex:none"></span>Landing Pages</a><a href="https://ecom.zyx.mx/"><span style="width:8px;height:8px;border-radius:50%;background:#00c48c;flex:none"></span>Shopify</a><a href="https://ecom.zyx.mx/#ugc"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;flex:none"></span>UGC</a><a href="https://zyx.mx/ai-ads/"><span style="width:8px;height:8px;border-radius:50%;background:#ff3b30;flex:none"></span>AI Ads</a><a href="https://clon.zyx.mx/"><span style="width:8px;height:8px;border-radius:50%;background:#e879f9;flex:none"></span>Clon IA</a><a href="https://info.zyx.mx/"><span style="width:8px;height:8px;border-radius:50%;background:#14b8a6;flex:none"></span>Infoproductos</a><a href="https://zyx.mx/software/"><span style="width:8px;height:8px;border-radius:50%;background:#a3e635;flex:none"></span>Software</a></div></div>
+<div><div class="mm-h">Más</div><div class="mm-l"><a href="https://zyx.mx/">Inicio<span style="color:#525252">→</span></a><a href="https://zyx.mx/#cotizar">Cotizar<span style="color:#525252">→</span></a><a href="https://zyx.mx/blog/">Blog · ZYX Research<span style="color:#525252">→</span></a></div></div>
+<a class="mm-cta" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener">Hablar por WhatsApp ↗</a>
+<div class="notranslate" translate="no"><div class="mm-h">Idioma · Language</div><div class="mm-langs"><button type="button" data-lang="es" lang="es">Español</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="pt" lang="pt">Português</button><button type="button" data-lang="fr" lang="fr">Français</button><button type="button" data-lang="de" lang="de">Deutsch</button><button type="button" data-lang="it" lang="it">Italiano</button><button type="button" data-lang="zh-CN" lang="zh-CN">中文</button><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="ko" lang="ko">한국어</button><button type="button" data-lang="ar" lang="ar">العربية</button><button type="button" data-lang="hi" lang="hi">हिन्दी</button><button type="button" data-lang="ru" lang="ru">Русский</button><button type="button" data-lang="tr" lang="tr">Türkçe</button><button type="button" data-lang="pl" lang="pl">Polski</button><button type="button" data-lang="iw" lang="iw">עברית</button><button type="button" data-lang="id" lang="id">Bahasa Indonesia</button></div></div>
+</div></div>
 <div id="gt-el"></div>
 <script>
 (function(){
   var L=[["es", "Español"], ["en", "English"], ["pt", "Português"], ["fr", "Français"], ["de", "Deutsch"], ["it", "Italiano"], ["zh-CN", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["ar", "العربية"], ["hi", "हिन्दी"], ["ru", "Русский"], ["tr", "Türkçe"], ["pl", "Polski"], ["iw", "עברית"], ["id", "Bahasa Indonesia"]], D=/zyx\.mx$/.test(location.hostname)?'; domain=.zyx.mx':'';
+  var PAGE=(document.documentElement.lang||'es').slice(0,2);
+  var ALT={}; document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){ALT[l.hreflang]=l.href;});
+  var BOT=/bot|crawl|spider|slurp|bingpreview|google|yandex|baidu|duckduck|lighthouse|headless|facebookexternalhit|embedly|whatsapp/i.test(navigator.userAgent);
   function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
   function put(n,v,age){document.cookie=n+'='+v+'; path=/; max-age='+age;if(D)document.cookie=n+'='+v+'; path=/; max-age='+age+D;}
-  function cur(){var g=ck('googtrans');return g?g.split('/').pop():'es';}
+  function cur(){var g=ck('googtrans');return g?g.split('/').pop():PAGE;}
   function load(){
     if(window.__zyxGT)return;window.__zyxGT=1;
-    window.zyxGTInit=function(){new google.translate.TranslateElement({pageLanguage:'es',autoDisplay:false},'gt-el');};
+    window.zyxGTInit=function(){new google.translate.TranslateElement({pageLanguage:PAGE,autoDisplay:false},'gt-el');};
     var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=zyxGTInit';s.async=true;document.head.appendChild(s);
-    // Google solo traduce lo que está renderizado: abre un momento los FAQ cerrados para que también se traduzcan
+    // Google solo traduce lo renderizado: abre un momento los FAQ cerrados para que también se traduzcan
     var closed=[].slice.call(document.querySelectorAll('details:not([open])'));
     closed.forEach(function(d){d.setAttribute('open','');});
     setTimeout(function(){closed.forEach(function(d){d.removeAttribute('open');});},4500);
   }
   function apply(code,reload){
-    put('googtrans','',0);
-    if(code!=='es')put('googtrans','/es/'+code,31536000);
-    put('zyx_lang',code,31536000);
-    if(reload)location.reload();else if(code!=='es')load();
+    put('googtrans','',0); put('zyx_lang',code,31536000);
+    // es / en tienen páginas propias escritas a mano
+    if((code==='es'||code==='en')&&ALT[code]){ if(code!==PAGE){location.href=ALT[code];return;} if(reload)location.reload(); return; }
+    if(code!==PAGE)put('googtrans','/'+PAGE+'/'+code,31536000);
+    if(reload)location.reload();else if(code!==PAGE)load();
   }
-  // Primera visita: usa el idioma del navegador / teléfono del visitante
   if(!ck('zyx_lang')){
-    var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'es']);
-    var pick='es';
-    for(var i=0;i<pref.length;i++){
-      var p=(pref[i]||'').toLowerCase(), b=p.split('-')[0]; if(b==='he')b='iw'; if(b==='zh')p='zh-cn';
-      if(b==='es'){pick='es';break;}
-      var hit=L.filter(function(x){return x[0].toLowerCase()===p||x[0].split('-')[0]===b;})[0];
-      if(hit){pick=hit[0];break;}
+    if(!BOT){
+      var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'es']);
+      var pick='es';
+      for(var i=0;i<pref.length;i++){
+        var p=(pref[i]||'').toLowerCase(), b=p.split('-')[0]; if(b==='he')b='iw'; if(b==='zh')p='zh-cn';
+        if(b==='es'){pick='es';break;}
+        var hit=L.filter(function(x){return x[0].toLowerCase()===p||x[0].split('-')[0]===b;})[0];
+        if(hit){pick=hit[0];break;}
+      }
+      apply(pick,false);
     }
-    apply(pick,false);
-  } else if(cur()!=='es'){ load(); }
+  } else if(cur()!==PAGE){ load(); }
   var c=cur();
   document.querySelectorAll('.lang-cur').forEach(function(e){e.textContent=c.split('-')[0];});
   document.querySelectorAll('[data-lang]').forEach(function(b){
@@ -248,7 +279,13 @@ font[style]{background:none!important;box-shadow:none!important}
     btn.addEventListener('click',function(e){e.stopPropagation();var o=w.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
   });
   document.addEventListener('click',function(){document.querySelectorAll('.lang.open').forEach(function(w){w.classList.remove('open');w.querySelector('.lang-btn').setAttribute('aria-expanded','false');});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.dispatchEvent(new Event('click'));});
+  // menú hamburguesa
+  var mm=document.getElementById('mm'), burger=document.querySelector('.burger');
+  function setMenu(o){if(!mm)return;mm.classList.toggle('open',o);document.documentElement.classList.toggle('mm-lock',o);if(burger)burger.setAttribute('aria-expanded',o);}
+  if(burger)burger.addEventListener('click',function(e){e.stopPropagation();setMenu(!mm.classList.contains('open'));});
+  document.querySelectorAll('[data-mm-close]').forEach(function(x){x.addEventListener('click',function(){setMenu(false);});});
+  if(mm)mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setMenu(false);document.dispatchEvent(new Event('click'));}});
 })();
 </script>
 </div>
