@@ -73,11 +73,12 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 .rec{animation:rec 1.2s ease-in-out infinite}@keyframes rec{50%{opacity:.25}}
 .spin{animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .mega{display:flex;justify-content:center;margin-top:72px;overflow:hidden;font-weight:700;font-size:clamp(120px,30vw,440px);letter-spacing:-.08em;line-height:.8;user-select:none;padding:0 .08em .02em 0}
-.mega span{display:inline-block;color:transparent;background-image:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 100%),linear-gradient(180deg,#fff 0%,#f5f5f5 38%,rgba(255,255,255,.06) 100%);background-size:40% 100%,100% 100%;background-repeat:no-repeat;background-position:-120% 0,0 0;-webkit-background-clip:text;background-clip:text;animation:megaUp 1.4s cubic-bezier(.2,.8,.2,1) both,shine 6s cubic-bezier(.6,0,.2,1) 1.4s infinite}
-.mega span:nth-child(2){animation-delay:.12s,1.6s}.mega span:nth-child(3){animation-delay:.24s,1.8s}
-@keyframes megaUp{from{transform:translateY(105%) rotate(4deg);opacity:0}to{transform:none;opacity:1}}
-@keyframes shine{0%{background-position:-120% 0,0 0}45%,100%{background-position:220% 0,0 0}}
-@supports (animation-timeline: view()){.mega span{animation-timeline:view(),auto;animation-range:entry 10% cover 45%,normal}.mega span:nth-child(2){animation-range:entry 20% cover 50%,normal}.mega span:nth-child(3){animation-range:entry 30% cover 55%,normal}}
+.mega span{display:inline-block;color:transparent;opacity:0;background-image:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(79,142,247,.95) 38%,rgba(232,121,249,.95) 50%,rgba(163,230,53,.9) 62%,rgba(255,255,255,0) 100%),linear-gradient(180deg,#fff 0%,#f2f2f2 40%,#3a3a3a 100%);background-size:300% 100%,100% 100%;background-repeat:no-repeat;background-position:180% 0,0 0;-webkit-background-clip:text;background-clip:text}
+.mega.go span{opacity:1;animation:megaFloat 6s ease-in-out 2s infinite,megaLight 9s ease-in-out 2.2s infinite,megaDrop 1.5s cubic-bezier(.3,0,.25,1) both}
+.mega.go span:nth-child(2){animation-delay:2.3s,2.6s,.16s}.mega.go span:nth-child(3){animation-delay:2.6s,3s,.32s}
+@keyframes megaDrop{0%{opacity:0;transform:translateY(-130%) rotate(-10deg)}45%{opacity:1;transform:translateY(5%) rotate(2deg)}62%{transform:translateY(-6%) rotate(-1deg)}78%{transform:translateY(2%)}90%{transform:translateY(-1%)}100%{opacity:1;transform:none}}
+@keyframes megaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4%)}}
+@keyframes megaLight{0%{background-position:180% 0,0 0}55%,100%{background-position:-80% 0,0 0}}
 @media (max-width:900px){.s2,.s3,.s4{grid-column:span 6}}
 @media (max-width:760px){.wrap{padding:0 20px}.hide-sm{display:none!important}.tile{padding:24px}}
 .chip.on{background:#a3e635;border-color:#a3e635;color:#000;font-weight:500}
@@ -558,7 +559,9 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 </div>
 </footer>
 
-</div>
+</div><script>
+(function(){var m=document.querySelector('.mega');if(!m)return;if(!('IntersectionObserver' in window)){m.classList.add('go');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){m.classList.add('go');io.disconnect();}},{threshold:.35});io.observe(m);})();
+</script>
 <script>
 (function(){
   // Palabra rotatoria del hero
