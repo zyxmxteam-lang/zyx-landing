@@ -643,7 +643,15 @@ html.mm-lock{overflow:hidden}
 <div id="gt-el"></div>
 <script>
 (function(){
-  var L=[["es", "Español"], ["en", "English"], ["pt", "Português"], ["fr", "Français"], ["de", "Deutsch"], ["it", "Italiano"], ["zh-CN", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["ar", "العربية"], ["hi", "हिन्दी"], ["ru", "Русский"], ["tr", "Türkçe"], ["pl", "Polski"], ["iw", "עברית"], ["id", "Bahasa Indonesia"]], D=/zyx\.mx$/.test(location.hostname)?'; domain=.zyx.mx':'';
+  var L=[["es", "Español"], ["en", "English"], ["pt", "Português"], ["fr", "Français"], ["de", "Deutsch"], ["it", "Italiano"], ["zh-CN", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["ar", "العربية"], ["hi", "हिन्दी"], ["ru", "Русский"], ["tr", "Türkçe"], ["pl", "Polski"], ["iw", "עברית"], ["id", "Bahasa Indonesia"]];
+  // Dominio internacional zyxsystem.com: mismo sitio, navegación dentro del dominio
+  var HZ=/(^|\.)zyxsystem\.com$/.test(location.hostname);
+  var D=/zyx\.mx$/.test(location.hostname)?'; domain=.zyx.mx':(HZ?'; domain=.zyxsystem.com':'');
+  if(HZ){
+    var mapU=function(u){var x;try{x=new URL(u,location.href);}catch(e){return u;}var m=x.hostname.match(/^(?:(ads|paginas|ecom|clon|info)\.)?zyx\.mx$/);if(!m)return u;return location.origin+(m[1]?'/'+m[1]:'')+x.pathname+x.search+x.hash;};
+    document.querySelectorAll('a[href]').forEach(function(a){a.setAttribute('href',mapU(a.getAttribute('href')));});
+    document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){l.setAttribute('href',mapU(l.getAttribute('href')));});
+  }
   var PAGE=(document.documentElement.lang||'es').slice(0,2);
   var ALT={}; document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){ALT[l.hreflang]=l.href;});
   var BOT=/bot|crawl|spider|slurp|bingpreview|google|yandex|baidu|duckduck|lighthouse|headless|facebookexternalhit|embedly|whatsapp/i.test(navigator.userAgent);
@@ -666,7 +674,9 @@ html.mm-lock{overflow:hidden}
     if(code!==PAGE)put('googtrans','/'+PAGE+'/'+code,31536000);
     if(reload)location.reload();else if(code!==PAGE)load();
   }
-  if(!ck('zyx_lang')){
+  if(!ck('zyx_lang') && HZ && !BOT){
+    apply('en',false);
+  } else if(!ck('zyx_lang')){
     if(!BOT){
       var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'es']);
       var pick='es';
