@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZYX · La agencia que hace crecer tu negocio en digital.</title>
-<meta name="description" content="ZYX es la agencia digital que combina Meta Ads, landing pages, Shopify, UGC, clones IA de marca personal e infoproductos para hacer crecer tu negocio. Resultados reales, entrega rápida.">
+<meta name="description" content="ZYX es la agencia digital que combina Meta Ads, landing pages, Shopify, UGC, clones IA de marca personal, infoproductos y desarrollo de software a la medida para hacer crecer tu negocio. Resultados reales, entrega rápida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
   --lt-body:#555;--lt-muted:#888;--lt-border:#e5e5e5;
   --r:4px;--ease:cubic-bezier(.16,1,.3,1);
   --green:#00c48c;--blue:#4f8ef7;--purple:#a855f7;--orange:#f97316;
-  --pink:#e879f9;--teal:#14b8a6;
+  --pink:#e879f9;--teal:#14b8a6;--lime:#a3e635;
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -305,6 +305,109 @@ button{font-family:inherit;cursor:pointer}
 .ugc-mini-per{font-size:.7rem;color:var(--lt-muted);margin-top:2px}
 
 /* ─────────────────────────────────────────
+   SOFTWARE DEVELOPMENT SECTION
+───────────────────────────────────────── */
+#svc-dev{background:var(--k);color:var(--w);position:relative;overflow:hidden}
+#svc-dev::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(#0c0c0c 1px,transparent 1px),linear-gradient(90deg,#0c0c0c 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%)}
+#svc-dev::after{content:'';position:absolute;top:-200px;left:50%;width:900px;height:500px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse,rgba(163,230,53,.10),transparent 65%)}
+#svc-dev .wrap{position:relative;z-index:1}
+#svc-dev .svc-badge{background:#121a05;border:1px solid #3a5a10;color:var(--lime)}
+#svc-dev .svc-desc{color:var(--dk-body)}
+#svc-dev .svc-desc strong{color:var(--w)}
+.dev-hl{color:var(--lime);font-style:normal}
+.btn-lime{background:var(--lime);color:var(--k)}
+.dev-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* terminal */
+.dev-term{background:#050505;border:1px solid #1f1f1f;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(163,230,53,.12)}
+.dev-term-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid #161616;background:#0a0a0a}
+.dev-term-bar i{width:10px;height:10px;border-radius:50%;background:#2a2a2a;display:block}
+.dev-term-bar i:nth-child(1){background:#ff5f57}.dev-term-bar i:nth-child(2){background:#febc2e}.dev-term-bar i:nth-child(3){background:#28c840}
+.dev-term-bar span{margin-left:10px;color:var(--dk-faint);font-size:.68rem;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.dev-term-body{padding:22px 20px 24px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;line-height:1.9;min-height:250px;color:var(--dk-body)}
+.dev-term-body .ln{display:block;white-space:pre-wrap;word-break:break-word}
+.dev-term-body .p{color:var(--lime)}
+.dev-term-body .c{color:var(--dk-faint)}
+.dev-term-body .ok{color:var(--green)}
+.dev-term-body .w{color:var(--w)}
+.dev-cursor{display:inline-block;width:8px;height:15px;background:var(--lime);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* "if you can imagine it" strip */
+.dev-imagine{margin-top:72px;text-align:center}
+.dev-imagine-h{font-size:clamp(1.25rem,3vw,1.9rem);font-weight:900;letter-spacing:-.02em;line-height:1.2}
+.dev-rotator{display:inline-block;color:var(--lime);border-bottom:2px solid var(--lime);min-width:4ch;transition:opacity .25s}
+.dev-imagine p{color:var(--dk-muted);font-size:.9rem;margin-top:12px}
+
+/* build grid */
+.dev-grid{display:grid;gap:14px;margin-top:40px}
+@media(min-width:560px){.dev-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.dev-grid{grid-template-columns:repeat(4,1fr)}}
+.dev-card{background:#070707;border:1px solid #1a1a1a;border-radius:10px;padding:24px 20px;transition:border-color .2s,transform .2s var(--ease),background .2s}
+.dev-card:hover{border-color:#3a5a10;transform:translateY(-3px);background:#0a0f04}
+.dev-card-icon{width:42px;height:42px;border-radius:10px;background:#121a05;border:1px solid #2a4010;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:16px}
+.dev-card h4{font-size:.95rem;font-weight:800;color:var(--w);margin-bottom:6px}
+.dev-card p{font-size:.8rem;color:var(--dk-muted);line-height:1.6}
+.dev-card .ex{display:block;margin-top:12px;font-size:.68rem;font-weight:700;color:var(--lime);letter-spacing:.02em;line-height:1.5}
+
+/* pain vs gain */
+.dev-pg{display:grid;gap:16px;margin-top:88px}
+@media(min-width:768px){.dev-pg{grid-template-columns:1fr 1fr}}
+.dev-pg-col{border-radius:12px;padding:28px 24px}
+.dev-pg-col.pain{background:#0a0505;border:1px solid #2a1414}
+.dev-pg-col.gain{background:#070b03;border:1px solid #2a4010}
+.dev-pg-col h3{font-size:1rem;font-weight:800;margin-bottom:16px}
+.dev-pg-col.pain h3{color:#f87171}.dev-pg-col.gain h3{color:var(--lime)}
+.dev-pg-col ul{list-style:none;display:grid;gap:12px}
+.dev-pg-col li{display:flex;gap:10px;font-size:.85rem;line-height:1.55;color:var(--dk-body)}
+.dev-pg-col li b{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;margin-top:2px}
+.dev-pg-col.pain li b{background:#2a1414;color:#f87171}
+.dev-pg-col.gain li b{background:#1a2a08;color:var(--lime)}
+
+/* process */
+.dev-steps{display:grid;gap:14px;margin-top:40px;counter-reset:st}
+@media(min-width:640px){.dev-steps{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.dev-steps{grid-template-columns:repeat(4,1fr)}}
+.dev-step{position:relative;background:#070707;border:1px solid #1a1a1a;border-radius:10px;padding:26px 20px 22px}
+.dev-step-n{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;font-weight:700;color:var(--lime);letter-spacing:.1em}
+.dev-step h4{font-size:.95rem;font-weight:800;color:var(--w);margin:10px 0 6px}
+.dev-step p{font-size:.8rem;color:var(--dk-muted);line-height:1.6}
+.dev-step-t{display:inline-block;margin-top:14px;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dk-faint);border:1px solid #222;border-radius:30px;padding:4px 10px}
+
+/* stack */
+.dev-stack{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:28px}
+.dev-stack span{background:#0a0a0a;border:1px solid #1f1f1f;border-radius:30px;padding:7px 14px;font-size:.72rem;font-weight:700;color:var(--dk-body);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* guarantees */
+.dev-guar{display:grid;gap:14px;margin-top:40px}
+@media(min-width:640px){.dev-guar{grid-template-columns:repeat(3,1fr)}}
+.dev-guar div{text-align:center;padding:24px 18px;border:1px solid #1a1a1a;border-radius:10px;background:#050505}
+.dev-guar .gi{font-size:1.5rem}
+.dev-guar h4{font-size:.9rem;font-weight:800;color:var(--w);margin:10px 0 6px}
+.dev-guar p{font-size:.78rem;color:var(--dk-muted);line-height:1.6}
+
+/* quote builder */
+.dev-quote{margin-top:96px;background:linear-gradient(180deg,#0b1204,#050505 60%);border:1px solid #2a4010;border-radius:16px;padding:40px 22px}
+@media(min-width:640px){.dev-quote{padding:56px 48px}}
+.dev-quote-h{text-align:center;max-width:620px;margin:0 auto}
+.dev-quote-h p{color:var(--dk-body);font-size:.95rem;line-height:1.75;margin-top:14px}
+.dev-q{margin-top:32px}
+.dev-q-label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dk-muted);margin-bottom:12px}
+.dev-chips{display:flex;flex-wrap:wrap;gap:8px}
+.dev-chip{background:#0a0a0a;border:1px solid #262626;color:var(--dk-body);border-radius:30px;padding:10px 16px;font-size:.8rem;font-weight:700;transition:all .15s}
+.dev-chip:hover{border-color:#4a6a20;color:var(--w)}
+.dev-chip.on{background:var(--lime);border-color:var(--lime);color:var(--k)}
+.dev-text{width:100%;margin-top:4px;background:#0a0a0a;border:1px solid #262626;border-radius:10px;color:var(--w);font-family:inherit;font-size:.9rem;padding:14px 16px;resize:vertical;min-height:96px;line-height:1.6}
+.dev-text:focus{outline:none;border-color:var(--lime)}
+.dev-text::placeholder{color:#555}
+.dev-quote-cta{text-align:center;margin-top:36px}
+.dev-quote-cta .btn{font-size:1rem;padding:20px 40px;white-space:normal}
+.dev-quote-note{color:var(--dk-faint);font-size:.72rem;font-weight:600;margin-top:16px}
+
+/* ─────────────────────────────────────────
    WHY ZYX
 ───────────────────────────────────────── */
 #why{background:var(--k);color:var(--w)}
@@ -370,6 +473,7 @@ button{font-family:inherit;cursor:pointer}
     <li><a href="#svc-ecom" data-en="Shopify + UGC">Shopify + UGC</a></li>
     <li><a href="https://clon.zyx.mx" data-en="AI Clone" target="_blank" rel="noopener">Clon IA</a></li>
     <li><a href="https://info.zyx.mx" data-en="Infoproducts" target="_blank" rel="noopener">Infoproductos</a></li>
+    <li><a href="#svc-dev" data-en="Software Development">Desarrollo de Software</a></li>
     <li><a href="#who" data-en="About">Nosotros</a></li>
   </ul>
 </nav>
@@ -387,8 +491,8 @@ button{font-family:inherit;cursor:pointer}
     </h1>
 
     <p class="hero-sub sp-24 reveal" data-d="1"
-       data-en="ZYX is the digital agency that combines <strong>Meta Ads, landing pages, Shopify stores and UGC content</strong> to make your business sell more. One team. Four powerful services. Real results.">
-      ZYX es la agencia digital que combina <strong>Meta Ads, landing pages, Shopify, UGC, clones IA y venta de infoproductos</strong> para que tu negocio venda más. Un solo equipo. Seis servicios poderosos. Resultados reales.
+       data-en="ZYX is the digital agency that combines <strong>Meta Ads, landing pages, Shopify, UGC, AI clones, infoproducts and software development</strong> to make your business sell more. One team. Seven powerful services. Real results.">
+      ZYX es la agencia digital que combina <strong>Meta Ads, landing pages, Shopify, UGC, clones IA, infoproductos y desarrollo de software</strong> para que tu negocio venda más. Un solo equipo. Siete servicios poderosos. Resultados reales.
     </p>
 
     <div class="hero-ctas reveal" data-d="2">
@@ -440,6 +544,13 @@ button{font-family:inherit;cursor:pointer}
         <div class="hsvc-desc" data-en="We turn your expertise into a digital product that sells while you sleep: course, masterclass, ebook. Strategy, design, and launch included.">Convertimos tu expertise en un producto digital que vende mientras duermes: curso, masterclass, ebook. Estrategia, diseño y lanzamiento incluidos.</div>
         <div class="hsvc-link" style="color:var(--teal)" data-en="See service →">Ver servicio →</div>
       </a>
+      <a href="#svc-dev" class="hsvc reveal" data-d="3">
+        <div class="hsvc-icon">💻</div>
+        <div class="hsvc-tag" style="color:var(--lime)" data-en="SOFTWARE · CUSTOM">SOFTWARE · A LA MEDIDA</div>
+        <div class="hsvc-name" data-en="Software Development">Desarrollo de Software</div>
+        <div class="hsvc-desc" data-en="Apps, platforms, internal systems, AI and automations. If you can imagine it, we build it.">Apps, plataformas, sistemas internos, IA y automatizaciones. Si lo puedes imaginar, lo construimos.</div>
+        <div class="hsvc-link" style="color:var(--lime)" data-en="Quote my project →">Cotizar mi proyecto →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -453,6 +564,7 @@ button{font-family:inherit;cursor:pointer}
     <span>Videos UGC</span><span class="dot">·</span>
     <span>Clon IA Hiper-Realista</span><span class="dot">·</span>
     <span>Infoproductos</span><span class="dot">·</span>
+    <span>Desarrollo de Software</span><span class="dot">·</span>
     <span>Diseño 100% custom</span><span class="dot">·</span>
     <span>Copy que convierte</span><span class="dot">·</span>
     <span>Entrega rápida</span><span class="dot">·</span>
@@ -463,6 +575,7 @@ button{font-family:inherit;cursor:pointer}
     <span>Videos UGC</span><span class="dot">·</span>
     <span>Clon IA Hiper-Realista</span><span class="dot">·</span>
     <span>Infoproductos</span><span class="dot">·</span>
+    <span>Desarrollo de Software</span><span class="dot">·</span>
     <span>Diseño 100% custom</span><span class="dot">·</span>
     <span>Copy que convierte</span><span class="dot">·</span>
     <span>Entrega rápida</span><span class="dot">·</span>
@@ -483,7 +596,7 @@ button{font-family:inherit;cursor:pointer}
         <div class="stat-label" data-en="Average delivery time per project">Tiempo promedio de entrega por proyecto</div>
       </div>
       <div class="stat reveal" data-d="2">
-        <div class="stat-num">6</div>
+        <div class="stat-num">7</div>
         <div class="stat-label" data-en="Specialized services under one team">Servicios especializados bajo un solo equipo</div>
       </div>
       <div class="stat reveal" data-d="3">
@@ -500,9 +613,9 @@ button{font-family:inherit;cursor:pointer}
     <p class="label reveal" data-en="WHO WE ARE">QUIÉNES SOMOS</p>
     <div class="who-grid">
       <div class="who-text reveal" data-d="1">
-        <h2 class="h2" data-en="We're not an agency<br>that does everything.<br>We do <em style='font-style:italic'>six things perfectly.</em>">No somos una agencia<br>que hace todo.<br>Hacemos <em style="font-style:italic">seis cosas perfecto.</em></h2>
-        <p data-en="ZYX was born from a simple idea: most agencies spread too thin. They try to do everything and end up doing nothing well. We chose 6 specific digital services and mastered each one of them.">ZYX nació de una idea simple: la mayoría de las agencias se dispersan demasiado. Intentan hacer todo y terminan no haciendo nada bien. Nosotros elegimos 6 servicios digitales específicos y los dominamos por completo.</p>
-        <p data-en="<strong>Meta Ads, landing pages, Shopify stores, UGC videos, hyper-realistic AI clones and infoproducts</strong> — the six pillars any brand needs to dominate digitally. And we're specialists in all six."><strong>Meta Ads, landing pages, tiendas Shopify, videos UGC, clones IA hiper-realistas e infoproductos</strong> — los seis pilares que cualquier marca necesita para dominar en digital. Y somos especialistas en los seis.</p>
+        <h2 class="h2" data-en="We're not an agency<br>that does everything.<br>We do <em style='font-style:italic'>seven things perfectly.</em>">No somos una agencia<br>que hace todo.<br>Hacemos <em style="font-style:italic">siete cosas perfecto.</em></h2>
+        <p data-en="ZYX was born from a simple idea: most agencies spread too thin. They try to do everything and end up doing nothing well. We chose 7 specific digital services and mastered each one of them.">ZYX nació de una idea simple: la mayoría de las agencias se dispersan demasiado. Intentan hacer todo y terminan no haciendo nada bien. Nosotros elegimos 7 servicios digitales específicos y los dominamos por completo.</p>
+        <p data-en="<strong>Meta Ads, landing pages, Shopify stores, UGC videos, hyper-realistic AI clones, infoproducts and custom software</strong> — the seven pillars any brand needs to dominate digitally. And we're specialists in all seven."><strong>Meta Ads, landing pages, tiendas Shopify, videos UGC, clones IA hiper-realistas, infoproductos y software a la medida</strong> — los siete pilares que cualquier marca necesita para dominar en digital. Y somos especialistas en los siete.</p>
         <p data-en="We don't sell contracts. We sell results. We don't have 50 clients. We have the clients we can truly serve well. And every project we deliver is 100% custom, built from scratch for each business.">No vendemos contratos. Vendemos resultados. No tenemos 50 clientes. Tenemos los clientes que podemos atender bien de verdad. Y cada proyecto que entregamos es 100% personalizado, construido desde cero para cada negocio.</p>
         <div class="who-pills sp-20">
           <span class="who-pill">Meta Ads</span>
@@ -511,6 +624,7 @@ button{font-family:inherit;cursor:pointer}
           <span class="who-pill">UGC</span>
           <span class="who-pill" data-en="AI Clone">Clon IA</span>
           <span class="who-pill" data-en="Infoproducts">Infoproductos</span>
+          <span class="who-pill" data-en="Software">Software</span>
           <span class="who-pill" data-en="Custom copy">Copy personalizado</span>
           <span class="who-pill" data-en="Fast delivery">Entrega rápida</span>
         </div>
@@ -949,6 +1063,247 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════ SERVICE: SOFTWARE DEVELOPMENT -->
+<section id="svc-dev" class="sec svc-section">
+  <div class="wrap">
+    <div class="svc-header">
+      <div class="reveal">
+        <div class="svc-badge">
+          💻 <span data-en="SOFTWARE DEVELOPMENT · CUSTOM">DESARROLLO DE SOFTWARE · A LA MEDIDA</span>
+        </div>
+        <h2 class="h2 svc-h" style="color:var(--w)"
+            data-en="If you can imagine it,<br>we can <em class='dev-hl'>build it.</em>">
+          Si lo puedes imaginar,<br>lo podemos <em class="dev-hl">construir.</em>
+        </h2>
+        <p class="svc-desc" data-en="Apps, platforms, internal systems, automations, AI tools… <strong>We develop custom software for any type of business or idea</strong> — from an MVP to validate your startup to the system that runs your entire operation. You bring the problem (or the idea on a napkin). We bring the team, the strategy, and the code.">
+          Apps, plataformas, sistemas internos, automatizaciones, herramientas con IA… <strong>Desarrollamos software a la medida para cualquier tipo de negocio o idea</strong> — desde un MVP para validar tu startup hasta el sistema que corre toda tu operación. Tú traes el problema (o la idea en una servilleta). Nosotros ponemos el equipo, la estrategia y el código.
+        </p>
+        <div class="dev-ctas">
+          <a href="#dev-quote" class="btn btn-lime" data-en="Quote my project →">Cotizar mi proyecto →</a>
+          <a href="#dev-what" class="btn btn-ol" data-en="What can you build?">¿Qué pueden hacer?</a>
+        </div>
+      </div>
+      <div class="reveal" data-d="1">
+        <div class="dev-term" aria-hidden="true">
+          <div class="dev-term-bar"><i></i><i></i><i></i><span>zyx ~ nuevo-proyecto</span></div>
+          <div class="dev-term-body" id="devTerm"></div>
+        </div>
+        <div class="feat-grid sp-16">
+          <div class="feat-card dark-feat">
+            <div class="feat-check" style="background:#121a05;color:var(--lime)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="100% yours">100% tuyo</h4>
+              <p data-en="Source code, design, and data belong to you. No hostages.">El código, el diseño y los datos son tuyos. Sin secuestros.</p>
+            </div>
+          </div>
+          <div class="feat-card dark-feat">
+            <div class="feat-check" style="background:#121a05;color:var(--lime)">✓</div>
+            <div class="feat-card-text">
+              <h4 data-en="Weekly demos">Demos cada semana</h4>
+              <p data-en="You see real progress every week. Zero black boxes.">Ves avances reales cada semana. Cero cajas negras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGINE -->
+    <div class="dev-imagine reveal" id="dev-what">
+      <p class="label inv tc" data-en="WHAT WE BUILD">LO QUE CONSTRUIMOS</p>
+      <div class="dev-imagine-h sp-12">
+        <span data-en="We build">Construimos</span> <span class="dev-rotator" id="devRot">apps móviles</span>
+      </div>
+      <p data-en="And basically anything that runs on a screen. These are just some examples:">Y básicamente cualquier cosa que corra en una pantalla. Estos son solo algunos ejemplos:</p>
+    </div>
+
+    <div class="dev-grid">
+      <div class="dev-card reveal" data-d="1">
+        <div class="dev-card-icon">📱</div>
+        <h4 data-en="Mobile apps">Apps móviles</h4>
+        <p data-en="iOS and Android apps your customers will want to keep on their phone.">Apps para iOS y Android que tus clientes van a querer tener en su celular.</p>
+        <span class="ex" data-en="Delivery · Bookings · Loyalty · Fitness">Delivery · Reservas · Lealtad · Fitness</span>
+      </div>
+      <div class="dev-card reveal" data-d="2">
+        <div class="dev-card-icon">🌐</div>
+        <h4 data-en="Web platforms &amp; SaaS">Plataformas web y SaaS</h4>
+        <p data-en="Software you sell by subscription, with users, payments, and admin panel.">Software que vendes por suscripción, con usuarios, pagos y panel de administración.</p>
+        <span class="ex" data-en="Marketplaces · Course platforms · B2B tools">Marketplaces · Plataformas de cursos · Herramientas B2B</span>
+      </div>
+      <div class="dev-card reveal" data-d="3">
+        <div class="dev-card-icon">🏢</div>
+        <h4 data-en="Internal systems">Sistemas internos</h4>
+        <p data-en="Goodbye to Excel spreadsheets and WhatsApp chaos. A system built around how YOU work.">Adiós a los Excel y al caos por WhatsApp. Un sistema hecho a cómo TÚ trabajas.</p>
+        <span class="ex" data-en="CRM · ERP · Inventory · Points of sale">CRM · ERP · Inventarios · Punto de venta</span>
+      </div>
+      <div class="dev-card reveal" data-d="4">
+        <div class="dev-card-icon">🧠</div>
+        <h4 data-en="AI &amp; chatbots">IA y chatbots</h4>
+        <p data-en="Assistants that answer, qualify, and sell for you 24/7, trained on your business.">Asistentes que responden, califican y venden por ti 24/7, entrenados con tu negocio.</p>
+        <span class="ex" data-en="WhatsApp bots · AI agents · Document analysis">Bots de WhatsApp · Agentes IA · Análisis de documentos</span>
+      </div>
+      <div class="dev-card reveal" data-d="1">
+        <div class="dev-card-icon">⚙️</div>
+        <h4 data-en="Automations">Automatizaciones</h4>
+        <p data-en="We connect your tools so repetitive tasks do themselves. Hours saved every week.">Conectamos tus herramientas para que las tareas repetitivas se hagan solas. Horas ahorradas cada semana.</p>
+        <span class="ex" data-en="Invoicing · Reports · Follow-ups · Syncs">Facturación · Reportes · Seguimientos · Sincronizaciones</span>
+      </div>
+      <div class="dev-card reveal" data-d="2">
+        <div class="dev-card-icon">📊</div>
+        <h4 data-en="Dashboards &amp; data">Dashboards y datos</h4>
+        <p data-en="All your business numbers in one screen, in real time. Decide with data, not hunches.">Todos los números de tu negocio en una pantalla, en tiempo real. Decide con datos, no con corazonadas.</p>
+        <span class="ex" data-en="Sales · Operations · KPIs · Finance">Ventas · Operación · KPIs · Finanzas</span>
+      </div>
+      <div class="dev-card reveal" data-d="3">
+        <div class="dev-card-icon">🔌</div>
+        <h4 data-en="Integrations &amp; APIs">Integraciones y APIs</h4>
+        <p data-en="We make your systems talk to each other: payments, CRMs, ERPs, invoicing, logistics.">Hacemos que tus sistemas hablen entre sí: pagos, CRMs, ERPs, facturación, paqueterías.</p>
+        <span class="ex">Stripe · Mercado Pago · SAT · Shopify · Meta</span>
+      </div>
+      <div class="dev-card reveal" data-d="4">
+        <div class="dev-card-icon">🚀</div>
+        <h4 data-en="MVPs for startups">MVPs para startups</h4>
+        <p data-en="Validate your idea with a real product in weeks, not months — and without burning your capital.">Valida tu idea con un producto real en semanas, no meses — y sin quemar tu capital.</p>
+        <span class="ex" data-en="Prototype · Launch · Pitch to investors">Prototipo · Lanzamiento · Pitch a inversionistas</span>
+      </div>
+    </div>
+
+    <!-- PAIN VS GAIN -->
+    <div class="dev-pg">
+      <div class="dev-pg-col pain reveal" data-d="1">
+        <h3 data-en="😩 Without custom software">😩 Sin software a la medida</h3>
+        <ul>
+          <li><b>✕</b><span data-en="You pay for 6 different apps that don't talk to each other.">Pagas 6 apps distintas que no se hablan entre sí.</span></li>
+          <li><b>✕</b><span data-en="Your team loses hours copying data from one place to another.">Tu equipo pierde horas copiando datos de un lado a otro.</span></li>
+          <li><b>✕</b><span data-en="You depend on spreadsheets that break if someone moves a cell.">Dependes de un Excel que se rompe si alguien mueve una celda.</span></li>
+          <li><b>✕</b><span data-en="Your great idea stays in a notebook because 'it's too complicated'.">Tu idea millonaria se queda en una libreta porque “está muy complicado”.</span></li>
+        </ul>
+      </div>
+      <div class="dev-pg-col gain reveal" data-d="2">
+        <h3 data-en="🚀 With ZYX">🚀 Con ZYX</h3>
+        <ul>
+          <li><b>✓</b><span data-en="One single system, designed exactly for how your business works.">Un solo sistema, diseñado exactamente para cómo funciona tu negocio.</span></li>
+          <li><b>✓</b><span data-en="Repetitive tasks run on autopilot. Your team focuses on selling.">Las tareas repetitivas corren en automático. Tu equipo se enfoca en vender.</span></li>
+          <li><b>✓</b><span data-en="Real-time data from anywhere, on your phone or laptop.">Datos en tiempo real desde cualquier lugar, en tu celular o laptop.</span></li>
+          <li><b>✓</b><span data-en="Your idea, launched and in the hands of real users. A digital asset that is worth money.">Tu idea, lanzada y en manos de usuarios reales. Un activo digital que vale dinero.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="sp-64 tc reveal" style="margin-top:96px">
+      <p class="label inv" data-en="HOW WE WORK">CÓMO TRABAJAMOS</p>
+      <h2 class="h2 sp-12" style="color:var(--w)" data-en="From idea to launch<br>in 4 clear steps">De la idea al lanzamiento<br>en 4 pasos claros</h2>
+    </div>
+    <div class="dev-steps">
+      <div class="dev-step reveal" data-d="1">
+        <div class="dev-step-n">01 / DISCOVERY</div>
+        <h4 data-en="We understand your problem">Entendemos tu problema</h4>
+        <p data-en="A free call where we dig into your idea, your users, and what success looks like for you.">Una llamada gratis donde aterrizamos tu idea, tus usuarios y qué significa el éxito para ti.</p>
+        <span class="dev-step-t" data-en="Free">Gratis</span>
+      </div>
+      <div class="dev-step reveal" data-d="2">
+        <div class="dev-step-n">02 / BLUEPRINT</div>
+        <h4 data-en="Plan + quote">Plan + cotización</h4>
+        <p data-en="We give you the scope, screen designs, timeline, and a closed quote. No surprises.">Te entregamos alcance, diseño de pantallas, tiempos y una cotización cerrada. Sin sorpresas.</p>
+        <span class="dev-step-t" data-en="2–5 days">2–5 días</span>
+      </div>
+      <div class="dev-step reveal" data-d="3">
+        <div class="dev-step-n">03 / BUILD</div>
+        <h4 data-en="We build in sprints">Construimos por sprints</h4>
+        <p data-en="Development in short cycles with weekly demos. You test, give feedback, and we adjust on the fly.">Desarrollo en ciclos cortos con demos semanales. Tú pruebas, das feedback y ajustamos sobre la marcha.</p>
+        <span class="dev-step-t" data-en="Weekly demos">Demos semanales</span>
+      </div>
+      <div class="dev-step reveal" data-d="4">
+        <div class="dev-step-n">04 / LAUNCH</div>
+        <h4 data-en="Launch + support">Lanzamiento + soporte</h4>
+        <p data-en="We publish, monitor, and keep improving. We don't disappear after delivery.">Publicamos, monitoreamos y seguimos mejorando. No desaparecemos después de entregar.</p>
+        <span class="dev-step-t" data-en="Support included">Soporte incluido</span>
+      </div>
+    </div>
+
+    <!-- STACK -->
+    <div class="tc reveal" style="margin-top:72px">
+      <p class="label inv" data-en="MODERN TECHNOLOGY, BUILT TO SCALE">TECNOLOGÍA MODERNA, HECHA PARA ESCALAR</p>
+      <div class="dev-stack">
+        <span>React</span><span>Next.js</span><span>React Native</span><span>Swift</span><span>Kotlin</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>Supabase</span><span>Firebase</span><span>AWS</span><span>Vercel</span><span>OpenAI · Claude</span><span>Stripe</span><span>WhatsApp API</span>
+      </div>
+    </div>
+
+    <!-- GUARANTEES -->
+    <div class="dev-guar">
+      <div class="reveal" data-d="1">
+        <div class="gi">🔐</div>
+        <h4 data-en="Total confidentiality">Confidencialidad total</h4>
+        <p data-en="We sign an NDA before you tell us your idea. It's safe with us.">Firmamos NDA antes de que nos cuentes tu idea. Está segura con nosotros.</p>
+      </div>
+      <div class="reveal" data-d="2">
+        <div class="gi">📦</div>
+        <h4 data-en="You own the code">El código es tuyo</h4>
+        <p data-en="Full transfer of code, accounts, and documentation. Zero dependency on us.">Entrega total de código, cuentas y documentación. Cero dependencia de nosotros.</p>
+      </div>
+      <div class="reveal" data-d="3">
+        <div class="gi">🎯</div>
+        <h4 data-en="Closed quote">Cotización cerrada</h4>
+        <p data-en="You know exactly what you'll pay and what you'll get before we start.">Sabes exactamente cuánto vas a pagar y qué vas a recibir antes de empezar.</p>
+      </div>
+    </div>
+
+    <!-- QUOTE BUILDER -->
+    <div class="dev-quote reveal" id="dev-quote">
+      <div class="dev-quote-h">
+        <p class="label tc" style="color:var(--lime)" data-en="FREE QUOTE · NO COMMITMENT">COTIZACIÓN GRATIS · SIN COMPROMISO</p>
+        <h2 class="h2 sp-12" style="color:var(--w)" data-en="Tell us about your project.<br>We'll quote it in &lt;48 h.">Cuéntanos tu proyecto.<br>Te lo cotizamos en &lt;48 h.</h2>
+        <p data-en="Every project is different, so we don't use generic prices. Answer 3 quick questions and send them to us on WhatsApp — a developer will reply with next steps.">Cada proyecto es distinto, por eso no manejamos precios genéricos. Responde 3 preguntas rápidas y mándanoslas por WhatsApp — un desarrollador te responde con los siguientes pasos.</p>
+      </div>
+
+      <div class="dev-q">
+        <div class="dev-q-label" data-en="1 · What do you want to build?">1 · ¿Qué quieres construir?</div>
+        <div class="dev-chips" data-group="tipo" data-multi="1">
+          <button type="button" class="dev-chip" data-en="Mobile app">App móvil</button>
+          <button type="button" class="dev-chip" data-en="Web platform / SaaS">Plataforma web / SaaS</button>
+          <button type="button" class="dev-chip" data-en="Internal system (CRM, ERP…)">Sistema interno (CRM, ERP…)</button>
+          <button type="button" class="dev-chip" data-en="AI / Chatbot">IA / Chatbot</button>
+          <button type="button" class="dev-chip" data-en="Automation">Automatización</button>
+          <button type="button" class="dev-chip" data-en="Integration / API">Integración / API</button>
+          <button type="button" class="dev-chip" data-en="Something else">Otra cosa</button>
+        </div>
+      </div>
+
+      <div class="dev-q">
+        <div class="dev-q-label" data-en="2 · What stage are you at?">2 · ¿En qué etapa estás?</div>
+        <div class="dev-chips" data-group="etapa">
+          <button type="button" class="dev-chip" data-en="Just an idea">Solo es una idea</button>
+          <button type="button" class="dev-chip" data-en="I have designs / a plan">Ya tengo diseños / plan</button>
+          <button type="button" class="dev-chip" data-en="I want to improve an existing system">Quiero mejorar algo que ya existe</button>
+        </div>
+      </div>
+
+      <div class="dev-q">
+        <div class="dev-q-label" data-en="3 · When do you need it?">3 · ¿Para cuándo lo necesitas?</div>
+        <div class="dev-chips" data-group="tiempo">
+          <button type="button" class="dev-chip" data-en="ASAP">Lo antes posible</button>
+          <button type="button" class="dev-chip" data-en="1–3 months">1–3 meses</button>
+          <button type="button" class="dev-chip" data-en="3+ months">3+ meses</button>
+          <button type="button" class="dev-chip" data-en="Just exploring">Solo estoy explorando</button>
+        </div>
+      </div>
+
+      <div class="dev-q">
+        <div class="dev-q-label" data-en="Describe it in a few words (optional)">Descríbelo en pocas palabras (opcional)</div>
+        <textarea class="dev-text" id="devIdea" maxlength="600"
+          placeholder="Ej. Una app para que mis clientes agenden citas y paguen desde el celular…"
+          data-ph-en="E.g. An app for my clients to book appointments and pay from their phone…"></textarea>
+      </div>
+
+      <div class="dev-quote-cta">
+        <a href="https://wa.me/524421454972" id="devQuoteBtn" class="btn btn-lime" target="_blank" rel="noopener"
+           data-en="💬 Quote my project on WhatsApp">💬 Cotizar mi proyecto por WhatsApp</a>
+        <p class="dev-quote-note" data-en="Free · No commitment · NDA available · Response in &lt;24 h">Gratis · Sin compromiso · NDA disponible · Respuesta en &lt;24 h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════════════ WHY ZYX -->
 <section id="why" class="sec">
   <div class="wrap">
@@ -1021,6 +1376,7 @@ button{font-family:inherit;cursor:pointer}
       <a href="https://ecom.zyx.mx#ugc" class="foot-svc orange">UGC Videos</a>
       <a href="#svc-clone" class="foot-svc" style="color:var(--pink)">Clon IA</a>
       <a href="#svc-info" class="foot-svc" style="color:var(--teal)">Infoproductos</a>
+      <a href="#svc-dev" class="foot-svc" style="color:var(--lime)" data-en="Software">Software</a>
     </div>
     <div class="foot-copy" data-en="© 2025 ZYX. All rights reserved.">© 2025 ZYX. Todos los derechos reservados.</div>
     <div class="foot-legal">
@@ -1073,6 +1429,83 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   ham.classList.remove('open');
   ham.setAttribute('aria-expanded','false');
 }));
+
+// ── SOFTWARE DEV: terminal typing
+(function(){
+  const term=document.getElementById('devTerm');
+  if(!term)return;
+  const L={
+    es:[['p','$ '],['w','zyx crear --idea "tu proyecto"'],['br'],['c','# analizando requerimientos…'],['br'],['ok','✓ '],['','diseño UX/UI listo'],['br'],['ok','✓ '],['','backend + base de datos'],['br'],['ok','✓ '],['','app iOS + Android'],['br'],['ok','✓ '],['','pagos e integraciones'],['br'],['ok','✓ '],['','automatizaciones con IA'],['br'],['p','→ '],['w','deploy a producción… 🚀'],['br'],['ok','listo. tu negocio, en piloto automático.']],
+    en:[['p','$ '],['w','zyx create --idea "your project"'],['br'],['c','# analyzing requirements…'],['br'],['ok','✓ '],['','UX/UI design ready'],['br'],['ok','✓ '],['','backend + database'],['br'],['ok','✓ '],['','iOS + Android app'],['br'],['ok','✓ '],['','payments & integrations'],['br'],['ok','✓ '],['','AI automations'],['br'],['p','→ '],['w','deploying to production… 🚀'],['br'],['ok','done. your business, on autopilot.']]
+  };
+  let timer,started=false;
+  function run(){
+    clearTimeout(timer);
+    const seq=L[document.documentElement.getAttribute('data-lang')==='en'?'en':'es'];
+    term.innerHTML='';
+    let line=document.createElement('span');line.className='ln';term.appendChild(line);
+    const cur=document.createElement('span');cur.className='dev-cursor';line.appendChild(cur);
+    let i=0,j=0,span=null;
+    (function step(){
+      if(i>=seq.length){timer=setTimeout(run,4000);return}
+      const [cls,txt]=seq[i];
+      if(cls==='br'){line=document.createElement('span');line.className='ln';term.appendChild(line);line.appendChild(cur);i++;timer=setTimeout(step,260);return}
+      if(!span){span=document.createElement('span');if(cls)span.className=cls;line.insertBefore(span,cur)}
+      span.textContent+=txt[j++];
+      if(j>=txt.length){i++;j=0;span=null}
+      timer=setTimeout(step,cls==='w'?38:18);
+    })();
+  }
+  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!started){started=true;run();io.disconnect()}},{threshold:.3});
+  io.observe(term);
+  langBtn.addEventListener('click',()=>{if(started)run()});
+})();
+
+// ── SOFTWARE DEV: rotating word
+(function(){
+  const rot=document.getElementById('devRot');
+  if(!rot)return;
+  const W={es:['apps móviles','plataformas SaaS','CRMs a la medida','chatbots con IA','marketplaces','sistemas de inventario','automatizaciones','dashboards','lo que imagines'],
+           en:['mobile apps','SaaS platforms','custom CRMs','AI chatbots','marketplaces','inventory systems','automations','dashboards','whatever you imagine']};
+  let k=0;
+  setInterval(()=>{
+    const list=W[document.documentElement.getAttribute('data-lang')==='en'?'en':'es'];
+    k=(k+1)%list.length;
+    rot.style.opacity=0;
+    setTimeout(()=>{rot.textContent=list[k];rot.style.opacity=1},250);
+  },1800);
+})();
+
+// ── SOFTWARE DEV: quote builder → WhatsApp
+(function(){
+  const btn=document.getElementById('devQuoteBtn');
+  if(!btn)return;
+  const idea=document.getElementById('devIdea');
+  document.querySelectorAll('.dev-chips').forEach(g=>{
+    g.addEventListener('click',e=>{
+      const c=e.target.closest('.dev-chip');if(!c)return;
+      if(!g.dataset.multi)g.querySelectorAll('.dev-chip').forEach(x=>{if(x!==c)x.classList.remove('on')});
+      c.classList.toggle('on');
+      build();
+    });
+  });
+  function pick(name){return [...document.querySelectorAll('.dev-chips[data-group="'+name+'"] .dev-chip.on')].map(c=>c.textContent.trim()).join(', ')}
+  function build(){
+    let msg='Hola ZYX 👋 Quiero cotizar un proyecto de desarrollo de software.';
+    const t=pick('tipo'),s=pick('etapa'),w=pick('tiempo'),d=idea.value.trim();
+    if(t)msg+='\n\n• Qué quiero construir: '+t;
+    if(s)msg+='\n• Etapa: '+s;
+    if(w)msg+='\n• Tiempo: '+w;
+    if(d)msg+='\n• Idea: '+d;
+    btn.href='https://wa.me/524421454972?text='+encodeURIComponent(msg);
+  }
+  idea.addEventListener('input',build);
+  build();
+  langBtn.addEventListener('click',()=>{
+    idea.placeholder=lang==='en'?idea.dataset.phEn:'Ej. Una app para que mis clientes agenden citas y paguen desde el celular…';
+    setTimeout(build,0);
+  });
+})();
 </script>
 </body>
 </html>
