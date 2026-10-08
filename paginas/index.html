@@ -82,6 +82,55 @@ details[open] .pl{transform:rotate(45deg)}
 .mesh{background-image:radial-gradient(currentColor 1px,transparent 1.4px);background-size:9px 9px;-webkit-mask-image:radial-gradient(circle,#000 55%,transparent 72%);mask-image:radial-gradient(circle,#000 55%,transparent 72%);animation:meshp 3s ease-in-out infinite}
 @keyframes meshp{50%{opacity:.45}}
 .pulse{animation:pulse 2s ease-out infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+.kin{overflow:hidden;padding:8px 0;border-top:1px solid #141414;border-bottom:1px solid #141414}
+.kin-row{display:flex;gap:48px;white-space:nowrap;width:max-content;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(56px,9vw,136px);line-height:1.08;letter-spacing:-.02em}
+.kin-l{animation:kl 38s linear infinite}.kin-r{animation:kr 38s linear infinite}
+@keyframes kl{to{transform:translateX(-50%)}}@keyframes kr{from{transform:translateX(-50%)}to{transform:none}}
+.ol{color:transparent;-webkit-text-stroke:1px #3a3a3a}
+.mx{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:56px}
+.mc{position:relative;border:1px solid #1a1a1a;border-radius:28px;background:#070707;padding:24px;min-height:400px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s,transform .3s}
+.mc:hover{border-color:#333;transform:translateY(-4px)}
+.mc-h{font-size:21px;font-weight:500;letter-spacing:-.025em;margin-top:10px;line-height:1.15}
+.mc-v{position:relative;flex:1;margin-top:20px;min-height:230px}
+@property --n{syntax:'<integer>';initial-value:0;inherits:false}
+.cnt{counter-reset:n var(--n);font-variant-numeric:tabular-nums}.cnt::after{content:counter(n)}
+.c48{animation:c48 6s cubic-bezier(.2,.8,.2,1) infinite}@keyframes c48{0%{--n:0}60%,100%{--n:48}}
+.c312{animation:c312 6s cubic-bezier(.2,.8,.2,1) infinite}@keyframes c312{0%{--n:0}60%,100%{--n:312}}
+.c100{animation:c100 6s cubic-bezier(.2,.8,.2,1) infinite}@keyframes c100{0%{--n:0}60%,100%{--n:100}}
+.c150{animation:c150 6s cubic-bezier(.2,.8,.2,1) infinite}@keyframes c150{0%{--n:0}60%,100%{--n:150}}
+.c7{animation:c7 6s steps(7) infinite}@keyframes c7{0%{--n:0}60%,100%{--n:7}}
+.feed{animation:feed 14s linear infinite}@keyframes feed{to{transform:translateY(-50%)}}
+.pop{animation:pop 2.4s ease-in-out infinite}@keyframes pop{0%,70%,100%{transform:scale(1)}78%{transform:scale(1.45)}86%{transform:scale(.95)}}
+.flt{position:absolute;bottom:10%;animation:flt 3.2s ease-in infinite;opacity:0}
+@keyframes flt{0%{opacity:0;transform:translateY(0) scale(.6)}15%{opacity:1}100%{opacity:0;transform:translateY(-190px) scale(1.2) rotate(-12deg)}}
+.ring{transform:rotate(-90deg);transform-origin:50% 50%}
+.ringf{stroke-dasharray:302;stroke-dashoffset:302;animation:ringf 6s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes ringf{0%{stroke-dashoffset:302}55%,100%{stroke-dashoffset:0}}
+.ring3{stroke-dasharray:302;animation:ring3 3s linear infinite}@keyframes ring3{from{stroke-dashoffset:0}to{stroke-dashoffset:302}}
+.sweep{position:absolute;inset:0;animation:sweep 6s cubic-bezier(.7,0,.3,1) infinite alternate}
+@keyframes sweep{0%,10%{clip-path:inset(0 100% 0 0)}90%,100%{clip-path:inset(0 0 0 0)}}
+.sweepline{position:absolute;top:0;bottom:0;width:2px;animation:sweepl 6s cubic-bezier(.7,0,.3,1) infinite alternate}
+@keyframes sweepl{0%,10%{left:0}90%,100%{left:100%}}
+.ln{position:absolute;left:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;animation-duration:4s;animation-timing-function:linear;animation-iteration-count:infinite}
+.lt{animation-name:lt}.lm{animation-name:lm}.lb{animation-name:lb}.lx{animation-name:lx}
+@keyframes lt{0%{left:0;top:12%;opacity:1}55%{left:58%;top:50%}100%{left:100%;top:50%;opacity:1}}
+@keyframes lm{0%{left:0;top:50%;opacity:1}100%{left:100%;top:50%;opacity:1}}
+@keyframes lb{0%{left:0;top:88%;opacity:1}55%{left:58%;top:50%}100%{left:100%;top:50%;opacity:1}}
+@keyframes lx{0%{left:0;top:30%;opacity:1}40%{left:40%;top:38%;opacity:1}50%,100%{left:46%;top:40%;opacity:0}}
+.cfw{position:absolute;left:50%;top:44%;width:0;height:0}
+.cf{position:absolute;width:7px;height:12px;border-radius:2px;left:-3px;top:-6px;opacity:0;animation:cf 4s cubic-bezier(.1,.8,.3,1) infinite}
+@keyframes cf{0%,62%{opacity:0;transform:translateY(0) rotate(0)}66%{opacity:1}100%{opacity:0;transform:translateY(-110px) rotate(260deg)}}
+.lit2{animation:lit2 8s ease infinite both}@keyframes lit2{0%,4%{background:#0d0d0d;color:#737373;border-color:#222}10%,88%{background:#fff;color:#000;border-color:#fff}96%,100%{background:#0d0d0d;color:#737373;border-color:#222}}
+.dash{stroke-dasharray:6 8;animation:dash 1.2s linear infinite}@keyframes dash{to{stroke-dashoffset:-28}}
+.trav{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;animation:trav 5s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes trav{0%{left:6%}100%{left:94%}}
+.grow{transform-origin:bottom;animation:grow2 6s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes grow2{0%{transform:scaleY(.05)}55%,100%{transform:none}}
+.stack{animation:stack 8s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes stack{0%{opacity:0;transform:translateY(-24px) scale(.96)}8%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
+.blinkc{animation:bl2 1s steps(1) infinite}@keyframes bl2{50%{opacity:0}}
+@keyframes cyc2{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-2.8em)}50%,70%{transform:translateY(-5.6em)}75%,95%{transform:translateY(-8.4em)}100%{transform:translateY(0)}}
+.cyc>span[style*=cyc2]{animation:cyc2 10s cubic-bezier(.7,0,.2,1) infinite}
 @media (max-width:760px){.wrap{padding:0 20px}.hide-sm{display:none!important}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -166,6 +215,21 @@ details[open] .pl{transform:rotate(45deg)}
 </div>
 </div>
 </section>
+
+<!-- EN ACCION -->
+<section style="padding: 0 0 120px">
+<div class="kin" aria-hidden="true">
+<div class="kin-row kin-l"><span style="color: #A855F7">Diseño</span><span style="color: #2a2a2a">✦</span><span class="ol">Copy</span><span style="color: #2a2a2a">✦</span><span style="color: #A855F7">Conversión</span><span style="color: #2a2a2a">✦</span><span class="ol">Mobile</span><span style="color: #2a2a2a">✦</span><span style="color: #A855F7">7 días</span><span style="color: #2a2a2a">✦</span><span class="ol">Landing</span><span style="color: #2a2a2a">✦</span><span style="color: #A855F7">Diseño</span><span style="color: #2a2a2a">✦</span><span class="ol">Copy</span><span style="color: #2a2a2a">✦</span><span style="color: #A855F7">Conversión</span><span style="color: #2a2a2a">✦</span><span class="ol">Mobile</span><span style="color: #2a2a2a">✦</span><span style="color: #A855F7">7 días</span><span style="color: #2a2a2a">✦</span><span class="ol">Landing</span><span style="color: #2a2a2a">✦</span></div>
+<div class="kin-row kin-r"><span class="ol">Landing</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">7 días</span><span style="color: #2a2a2a">✦</span><span class="ol">Mobile</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">Conversión</span><span style="color: #2a2a2a">✦</span><span class="ol">Copy</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">Diseño</span><span style="color: #2a2a2a">✦</span><span class="ol">Landing</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">7 días</span><span style="color: #2a2a2a">✦</span><span class="ol">Mobile</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">Conversión</span><span style="color: #2a2a2a">✦</span><span class="ol">Copy</span><span style="color: #2a2a2a">✦</span><span style="color: #fff">Diseño</span><span style="color: #2a2a2a">✦</span></div>
+</div>
+<div class="wrap" style="margin-top: 96px">
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end"><div style="flex: 999 1 560px"><div class="mono" style="color: #A855F7">En acción</div><h2 class="h2" style="margin-top: 22px">Cada píxel, <span class="serif it" style="color: #737373">pensado para convertir.</span></h2></div><div class="mono" style="color: #525252">Simulación ilustrativa</div></div>
+<div class="mx">
+<div class="mc rv"><div class="mono" style="display: flex; justify-content: space-between; color: #737373"><span>Antes → después</span><span style="color: #A855F7">●</span></div><div class="mc-h">De plantilla genérica a página que vende.</div><div class="mc-v"><div style="position: absolute; inset: 0; border-radius: 18px; overflow: hidden; border: 1px solid #1f1f1f"><div style="position: absolute; inset: 0; background: #111; padding: 20px"><div class="mono" style="color: #525252; font-size: 10px">Plantilla genérica</div><div style="height: 14px; width: 70%; background: #222; border-radius: 4px; margin-top: 18px"></div><div style="height: 8px; width: 90%; background: #1c1c1c; border-radius: 4px; margin-top: 14px"></div><div style="height: 8px; width: 80%; background: #1c1c1c; border-radius: 4px; margin-top: 8px"></div><div style="height: 70px; background: #1a1a1a; border-radius: 8px; margin-top: 18px"></div><div style="height: 22px; width: 30%; background: #222; border-radius: 4px; margin-top: 16px"></div></div><div class="sweep" style="background: #0a0612; padding: 20px"><div class="mono" style="color: #A855F7; font-size: 10px">Página ZYX</div><div style="font-size: 26px; font-weight: 500; letter-spacing: -.04em; line-height: 1.05; margin-top: 14px">Tu oferta, <span class="serif it" style="color: #A855F7">clarísima.</span></div><div style="height: 7px; width: 80%; background: #2a2a2a; border-radius: 9px; margin-top: 14px"></div><div style="display: inline-block; margin-top: 18px; background: #fff; color: #000; border-radius: 99px; padding: 8px 16px; font-size: 12px; font-weight: 600">Quiero mi lugar →</div><div style="display: flex; gap: 6px; margin-top: 18px"><span style="flex: 1; height: 44px; border-radius: 10px; background: #1a1026; border: 1px solid #2e1a45"></span><span style="flex: 1; height: 44px; border-radius: 10px; background: #1a1026; border: 1px solid #2e1a45"></span></div></div><div class="sweepline" style="background: #A855F7; box-shadow: 0 0 16px #A855F7"></div></div></div></div><div class="mc rv"><div class="mono" style="display: flex; justify-content: space-between; color: #737373"><span>Embudo</span><span style="color: #A855F7">●</span></div><div class="mc-h">Visitas que entran. Clientes que salen.</div><div class="mc-v"><div style="position: absolute; inset: 0"><svg viewBox="0 0 300 200" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true"><path d="M0 10 L175 80 L300 80 L300 120 L175 120 L0 190 Z" fill="#0d0814" stroke="#2a1a3d"/></svg><span class="ln lt" style="background: #555"></span><span class="ln lm" style="background: #555; animation-delay: .7s"></span><span class="ln lb" style="background: #555; animation-delay: 1.4s"></span><span class="ln lx" style="background: #555; animation-delay: .3s"></span><span class="ln lt" style="background: #A855F7; animation-delay: 2.1s"></span><span class="ln lb" style="background: #A855F7; animation-delay: 2.8s"></span><span class="ln lx" style="background: #555; animation-delay: 1.9s"></span><span class="ln lm" style="background: #A855F7; animation-delay: 3.4s"></span><div class="mono" style="position: absolute; left: 0; bottom: -2px; color: #525252; font-size: 10px">Visitas</div><div class="mono" style="position: absolute; right: 0; bottom: -2px; color: #A855F7; font-size: 10px">Leads</div></div></div></div><div class="mc rv"><div class="mono" style="display: flex; justify-content: space-between; color: #737373"><span>Calidad</span><span style="color: #A855F7">●</span></div><div class="mc-h">Rápida, móvil y lista para anuncios.</div><div class="mc-v"><div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: center; height: 100%"><div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><div style="position: relative; width: 84px; height: 84px"><svg class="ring" width="84" height="84" viewBox="0 0 110 110"><circle cx="55" cy="55" r="48" fill="none" stroke="#1a1a1a" stroke-width="7"/><circle class="ringf" cx="55" cy="55" r="48" fill="none" stroke="#A855F7" stroke-width="7" stroke-linecap="round" style="animation-delay: 0.0s"/></svg><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500"><span class="cnt c100" style="animation-delay: 0.0s"></span></div></div><div class="mono" style="color: #a3a3a3; font-size: 10px">Velocidad</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><div style="position: relative; width: 84px; height: 84px"><svg class="ring" width="84" height="84" viewBox="0 0 110 110"><circle cx="55" cy="55" r="48" fill="none" stroke="#1a1a1a" stroke-width="7"/><circle class="ringf" cx="55" cy="55" r="48" fill="none" stroke="#A855F7" stroke-width="7" stroke-linecap="round" style="animation-delay: 0.25s"/></svg><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500"><span class="cnt c100" style="animation-delay: 0.25s"></span></div></div><div class="mono" style="color: #a3a3a3; font-size: 10px">Mobile</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 10px"><div style="position: relative; width: 84px; height: 84px"><svg class="ring" width="84" height="84" viewBox="0 0 110 110"><circle cx="55" cy="55" r="48" fill="none" stroke="#1a1a1a" stroke-width="7"/><circle class="ringf" cx="55" cy="55" r="48" fill="none" stroke="#A855F7" stroke-width="7" stroke-linecap="round" style="animation-delay: 0.5s"/></svg><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500"><span class="cnt c100" style="animation-delay: 0.5s"></span></div></div><div class="mono" style="color: #a3a3a3; font-size: 10px">SEO</div></div></div></div></div>
+</div>
+</div>
+</section>
+
 
 
 <!-- STATS -->
