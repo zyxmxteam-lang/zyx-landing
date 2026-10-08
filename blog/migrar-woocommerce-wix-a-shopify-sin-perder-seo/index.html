@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrar a Shopify sin perder SEO ni ventas (guía) | ZYX Research</title>
+<meta name="description" content="Cómo migrar tu tienda de WooCommerce o Wix a Shopify paso a paso: productos, clientes, redirecciones 301, SEO y pruebas para no perder ventas durante el cambio.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://zyx.mx/blog/migrar-woocommerce-wix-a-shopify-sin-perder-seo/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ZYX">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://zyx.mx/blog/migrar-woocommerce-wix-a-shopify-sin-perder-seo/">
+<meta property="og:title" content="Migrar a Shopify sin perder SEO ni ventas (guía) | ZYX Research">
+<meta property="og:description" content="Cómo migrar tu tienda de WooCommerce o Wix a Shopify paso a paso: productos, clientes, redirecciones 301, SEO y pruebas para no perder ventas durante el cambio.">
+<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="2026-09-13">
+<meta property="article:section" content="Shopify">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='700' font-size='30' text-anchor='middle' fill='%23fff' letter-spacing='-2'%3EZYX%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="ZYX Research" href="https://zyx.mx/blog/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+*{box-sizing:border-box}
+::selection{background:#fff;color:#000}
+a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 32px}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}.it{font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:500;font-size:15px;transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.pill a.l{color:#a3a3a3;font-size:13.5px;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}.pill a.l:hover{color:#fff;background:#1a1a1a}
+.dotgrid{background-image:radial-gradient(#262626 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 40% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 40% 40%,#000 30%,transparent 75%)}
+.up{animation:up 1s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.1s}.d2{animation-delay:.2s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.prog{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);z-index:60}
+@supports (animation-timeline: scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}}
+@keyframes prog{to{transform:scaleX(1)}}
+.card{display:flex;flex-direction:column;gap:14px;border:1px solid #1a1a1a;border-radius:24px;background:#070707;padding:26px;min-height:280px;transition:border-color .25s,transform .25s;color:#fff}
+.card:hover{border-color:#3a3a3a;transform:translateY(-3px);color:#fff}
+.card h3{margin:0;font-size:21px;font-weight:500;letter-spacing:-.025em;line-height:1.2}
+.card p{margin:0;color:#a3a3a3;font-size:14.5px;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px}
+.chipf{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#d4d4d4;font:500 13.5px 'Geist',sans-serif;cursor:pointer}
+.chipf:hover{border-color:#666}.chipf.on{background:#fff;color:#000;border-color:#fff}
+.layout{display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start}
+.toc{flex:1 1 220px;max-width:260px;position:sticky;top:110px}
+.toc a{display:block;padding:7px 0 7px 14px;border-left:1px solid #222;color:#a3a3a3;font-size:14px;line-height:1.4}
+.toc a:hover{color:#fff;border-color:#fff}
+.art{flex:999 1 560px;min-width:0;max-width:740px}
+.art h2{font-size:clamp(28px,3vw,36px);font-weight:500;letter-spacing:-.035em;line-height:1.1;margin:64px 0 18px;scroll-margin-top:110px}
+.art p{font-size:18.5px;line-height:1.75;color:#d4d4d4;margin:0 0 20px}
+.art strong{color:#fff;font-weight:600}
+.art ul,.art ol{font-size:18px;line-height:1.7;color:#d4d4d4;padding-left:22px;margin:0 0 22px}
+.art li{margin-bottom:8px}
+.art .pq{margin:44px 0;padding:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(28px,3.2vw,40px);line-height:1.15;color:#fff;letter-spacing:-.01em}
+.art .pq::before{content:'“';display:block;font-size:72px;line-height:.6;color:var(--acc)}
+.art .fw{margin:36px 0;border:1px solid #222;border-radius:24px;background:#0a0a0a;padding:26px 28px}
+.art .fw-t{font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.art .fw p,.art .fw li{font-size:16.5px}
+.art .fw ol,.art .fw ul{margin-bottom:0}
+.art .tb{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px;display:block;overflow-x:auto}
+.art .tb th,.art .tb td{text-align:left;padding:14px 16px;border-bottom:1px solid #1f1f1f;color:#d4d4d4;vertical-align:top}
+.art .tb th{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#737373}
+details{border-top:1px solid #1c1c1c}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font-size:19px;font-weight:500;letter-spacing:-.015em}
+summary::-webkit-details-marker{display:none}
+.pl{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid #333;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s}
+details[open] .pl{transform:rotate(45deg)}
+.refs{font-size:14px;line-height:1.6;color:#a3a3a3;padding-left:20px}
+.refs li{margin-bottom:8px}
+.bf{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:32px 28px}
+.bf h4{margin:0 0 12px;display:flex;align-items:center;gap:8px;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.bf a{display:block;color:#a3a3a3;font-size:13.5px;line-height:1.4;padding:5px 0}
+.bf a:hover{color:#fff}
+@media (max-width:760px){.wrap{padding:0 20px}.hide-sm{display:none!important}.toc{display:none}.layout{gap:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#d4d4d4;font:500 13px 'Geist',sans-serif;cursor:pointer;transition:border-color .2s,color .2s}
+.lang-btn:hover,.lang.open .lang-btn{border-color:#555;color:#fff}
+.lang-btn .lang-cur{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.lang-menu{position:absolute;right:0;top:calc(100% + 10px);width:300px;max-width:calc(100vw - 32px);padding:8px;border-radius:20px;border:1px solid #222;background:#0b0b0b;box-shadow:0 30px 80px rgba(0,0,0,.6);display:grid;grid-template-columns:1fr 1fr;gap:2px;opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50}
+.lang.open .lang-menu{opacity:1;transform:none;pointer-events:auto}
+.lang-menu button,.lang-foot button{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:transparent;color:#d4d4d4;font:400 14px 'Geist',sans-serif;cursor:pointer;text-align:left}
+.lang-menu button:hover{background:#1a1a1a;color:#fff}
+.lang-menu button[aria-current=true]{background:#fff;color:#000}
+.lang-menu .lang-hint{grid-column:1/-1;padding:8px 12px 6px;font:500 10.5px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#737373}
+.lang-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:20px 0;border-top:1px solid #1a1a1a}
+.lang-foot .lf-t{display:inline-flex;align-items:center;gap:8px;margin-right:10px;color:#a3a3a3;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.lang-foot button{min-height:36px;padding:0 12px;border:1px solid transparent;border-radius:999px;font-size:13px;color:#a3a3a3}
+.lang-foot button:hover{color:#fff;border-color:#2a2a2a}
+.lang-foot button[aria-current=true]{color:#000;background:#fff}
+body{top:0!important}
+body>.skiptranslate,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,#gt-el{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+font[style]{background:none!important;box-shadow:none!important}
+@media (max-width:760px){.lang-btn .lang-cur{display:none}.lang-btn{padding:0 12px}.hide-sm{display:block!important;position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Migrar de WooCommerce o Wix a Shopify sin perder ventas ni posicionamiento", "description": "Cómo migrar tu tienda de WooCommerce o Wix a Shopify paso a paso: productos, clientes, redirecciones 301, SEO y pruebas para no perder ventas durante el cambio.", "datePublished": "2026-09-13", "dateModified": "2026-09-13", "inLanguage": "es-MX", "author": {"@type": "Organization", "name": "ZYX Research", "url": "https://zyx.mx/blog/"}, "publisher": {"@type": "Organization", "name": "ZYX", "url": "https://zyx.mx/", "logo": "https://zyx.mx/favicon.svg"}, "mainEntityOfPage": "https://zyx.mx/blog/migrar-woocommerce-wix-a-shopify-sin-perder-seo/", "articleSection": "Shopify"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ZYX", "item": "https://zyx.mx/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zyx.mx/blog/"}, {"@type": "ListItem", "position": 3, "name": "Migrar de WooCommerce o Wix a Shopify sin perder ventas ni posicionamiento", "item": "https://zyx.mx/blog/migrar-woocommerce-wix-a-shopify-sin-perder-seo/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Pierdo mi SEO si me cambio a Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "No necesariamente. Con un mapa de redirecciones 301 completo y metadatos conservados, la mayor parte del posicionamiento se mantiene."}}, {"@type": "Question", "name": "¿Se pueden migrar clientes y pedidos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con herramientas de importación. Las contraseñas de clientes no se migran por seguridad; se les invita a crear una nueva."}}, {"@type": "Question", "name": "¿Cuánto tarda una migración?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del tamaño del catálogo. Una tienda mediana suele migrarse en una a dos semanas, incluyendo pruebas."}}]}</script>
+</head>
+<body>
+<div style="background: #000; color: #fff; font-family: 'Geist', system-ui, sans-serif; font-size: 16px; line-height: 1.55; overflow-x: clip; -webkit-font-smoothing: antialiased">
+<div class="prog" style="background: #00c48c"></div>
+<header style="position: sticky; top: 14px; z-index: 20; padding: 0 16px">
+<div class="pill" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 8px 0 20px; border-radius: 999px; background: rgba(12,12,12,.72); backdrop-filter: blur(18px) saturate(1.4); border: 1px solid #1f1f1f">
+<a href="https://zyx.mx/" style="display: flex; align-items: center; gap: 12px"><span style="font-weight: 700; font-size: 20px; letter-spacing: -.045em"><span><span class="notranslate" translate="no">ZYX</span></span></span><span style="width: 1px; height: 18px; background: #2a2a2a"></span><span style="display: flex; align-items: center; gap: 7px; font-size: 13.5px; color: #d4d4d4"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></span></a>
+<nav class="hide-sm" style="display: flex; gap: 2px">
+<a class="l" href="https://zyx.mx/blog/">Todos los artículos</a><a class="l" href="https://zyx.mx/#servicios">Servicios</a><a class="l" href="https://zyx.mx/#cotizar">Cotizar</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px"><div class="lang notranslate" translate="no"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma / Change language"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg><span class="lang-cur">ES</span></button><div class="lang-menu" role="menu"><div class="lang-hint">Idioma · Language</div><button type="button" data-lang="es" lang="es"><span>Español</span><span class="mono" style="font-size:10px;opacity:.6">ES</span></button><button type="button" data-lang="en" lang="en"><span>English</span><span class="mono" style="font-size:10px;opacity:.6">EN</span></button><button type="button" data-lang="pt" lang="pt"><span>Português</span><span class="mono" style="font-size:10px;opacity:.6">PT</span></button><button type="button" data-lang="fr" lang="fr"><span>Français</span><span class="mono" style="font-size:10px;opacity:.6">FR</span></button><button type="button" data-lang="de" lang="de"><span>Deutsch</span><span class="mono" style="font-size:10px;opacity:.6">DE</span></button><button type="button" data-lang="it" lang="it"><span>Italiano</span><span class="mono" style="font-size:10px;opacity:.6">IT</span></button><button type="button" data-lang="zh-CN" lang="zh-CN"><span>中文</span><span class="mono" style="font-size:10px;opacity:.6">ZH</span></button><button type="button" data-lang="ja" lang="ja"><span>日本語</span><span class="mono" style="font-size:10px;opacity:.6">JA</span></button><button type="button" data-lang="ko" lang="ko"><span>한국어</span><span class="mono" style="font-size:10px;opacity:.6">KO</span></button><button type="button" data-lang="ar" lang="ar"><span>العربية</span><span class="mono" style="font-size:10px;opacity:.6">AR</span></button><button type="button" data-lang="hi" lang="hi"><span>हिन्दी</span><span class="mono" style="font-size:10px;opacity:.6">HI</span></button><button type="button" data-lang="ru" lang="ru"><span>Русский</span><span class="mono" style="font-size:10px;opacity:.6">RU</span></button><button type="button" data-lang="tr" lang="tr"><span>Türkçe</span><span class="mono" style="font-size:10px;opacity:.6">TR</span></button><button type="button" data-lang="pl" lang="pl"><span>Polski</span><span class="mono" style="font-size:10px;opacity:.6">PL</span></button><button type="button" data-lang="iw" lang="iw"><span>עברית</span><span class="mono" style="font-size:10px;opacity:.6">IW</span></button><button type="button" data-lang="id" lang="id"><span>Bahasa Indonesia</span><span class="mono" style="font-size:10px;opacity:.6">ID</span></button></div></div><a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20le%C3%AD%20su%20blog%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" style="background: #fff; color: #000; min-height: 44px; padding: 0 18px; font-size: 14px"><span>Hablar con <span class="notranslate" translate="no">ZYX</span> →</span></a></div>
+</div>
+</header>
+<section style="position: relative; padding: 140px 0 56px; margin-top: -60px">
+<div class="dotgrid" aria-hidden="true" style="position: absolute; inset: 0"></div>
+<div class="wrap" style="position: relative; max-width: 1040px">
+<nav class="mono up" aria-label="Breadcrumb" style="color: #737373; display: flex; flex-wrap: wrap; gap: 8px"><a href="https://zyx.mx/" style="color: #737373"><span><span class="notranslate" translate="no">ZYX</span></span></a><span>/</span><a href="https://zyx.mx/blog/" style="color: #737373">Blog</a><span>/</span><a href="https://zyx.mx/blog/#shopify" style="color: #00c48c"><span><span class="notranslate" translate="no">Shopify</span></span></a></nav>
+<div class="mono up" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; color: #a3a3a3; border: 1px solid #262626; border-radius: 999px; padding: 8px 14px; background: #0a0a0a"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">ZYX</span> Research · Paper N.º 3.4</span></div>
+<h1 class="up d1" style="margin: 28px 0 0; font-weight: 500; font-size: clamp(38px, 5.6vw, 76px); line-height: 1.02; letter-spacing: -.045em"><span>Migrar de WooCommerce o Wix a <span class="notranslate" translate="no">Shopify</span> sin perder ventas ni posicionamiento</span></h1>
+<p class="serif it up d2" style="margin: 28px 0 0; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; color: #a3a3a3; max-width: 860px">Cambiar de plataforma da miedo por una razón válida: hacerlo mal puede borrar años de posicionamiento. Hacerlo bien es un procedimiento.</p>
+<div class="mono" style="display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 36px; color: #737373"><span><span>Equipo <span class="notranslate" translate="no">ZYX</span> Research</span></span><span>13 de septiembre de 2026</span><span>4 min de lectura</span></div>
+</div>
+</section>
+<section style="padding: 0 0 40px">
+<div class="wrap" style="max-width: 1040px">
+<div style="border: 1px solid #1f1f1f; border-radius: 28px; background: #070707; padding: 28px 30px">
+<div class="mono" style="color: #00c48c">Resumen ejecutivo · Hallazgos clave</div>
+<ol style="list-style: none; margin: 18px 0 0; padding: 0"><li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1f1f1f"><span class="serif it" style="font-size: 28px; line-height: 1; color: #00c48c; flex: none; width: 28px">1</span><span style="font-size: 16.5px; line-height: 1.55; color: #e5e5e5">El mayor riesgo de una migración no es técnico sino de SEO: URLs que cambian sin redirección.</span></li><li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1f1f1f"><span class="serif it" style="font-size: 28px; line-height: 1; color: #00c48c; flex: none; width: 28px">2</span><span style="font-size: 16.5px; line-height: 1.55; color: #e5e5e5">Las redirecciones 301 conservan la mayor parte del valor de las URLs antiguas.</span></li><li style="display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid #1f1f1f"><span class="serif it" style="font-size: 28px; line-height: 1; color: #00c48c; flex: none; width: 28px">3</span><span style="font-size: 16.5px; line-height: 1.55; color: #e5e5e5">Una migración ordenada sigue cinco fases: inventario, mapeo, migración, redirección y verificación.</span></li></ol>
+</div>
+</div>
+</section>
+<section style="padding: 24px 0 80px">
+<div class="wrap layout">
+<aside class="toc"><div class="mono" style="color: #737373; margin-bottom: 14px">Contenido</div><a href="#por-que">Por qué migrar</a><a href="#riesgo">El riesgo real: las URLs</a><a href="#seo">Detalles de SEO que se olvidan</a><a href="#ventas">Cómo no perder ventas durante el cambio</a><a href="#conclusion">Conclusión</a><a href="#faq">Preguntas frecuentes</a><a href="#referencias">Referencias</a></aside>
+<article class="art" style="--acc: #00c48c">
+
+<h2 id="por-que">Por qué migrar</h2>
+<p><span>Las razones más comunes para dejar WooCommerce o Wix son mantenimiento técnico, velocidad, seguridad y escalabilidad. <span class="notranslate" translate="no">Shopify</span> resuelve el hosting, la seguridad y las actualizaciones, y deja que el negocio se concentre en vender. Pero una migración mal hecha puede costar tráfico orgánico y ventas.</span></p>
+
+<h2 id="riesgo">El riesgo real: las URLs</h2>
+<p><span><span class="notranslate" translate="no">Google</span> ha posicionado tus páginas con sus URLs actuales. Si después de migrar esas direcciones dan error 404, pierdes ese posicionamiento y los enlaces que apuntaban a ellas. La herramienta para evitarlo es la </span><strong>redirección 301</strong>, que le dice a los buscadores que la página se mudó de forma permanente y transfiere la mayor parte de su valor a la nueva dirección.</p>
+<blockquote class="pq">Una migración sin mapa de redirecciones es una mudanza sin dejar dirección nueva.</blockquote>
+
+<div class="fw"><div class="fw-t">Las 5 fases de una migración segura</div>
+<ol>
+<li><strong>Inventario:</strong> exporta productos, variantes, clientes, pedidos, páginas, posts y la lista completa de URLs indexadas.</li>
+<li><strong>Mapeo:</strong><span> relaciona cada URL antigua con su nueva URL en <span class="notranslate" translate="no">Shopify</span>.</span></li>
+<li><strong>Migración:</strong> importa datos, revisa variantes, imágenes, descripciones y metadatos SEO.</li>
+<li><strong>Redirección:</strong> carga las 301 antes de apuntar el dominio.</li>
+<li><strong>Verificación:</strong> prueba compras, revisa errores en Search Console y monitorea el tráfico las semanas siguientes.</li>
+</ol></div>
+
+<h2 id="seo">Detalles de SEO que se olvidan</h2>
+<ul>
+<li>Conservar títulos y meta descripciones que ya posicionan.</li>
+<li>Mantener el texto alternativo de las imágenes.</li>
+<li><span>Reenviar el sitemap nuevo a <span class="notranslate" translate="no">Google</span> Search Console.</span></li>
+<li>Migrar el blog si tienes contenido que atrae tráfico.</li>
+</ul>
+
+<h2 id="ventas">Cómo no perder ventas durante el cambio</h2>
+<p>Programa el cambio de dominio en un horario de bajo tráfico, ten la nueva tienda probada al 100% antes de apuntar el dominio y comunica a tus clientes frecuentes si cambia algo en su cuenta. Lo ideal es que el cliente ni se entere de que hubo una migración, salvo porque la tienda ahora es más rápida.</p>
+
+<h2 id="conclusion">Conclusión</h2>
+<p><span>Migrar a <span class="notranslate" translate="no">Shopify</span> puede ser una de las mejores decisiones para una tienda que está creciendo, siempre que se trate como un proyecto con procedimiento y no como un copiar y pegar.</span></p>
+
+<h2 id="faq">Preguntas frecuentes</h2>
+<div style="border-bottom: 1px solid #1c1c1c"><details><summary><span>¿Pierdo mi SEO si me cambio a <span class="notranslate" translate="no">Shopify</span>? </span><span class="pl">+</span></summary><p style="margin: 0 0 22px; color: #a3a3a3; font-size: 16.5px; line-height: 1.65">No necesariamente. Con un mapa de redirecciones 301 completo y metadatos conservados, la mayor parte del posicionamiento se mantiene.</p></details><details><summary>¿Se pueden migrar clientes y pedidos? <span class="pl">+</span></summary><p style="margin: 0 0 22px; color: #a3a3a3; font-size: 16.5px; line-height: 1.65">Sí, con herramientas de importación. Las contraseñas de clientes no se migran por seguridad; se les invita a crear una nueva.</p></details><details><summary>¿Cuánto tarda una migración? <span class="pl">+</span></summary><p style="margin: 0 0 22px; color: #a3a3a3; font-size: 16.5px; line-height: 1.65">Depende del tamaño del catálogo. Una tienda mediana suele migrarse en una a dos semanas, incluyendo pruebas.</p></details></div>
+<div style="margin: 56px 0 0; border-radius: 28px; padding: 32px; background: #00c48c; color: #000">
+<div class="mono"><span><span class="notranslate" translate="no">ZYX</span> · <span class="notranslate" translate="no">Shopify</span></span></div>
+<div style="font-size: clamp(26px, 3vw, 36px); font-weight: 500; letter-spacing: -.035em; line-height: 1.1; margin-top: 14px">¿Quieres aplicar esto en tu negocio?</div>
+<p style="color: #000; font-size: 16.5px; margin: 12px 0 22px; opacity: .8">Lo hacemos contigo: estrategia, ejecución y medición.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><a class="btn" href="https://ecom.zyx.mx/" style="background: #000; color: #fff"><span>Quiero mi tienda <span class="notranslate" translate="no">Shopify</span> →</span></a><a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20le%C3%AD%20su%20blog%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" style="border: 1px solid rgba(0,0,0,.35); color: #000"><span>Escribirnos por <span class="notranslate" translate="no">WhatsApp</span></span></a></div>
+</div>
+<h2 id="referencias">Referencias</h2>
+<ol class="refs"><li><span><span class="notranslate" translate="no">Google</span> Search Central. "Site moves with URL changes".</span></li><li><span><span class="notranslate" translate="no">Google</span> Search Central. "Redirects and <span class="notranslate" translate="no">Google</span> Search".</span></li><li><span><span class="notranslate" translate="no">Shopify</span> Help Center. "Migrating to <span class="notranslate" translate="no">Shopify</span>" y "URL redirects".</span></li></ol>
+<p style="font-size: 13.5px; color: #737373; line-height: 1.6; margin-top: 18px"><span>Este artículo es divulgativo y refleja el análisis del equipo de <span class="notranslate" translate="no">ZYX</span> a partir de las fuentes citadas. No constituye asesoría legal, fiscal ni financiera.</span></p>
+</article>
+</div>
+</section>
+<section style="padding: 0 0 80px">
+<div class="wrap">
+<div class="mono" style="color: #00c48c"><span>Más de <span class="notranslate" translate="no">Shopify</span></span></div>
+<div class="grid" style="margin-top: 22px"><a class="card" href="https://zyx.mx/blog/vender-en-linea-mexico-shopify-oxxo-mercado-pago/" data-cat="shopify" ><div class="mono" style="display: flex; justify-content: space-between; gap: 10px; color: #00c48c"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></span><span style="color: #525252">Paper 3.1</span></div><h3><span>Cómo vender en línea en México: <span class="notranslate" translate="no">Shopify</span>, <span class="notranslate" translate="no">OXXO</span>, <span class="notranslate" translate="no">Mercado Pago</span> y todo lo que nadie te explica</span></h3><p><span>Guía para vender en línea en México con <span class="notranslate" translate="no">Shopify</span>: métodos de pago locales como <span class="notranslate" translate="no">OXXO</span> y transferencia, envíos, facturación y los errores más comunes al lanzar una tienda.</span></p><div class="mono" style="margin-top: auto; color: #525252; font-size: 10.5px">4 de octubre de 2026 · 4 min</div></a><a class="card" href="https://zyx.mx/blog/carritos-abandonados-como-recuperarlos/" data-cat="shopify" ><div class="mono" style="display: flex; justify-content: space-between; gap: 10px; color: #00c48c"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></span><span style="color: #525252">Paper 3.2</span></div><h3>Carritos abandonados: el dinero invisible de tu tienda y cómo recuperarlo</h3><p><span>Por qué se abandonan los carritos en ecommerce según Baymard Institute, cuáles son las causas evitables y cómo recuperar ventas con email, <span class="notranslate" translate="no">WhatsApp</span> y un mejor checkout.</span></p><div class="mono" style="margin-top: auto; color: #525252; font-size: 10.5px">27 de septiembre de 2026 · 4 min</div></a><a class="card" href="https://zyx.mx/blog/tiendas-de-un-solo-producto-hero-product/" data-cat="shopify" ><div class="mono" style="display: flex; justify-content: space-between; gap: 10px; color: #00c48c"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></span><span style="color: #525252">Paper 3.3</span></div><h3>Tiendas de un solo producto: por qué muchas marcas DTC rentables empiezan con un &quot;hero product&quot;</h3><p><span>Qué es una tienda de un solo producto, por qué funciona para marcas directas al consumidor y cómo diseñarla con bundles, prueba social y contenido <span class="notranslate" translate="no">UGC</span>.</span></p><div class="mono" style="margin-top: auto; color: #525252; font-size: 10.5px">20 de septiembre de 2026 · 4 min</div></a><a class="card" href="https://zyx.mx/blog/comercio-agentico-ia-que-compra-por-tus-clientes/" data-cat="shopify" ><div class="mono" style="display: flex; justify-content: space-between; gap: 10px; color: #00c48c"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></span><span style="color: #525252">Paper 3.5</span></div><h3>Comercio agéntico: cuando la IA compra por tus clientes (y cómo preparar tu tienda)</h3><p>Qué es el comercio agéntico, cómo los asistentes de IA empiezan a buscar, comparar y comprar productos por las personas, y qué debe hacer tu tienda en línea para estar lista.</p><div class="mono" style="margin-top: auto; color: #525252; font-size: 10.5px">6 de septiembre de 2026 · 4 min</div></a></div>
+</div>
+</section>
+<footer style="padding: 24px 0 32px; border-top: 1px solid #111; margin-top: 40px">
+<div class="wrap"><div class="lang-foot notranslate" translate="no"><span class="lf-t"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg>Idioma · Language</span><button type="button" data-lang="es" lang="es">Español</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="pt" lang="pt">Português</button><button type="button" data-lang="fr" lang="fr">Français</button><button type="button" data-lang="de" lang="de">Deutsch</button><button type="button" data-lang="it" lang="it">Italiano</button><button type="button" data-lang="zh-CN" lang="zh-CN">中文</button><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="ko" lang="ko">한국어</button><button type="button" data-lang="ar" lang="ar">العربية</button><button type="button" data-lang="hi" lang="hi">हिन्दी</button><button type="button" data-lang="ru" lang="ru">Русский</button><button type="button" data-lang="tr" lang="tr">Türkçe</button><button type="button" data-lang="pl" lang="pl">Polski</button><button type="button" data-lang="iw" lang="iw">עברית</button><button type="button" data-lang="id" lang="id">Bahasa Indonesia</button></div></div>
+<div class="wrap" style="padding-top: 56px; padding-bottom: 48px; border-bottom: 1px solid #1a1a1a">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end; margin-bottom: 36px"><div><div class="mono" style="color: #737373"><span>Blog · <span class="notranslate" translate="no">ZYX</span> Research</span></div><div style="font-size: clamp(28px, 3.4vw, 44px); font-weight: 500; letter-spacing: -.04em; margin-top: 12px">Investigación sobre <span class="serif it" style="color: #737373">el futuro del crecimiento digital.</span></div></div><a href="https://zyx.mx/blog/" class="btn" style="border: 1px solid #2a2a2a; color: #fff">Ver los 40 artículos →</a></div>
+<div class="bf"><div><h4 style="color: #4f8ef7"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7"></span><span><span class="notranslate" translate="no">Meta Ads</span></span></h4><a href="https://zyx.mx/blog/creativo-es-la-nueva-segmentacion-meta-ads/">El creativo es la nueva segmentación</a><a href="https://zyx.mx/blog/niveles-de-conciencia-eugene-schwartz-anuncios/">Los 5 niveles de conciencia</a><a href="https://zyx.mx/blog/cuanto-invertir-en-meta-ads-mexico/"><span>Cuánto invertir en <span class="notranslate" translate="no">Meta Ads</span> en México</span></a><a href="https://zyx.mx/blog/fatiga-creativa-meta-ads-como-detectarla/">Fatiga creativa</a><a href="https://zyx.mx/blog/marca-personal-meta-ads-coaches-consultores/"><span>Marca personal + <span class="notranslate" translate="no">Meta Ads</span></span></a></div><div><h4 style="color: #a855f7"><span style="width: 7px; height: 7px; border-radius: 50%; background: #a855f7"></span>Landing Pages</h4><a href="https://zyx.mx/blog/anatomia-landing-page-que-convierte/">Anatomía de una landing page que convierte</a><a href="https://zyx.mx/blog/velocidad-web-y-ventas-datos/">Velocidad web y ventas</a><a href="https://zyx.mx/blog/diseno-mobile-first-zona-del-pulgar/">Mobile-first</a><a href="https://zyx.mx/blog/copywriting-de-conversion-principios-clasicos/">Copywriting de conversión</a><a href="https://zyx.mx/blog/landing-page-vs-sitio-web/">Landing page vs. sitio web</a></div><div><h4 style="color: #00c48c"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span><span class="notranslate" translate="no">Shopify</span></span></h4><a href="https://zyx.mx/blog/vender-en-linea-mexico-shopify-oxxo-mercado-pago/">Cómo vender en línea en México</a><a href="https://zyx.mx/blog/carritos-abandonados-como-recuperarlos/">Carritos abandonados</a><a href="https://zyx.mx/blog/tiendas-de-un-solo-producto-hero-product/">Tiendas de un solo producto</a><a href="https://zyx.mx/blog/migrar-woocommerce-wix-a-shopify-sin-perder-seo/"><span>Migrar de WooCommerce o Wix a <span class="notranslate" translate="no">Shopify</span> sin perder ventas ni posicionamiento</span></a><a href="https://zyx.mx/blog/comercio-agentico-ia-que-compra-por-tus-clientes/">Comercio agéntico</a></div><div><h4 style="color: #f97316"><span style="width: 7px; height: 7px; border-radius: 50%; background: #f97316"></span><span>Videos <span class="notranslate" translate="no">UGC</span></span></h4><a href="https://zyx.mx/blog/ugc-vs-publicidad-tradicional-ciencia-de-la-confianza/"><span><span class="notranslate" translate="no">UGC</span> vs. publicidad tradicional</span></a><a href="https://zyx.mx/blog/guion-ugc-30-segundos-que-vende/"><span>Cómo escribir un guion <span class="notranslate" translate="no">UGC</span> de 30 segundos que vende</span></a><a href="https://zyx.mx/blog/ugc-en-pagina-de-producto-conversion/"><span><span class="notranslate" translate="no">UGC</span> en la página de producto</span></a><a href="https://zyx.mx/blog/creadores-ugc-como-elegirlos-y-dirigirlos/"><span>Creadores <span class="notranslate" translate="no">UGC</span></span></a><a href="https://zyx.mx/blog/metricas-video-ugc-hook-rate-retencion/"><span>Las métricas que dicen si tu video <span class="notranslate" translate="no">UGC</span> funciona</span></a></div><div><h4 style="color: #ff3b30"><span style="width: 7px; height: 7px; border-radius: 50%; background: #ff3b30"></span>AI Ads</h4><a href="https://zyx.mx/blog/anuncios-generados-con-ia-que-son-como-funcionan/">Anuncios 100% generados con IA</a><a href="https://zyx.mx/blog/9-formatos-de-video-ia-que-rompen-el-feed/">9 formatos de video con IA que rompen el patrón del feed</a><a href="https://zyx.mx/blog/futuro-produccion-audiovisual-video-generativo/">El futuro de la producción audiovisual</a><a href="https://zyx.mx/blog/prompt-a-anuncio-como-dirigir-ia-de-video/">Del prompt al anuncio</a><a href="https://zyx.mx/blog/ia-o-rodaje-cuando-conviene-cada-uno/">IA o rodaje tradicional</a></div><div><h4 style="color: #e879f9"><span style="width: 7px; height: 7px; border-radius: 50%; background: #e879f9"></span>Clon IA</h4><a href="https://zyx.mx/blog/clones-de-ia-hiperrealistas-como-funcionan/">Clones de IA hiperrealistas</a><a href="https://zyx.mx/blog/marca-personal-publicar-todos-los-dias-sin-grabar/">Marca personal a escala</a><a href="https://zyx.mx/blog/etica-y-legalidad-clones-de-ia/">Ética y legalidad de los clones de IA</a><a href="https://zyx.mx/blog/doblaje-con-ia-tu-contenido-en-otros-idiomas/">Doblaje con IA</a><a href="https://zyx.mx/blog/avatar-ia-vs-grabarte-comparativa/">Avatar de IA vs. grabarte tú</a></div><div><h4 style="color: #14b8a6"><span style="width: 7px; height: 7px; border-radius: 50%; background: #14b8a6"></span>Infoproductos</h4><a href="https://zyx.mx/blog/como-convertir-tu-conocimiento-en-infoproducto/">Cómo convertir tu conocimiento en un infoproducto</a><a href="https://zyx.mx/blog/vsl-anatomia-video-de-ventas/">VSL</a><a href="https://zyx.mx/blog/curso-masterclass-o-ebook-que-formato-elegir/">Curso, masterclass o ebook</a><a href="https://zyx.mx/blog/funnel-de-lanzamiento-anuncio-checkout-email/">El funnel de lanzamiento</a><a href="https://zyx.mx/blog/economia-del-conocimiento-aprendizaje-online-futuro/">La economía del conocimiento</a></div><div><h4 style="color: #a3e635"><span style="width: 7px; height: 7px; border-radius: 50%; background: #a3e635"></span>Software</h4><a href="https://zyx.mx/blog/agentes-de-ia-para-negocios-whatsapp/">Agentes de IA para negocios</a><a href="https://zyx.mx/blog/mvp-validar-idea-startup-en-semanas/">MVP</a><a href="https://zyx.mx/blog/software-a-la-medida-vs-saas/">Software a la medida vs. SaaS</a><a href="https://zyx.mx/blog/automatizaciones-tareas-que-no-deberias-hacer-a-mano/">Automatización</a><a href="https://zyx.mx/blog/del-excel-al-sistema-digitalizar-pyme/">Del Excel al sistema</a></div></div>
+</div>
+
+<div class="wrap mono" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; color: #525252; padding-top: 28px">
+<a href="https://zyx.mx/" style="color: #a3a3a3"><span>← <span class="notranslate" translate="no">ZYX</span> · Todos los servicios</span></a>
+<span><span>© 2026 <span class="notranslate" translate="no">ZYX</span> · <span class="notranslate" translate="no">ZYX</span> Research · México</span></span>
+</div>
+</footer>
+<div id="gt-el"></div>
+<script>
+(function(){
+  var L=[["es", "Español"], ["en", "English"], ["pt", "Português"], ["fr", "Français"], ["de", "Deutsch"], ["it", "Italiano"], ["zh-CN", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["ar", "العربية"], ["hi", "हिन्दी"], ["ru", "Русский"], ["tr", "Türkçe"], ["pl", "Polski"], ["iw", "עברית"], ["id", "Bahasa Indonesia"]], D=/zyx\.mx$/.test(location.hostname)?'; domain=.zyx.mx':'';
+  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function put(n,v,age){document.cookie=n+'='+v+'; path=/; max-age='+age;if(D)document.cookie=n+'='+v+'; path=/; max-age='+age+D;}
+  function cur(){var g=ck('googtrans');return g?g.split('/').pop():'es';}
+  function load(){
+    if(window.__zyxGT)return;window.__zyxGT=1;
+    window.zyxGTInit=function(){new google.translate.TranslateElement({pageLanguage:'es',autoDisplay:false},'gt-el');};
+    var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=zyxGTInit';s.async=true;document.head.appendChild(s);
+    // Google solo traduce lo que está renderizado: abre un momento los FAQ cerrados para que también se traduzcan
+    var closed=[].slice.call(document.querySelectorAll('details:not([open])'));
+    closed.forEach(function(d){d.setAttribute('open','');});
+    setTimeout(function(){closed.forEach(function(d){d.removeAttribute('open');});},4500);
+  }
+  function apply(code,reload){
+    put('googtrans','',0);
+    if(code!=='es')put('googtrans','/es/'+code,31536000);
+    put('zyx_lang',code,31536000);
+    if(reload)location.reload();else if(code!=='es')load();
+  }
+  // Primera visita: usa el idioma del navegador / teléfono del visitante
+  if(!ck('zyx_lang')){
+    var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'es']);
+    var pick='es';
+    for(var i=0;i<pref.length;i++){
+      var p=(pref[i]||'').toLowerCase(), b=p.split('-')[0]; if(b==='he')b='iw'; if(b==='zh')p='zh-cn';
+      if(b==='es'){pick='es';break;}
+      var hit=L.filter(function(x){return x[0].toLowerCase()===p||x[0].split('-')[0]===b;})[0];
+      if(hit){pick=hit[0];break;}
+    }
+    apply(pick,false);
+  } else if(cur()!=='es'){ load(); }
+  var c=cur();
+  document.querySelectorAll('.lang-cur').forEach(function(e){e.textContent=c.split('-')[0];});
+  document.querySelectorAll('[data-lang]').forEach(function(b){
+    if(b.getAttribute('data-lang')===c)b.setAttribute('aria-current','true');
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'),true);});
+  });
+  document.querySelectorAll('.lang').forEach(function(w){
+    var btn=w.querySelector('.lang-btn');
+    btn.addEventListener('click',function(e){e.stopPropagation();var o=w.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.lang.open').forEach(function(w){w.classList.remove('open');w.querySelector('.lang-btn').setAttribute('aria-expanded','false');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.dispatchEvent(new Event('click'));});
+})();
+</script>
+</div>
+</body>
+</html>
