@@ -83,6 +83,26 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 @media (max-width:760px){.wrap{padding:0 20px}.hide-sm{display:none!important}.tile{padding:24px}}
 .chip.on{background:#a3e635;border-color:#a3e635;color:#000;font-weight:500}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #2a2a2a;background:transparent;color:#d4d4d4;font:500 13px 'Geist',sans-serif;cursor:pointer;transition:border-color .2s,color .2s}
+.lang-btn:hover,.lang.open .lang-btn{border-color:#555;color:#fff}
+.lang-btn .lang-cur{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.lang-menu{position:absolute;right:0;top:calc(100% + 10px);width:300px;max-width:calc(100vw - 32px);padding:8px;border-radius:20px;border:1px solid #222;background:#0b0b0b;box-shadow:0 30px 80px rgba(0,0,0,.6);display:grid;grid-template-columns:1fr 1fr;gap:2px;opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50}
+.lang.open .lang-menu{opacity:1;transform:none;pointer-events:auto}
+.lang-menu button,.lang-foot button{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:transparent;color:#d4d4d4;font:400 14px 'Geist',sans-serif;cursor:pointer;text-align:left}
+.lang-menu button:hover{background:#1a1a1a;color:#fff}
+.lang-menu button[aria-current=true]{background:#fff;color:#000}
+.lang-menu .lang-hint{grid-column:1/-1;padding:8px 12px 6px;font:500 10.5px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#737373}
+.lang-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:20px 0;border-top:1px solid #1a1a1a}
+.lang-foot .lf-t{display:inline-flex;align-items:center;gap:8px;margin-right:10px;color:#a3a3a3;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.lang-foot button{min-height:36px;padding:0 12px;border:1px solid transparent;border-radius:999px;font-size:13px;color:#a3a3a3}
+.lang-foot button:hover{color:#fff;border-color:#2a2a2a}
+.lang-foot button[aria-current=true]{color:#000;background:#fff}
+body{top:0!important}
+body>.skiptranslate,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,#gt-el{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+font[style]{background:none!important;box-shadow:none!important}
+@media (max-width:760px){.lang-btn .lang-cur{display:none}.lang-btn{padding:0 12px}}
 </style>
 </head>
 <body>
@@ -92,7 +112,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <header style="position: sticky; top: 14px; z-index: 20; padding: 0 16px">
 <div class="pill" style="max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 8px 0 20px; border-radius: 999px; background: rgba(12,12,12,.72); backdrop-filter: blur(18px) saturate(1.4); border: 1px solid #1f1f1f">
 <a href="#top" style="display: flex; align-items: center; gap: 10px">
-<span style="font-weight: 700; font-size: 20px; letter-spacing: -.045em">ZYX</span>
+<span style="font-weight: 700; font-size: 20px; letter-spacing: -.045em"><span class="notranslate" translate="no">ZYX</span></span>
 <span style="display: grid; grid-template-columns: repeat(4, 4px); gap: 2px"><span style="width: 4px; height: 4px; border-radius: 50%; background: #4f8ef7"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #a855f7"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #00c48c"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #f97316"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #e879f9"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #14b8a6"></span><span style="width: 4px; height: 4px; border-radius: 50%; background: #a3e635"></span></span>
 </a>
 <nav class="hide-sm" style="display: flex; gap: 2px">
@@ -101,10 +121,10 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <a class="l" href="#nosotros">Nosotros</a>
 <a class="l" href="https://zyx.mx/software/">Software</a>
 <a class="l" href="#cotizar">Cotizar</a>
-<a class="l" href="#por-que">Por qué ZYX</a>
+<a class="l" href="#por-que">Por qué <span class="notranslate" translate="no">ZYX</span></a>
 </nav>
-<a class="btn btn-w" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener" style="min-height: 44px; padding: 0 18px; font-size: 14px">Hablar con ZYX
-<svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11L11 3M5 3h6v6"/></svg></a>
+<div style="display: flex; align-items: center; gap: 8px"><div class="lang notranslate" translate="no"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma / Change language"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg><span class="lang-cur">ES</span></button><div class="lang-menu" role="menu"><div class="lang-hint">Idioma · Language</div><button type="button" data-lang="es" lang="es"><span>Español</span><span class="mono" style="font-size:10px;opacity:.6">ES</span></button><button type="button" data-lang="en" lang="en"><span>English</span><span class="mono" style="font-size:10px;opacity:.6">EN</span></button><button type="button" data-lang="pt" lang="pt"><span>Português</span><span class="mono" style="font-size:10px;opacity:.6">PT</span></button><button type="button" data-lang="fr" lang="fr"><span>Français</span><span class="mono" style="font-size:10px;opacity:.6">FR</span></button><button type="button" data-lang="de" lang="de"><span>Deutsch</span><span class="mono" style="font-size:10px;opacity:.6">DE</span></button><button type="button" data-lang="it" lang="it"><span>Italiano</span><span class="mono" style="font-size:10px;opacity:.6">IT</span></button><button type="button" data-lang="zh-CN" lang="zh-CN"><span>中文</span><span class="mono" style="font-size:10px;opacity:.6">ZH</span></button><button type="button" data-lang="ja" lang="ja"><span>日本語</span><span class="mono" style="font-size:10px;opacity:.6">JA</span></button><button type="button" data-lang="ko" lang="ko"><span>한국어</span><span class="mono" style="font-size:10px;opacity:.6">KO</span></button><button type="button" data-lang="ar" lang="ar"><span>العربية</span><span class="mono" style="font-size:10px;opacity:.6">AR</span></button><button type="button" data-lang="hi" lang="hi"><span>हिन्दी</span><span class="mono" style="font-size:10px;opacity:.6">HI</span></button><button type="button" data-lang="ru" lang="ru"><span>Русский</span><span class="mono" style="font-size:10px;opacity:.6">RU</span></button><button type="button" data-lang="tr" lang="tr"><span>Türkçe</span><span class="mono" style="font-size:10px;opacity:.6">TR</span></button><button type="button" data-lang="id" lang="id"><span>Bahasa Indonesia</span><span class="mono" style="font-size:10px;opacity:.6">ID</span></button></div></div><a class="btn btn-w" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener" style="min-height: 44px; padding: 0 18px; font-size: 14px">Hablar con ZYX
+<svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11L11 3M5 3h6v6"/></svg></a></div>
 </div>
 </header>
 
@@ -114,18 +134,18 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="wrap" style="position: relative; text-align: center; display: flex; flex-direction: column; align-items: center">
 <a href="https://zyx.mx/software/" class="up" style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 8px 6px 6px; border-radius: 999px; border: 1px solid #222; background: #0a0a0a; font-size: 13px; color: #d4d4d4">
 <span class="mono" style="background: #a3e635; color: #000; border-radius: 999px; padding: 3px 9px; font-size: 10.5px">Nuevo</span>Desarrollo de software a la medida<span style="color: #737373">→</span></a>
-<h1 class="up d1" style="margin: 36px 0 0; font-weight: 500; font-size: clamp(54px, 10.4vw, 164px); line-height: .9; letter-spacing: -.06em">Hacemos crecer<br>tu negocio en<br><span class="rot serif it" id="rot" style="letter-spacing: -.02em; width: 2.95em"><span id="rot-track"><span style="color: #FFFFFF">digital.</span><span style="color: #4F8EF7">Meta.</span><span style="color: #00C48C">Shopify.</span><span style="color: #F97316">TikTok.</span><span style="color: #E879F9">IA.</span><span style="color: #A3E635">software.</span></span></span></h1>
-<p class="up d2" style="margin: 40px 0 0; max-width: 620px; font-size: clamp(17px, 1.6vw, 20px); color: #a3a3a3; line-height: 1.6">Meta Ads, landing pages, Shopify, UGC, clones IA, infoproductos y software para que tu negocio venda más. <span style="color: #fff">Un solo equipo. Siete servicios. Resultados reales.</span></p>
+<h1 class="up d1" style="margin: 36px 0 0; font-weight: 500; font-size: clamp(54px, 10.4vw, 164px); line-height: .9; letter-spacing: -.06em">Hacemos crecer<br>tu negocio en<br><span class="rot serif it" id="rot" style="letter-spacing: -.02em; width: 2.95em"><span id="rot-track"><span style="color: #FFFFFF">digital.</span><span style="color: #4F8EF7"><span class="notranslate" translate="no">Meta</span>.</span><span style="color: #00C48C"><span class="notranslate" translate="no">Shopify</span>.</span><span style="color: #F97316"><span class="notranslate" translate="no">TikTok</span>.</span><span style="color: #E879F9">IA.</span><span style="color: #A3E635">software.</span></span></span></h1>
+<p class="up d2" style="margin: 40px 0 0; max-width: 620px; font-size: clamp(17px, 1.6vw, 20px); color: #a3a3a3; line-height: 1.6"><span class="notranslate" translate="no">Meta Ads</span>, landing pages, <span class="notranslate" translate="no">Shopify</span>, <span class="notranslate" translate="no">UGC</span>, clones IA, infoproductos y software para que tu negocio venda más. <span style="color: #fff">Un solo equipo. Siete servicios. Resultados reales.</span></p>
 <div class="up d3" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 40px">
 <a class="btn btn-w" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener" style="min-height: 56px; padding: 0 30px">Hablar por WhatsApp
 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11L11 3M5 3h6v6"/></svg></a>
 <a class="btn btn-ghost" href="#servicios" style="min-height: 56px; padding: 0 30px">Ver servicios</a>
 </div>
 <div class="up d4 rail" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 72px; max-width: 920px">
-<a href="https://ads.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7"></span>Meta Ads</a>
+<a href="https://ads.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7"></span><span class="notranslate" translate="no">Meta Ads</span></a>
 <a href="https://paginas.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #a855f7"></span>Landing Pages</a>
-<a href="https://ecom.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span>Shopify</a>
-<a href="https://ecom.zyx.mx/#ugc"><span style="width: 7px; height: 7px; border-radius: 50%; background: #f97316"></span>UGC</a>
+<a href="https://ecom.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span><span class="notranslate" translate="no">Shopify</span></a>
+<a href="https://ecom.zyx.mx/#ugc"><span style="width: 7px; height: 7px; border-radius: 50%; background: #f97316"></span><span class="notranslate" translate="no">UGC</span></a>
 <a href="https://clon.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #e879f9"></span>Clon IA</a>
 <a href="https://info.zyx.mx/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #14b8a6"></span>Infoproductos</a>
 <a href="https://zyx.mx/software/"><span style="width: 7px; height: 7px; border-radius: 50%; background: #a3e635"></span>Software</a>
@@ -139,8 +159,8 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="mono" style="text-align: center; color: #525252">Construimos sobre las plataformas que mueven el mercado</div>
 <div style="overflow: hidden; margin-top: 28px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent); mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent)">
 <div class="marq" style="font-size: 26px; font-weight: 600; letter-spacing: -.03em; color: #525252">
-<span>Meta</span><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Stripe</span><span>Mercado Pago</span><span>OpenAI</span><span>Claude</span><span>Vercel</span><span>Supabase</span><span>WhatsApp</span><span>Webflow</span>
-<span>Meta</span><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Stripe</span><span>Mercado Pago</span><span>OpenAI</span><span>Claude</span><span>Vercel</span><span>Supabase</span><span>WhatsApp</span><span>Webflow</span>
+<span><span class="notranslate" translate="no">Meta</span></span><span><span class="notranslate" translate="no">Shopify</span></span><span><span class="notranslate" translate="no">TikTok</span></span><span><span class="notranslate" translate="no">Instagram</span></span><span><span class="notranslate" translate="no">Stripe</span></span><span><span class="notranslate" translate="no">Mercado Pago</span></span><span><span class="notranslate" translate="no">OpenAI</span></span><span><span class="notranslate" translate="no">Claude</span></span><span><span class="notranslate" translate="no">Vercel</span></span><span><span class="notranslate" translate="no">Supabase</span></span><span><span class="notranslate" translate="no">WhatsApp</span></span><span><span class="notranslate" translate="no">Webflow</span></span>
+<span><span class="notranslate" translate="no">Meta</span></span><span><span class="notranslate" translate="no">Shopify</span></span><span><span class="notranslate" translate="no">TikTok</span></span><span><span class="notranslate" translate="no">Instagram</span></span><span><span class="notranslate" translate="no">Stripe</span></span><span><span class="notranslate" translate="no">Mercado Pago</span></span><span><span class="notranslate" translate="no">OpenAI</span></span><span><span class="notranslate" translate="no">Claude</span></span><span><span class="notranslate" translate="no">Vercel</span></span><span><span class="notranslate" translate="no">Supabase</span></span><span><span class="notranslate" translate="no">WhatsApp</span></span><span><span class="notranslate" translate="no">Webflow</span></span>
 </div>
 </div>
 </section>
@@ -170,7 +190,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <!-- ADS -->
 <a href="https://ads.zyx.mx/" class="tile s4 rv" style="min-height: 460px">
 <div style="display: flex; justify-content: space-between; gap: 16px">
-<div class="mono" style="display: flex; align-items: center; gap: 8px; color: #4f8ef7"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7"></span>01 · Meta Ads</div>
+<div class="mono" style="display: flex; align-items: center; gap: 8px; color: #4f8ef7"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7"></span>01 · <span class="notranslate" translate="no">Meta Ads</span></div>
 <div class="mono" style="color: #737373">$10,000 / mes</div>
 </div>
 <div style="font-size: clamp(28px, 3vw, 40px); font-weight: 500; letter-spacing: -.04em; line-height: 1.05; margin-top: 20px; max-width: 520px">Campañas que traen clientes calificados. <span class="serif it" style="color: #737373">No solo clics.</span></div>
@@ -210,21 +230,21 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 
 <!-- SHOPIFY -->
 <a href="https://ecom.zyx.mx/" class="tile s2 rv" style="min-height: 420px">
-<div style="display: flex; justify-content: space-between; gap: 16px"><div class="mono" style="display: flex; align-items: center; gap: 8px; color: #00c48c"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span>03 · Shopify</div><div class="mono" style="color: #737373">Cotización</div></div>
+<div style="display: flex; justify-content: space-between; gap: 16px"><div class="mono" style="display: flex; align-items: center; gap: 8px; color: #00c48c"><span style="width: 7px; height: 7px; border-radius: 50%; background: #00c48c"></span>03 · <span class="notranslate" translate="no">Shopify</span></div><div class="mono" style="color: #737373">Cotización</div></div>
 <div style="font-size: 26px; font-weight: 500; letter-spacing: -.035em; line-height: 1.08; margin-top: 20px">Tu tienda, lista y vendiendo. <span class="serif it" style="color: #737373">Esta semana.</span></div>
 <div class="viz">
 <div style="display: flex; gap: 12px; border: 1px solid #1f1f1f; border-radius: 16px; padding: 14px; background: #050505; align-items: center">
 <div style="width: 64px; height: 64px; border-radius: 12px; background: #0d1f18; border: 1px solid #13392a; flex: none"></div>
 <div style="flex: 1; min-width: 0"><div style="height: 9px; width: 70%; border-radius: 9px; background: #262626"></div><div style="height: 9px; width: 40%; border-radius: 9px; background: #1c1c1c; margin-top: 7px"></div><div style="display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 600; background: #00c48c; color: #000; border-radius: 99px; padding: 4px 10px">Agregar al carrito</div></div>
 </div>
-<div class="mono" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: 10px; color: #a3a3a3"><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px">Tarjeta</span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px">OXXO</span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px">Mercado Pago</span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px">PayPal</span></div>
+<div class="mono" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: 10px; color: #a3a3a3"><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px">Tarjeta</span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px"><span class="notranslate" translate="no">OXXO</span></span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px"><span class="notranslate" translate="no">Mercado Pago</span></span><span style="border: 1px solid #222; border-radius: 99px; padding: 4px 9px"><span class="notranslate" translate="no">PayPal</span></span></div>
 </div>
 <div class="go" style="margin-top: 24px; font-weight: 500; color: #00c48c">Ver servicio →</div>
 </a>
 
 <!-- UGC -->
 <a href="https://ecom.zyx.mx/#ugc" class="tile s2 rv" style="min-height: 420px">
-<div style="display: flex; justify-content: space-between; gap: 16px"><div class="mono" style="display: flex; align-items: center; gap: 8px; color: #f97316"><span style="width: 7px; height: 7px; border-radius: 50%; background: #f97316"></span>04 · UGC</div><div class="mono" style="color: #737373">Desde $5,000</div></div>
+<div style="display: flex; justify-content: space-between; gap: 16px"><div class="mono" style="display: flex; align-items: center; gap: 8px; color: #f97316"><span style="width: 7px; height: 7px; border-radius: 50%; background: #f97316"></span>04 · <span class="notranslate" translate="no">UGC</span></div><div class="mono" style="color: #737373">Desde $5,000</div></div>
 <div style="font-size: 26px; font-weight: 500; letter-spacing: -.035em; line-height: 1.08; margin-top: 20px">Videos que parecen reales. <span class="serif it" style="color: #737373">Porque lo son.</span></div>
 <div class="viz" style="display: flex; gap: 10px; justify-content: center; align-items: flex-end">
 <div style="width: 30%; aspect-ratio: 9 / 16; border-radius: 14px; border: 1px solid #222; background: #0d0905; display: flex; align-items: center; justify-content: center; transform: rotate(-6deg) translateY(8px)"><svg width="18" height="18" viewBox="0 0 18 18" fill="#f97316"><path d="M6 4l8 5-8 5z"/></svg></div>
@@ -257,7 +277,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="viz" style="display: flex; flex-direction: column; gap: 8px">
 <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #1f1f1f; border-radius: 14px; padding: 12px 16px; background: #050505"><span class="mono" style="color: #14b8a6">M01</span><span style="flex: 1; font-size: 14px">Tu método, estructurado</span><span style="width: 18px; height: 18px; border-radius: 50%; background: #14b8a6; color: #000; font-size: 11px; display: inline-flex; align-items: center; justify-content: center">✓</span></div>
 <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #1f1f1f; border-radius: 14px; padding: 12px 16px; background: #050505"><span class="mono" style="color: #14b8a6">M02</span><span style="flex: 1; font-size: 14px">Landing + VSL</span><span style="width: 18px; height: 18px; border-radius: 50%; background: #14b8a6; color: #000; font-size: 11px; display: inline-flex; align-items: center; justify-content: center">✓</span></div>
-<div style="display: flex; align-items: center; gap: 14px; border: 1px solid #1f1f1f; border-radius: 14px; padding: 12px 16px; background: #050505"><span class="mono" style="color: #737373">M03</span><span style="flex: 1; font-size: 14px; color: #a3a3a3">Funnel + Meta Ads</span><span style="width: 60px; height: 4px; border-radius: 4px; background: #1f1f1f; overflow: hidden"><span style="display: block; width: 60%; height: 100%; background: #14b8a6"></span></span></div>
+<div style="display: flex; align-items: center; gap: 14px; border: 1px solid #1f1f1f; border-radius: 14px; padding: 12px 16px; background: #050505"><span class="mono" style="color: #737373">M03</span><span style="flex: 1; font-size: 14px; color: #a3a3a3">Funnel + <span class="notranslate" translate="no">Meta Ads</span></span><span style="width: 60px; height: 4px; border-radius: 4px; background: #1f1f1f; overflow: hidden"><span style="display: block; width: 60%; height: 100%; background: #14b8a6"></span></span></div>
 </div>
 <div class="go" style="margin-top: 24px; font-weight: 500; color: #14b8a6">Ver servicio →</div>
 </a>
@@ -287,11 +307,11 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="wrap" style="position: relative">
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-end">
 <div style="flex: 999 1 640px">
-<div class="mono" style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid #2a1414; background: #0d0606; border-radius: 999px; padding: 7px 14px; color: #ff6b61"><span class="rec" style="width: 8px; height: 8px; border-radius: 50%; background: #ff3b30"></span>ZYX AI Studio · 100% generado con IA</div>
+<div class="mono" style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid #2a1414; background: #0d0606; border-radius: 999px; padding: 7px 14px; color: #ff6b61"><span class="rec" style="width: 8px; height: 8px; border-radius: 50%; background: #ff3b30"></span><span class="notranslate" translate="no">ZYX</span> AI Studio · 100% generado con IA</div>
 <h2 style="margin: 32px 0 0; font-weight: 500; font-size: clamp(48px, 7.6vw, 120px); line-height: .9; letter-spacing: -.06em">Ads que parecen rodaje de cine. <span class="serif it" style="color: #ff3b30; letter-spacing: -.015em">Cero cámaras.</span></h2>
 </div>
 <div style="flex: 1 1 320px">
-<p style="margin: 0; color: #a3a3a3; font-size: 18px">Creamos anuncios y videos <span style="color: #fff">hiperrealistas, generados al 100% con inteligencia artificial</span>: personas, productos, escenas y voces. Sin actores, sin locaciones, sin días de grabación. Listos para Meta, TikTok y Reels.</p>
+<p style="margin: 0; color: #a3a3a3; font-size: 18px">Creamos anuncios y videos <span style="color: #fff">hiperrealistas, generados al 100% con inteligencia artificial</span>: personas, productos, escenas y voces. Sin actores, sin locaciones, sin días de grabación. Listos para <span class="notranslate" translate="no">Meta</span>, <span class="notranslate" translate="no">TikTok</span> y <span class="notranslate" translate="no">Reels</span>.</p>
 <a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20mis%20ads%20hechos%20con%20IA" target="_blank" rel="noopener" style="margin-top: 28px; background: #d92d20; color: #fff">Quiero mis ads con IA
 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11L11 3M5 3h6v6"/></svg></a>
 </div>
@@ -304,7 +324,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="mono hide-sm" style="color: #525252">Desliza →</div>
 </div>
 <div class="reel">
-<div class="vf" style="background: #0e0a08"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><div class="scan"></div><div class="vf-top"><span><span class="rec" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; margin-right: 6px"></span>REC</span><span>00:01</span></div><div class="vf-mid"><svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#fff" stroke-width="1.4"><circle cx="28" cy="21" r="10"/><path d="M10 50c2-10 9-15 18-15s16 5 18 15"/></svg></div><div class="vf-bot"><div class="mono" style="color: #ff6b61; font-size: 10px">01</div><div class="vf-t">Avatar UGC hiperrealista</div><div class="vf-d">Una persona "real" recomendando tu producto. Nadie nota que es IA.</div></div></div>
+<div class="vf" style="background: #0e0a08"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><div class="scan"></div><div class="vf-top"><span><span class="rec" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; margin-right: 6px"></span>REC</span><span>00:01</span></div><div class="vf-mid"><svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#fff" stroke-width="1.4"><circle cx="28" cy="21" r="10"/><path d="M10 50c2-10 9-15 18-15s16 5 18 15"/></svg></div><div class="vf-bot"><div class="mono" style="color: #ff6b61; font-size: 10px">01</div><div class="vf-t">Avatar <span class="notranslate" translate="no">UGC</span> hiperrealista</div><div class="vf-d">Una persona "real" recomendando tu producto. Nadie nota que es IA.</div></div></div>
 <div class="vf" style="background: #0a0a0e"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><div class="scan"></div><div class="vf-top"><span><span class="rec" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; margin-right: 6px"></span>REC</span><span>00:02</span></div><div class="vf-mid"><svg width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#fff" stroke-width="1.4"><rect x="20" y="6" width="16" height="28" rx="8"/><path d="M12 26c0 9 7 16 16 16s16-7 16-16M28 42v8M20 50h16"/></svg></div><div class="vf-bot"><div class="mono" style="color: #ff6b61; font-size: 10px">02</div><div class="vf-t">Fake Podcast</div><div class="vf-d">Formato entrevista que toma prestada la autoridad del podcast.</div></div></div>
 <div class="vf" style="background: #0b0b0b"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><div class="scan"></div><div class="vf-top"><span><span class="rec" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; margin-right: 6px"></span>REC</span><span>00:03</span></div><div class="vf-mid"><span class="spin" style="display: block; width: 52px; height: 52px; border: 1.4px solid #fff; border-radius: 14px"></span></div><div class="vf-bot"><div class="mono" style="color: #ff6b61; font-size: 10px">03</div><div class="vf-t">Hyper Motion de producto</div><div class="vf-d">Tu producto en tomas cinematográficas premium, sin estudio.</div></div></div>
 <div class="vf" style="background: #080b0e"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span><div class="scan"></div><div class="vf-top"><span><span class="rec" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; margin-right: 6px"></span>REC</span><span>00:04</span></div><div class="vf-mid"><svg width="60" height="44" viewBox="0 0 60 44" fill="none" stroke="#fff" stroke-width="1.4"><rect x="2" y="6" width="40" height="32" rx="4"/><path d="M42 16l16-8v28l-16-8"/></svg></div><div class="vf-bot"><div class="mono" style="color: #ff6b61; font-size: 10px">04</div><div class="vf-t">Cinematic 3D</div><div class="vf-d">Personajes casi reales con luz de cine. Historias de transformación.</div></div></div>
@@ -321,7 +341,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div style="background: #050505; padding: 32px"><div class="mono" style="color: #ff6b61">Sin rodaje</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Cero cámaras, actores o locaciones</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Todo se genera con IA: personas, escenarios, producto y voz.</p></div>
 <div style="background: #050505; padding: 32px"><div class="mono" style="color: #ff6b61">Variaciones</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Un guion, muchos formatos</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Múltiples hooks y estilos para testear y encontrar al ganador rápido.</p></div>
 <div style="background: #050505; padding: 32px"><div class="mono" style="color: #ff6b61">Multi-idioma</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">Español, inglés, portugués</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">El mismo anuncio en otros mercados sin volver a producir.</p></div>
-<div style="background: #050505; padding: 32px"><div class="mono" style="color: #ff6b61">Listos para pautar</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">9:16, subtítulos y música</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Optimizados para Meta Ads, TikTok, Reels y Shorts.</p></div>
+<div style="background: #050505; padding: 32px"><div class="mono" style="color: #ff6b61">Listos para pautar</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 28px">9:16, subtítulos y música</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14.5px">Optimizados para <span class="notranslate" translate="no">Meta Ads</span>, <span class="notranslate" translate="no">TikTok</span>, <span class="notranslate" translate="no">Reels</span> y <span class="notranslate" translate="no">Shorts</span>.</p></div>
 </div>
 
 <!-- PIPELINE + COMPARE -->
@@ -392,11 +412,11 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: #e5e5e5; border: 1px solid #e5e5e5; border-radius: 28px; overflow: hidden; margin-top: 80px">
 <div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">01</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Apps móviles</div><div style="color: #525252; font-size: 14px; margin-top: 8px">iOS y Android que tus clientes van a querer tener.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">Delivery · Reservas · Lealtad</div></div>
 <div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">02</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Plataformas web y SaaS</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Usuarios, pagos y panel de administración.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">Marketplaces · Cursos · B2B</div></div>
-<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">03</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Sistemas internos</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Adiós al Excel y al caos por WhatsApp.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">CRM · ERP · Inventarios · POS</div></div>
-<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">04</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">IA y chatbots</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Asistentes que responden, califican y venden 24/7.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">WhatsApp · Agentes · Documentos</div></div>
+<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">03</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Sistemas internos</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Adiós al Excel y al caos por <span class="notranslate" translate="no">WhatsApp</span>.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">CRM · ERP · Inventarios · POS</div></div>
+<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">04</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">IA y chatbots</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Asistentes que responden, califican y venden 24/7.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px"><span class="notranslate" translate="no">WhatsApp</span> · Agentes · Documentos</div></div>
 <div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">05</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Automatizaciones</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Las tareas repetitivas se hacen solas.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">Facturación · Reportes · Sync</div></div>
 <div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">06</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Dashboards y datos</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Todos tus números en una pantalla, en tiempo real.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">Ventas · KPIs · Finanzas</div></div>
-<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">07</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Integraciones y APIs</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Que tus sistemas hablen entre sí.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px">Stripe · Mercado Pago · SAT</div></div>
+<div style="background: #fff; padding: 30px"><div class="mono" style="color: #a3a3a3">07</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">Integraciones y APIs</div><div style="color: #525252; font-size: 14px; margin-top: 8px">Que tus sistemas hablen entre sí.</div><div class="mono" style="color: #a3a3a3; font-size: 10.5px; margin-top: 20px"><span class="notranslate" translate="no">Stripe</span> · <span class="notranslate" translate="no">Mercado Pago</span> · SAT</div></div>
 <div style="background: #000; color: #fff; padding: 30px"><div class="mono" style="color: #a3e635">08</div><div style="font-size: 21px; font-weight: 500; letter-spacing: -.025em; margin-top: 36px">MVPs para startups</div><div style="color: #a3a3a3; font-size: 14px; margin-top: 8px">Valida tu idea en semanas, no meses, sin quemar capital.</div><div class="mono" style="color: #737373; font-size: 10.5px; margin-top: 20px">Prototipo · Lanzamiento · Pitch</div></div>
 </div>
 
@@ -411,7 +431,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 </ul>
 </div>
 <div style="border-radius: 28px; padding: 40px; background: #000; color: #fff">
-<div class="mono" style="color: #a3e635">Con ZYX</div>
+<div class="mono" style="color: #a3e635">Con <span class="notranslate" translate="no">ZYX</span></div>
 <ul style="list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 16px">
 <li style="display: flex; gap: 14px"><span style="color: #a3e635">✓</span>Un solo sistema, diseñado para cómo funciona tu negocio.</li>
 <li style="display: flex; gap: 14px"><span style="color: #a3e635">✓</span>Las tareas repetitivas corren solas.</li>
@@ -437,7 +457,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="rv" style="margin-top: 112px; padding-top: 40px; border-top: 1px solid #e5e5e5; display: flex; flex-wrap: wrap; gap: 40px">
 <div style="flex: 1 1 280px"><div class="mono" style="color: #737373">Stack moderno, hecho para escalar</div></div>
 <div style="flex: 3 1 560px; display: flex; flex-wrap: wrap; gap: 8px">
-<span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">React</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Next.js</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">React Native</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Swift</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Kotlin</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Node.js</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Python</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">PostgreSQL</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Supabase</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Firebase</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">AWS</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Vercel</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">OpenAI · Claude</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Stripe</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">WhatsApp API</span>
+<span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">React</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">Next.js</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">React Native</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Swift</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Kotlin</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Node.js</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Python</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">PostgreSQL</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">Supabase</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">Firebase</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px">AWS</span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">Vercel</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">OpenAI</span> · <span class="notranslate" translate="no">Claude</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">Stripe</span></span><span style="border: 1px solid #e5e5e5; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 14px"><span class="notranslate" translate="no">WhatsApp API</span></span>
 </div>
 </div>
 <div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 56px">
@@ -456,7 +476,7 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div style="position: relative; flex: 1 1 340px">
 <div class="mono" style="color: #a3e635">Cotización gratis · Sin compromiso</div>
 <h2 style="margin: 24px 0 0; font-weight: 500; font-size: clamp(42px, 5.2vw, 76px); line-height: .96; letter-spacing: -.05em">Cuéntanos tu proyecto. <span class="serif it" style="color: #a3e635">Cotizado en &lt;48 h.</span></h2>
-<p style="margin: 28px 0 0; color: #a3a3a3; font-size: 17px; max-width: 440px">Cada proyecto es distinto. Responde 3 preguntas y mándalas por WhatsApp: un desarrollador te responde con los siguientes pasos.</p>
+<p style="margin: 28px 0 0; color: #a3a3a3; font-size: 17px; max-width: 440px">Cada proyecto es distinto. Responde 3 preguntas y mándalas por <span class="notranslate" translate="no">WhatsApp</span>: un desarrollador te responde con los siguientes pasos.</p>
 <div style="margin-top: 36px; border: 1px solid #1f1f1f; border-radius: 20px; padding: 20px; background: rgba(10,10,10,.8)">
 <div class="mono" style="color: #737373">Tu brief</div>
 <div style="margin-top: 12px; font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.9; color: #d4d4d4">
@@ -504,14 +524,14 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 64px">
 <div style="flex: 1 1 360px">
 <div style="position: sticky; top: 120px">
-<div class="mono" style="color: #737373">Por qué ZYX</div>
+<div class="mono" style="color: #737373">Por qué <span class="notranslate" translate="no">ZYX</span></div>
 <h2 style="margin: 28px 0 0; font-weight: 500; font-size: clamp(42px, 5.2vw, 76px); line-height: .98; letter-spacing: -.05em">La agencia que <span class="serif it" style="color: #737373">entrega</span>, no la que promete.</h2>
 <a class="btn btn-w" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener" style="margin-top: 40px">Empezar ahora →</a>
 </div>
 </div>
 <div style="flex: 999 1 560px; min-width: 0; border-bottom: 1px solid #1a1a1a">
 <div class="why rv"><span class="mono" style="color: #4f8ef7; width: 28px">01</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Resultados, no entregables</div><p style="margin: 10px 0 0; color: #a3a3a3">Medimos el éxito por lo que tú vendes. Cada decisión está orientada a tu ROI.</p></div></div>
-<div class="why rv"><span class="mono" style="color: #a855f7; width: 28px">02</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Entrega en días, no meses</div><p style="margin: 10px 0 0; color: #a3a3a3">Landing pages en 7 días, tiendas Shopify en una semana, UGC listo en días.</p></div></div>
+<div class="why rv"><span class="mono" style="color: #a855f7; width: 28px">02</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Entrega en días, no meses</div><p style="margin: 10px 0 0; color: #a3a3a3">Landing pages en 7 días, tiendas <span class="notranslate" translate="no">Shopify</span> en una semana, <span class="notranslate" translate="no">UGC</span> listo en días.</p></div></div>
 <div class="why rv"><span class="mono" style="color: #00c48c; width: 28px">03</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Todo personalizado, siempre</div><p style="margin: 10px 0 0; color: #a3a3a3">Sin templates, sin copy reciclado, sin campañas de otros clientes.</p></div></div>
 <div class="why rv"><span class="mono" style="color: #f97316; width: 28px">04</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Estrategia detrás de cada píxel</div><p style="margin: 10px 0 0; color: #a3a3a3">Titular, color y CTA decididos con psicología de conversión y datos.</p></div></div>
 <div class="why rv"><span class="mono" style="color: #e879f9; width: 28px">05</span><div><div style="font-size: 24px; font-weight: 500; letter-spacing: -.025em">Comunicación real y directa</div><p style="margin: 10px 0 0; color: #a3a3a3">Sin reportes de vanidad ni excusas. Te decimos qué funciona y qué no.</p></div></div>
@@ -540,20 +560,21 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 
 <!-- FOOTER -->
 <footer style="padding: 72px 0 32px">
+<div class="wrap"><div class="lang-foot notranslate" translate="no"><span class="lf-t"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 4 6 4 9.5s-1.4 6.9-4 9.5c-2.6-2.6-4-6-4-9.5s1.4-6.9 4-9.5z"/></svg>Idioma · Language</span><button type="button" data-lang="es" lang="es">Español</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="pt" lang="pt">Português</button><button type="button" data-lang="fr" lang="fr">Français</button><button type="button" data-lang="de" lang="de">Deutsch</button><button type="button" data-lang="it" lang="it">Italiano</button><button type="button" data-lang="zh-CN" lang="zh-CN">中文</button><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="ko" lang="ko">한국어</button><button type="button" data-lang="ar" lang="ar">العربية</button><button type="button" data-lang="hi" lang="hi">हिन्दी</button><button type="button" data-lang="ru" lang="ru">Русский</button><button type="button" data-lang="tr" lang="tr">Türkçe</button><button type="button" data-lang="id" lang="id">Bahasa Indonesia</button></div></div>
 <div class="wrap">
 <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
 <div style="flex: 1 1 280px; max-width: 360px">
-<div style="font-weight: 700; font-size: 28px; letter-spacing: -.045em">ZYX</div>
+<div style="font-weight: 700; font-size: 28px; letter-spacing: -.045em"><span class="notranslate" translate="no">ZYX</span></div>
 <p style="margin: 14px 0 0; color: #737373; font-size: 15px">La agencia que hace crecer tu negocio en digital. Querétaro, México.</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 64px">
-<nav style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><span class="mono" style="color: #525252; margin-bottom: 6px">Servicios</span><a href="https://ads.zyx.mx/">Meta Ads</a><a href="https://paginas.zyx.mx/">Landing Pages</a><a href="https://ecom.zyx.mx/">Shopify</a><a href="https://ecom.zyx.mx/#ugc">UGC Videos</a></nav>
-<nav style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><span class="mono" style="color: #525252; margin-bottom: 6px">Más</span><a href="https://clon.zyx.mx/">Clon IA</a><a href="https://info.zyx.mx/">Infoproductos</a><a href="https://zyx.mx/software/">Software</a><a href="#ai-studio">AI Ads &amp; Videos</a><a href="https://wa.me/524421454972" target="_blank" rel="noopener">WhatsApp</a></nav>
+<nav style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><span class="mono" style="color: #525252; margin-bottom: 6px">Servicios</span><a href="https://ads.zyx.mx/"><span class="notranslate" translate="no">Meta Ads</span></a><a href="https://paginas.zyx.mx/">Landing Pages</a><a href="https://ecom.zyx.mx/"><span class="notranslate" translate="no">Shopify</span></a><a href="https://ecom.zyx.mx/#ugc"><span class="notranslate" translate="no">UGC</span> Videos</a></nav>
+<nav style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><span class="mono" style="color: #525252; margin-bottom: 6px">Más</span><a href="https://clon.zyx.mx/">Clon IA</a><a href="https://info.zyx.mx/">Infoproductos</a><a href="https://zyx.mx/software/">Software</a><a href="#ai-studio">AI Ads &amp; Videos</a><a href="https://wa.me/524421454972" target="_blank" rel="noopener"><span class="notranslate" translate="no">WhatsApp</span></a></nav>
 </div>
 </div>
 <div class="mega" aria-hidden="true"><span>Z</span><span>Y</span><span>X</span></div>
 <div class="mono" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; margin-top: 32px; padding-top: 24px; border-top: 1px solid #1a1a1a; color: #525252">
-<span>© 2026 ZYX. Todos los derechos reservados.</span>
+<span>© 2026 <span class="notranslate" translate="no">ZYX</span>. Todos los derechos reservados.</span>
 <a href="https://zyx.mx/politicas" style="color: #737373">Políticas de privacidad</a>
 </div>
 </div>
@@ -561,6 +582,50 @@ a{color:#fff;text-decoration:none}a:hover{color:#d4d4d4}
 
 </div><script>
 (function(){var m=document.querySelector('.mega');if(!m)return;if(!('IntersectionObserver' in window)){m.classList.add('go');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){m.classList.add('go');io.disconnect();}},{threshold:.35});io.observe(m);})();
+</script>
+<div id="gt-el"></div>
+<script>
+(function(){
+  var L=[["es", "Español"], ["en", "English"], ["pt", "Português"], ["fr", "Français"], ["de", "Deutsch"], ["it", "Italiano"], ["zh-CN", "中文"], ["ja", "日本語"], ["ko", "한국어"], ["ar", "العربية"], ["hi", "हिन्दी"], ["ru", "Русский"], ["tr", "Türkçe"], ["id", "Bahasa Indonesia"]], D=/zyx\.mx$/.test(location.hostname)?'; domain=.zyx.mx':'';
+  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+  function put(n,v,age){document.cookie=n+'='+v+'; path=/; max-age='+age;if(D)document.cookie=n+'='+v+'; path=/; max-age='+age+D;}
+  function cur(){var g=ck('googtrans');return g?g.split('/').pop():'es';}
+  function load(){
+    if(window.__zyxGT)return;window.__zyxGT=1;
+    window.zyxGTInit=function(){new google.translate.TranslateElement({pageLanguage:'es',autoDisplay:false},'gt-el');};
+    var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=zyxGTInit';s.async=true;document.head.appendChild(s);
+  }
+  function apply(code,reload){
+    put('googtrans','',0);
+    if(code!=='es')put('googtrans','/es/'+code,31536000);
+    put('zyx_lang',code,31536000);
+    if(reload)location.reload();else if(code!=='es')load();
+  }
+  // Primera visita: usa el idioma del navegador / teléfono del visitante
+  if(!ck('zyx_lang')){
+    var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'es']);
+    var pick='es';
+    for(var i=0;i<pref.length;i++){
+      var p=(pref[i]||'').toLowerCase(), b=p.split('-')[0];
+      if(b==='es'){pick='es';break;}
+      var hit=L.filter(function(x){return x[0].toLowerCase()===p||x[0].split('-')[0]===b;})[0];
+      if(hit){pick=hit[0];break;}
+    }
+    apply(pick,false);
+  } else if(cur()!=='es'){ load(); }
+  var c=cur();
+  document.querySelectorAll('.lang-cur').forEach(function(e){e.textContent=c.split('-')[0];});
+  document.querySelectorAll('[data-lang]').forEach(function(b){
+    if(b.getAttribute('data-lang')===c)b.setAttribute('aria-current','true');
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'),true);});
+  });
+  document.querySelectorAll('.lang').forEach(function(w){
+    var btn=w.querySelector('.lang-btn');
+    btn.addEventListener('click',function(e){e.stopPropagation();var o=w.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.lang.open').forEach(function(w){w.classList.remove('open');w.querySelector('.lang-btn').setAttribute('aria-expanded','false');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.dispatchEvent(new Event('click'));});
+})();
 </script>
 <script>
 (function(){
