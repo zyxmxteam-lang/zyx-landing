@@ -50,7 +50,7 @@ details[open] .pl{transform:rotate(45deg)}
 .step{display:flex;flex-wrap:wrap;gap:16px 48px;padding:36px 0;border-top:1px solid #1c1c1c}
 .marq{display:flex;gap:40px;white-space:nowrap;animation:mq 40s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
-.pk li{display:flex;gap:12px;font-size:14px}
+.pkl li{display:flex;gap:12px;font-size:14px;line-height:1.45}.pkl li>span:first-child{flex:none}
 ::selection{background:#fff;color:#000}
 .tnum{font-variant-numeric:tabular-nums}
 .btn{transition:transform .25s cubic-bezier(.2,.8,.2,1),opacity .25s}
@@ -282,7 +282,7 @@ html.mm-lock{overflow:hidden}
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px">
 <div class="pnl" style="flex: 999 1 560px">
 <div style="display: flex; justify-content: space-between; align-items: center"><span style="font-weight: 700; letter-spacing: -.03em">TU MARCA</span><span class="hide-sm" style="display: flex; gap: 18px; font-size: 13px; color: #737373"><span>Tienda</span><span>Colecciones</span><span>Contacto</span></span><span style="position: relative; display: inline-flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1.5 12h-11z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="bump" style="position: absolute; top: -6px; right: -8px; min-width: 17px; height: 17px; border-radius: 99px; background: #00C48C; color: #000; font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">3</span></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 10px; margin-top: 20px">
 <div class="seq" style="animation-delay: 0s"><div style="aspect-ratio: 1; border-radius: 14px; background: #0c1a14; border: 1px solid #13392a"></div><div style="height: 8px; width: 70%; border-radius: 9px; background: #262626; margin-top: 10px"></div><div style="font-size: 13px; margin-top: 6px">$1,290</div></div>
 <div class="seq" style="animation-delay: .3s"><div style="aspect-ratio: 1; border-radius: 14px; background: #101010; border: 1px solid #1f1f1f"></div><div style="height: 8px; width: 60%; border-radius: 9px; background: #262626; margin-top: 10px"></div><div style="font-size: 13px; margin-top: 6px">$890</div></div>
 <div class="seq" style="animation-delay: .6s"><div style="aspect-ratio: 1; border-radius: 14px; background: #0c1a14; border: 1px solid #13392a"></div><div style="height: 8px; width: 75%; border-radius: 9px; background: #262626; margin-top: 10px"></div><div style="font-size: 13px; margin-top: 6px">$1,540</div></div>
@@ -337,7 +337,7 @@ html.mm-lock{overflow:hidden}
 <!-- STATS -->
 <section style="padding: 96px 0 120px">
 <div class="wrap">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #1c1c1c; border: 1px solid #1c1c1c; border-radius: 24px; overflow: hidden">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1px; background: #1c1c1c; border: 1px solid #1c1c1c; border-radius: 24px; overflow: hidden">
 <div style="background: #000; padding: 36px 32px"><div style="font-size: 64px; font-weight: 500; letter-spacing: -.05em; line-height: 1">+50</div><div class="mono" style="margin-top: 14px; color: #737373"><span>Tiendas <span class="notranslate" translate="no">Shopify</span> lanzadas</span></div></div>
 <div style="background: #000; padding: 36px 32px"><div style="font-size: 64px; font-weight: 500; letter-spacing: -.05em; line-height: 1">&lt;7<span class="serif it" style="color: #00C48C">d</span></div><div class="mono" style="margin-top: 14px; color: #737373">Tiempo promedio de entrega</div></div>
 <div style="background: #000; padding: 36px 32px"><div style="font-size: 64px; font-weight: 500; letter-spacing: -.05em; line-height: 1">100<span class="serif it" style="color: #00C48C">%</span></div><div class="mono" style="margin-top: 14px; color: #737373">Diseño custom, cero templates</div></div>
@@ -356,7 +356,7 @@ html.mm-lock{overflow:hidden}
 <div class="wrap">
 <div class="mono" style="color: #00C48C">Para quién es</div>
 <h2 class="h2 rv" style="margin-top: 24px">Hecho para negocios <span class="serif it" style="color: #737373">que van en serio a vender.</span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; margin-top: 56px">
 <div style="border: 1px solid #1c1c1c; border-radius: 24px; padding: 28px"><div class="mono" style="color: #00C48C">A</div><div style="font-size: 20px; font-weight: 500; margin-top: 18px">Empezando desde cero</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14px">Tienes producto pero no sabes por dónde empezar. Manejamos el 100% de la configuración.</p></div>
 <div style="border: 1px solid #1c1c1c; border-radius: 24px; padding: 28px"><div class="mono" style="color: #00C48C">B</div><div style="font-size: 20px; font-weight: 500; margin-top: 18px">Migrando de plataforma</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14px"><span>De WooCommerce, Wix u otra a <span class="notranslate" translate="no">Shopify</span>, sin perder datos ni tráfico.</span></p></div>
 <div style="border: 1px solid #1c1c1c; border-radius: 24px; padding: 28px"><div class="mono" style="color: #00C48C">C</div><div style="font-size: 20px; font-weight: 500; margin-top: 18px">Tienda que no convierte</div><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 14px"><span>Ya estás en <span class="notranslate" translate="no">Shopify</span> pero se ve genérica o no vende. La rediseñamos.</span></p></div>
@@ -390,7 +390,7 @@ html.mm-lock{overflow:hidden}
 <div class="wrap">
 <div class="mono" style="color: #525252">Qué incluye</div>
 <h2 class="h2 rv" style="margin-top: 24px">Todo lo que tu tienda necesita <span class="serif it">para vender desde el día uno.</span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px 40px; margin-top: 72px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 48px 40px; margin-top: 72px">
 <div style="border-top: 2px solid #000; padding-top: 24px"><div class="mono" style="color: #737373">01</div><div style="font-size: 22px; font-weight: 500; letter-spacing: -.02em; margin-top: 14px">Diseño 100% personalizado</div><p style="margin: 10px 0 0; color: #404040; font-size: 15px">Desde cero, basado en tu identidad. Tu tienda se verá como ninguna otra.</p></div>
 <div style="border-top: 2px solid #000; padding-top: 24px"><div class="mono" style="color: #737373">02</div><div style="font-size: 22px; font-weight: 500; letter-spacing: -.02em; margin-top: 14px">Copy de ventas</div><p style="margin: 10px 0 0; color: #404040; font-size: 15px">Titulares, descripciones, CTAs y checkout escritos para impulsar la compra.</p></div>
 <div style="border-top: 2px solid #000; padding-top: 24px"><div class="mono" style="color: #737373">03</div><div style="font-size: 22px; font-weight: 500; letter-spacing: -.02em; margin-top: 14px">Configuración técnica completa</div><p style="margin: 10px 0 0; color: #404040; font-size: 15px">Pagos, envíos, impuestos, legales y dominio. Lista para operar.</p></div>
@@ -442,12 +442,12 @@ html.mm-lock{overflow:hidden}
 <div class="mono" style="display: inline-flex; align-items: center; gap: 10px; color: #F97316"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F97316"></span><span>Contenido <span class="notranslate" translate="no">UGC</span></span></div>
 <h2 style="margin: 28px 0 0; font-weight: 500; font-size: clamp(48px, 7.4vw, 112px); line-height: .92; letter-spacing: -.055em">Videos que hacen <span class="serif it" style="color: #F97316; letter-spacing: -.01em">que tus productos vendan.</span></h2>
 <p style="margin: 32px 0 0; max-width: 640px; color: #a3a3a3; font-size: 18px"><span>Videos estilo <span class="notranslate" translate="no">UGC</span> optimizados para anuncios, redes y páginas de producto. Contenido real, estilo auténtico: el tipo que detiene el scroll y genera compras.</span></p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 64px; align-items: stretch">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 64px; align-items: stretch">
 <div style="border: 1px solid #262626; border-radius: 28px; padding: 32px; display: flex; flex-direction: column">
 <div class="mono" style="color: #737373">Pack Starter</div>
 <div style="font-size: 72px; font-weight: 500; letter-spacing: -.05em; line-height: 1; margin-top: 24px">5 <span class="serif it" style="font-size: 32px; color: #737373">videos</span></div>
 <div style="font-size: 28px; font-weight: 500; margin-top: 20px">$5,000 <span style="font-size: 13px; color: #737373; font-weight: 400">MXN · $1,000/video</span></div>
-<ul class="pk" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid #1c1c1c; display: flex; flex-direction: column; gap: 10px; color: #a3a3a3; flex: 1">
+<ul class="pkl" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid #1c1c1c; display: flex; flex-direction: column; gap: 10px; color: #a3a3a3; flex: 1">
 <li><span style="color: #F97316">✓</span><span>5 videos <span class="notranslate" translate="no">UGC</span> de producto</span></li><li><span style="color: #F97316">✓</span>Vertical 9:16 para anuncios</li><li><span style="color: #F97316">✓</span>Guión y dirección creativa</li><li><span style="color: #F97316">✓</span>Subtítulos y música</li><li><span style="color: #F97316">✓</span>Entrega en 7 días hábiles</li>
 </ul>
 <a class="btn btn-ghost" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20el%20Pack%20Starter%20de%20UGC" target="_blank" rel="noopener" style="margin-top: 28px">Quiero el Starter →</a>
@@ -456,7 +456,7 @@ html.mm-lock{overflow:hidden}
 <div class="mono" style="display: flex; justify-content: space-between; color: #737373">Pack Growth <span style="color: #F97316">Más popular</span></div>
 <div style="font-size: 72px; font-weight: 500; letter-spacing: -.05em; line-height: 1; margin-top: 24px">10 <span class="serif it" style="font-size: 32px; color: #737373">videos</span></div>
 <div style="font-size: 28px; font-weight: 500; margin-top: 20px">$9,000 <span style="font-size: 13px; color: #737373; font-weight: 400">MXN · $900/video</span></div>
-<ul class="pk" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid #1c1c1c; display: flex; flex-direction: column; gap: 10px; color: #a3a3a3; flex: 1">
+<ul class="pkl" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid #1c1c1c; display: flex; flex-direction: column; gap: 10px; color: #a3a3a3; flex: 1">
 <li><span style="color: #F97316">✓</span><span>10 videos <span class="notranslate" translate="no">UGC</span> de producto</span></li><li><span style="color: #F97316">✓</span>9:16 + versiones 16:9</li><li><span style="color: #F97316">✓</span>Guión y dirección por video</li><li><span style="color: #F97316">✓</span>Subtítulos, música y efectos</li><li><span style="color: #F97316">✓</span>1 ronda de revisiones por video</li><li><span style="color: #F97316">✓</span>Entrega en 10 días hábiles</li>
 </ul>
 <a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20el%20Pack%20Growth%20de%20UGC" target="_blank" rel="noopener" style="margin-top: 28px; background: #fff; color: #000">Quiero el Growth →</a>
@@ -465,7 +465,7 @@ html.mm-lock{overflow:hidden}
 <div class="mono" style="display: flex; justify-content: space-between">Pack Pro <span>Mejor valor</span></div>
 <div style="font-size: 72px; font-weight: 500; letter-spacing: -.05em; line-height: 1; margin-top: 24px">20 <span class="serif it" style="font-size: 32px">videos</span></div>
 <div style="font-size: 28px; font-weight: 500; margin-top: 20px">$16,000 <span style="font-size: 13px; font-weight: 400">MXN · $800/video</span></div>
-<ul class="pk" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid rgba(0,0,0,.2); display: flex; flex-direction: column; gap: 10px; flex: 1">
+<ul class="pkl" style="list-style: none; padding: 24px 0 0; margin: 24px 0 0; border-top: 1px solid rgba(0,0,0,.2); display: flex; flex-direction: column; gap: 10px; flex: 1">
 <li><span>✓</span><span>20 videos <span class="notranslate" translate="no">UGC</span> de producto</span></li><li><span>✓</span>Vertical, horizontal y cuadrado</li><li><span>✓</span>Guión + dirección + storyboard</li><li><span>✓</span>Edición profesional completa</li><li><span>✓</span>2 rondas de revisiones por video</li><li><span>✓</span>Calendario de contenido</li><li><span>✓</span>Entrega en 15 días hábiles</li>
 </ul>
 <a class="btn" href="https://wa.me/524421454972?text=Hola%20ZYX%2C%20quiero%20el%20Pack%20Pro%20de%20UGC" target="_blank" rel="noopener" style="margin-top: 28px; background: #000; color: #fff">Quiero el Pro →</a>
@@ -484,7 +484,7 @@ html.mm-lock{overflow:hidden}
 <div><div style="font-size: 56px; font-weight: 500; letter-spacing: -.05em; line-height: 1">3<span class="serif it" style="color: #F97316">×</span></div><div style="font-weight: 500; margin-top: 18px">Más tiempo viendo</div><p style="margin: 6px 0 0; color: #a3a3a3; font-size: 14px">Más recordación de marca, más ventas.</p></div>
 <div><div style="font-size: 56px; font-weight: 500; letter-spacing: -.05em; line-height: 1">70<span class="serif it" style="color: #F97316">%</span></div><div style="font-weight: 500; margin-top: 18px">Prefiere descubrir marcas así</div><p style="margin: 6px 0 0; color: #a3a3a3; font-size: 14px">Auténtico, cercano y real.</p></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 16px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 16px">
 <div style="border: 1px solid #1c1c1c; border-radius: 24px; padding: 36px">
 <div class="mono" style="color: #737373">Contenido tradicional</div>
 <ul style="list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; color: #a3a3a3">
@@ -545,7 +545,7 @@ html.mm-lock{overflow:hidden}
 <section style="padding: 96px 0 24px">
 <div class="wrap rv">
 <div class="mono" style="color: #737373"><span>Otros servicios <span class="notranslate" translate="no">ZYX</span></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 10px; margin-top: 24px">
 <a class="other" href="https://zyx.mx/ai-ads/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #ff3b30"></span>AI Ads</span><span style="color: #ff3b30">→</span></a>
 <a class="other" href="https://ads.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4f8ef7"></span><span><span class="notranslate" translate="no">Meta Ads</span></span></span><span style="color: #4f8ef7">→</span></a>
 <a class="other" href="https://paginas.zyx.mx/"><span style="display: flex; align-items: center; gap: 10px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #a855f7"></span>Landing Pages</span><span style="color: #a855f7">→</span></a>
